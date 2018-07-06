@@ -8,10 +8,12 @@ set(CMAKE_MODULE_PATH
 find_package(GTest REQUIRED)
 
 set(SRC
-  src/easyStrings.cpp)
+  src/easyStrings.cpp
+  src/dynamicProgramming.cpp)
 set(TEST
   test/main.cpp
-  test/testEasyStrings.cpp)
+  test/testEasyStrings.cpp
+  test/testDynamicProgramming.cpp)
 
 add_executable(${PROJECT_NAME}_test ${SRC} ${TEST})
 target_include_directories(${PROJECT_NAME}_test
