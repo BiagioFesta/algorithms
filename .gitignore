@@ -1,0 +1,4 @@
+build/
+compile_commands.json
+.projectile
+.cquery_cached_index/
