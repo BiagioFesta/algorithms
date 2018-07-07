@@ -25,6 +25,12 @@ namespace algorithms {
  */
 bool isAlmostNonDecreasing(const int* iArray, const int iSize);
 
+/*! \brief Given an array of n positive integers and a positive integer s, it
+ *  finds the minimal length of a contiguous subarray of which the sum ≥ s. If
+ *  there isn't one, it returns 0 instead.
+ */
+int minSizeSubArraySum(const int* iArray, const int iSize, int s);
+
 }  // namespace algorithms
 
 #endif  // ALGORITHMS__ALG_ARRAYS__HPP
