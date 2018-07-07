@@ -17,6 +17,7 @@
  */
 #include <gtest/gtest.h>
 #include <AlgArrays.hpp>
+#include <tuple>
 
 namespace algorithms::test {
 
@@ -29,6 +30,23 @@ TEST(AlgArrays, isAlmostNonDecreasing) {
     ASSERT_EQ(isAlmostNonDecreasing(test.first.data(), test.first.size()),
               test.second);
   }
+}
+
+TEST(AlgArrays, minSizeSubArraySum) {
+  const std::vector kData1 = {2, 3, 1, 2, 4, 3};
+  ASSERT_EQ(minSizeSubArraySum(kData1.data(), kData1.size(), 7), 2);
+
+  const std::vector kData2 = {1};
+  ASSERT_EQ(minSizeSubArraySum(kData2.data(), kData2.size(), 7), 0);
+
+  const std::vector kData3 = {1, 1, 4, 3, 1, 1, 1};
+  ASSERT_EQ(minSizeSubArraySum(kData3.data(), kData3.size(), 7), 2);
+
+  const std::vector<int> kData4 = {};
+  ASSERT_EQ(minSizeSubArraySum(kData4.data(), kData4.size(), 100), 0);
+
+  const std::vector kData5 = {12, 28, 83, 4, 25, 26, 25, 2, 25, 25, 25, 12};
+  ASSERT_EQ(minSizeSubArraySum(kData5.data(), kData5.size(), 213), 8);
 }
 
 }  // namespace algorithms::test

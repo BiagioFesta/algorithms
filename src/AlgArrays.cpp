@@ -16,6 +16,9 @@
 
  */
 #include "AlgArrays.hpp"
+#include <cassert>
+#include <limits>
+#include <vector>
 
 namespace algorithms {
 
@@ -57,6 +60,29 @@ bool isAlmostNonDecreasing(const int* iArray, const int iSize) {
   }
 
   return true;
+}
+
+int minSizeSubArraySum(const int* iArray, const int iSize, int s) {
+  assert(s > 0);
+  int min = std::numeric_limits<int>::max();
+  int sum = 0;
+  int i = 0;
+  int j = 0;
+
+  for (; j < iSize; ++j) {
+    sum += iArray[j];
+    if (sum >= s) {
+      min = std::min(min, j + 1 - i);
+    }
+
+    while (i < j && sum - iArray[i] >= s) {
+      sum -= iArray[i];
+      ++i;
+      min = std::min(min, j + 1 - i);
+    }
+  }
+
+  return min == std::numeric_limits<int>::max() ? 0 : min;
 }
 
 }  // namespace algorithms
