@@ -16,7 +16,7 @@
 
  */
 #include <gtest/gtest.h>
-#include <dynamicProgramming.hpp>
+#include <DynamicProgramming.hpp>
 #include <tuple>
 #include <vector>
 

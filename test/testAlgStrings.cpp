@@ -16,15 +16,15 @@
 
  */
 #include <gtest/gtest.h>
+#include <AlgStrings.hpp>
 #include <algorithm>
-#include <easyStrings.hpp>
 #include <string>
 #include <tuple>
 #include <vector>
 
 namespace algorithms::test {
 
-TEST(easyStrings, isPermutation) {
+TEST(AlgStrings, isPermutation) {
   const char* str1 = "dog";
   const char* str2 = "god";
   const char* str3 = "God";
@@ -37,7 +37,7 @@ TEST(easyStrings, isPermutation) {
   ASSERT_FALSE(isPermutation(str1, str5));
 }
 
-TEST(easyStrings, URLify) {
+TEST(AlgStrings, URLify) {
   constexpr const char kStr[] = "Mr John Smith";
   constexpr const char kExpectedResult[] = "Mr%20John%20Smith";
   constexpr int kLenStr = sizeof(kStr) - 1;
@@ -51,7 +51,7 @@ TEST(easyStrings, URLify) {
   ASSERT_TRUE(std::strcmp(aBuffer.c_str(), kExpectedResult) == 0);
 }
 
-TEST(easyStrings, palindromePermutation) {
+TEST(AlgStrings, palindromePermutation) {
   const char* str1 = "tactocoa";
   const char* str2 = "dog";
   const char* str3 = "bbiia";
@@ -61,7 +61,7 @@ TEST(easyStrings, palindromePermutation) {
   ASSERT_TRUE(palindromePermutation(str3));
 }
 
-TEST(easyStrings, oneWay) {
+TEST(AlgStrings, oneWay) {
   using Case = std::tuple<std::string, std::string, bool>;
   const std::vector<Case> testCases = {{"pale", "ple", true},
                                        {"pales", "pale", true},
@@ -75,7 +75,7 @@ TEST(easyStrings, oneWay) {
   }
 }
 
-TEST(easyStrings, stringCompression) {
+TEST(AlgStrings, stringCompression) {
   const char aStr1[] = "aabcccccaaa";
   const char aStr2[] = "abc";
   constexpr int kSizeBuffer1 = sizeof(aStr1);
@@ -88,7 +88,7 @@ TEST(easyStrings, stringCompression) {
   ASSERT_FALSE(stringCompression(aStr2, aBuffer, 3));
 }
 
-TEST(easyStrings, maxLenSubWithoutRep) {
+TEST(AlgStrings, maxLenSubWithoutRep) {
   const std::vector<std::pair<std::string, int>> testCases = {
       {"abcabcbb", 3}, {"bbbbb", 1}, {"pwwkew", 3}, {"", 0}, {"abba", 2}};
 

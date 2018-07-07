@@ -15,7 +15,7 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
  */
-#include "dynamicProgramming.hpp"
+#include "DynamicProgramming.hpp"
 #include <cassert>
 #include <vector>
 

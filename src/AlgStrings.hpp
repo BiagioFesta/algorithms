@@ -15,8 +15,8 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
  */
-#ifndef ALGORITHMS__EASY_STRING__HPP
-#define ALGORITHMS__EASY_STRING__HPP
+#ifndef ALGORITHMS__ALG_STRINGS__HPP
+#define ALGORITHMS__ALG_STRINGS__HPP
 #include <cstdint>
 #include <cstring>
 #include <string>
@@ -68,4 +68,4 @@ int maxLenSubWithoutRep(const std::string& iString);
 
 }  // namespace algorithms
 
-#endif  // ALGORITHMS__EASY_STRING__HPP
+#endif  // ALGORITHMS__ALG_STRINGS__HPP

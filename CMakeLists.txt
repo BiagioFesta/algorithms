@@ -9,11 +9,12 @@ find_package(GTest REQUIRED)
 find_package(Threads REQUIRED)
 
 set(SRC
-  src/easyStrings.cpp
-  src/dynamicProgramming.cpp)
+  src/AlgStrings.cpp
+  src/DynamicProgramming.cpp
+  src/AlgArrays.cpp)
 set(TEST
   test/main.cpp
-  test/testEasyStrings.cpp
+  test/testAlgStrings.cpp
   test/testDynamicProgramming.cpp)
 
 add_executable(${PROJECT_NAME}_test ${SRC} ${TEST})
