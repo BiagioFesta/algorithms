@@ -15,7 +15,8 @@ set(SRC
 set(TEST
   test/main.cpp
   test/testAlgStrings.cpp
-  test/testDynamicProgramming.cpp)
+  test/testDynamicProgramming.cpp
+  test/testAlgArrays.cpp)
 
 add_executable(${PROJECT_NAME}_test ${SRC} ${TEST})
 target_include_directories(${PROJECT_NAME}_test
