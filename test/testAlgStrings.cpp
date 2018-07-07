@@ -97,4 +97,18 @@ TEST(AlgStrings, maxLenSubWithoutRep) {
   }
 }
 
+TEST(AlgStrings, lenLastWord) {
+  using Test = std::pair<std::string, int>;
+  std::vector<Test> testCases = {{"Hello World", 5},
+                                 {"On", 2},
+                                 {"", 0},
+                                 {"A BC DEFG", 4},
+                                 {"   ab", 2},
+                                 {"a   ", 1}};
+
+  for (const auto& test : testCases) {
+    ASSERT_EQ(lenLastWord(test.first.c_str()), test.second);
+  }
+}
+
 }  // namespace algorithms::test

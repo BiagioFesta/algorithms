@@ -66,6 +66,12 @@ bool stringCompression(const char* iStr, char* oBuffer, const int iSizeBuffer);
  */
 int maxLenSubWithoutRep(const std::string& iString);
 
+/*! \brief Given a string s consists of upper/lower-case alphabets and empty
+ * space characters ' ', it returns the length of last word in the string.
+ * \note If the last word does not exist, it returns 0.
+ */
+int lenLastWord(const char* iStr);
+
 }  // namespace algorithms
 
 #endif  // ALGORITHMS__ALG_STRINGS__HPP
