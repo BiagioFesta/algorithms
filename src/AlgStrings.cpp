@@ -176,4 +176,20 @@ int maxLenSubWithoutRep(const std::string& iString) {
   return aMax;
 }
 
+int lenLastWord(const char* iStr) {
+  bool space = false;
+  int len = 0;
+
+  for (int i = 0;; ++i) {
+    const char c = iStr[i];
+    if (c == '\0') return len;
+    if (c == ' ') {
+      space = true;
+    } else {
+      len = space == true ? 1 : len + 1;
+      space = false;
+    }
+  }
+}
+
 }  // namespace algorithms
