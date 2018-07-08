@@ -26,9 +26,8 @@ TEST(AlgArrays, isAlmostNonDecreasing) {
   const std::vector<Test> TestCases = {
       {{4, 2, 3}, true}, {{4, 2, 1}, false}, {{3, 4, 2, 3}, false}};
 
-  for (const auto& test : TestCases) {
-    ASSERT_EQ(isAlmostNonDecreasing(test.first.data(), test.first.size()),
-              test.second);
+  for (const auto& [str, exp] : TestCases) {
+    ASSERT_EQ(isAlmostNonDecreasing(str.data(), str.size()), exp);
   }
 }
 

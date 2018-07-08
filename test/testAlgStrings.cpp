@@ -69,9 +69,9 @@ TEST(AlgStrings, oneWay) {
                                        {"pale", "bae", false},
                                        {"paless", "pale", false}};
 
-  for (const auto& test : testCases) {
-    ASSERT_EQ(oneWay(std::get<0>(test), std::get<1>(test)), std::get<2>(test));
-    ASSERT_EQ(oneWay(std::get<1>(test), std::get<0>(test)), std::get<2>(test));
+  for (const auto& [str1, str2, exp] : testCases) {
+    ASSERT_EQ(oneWay(str1, str2), exp);
+    ASSERT_EQ(oneWay(str2, str1), exp);
   }
 }
 
@@ -92,8 +92,8 @@ TEST(AlgStrings, maxLenSubWithoutRep) {
   const std::vector<std::pair<std::string, int>> testCases = {
       {"abcabcbb", 3}, {"bbbbb", 1}, {"pwwkew", 3}, {"", 0}, {"abba", 2}};
 
-  for (const auto& test : testCases) {
-    ASSERT_EQ(maxLenSubWithoutRep(test.first), test.second);
+  for (const auto& [str, exp] : testCases) {
+    ASSERT_EQ(maxLenSubWithoutRep(str), exp);
   }
 }
 
@@ -106,8 +106,8 @@ TEST(AlgStrings, lenLastWord) {
                                  {"   ab", 2},
                                  {"a   ", 1}};
 
-  for (const auto& test : testCases) {
-    ASSERT_EQ(lenLastWord(test.first.c_str()), test.second);
+  for (const auto& [str, exp] : testCases) {
+    ASSERT_EQ(lenLastWord(str.c_str()), exp);
   }
 }
 

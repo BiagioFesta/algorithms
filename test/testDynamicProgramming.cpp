@@ -26,9 +26,8 @@ TEST(dynamicProgramming, binomialCoefficient) {
   static std::vector<std::tuple<int, int, int>> testCases = {
       {4, 2, 6}, {1, 1, 1}, {20, 3, 1140}};
 
-  for (const auto& test : testCases) {
-    ASSERT_EQ(binomialCoefficient(std::get<0>(test), std::get<1>(test)),
-              std::get<2>(test));
+  for (const auto& [n, k, exp] : testCases) {
+    ASSERT_EQ(binomialCoefficient(n, k), exp);
   }
 }
 
