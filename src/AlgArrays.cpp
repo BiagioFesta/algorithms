@@ -85,4 +85,22 @@ int minSizeSubArraySum(const int* iArray, const int iSize, int s) {
   return min == std::numeric_limits<int>::max() ? 0 : min;
 }
 
+std::vector<int> findDisappearedNumbers(const std::vector<int>& iVector) {
+  std::vector<bool> table(iVector.size(), false);
+  for (const int n : iVector) {
+    assert(n <= iVector.size());
+    assert(n >= 1);
+
+    table[n - 1] = true;
+  }
+
+  std::vector<int> missing;
+  missing.reserve(iVector.size());
+  for (int i = 0; i < iVector.size(); ++i) {
+    if (table[i] == false) missing.push_back(i + 1);
+  }
+
+  return missing;
+}
+
 }  // namespace algorithms

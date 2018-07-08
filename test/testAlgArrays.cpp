@@ -18,6 +18,20 @@
 #include <gtest/gtest.h>
 #include <AlgArrays.hpp>
 #include <tuple>
+#include <vector>
+
+namespace {
+
+template <typename T>
+bool checkEqualityVectors(const std::vector<T>& v1, const std::vector<T>& v2) {
+  if (v1.size() != v2.size()) return false;
+  for (std::size_t i = 0; i < v1.size(); ++i) {
+    if (v1[i] != v2[i]) return false;
+  }
+  return true;
+}
+
+}  // anonymous namespace
 
 namespace algorithms::test {
 
@@ -46,6 +60,14 @@ TEST(AlgArrays, minSizeSubArraySum) {
 
   const std::vector kData5 = {12, 28, 83, 4, 25, 26, 25, 2, 25, 25, 25, 12};
   ASSERT_EQ(minSizeSubArraySum(kData5.data(), kData5.size(), 213), 8);
+}
+
+TEST(AlgArrays, findDisappearedNumbers) {
+  using Test = std::pair<std::vector<int>, std::vector<int>>;
+
+  const Test test1 = {{4, 3, 2, 7, 8, 2, 3, 1}, {5, 6}};
+  const auto result1 = findDisappearedNumbers(test1.first);
+  ASSERT_TRUE(::checkEqualityVectors(result1, test1.second));
 }
 
 }  // namespace algorithms::test
