@@ -17,6 +17,7 @@
  */
 #ifndef ALGORITHMS__ALG_ARRAYS__HPP
 #define ALGORITHMS__ALG_ARRAYS__HPP
+#include <vector>
 
 namespace algorithms {
 
@@ -30,6 +31,13 @@ bool isAlmostNonDecreasing(const int* iArray, const int iSize);
  *  there isn't one, it returns 0 instead.
  */
 int minSizeSubArraySum(const int* iArray, const int iSize, int s);
+
+/*! \brief Given an array of integers where 1 ≤ a[i] ≤ n (n = size of array),
+ *  some elements appear twice and others appear once.
+ *  It finds all the elements of [1, n] inclusive that do not appear in this
+ *  array.
+ */
+std::vector<int> findDisappearedNumbers(const std::vector<int>& iVector);
 
 }  // namespace algorithms
 
