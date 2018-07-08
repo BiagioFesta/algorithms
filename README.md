@@ -1,5 +1,7 @@
 # Algorithms
 
+[![Build Status](https://travis-ci.org/BiagioFesta/algorithms.svg?branch=master)](https://travis-ci.org/BiagioFesta/algorithms)
+
 ## Brief Description
 Study project on algorithm design and implementation.
 
