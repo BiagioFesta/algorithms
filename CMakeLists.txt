@@ -27,3 +27,6 @@ target_link_libraries(${PROJECT_NAME}_test
   ${GTEST_BOTH_LIBRARIES}
   Threads::Threads)
 target_compile_features(${PROJECT_NAME}_test PRIVATE cxx_std_17)
+
+include(CTest)
+add_test(NAME TestAll COMMAND ${PROJECT_NAME}_test)
