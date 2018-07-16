@@ -3,3 +3,4 @@ compile_commands.json
 .projectile
 .cquery_cached_index/
 c_cpp_properties.json
+.vscode/
