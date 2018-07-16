@@ -103,4 +103,21 @@ std::vector<int> findDisappearedNumbers(const std::vector<int>& iVector) {
   return missing;
 }
 
+int findLengthOfLCIS(const std::vector<int>& iVector) {
+  if (iVector.empty()) return 0;
+
+  int counter = 1;
+  int max = 1;
+  for (int i = 1; i < iVector.size(); ++i) {
+    if (iVector[i - 1] < iVector[i]) {
+      ++counter;
+    } else {
+      max = std::max(max, counter);
+      counter = 1;
+    }
+  }
+
+  return std::max(max, counter);
+}
+
 }  // namespace algorithms

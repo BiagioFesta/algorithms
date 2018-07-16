@@ -31,4 +31,14 @@ TEST(dynamicProgramming, binomialCoefficient) {
   }
 }
 
+TEST(dynamicProgramming, fibonacci) {
+  using Test = std::pair<int, int>;
+  static std::vector<Test> testCases = {
+      {0, 1}, {1, 1}, {2, 1}, {3, 2}, {5, 5}, {10, 55}};
+
+  for (const auto& [n, r] : testCases) {
+    ASSERT_EQ(fibonacci(n), r);
+  }
+}
+
 }  // namespace algorithms::test

@@ -36,4 +36,20 @@ int binomialCoefficient(const int n, const int k) {
   return aSolutions[k - 1];
 }
 
+int fibonacci(const int n) {
+  assert(n >= 0);
+
+  if (n == 0 || n == 1) return 1;
+
+  std::vector<int> aSolutions(n + 1);
+  aSolutions[0] = 0;
+  aSolutions[1] = 1;
+
+  for (int i = 2; i <= n; ++i) {
+    aSolutions[i] = aSolutions[i - 1] + aSolutions[i - 2];
+  }
+
+  return aSolutions[n];
+}
+
 }  // namespace algorithms

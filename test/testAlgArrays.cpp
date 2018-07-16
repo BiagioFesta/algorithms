@@ -58,7 +58,8 @@ TEST(AlgArrays, minSizeSubArraySum) {
   const std::vector<int> kData4 = {};
   ASSERT_EQ(minSizeSubArraySum(kData4.data(), kData4.size(), 100), 0);
 
-  const std::vector<int> kData5 = {12, 28, 83, 4, 25, 26, 25, 2, 25, 25, 25, 12};
+  const std::vector<int> kData5 = {
+      12, 28, 83, 4, 25, 26, 25, 2, 25, 25, 25, 12};
   ASSERT_EQ(minSizeSubArraySum(kData5.data(), kData5.size(), 213), 8);
 }
 
@@ -68,6 +69,22 @@ TEST(AlgArrays, findDisappearedNumbers) {
   const Test test1 = {{4, 3, 2, 7, 8, 2, 3, 1}, {5, 6}};
   const auto result1 = findDisappearedNumbers(test1.first);
   ASSERT_TRUE(::checkEqualityVectors(result1, test1.second));
+}
+
+TEST(AlgArrays, findLengthOfLCIS) {
+  using Test = std::pair<std::vector<int>, int>;
+
+  const Test test1 = {{1, 3, 5, 4, 7}, 3};
+  ASSERT_EQ(findLengthOfLCIS(test1.first), test1.second);
+
+  const Test test2 = {{2, 2, 2, 2}, 1};
+  ASSERT_EQ(findLengthOfLCIS(test2.first), test2.second);
+
+  const Test test3 = {{}, 0};
+  ASSERT_EQ(findLengthOfLCIS(test3.first), test3.second);
+
+  const Test test4 = {{1}, 1};
+  ASSERT_EQ(findLengthOfLCIS(test4.first), test4.second);
 }
 
 }  // namespace algorithms::test
