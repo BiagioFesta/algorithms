@@ -39,6 +39,12 @@ int minSizeSubArraySum(const int* iArray, const int iSize, int s);
  */
 std::vector<int> findDisappearedNumbers(const std::vector<int>& iVector);
 
+/*! \brief Given an unsorted array of integers, it finds the length of longest
+ *  continuous increasing subsequence (subarray).
+ *  \Complexity O(n)
+ */
+int findLengthOfLCIS(const std::vector<int>& iVector);
+
 }  // namespace algorithms
 
 #endif  // ALGORITHMS__ALG_ARRAYS__HPP

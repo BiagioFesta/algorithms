@@ -25,6 +25,12 @@ namespace algorithms {
  */
 int binomialCoefficient(const int n, const int k);
 
+/*! \brief It computes the n-th fibonacci number.
+ *  \note n must to be greater or equal zero.
+ *  \complexity Time O(n)  Space O(n)
+ */
+int fibonacci(const int n);
+
 }  // namespace algorithms
 
 #endif  // ALGORITHMS__DYNAMIC_PROGRAMMING__HPP
