@@ -87,4 +87,20 @@ TEST(AlgArrays, findLengthOfLCIS) {
   ASSERT_EQ(findLengthOfLCIS(test4.first), test4.second);
 }
 
+TEST(AlgArrays, firstMissingPositive) {
+  using Test = std::pair<std::vector<int>, int>;
+
+  Test test1 = {{1, 2, 0}, 3};
+  ASSERT_EQ(firstMissingPositive(&test1.first), test1.second);
+
+  Test test2 = {{3, 4, -1, 1}, 2};
+  ASSERT_EQ(firstMissingPositive(&test2.first), test2.second);
+
+  Test test3 = {{7, 8, 9, 11, 12}, 1};
+  ASSERT_EQ(firstMissingPositive(&test3.first), test3.second);
+
+  Test test4 = {{1, 2, 3, 4, 5}, 6};
+  ASSERT_EQ(firstMissingPositive(&test4.first), test4.second);
+}
+
 }  // namespace algorithms::test

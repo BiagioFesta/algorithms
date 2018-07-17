@@ -120,4 +120,30 @@ int findLengthOfLCIS(const std::vector<int>& iVector) {
   return std::max(max, counter);
 }
 
+int firstMissingPositive(std::vector<int>* iVector) {
+  const int n = iVector->size();
+
+  for (int i = 0; i < n;) {
+    int& value_i = (*iVector)[i];
+    if (value_i > 0 && value_i <= n) {
+      int& value_j = (*iVector)[value_i - 1];
+      if (value_i != value_j) {
+        std::swap(value_i, value_j);
+      } else {
+        ++i;
+      }
+    } else {
+      ++i;
+    }
+  }
+
+  for (int i = 0; i < n; ++i) {
+    if ((*iVector)[i] != i + 1) {
+      return i + 1;
+    }
+  }
+
+  return n + 1;
+}
+
 }  // namespace algorithms
