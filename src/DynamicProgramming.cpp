@@ -17,6 +17,7 @@
  */
 #include "DynamicProgramming.hpp"
 #include <cassert>
+#include <limits>
 #include <vector>
 
 namespace algorithms {
@@ -50,6 +51,26 @@ int fibonacci(const int n) {
   }
 
   return aSolutions[n];
+}
+
+int minPathSum(const int* const iMatrix, const int M, const int N) {
+  static constexpr int kMaxInt = std::numeric_limits<int>::max();
+  const int Q = M * N;
+  assert(Q > 0);
+
+  std::vector<int> aSolutions(Q);
+  aSolutions[Q - 1] = iMatrix[Q - 1];
+
+  for (int i = 1; i < Q; ++i) {
+    const int index = Q - 1 - i;
+    const int costDown =
+        i < N ? kMaxInt : aSolutions[index + N] + iMatrix[index];
+    const int costRight =
+        i % N == 0 ? kMaxInt : aSolutions[index + 1] + iMatrix[index];
+    aSolutions[index] = std::min(costDown, costRight);
+  }
+
+  return aSolutions[0];
 }
 
 }  // namespace algorithms
