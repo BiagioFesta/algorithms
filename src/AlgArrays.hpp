@@ -45,6 +45,12 @@ std::vector<int> findDisappearedNumbers(const std::vector<int>& iVector);
  */
 int findLengthOfLCIS(const std::vector<int>& iVector);
 
+/*! \brief Given an unsorted integer array, find the smallest missing positive
+ *  integer.
+ *  \Complexity Time: O(n)      Space: O(1) - it exploits the input.
+ */
+int firstMissingPositive(std::vector<int>* iVector);
+
 }  // namespace algorithms
 
 #endif  // ALGORITHMS__ALG_ARRAYS__HPP
