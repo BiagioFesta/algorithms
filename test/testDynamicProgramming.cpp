@@ -41,4 +41,11 @@ TEST(dynamicProgramming, fibonacci) {
   }
 }
 
+TEST(dynamicProgramming, minPathSum) {
+  static const std::vector<int> kMatrix = {1, 3, 1, 1, 5, 1, 4, 2, 1};
+  static const int kExpectedSol = 7;
+
+  ASSERT_EQ(minPathSum(kMatrix.data(), 3, 3), kExpectedSol);
+}
+
 }  // namespace algorithms::test

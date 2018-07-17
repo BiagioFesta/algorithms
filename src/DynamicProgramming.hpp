@@ -31,6 +31,16 @@ int binomialCoefficient(const int n, const int k);
  */
 int fibonacci(const int n);
 
+/*! \brief Given a M x N grid filled with non-negative numbers, it finds a path
+ *  from top left to bottom right which minimizes the sum of all numbers along
+ *  its path.
+ *  \note It assumes you can only move either down or right at any point in
+ *  time.
+ *  \note M and N must be positive (> 0).
+ *  \complexity Time (M x N)    Space (M x N)
+ */
+int minPathSum(const int* const iMatrix, const int M, const int N);
+
 }  // namespace algorithms
 
 #endif  // ALGORITHMS__DYNAMIC_PROGRAMMING__HPP
