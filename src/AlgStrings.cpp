@@ -17,6 +17,7 @@
  */
 #include "AlgStrings.hpp"
 #include <algorithm>
+#include <locale>
 #include <string>
 
 namespace algorithms {
@@ -190,6 +191,27 @@ int lenLastWord(const char* iStr) {
       space = false;
     }
   }
+}
+
+int countSegment(const char* iStr) {
+  std::locale aLocale;
+  int count = 0;
+  bool startSeg = false;
+
+  while (*iStr != '\0') {
+    const bool isSpace = std::isspace(*iStr, aLocale);
+
+    if (isSpace && startSeg) {
+      startSeg = false;
+    } else if (!isSpace && !startSeg) {
+      startSeg = true;
+      ++count;
+    }
+
+    ++iStr;
+  }
+
+  return count;
 }
 
 }  // namespace algorithms
