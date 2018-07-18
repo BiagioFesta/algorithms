@@ -72,6 +72,13 @@ int maxLenSubWithoutRep(const std::string& iString);
  */
 int lenLastWord(const char* iStr);
 
+/*! \brief It counts the number of segments in a string, where a segment is
+ *  defined to be a contiguous sequence of non-space characters.
+ *  \note The string must not contain any non-printable character.
+ *  \Complexity  Time O(N)   Space O(1)
+ */
+int countSegment(const char* iStr);
+
 }  // namespace algorithms
 
 #endif  // ALGORITHMS__ALG_STRINGS__HPP
