@@ -80,6 +80,10 @@ int lenLastWord(const char* iStr);
  */
 int countSegment(const char* iStr);
 
+/*! \brief Given a string S, we can transform every letter individually to be
+ *  lowercase or uppercase to create another string.
+ *  \return a list of all possible strings we could create.
+ */
 void letterCasePermutation(const std::string& iStr,
                            std::vector<std::string>* oPermutations);
 
