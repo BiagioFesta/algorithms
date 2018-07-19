@@ -48,4 +48,14 @@ TEST(dynamicProgramming, minPathSum) {
   ASSERT_EQ(minPathSum(kMatrix.data(), 3, 3), kExpectedSol);
 }
 
+TEST(dynamicProgramming, longestCommonSubsequence) {
+  using Test = std::tuple<std::string, std::string, int>;
+  std::vector<Test> testCases = {
+      {"ABCD", "ABDC", 3}, {"SHINCHAN", "NOHARAAA", 3}, {"ABC", "DEF", 0}};
+
+  for (const auto& [str1, str2, expt] : testCases) {
+    ASSERT_EQ(longestCommonSubsequence(str1, str2), expt);
+  }
+}
+
 }  // namespace algorithms::test
