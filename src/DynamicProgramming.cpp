@@ -18,6 +18,7 @@
 #include "DynamicProgramming.hpp"
 #include <cassert>
 #include <limits>
+#include <string>
 #include <vector>
 
 namespace algorithms {
@@ -71,6 +72,30 @@ int minPathSum(const int* const iMatrix, const int M, const int N) {
   }
 
   return aSolutions[0];
+}
+
+int longestCommonSubsequence(const std::string& iStr1,
+                             const std::string& iStr2) {
+  const int N = iStr1.size();
+  const int M = iStr2.size();
+
+  std::vector<int> solutions(N * M);
+
+  for (int i = 0; i < N; ++i) {
+    for (int j = 0; j < M; ++j) {
+      if (iStr1[i] == iStr2[j]) {
+        const int prev =
+            (i == 0 || j == 0 ? 0 : solutions[(i - 1) * M + (j - 1)]);
+        solutions[i * M + j] = prev + 1;
+      } else {
+        const int s1 = i != 0 ? solutions[(i - 1) * M + j] : 0;
+        const int s2 = j != 0 ? solutions[i * M + (j - 1)] : 0;
+        solutions[i * M + j] = std::max(s1, s2);
+      }
+    }
+  }
+
+  return solutions[N * M - 1];
 }
 
 }  // namespace algorithms

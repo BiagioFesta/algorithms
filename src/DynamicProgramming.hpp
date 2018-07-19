@@ -17,6 +17,7 @@
 */
 #ifndef ALGORITHMS__DYNAMIC_PROGRAMMING__HPP
 #define ALGORITHMS__DYNAMIC_PROGRAMMING__HPP
+#include <string>
 
 namespace algorithms {
 
@@ -40,6 +41,12 @@ int fibonacci(const int n);
  *  \complexity Time (M x N)    Space (M x N)
  */
 int minPathSum(const int* const iMatrix, const int M, const int N);
+
+/*! \brief It returns the longest common subsequence among two strings.
+ *  \complexity  Time: (N x M)   Space : (N x M)
+ */
+int longestCommonSubsequence(const std::string& iStr1,
+                             const std::string& iStr2);
 
 }  // namespace algorithms
 
