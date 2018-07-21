@@ -18,6 +18,7 @@
 #ifndef ALGORITHMS__DYNAMIC_PROGRAMMING__HPP
 #define ALGORITHMS__DYNAMIC_PROGRAMMING__HPP
 #include <string>
+#include <vector>
 
 namespace algorithms {
 
@@ -47,6 +48,16 @@ int minPathSum(const int* const iMatrix, const int M, const int N);
  */
 int longestCommonSubsequence(const std::string& iStr1,
                              const std::string& iStr2);
+
+/*! \brief The algorithm has to create an array A such that:
+ *              1 <= A[i] <= iUpperBounds[i]
+ *  For each possible array A, the algorithm will return the "best A".
+ *  The "best A" is that the sum of the absolute difference of consecutive pairs
+ *  is maximized.
+ *   I.e.     S = sum_i |A[i] - A[i - 1]|
+ *  \return S
+ */
+int sherlockAndCost(const std::vector<int>& iUpperBounds);
 
 }  // namespace algorithms
 

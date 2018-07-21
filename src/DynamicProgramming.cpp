@@ -16,6 +16,7 @@
 
 */
 #include "DynamicProgramming.hpp"
+#include <algorithm>
 #include <cassert>
 #include <limits>
 #include <string>
@@ -96,6 +97,22 @@ int longestCommonSubsequence(const std::string& iStr1,
   }
 
   return solutions[N * M - 1];
+}
+
+int sherlockAndCost(const std::vector<int>& iUpperBounds) {
+  std::vector<int> L(iUpperBounds.size());
+  std::vector<int> H(iUpperBounds.size());
+
+  for (std::size_t i = 0u; i < iUpperBounds.size(); ++i) {
+    L[i] = i == 0 ? 0 : std::max(L[i - 1], H[i - 1] + iUpperBounds[i- 1] - 1);
+    H[i] = i == 0
+               ? 0
+               : std::max(
+                     H[i - 1] + std::abs(iUpperBounds[i] - iUpperBounds[i - 1]),
+                     L[i - 1] + iUpperBounds[i] - 1);
+  }
+
+  return std::max(L[iUpperBounds.size() - 1], H[iUpperBounds.size() - 1]);
 }
 
 }  // namespace algorithms
