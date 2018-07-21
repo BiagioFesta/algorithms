@@ -137,4 +137,13 @@ TEST(AlgStrings, letterCasePermutation) {
   }
 }
 
+TEST(AlgStrings, steadyGene) {
+  using Test = std::pair<std::string, int>;
+  const std::vector<Test> testCases{{"GAAATAAA", 5}, {"", 0}, {"ACTGGTCA", 0}};
+
+  for (const auto& [str, expt] : testCases) {
+    ASSERT_EQ(steadyGene(str), expt);
+  }
+}
+
 }  // namespace algorithms::test

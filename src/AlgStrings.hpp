@@ -87,6 +87,15 @@ int countSegment(const char* iStr);
 void letterCasePermutation(const std::string& iStr,
                            std::vector<std::string>* oPermutations);
 
+/*! \brief A gene is represented as a string of lenght n (where n is divisible
+ *  by 4), composed of the letters A, C, T, G. It is considered to be steady if
+ *  each of the four letters occurs exaclty n/4 times. The algorithm takes as
+ *  input a gene which may be steady or not.
+ *  \return the smallest popssible substring to replace in the input gene to
+ *  make a steady gene.
+ */
+int steadyGene(const std::string& gene);
+
 }  // namespace algorithms
 
 #endif  // ALGORITHMS__ALG_STRINGS__HPP
