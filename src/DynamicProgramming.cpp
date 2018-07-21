@@ -45,15 +45,17 @@ int fibonacci(const int n) {
 
   if (n == 0 || n == 1) return 1;
 
-  std::vector<int> aSolutions(n + 1);
-  aSolutions[0] = 0;
-  aSolutions[1] = 1;
+  int n_1 = 1;
+  int n_2 = 0;
 
+  int current;
   for (int i = 2; i <= n; ++i) {
-    aSolutions[i] = aSolutions[i - 1] + aSolutions[i - 2];
+    current = n_1 + n_2;
+    n_2 = n_1;
+    n_1 = current;
   }
 
-  return aSolutions[n];
+  return current;
 }
 
 int minPathSum(const int* const iMatrix, const int M, const int N) {

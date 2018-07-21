@@ -29,7 +29,7 @@ int binomialCoefficient(const int n, const int k);
 
 /*! \brief It computes the n-th fibonacci number.
  *  \note n must to be greater or equal zero.
- *  \complexity Time O(n)  Space O(n)
+ *  \complexity Time O(n)  Space O(1)
  */
 int fibonacci(const int n);
 
