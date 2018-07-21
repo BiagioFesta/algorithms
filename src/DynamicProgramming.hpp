@@ -56,6 +56,7 @@ int longestCommonSubsequence(const std::string& iStr1,
  *  is maximized.
  *   I.e.     S = sum_i |A[i] - A[i - 1]|
  *  \return S
+ *  \complexity  Time O(N)    Space O(1)
  */
 int sherlockAndCost(const std::vector<int>& iUpperBounds);
 
