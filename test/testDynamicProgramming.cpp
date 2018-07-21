@@ -23,7 +23,7 @@
 namespace algorithms::test {
 
 TEST(dynamicProgramming, binomialCoefficient) {
-  static std::vector<std::tuple<int, int, int>> testCases = {
+  static const std::vector<std::tuple<int, int, int>> testCases = {
       {4, 2, 6}, {1, 1, 1}, {20, 3, 1140}};
 
   for (const auto& [n, k, exp] : testCases) {
@@ -33,7 +33,7 @@ TEST(dynamicProgramming, binomialCoefficient) {
 
 TEST(dynamicProgramming, fibonacci) {
   using Test = std::pair<int, int>;
-  static std::vector<Test> testCases = {
+  static const std::vector<Test> testCases = {
       {0, 1}, {1, 1}, {2, 1}, {3, 2}, {5, 5}, {10, 55}};
 
   for (const auto& [n, r] : testCases) {
@@ -50,11 +50,21 @@ TEST(dynamicProgramming, minPathSum) {
 
 TEST(dynamicProgramming, longestCommonSubsequence) {
   using Test = std::tuple<std::string, std::string, int>;
-  std::vector<Test> testCases = {
+  const std::vector<Test> testCases = {
       {"ABCD", "ABDC", 3}, {"SHINCHAN", "NOHARAAA", 3}, {"ABC", "DEF", 0}};
 
   for (const auto& [str1, str2, expt] : testCases) {
     ASSERT_EQ(longestCommonSubsequence(str1, str2), expt);
+  }
+}
+
+TEST(dynamicProgramming, sherlockAndCost) {
+  using Test = std::pair<std::vector<int>, int>;
+  const std::vector<Test> testCases = {{{1, 2, 3}, 2},
+                                       {{10, 1, 10, 1, 10}, 36}};
+
+  for (const auto& [v, expt] : testCases) {
+    ASSERT_EQ(sherlockAndCost(v), expt);
   }
 }
 
