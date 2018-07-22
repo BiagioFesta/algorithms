@@ -119,4 +119,20 @@ int sherlockAndCost(const std::vector<int>& iUpperBounds) {
   return std::max(L[1], H[1]);
 }
 
+int substringsSum(const std::string& iStr) {
+  static const int kMod = 1000000007;
+  if (iStr.empty()) return 0;
+
+  long long prev = iStr[0] - '0';
+  long long current;
+  long long sum = iStr[0] - '0';
+  for (std::size_t i = 1; i < iStr.size(); ++i) {
+    current = ((10 * prev) % kMod + (i + 1) * (iStr[i] - '0')) % kMod;
+    sum = (sum + current) % kMod;
+    prev = current;
+  }
+
+  return (int)sum;
+}
+
 }  // namespace algorithms

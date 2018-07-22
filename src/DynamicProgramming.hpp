@@ -60,6 +60,13 @@ int longestCommonSubsequence(const std::string& iStr1,
  */
 int sherlockAndCost(const std::vector<int>& iUpperBounds);
 
+/*! \brief Given a number as a string, no leading zeros, it determines the sum
+ *  of all integer values of substrings of the string.
+ *  \note As the number may become large, return the value modulo (10^9 + 7).
+ &  \complexity   Time O(N)    Space  O(1)
+ */
+int substringsSum(const std::string& iStr);
+
 }  // namespace algorithms
 
 #endif  // ALGORITHMS__DYNAMIC_PROGRAMMING__HPP
