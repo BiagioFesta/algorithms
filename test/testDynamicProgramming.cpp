@@ -17,7 +17,9 @@
 */
 #include <gtest/gtest.h>
 #include <DynamicProgramming.hpp>
+#include <string>
 #include <tuple>
+#include <utility>
 #include <vector>
 
 namespace algorithms::test {
@@ -65,6 +67,16 @@ TEST(dynamicProgramming, sherlockAndCost) {
 
   for (const auto& [v, expt] : testCases) {
     ASSERT_EQ(sherlockAndCost(v), expt);
+  }
+}
+
+TEST(dynamicProgramming, substringsSum) {
+  using Test = std::pair<std::string, int>;
+  const std::vector<Test> testCases = {
+      {"123", 164}, {"1", 1}, {"16", 23}, {"42", 48}};
+
+  for (const auto& [str, expt] : testCases) {
+    ASSERT_EQ(substringsSum(str), expt);
   }
 }
 
