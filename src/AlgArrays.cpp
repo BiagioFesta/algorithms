@@ -16,8 +16,10 @@
 
 */
 #include "AlgArrays.hpp"
+#include <algorithm>
 #include <cassert>
 #include <limits>
+#include <set>
 #include <vector>
 
 namespace algorithms {
@@ -144,6 +146,27 @@ int firstMissingPositive(std::vector<int>* iVector) {
   }
 
   return n + 1;
+}
+
+std::vector<int> climbingLeaderboard(const std::vector<int>& iLeaderBoard,
+                                     const std::vector<int>& iAliceScores) {
+  const std::set<int> aLeaderBoardTree(iLeaderBoard.cbegin(),
+                                       iLeaderBoard.cend());
+  const std::vector<int> aLeaderBoardPurged(aLeaderBoardTree.cbegin(),
+                                            aLeaderBoardTree.cend());
+  const int aPosTotal = aLeaderBoardPurged.size();
+
+  std::vector<int> aPositions;
+  aPositions.reserve(iAliceScores.size());
+
+  for (const int aGameScore : iAliceScores) {
+    const auto aBoundIt = std::upper_bound(
+        aLeaderBoardPurged.cbegin(), aLeaderBoardPurged.cend(), aGameScore);
+    const auto aPos =
+        aPosTotal + 1 - std::distance(aLeaderBoardPurged.cbegin(), aBoundIt);
+    aPositions.push_back(aPos);
+  }
+  return aPositions;
 }
 
 }  // namespace algorithms

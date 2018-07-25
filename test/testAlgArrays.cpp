@@ -91,4 +91,14 @@ TEST(AlgArrays, firstMissingPositive) {
   ASSERT_EQ(firstMissingPositive(&test4.first), test4.second);
 }
 
+TEST(AlgArrays, climbingLeaderboard) {
+  using Test = std::tuple<std::vector<int>, std::vector<int>, std::vector<int>>;
+  const std::vector<Test> testCases = {
+      {{100, 100, 50, 40, 40, 20, 10}, {5, 25, 50, 120}, {6, 4, 2, 1}}};
+
+  for (const auto& [board, alice, expt] : testCases) {
+    ASSERT_TRUE(checkEqualityVectors(climbingLeaderboard(board, alice), expt));
+  }
+}
+
 }  // namespace algorithms::test

@@ -51,6 +51,22 @@ int findLengthOfLCIS(const std::vector<int>& iVector);
  */
 int firstMissingPositive(std::vector<int>* iVector);
 
+/*! \brief Alice is playing an arcade game and wants to climb to the top of the
+ *  leaderboard.
+ *  The game uses Dense Ranking (see wikipedia),
+ *  We want to determine Alice's rank as she progresses up the leaderboard.
+ *  \param [in] iLeaderBoard   The score-leaderboard of the game (other
+ *                             players).
+ *                                 Size: M
+ *  \param [in] iAliceScores   The final score of each game of Alice.
+ *                                 Size: N
+ *  \return The position in the leaderboard of Alice after each game (the score
+ *  obtained by Alice is identified by the param 'iAliceScores').
+ *  \Complexity   Time: O(NlogM)    Space: O(M + N)
+ */
+std::vector<int> climbingLeaderboard(const std::vector<int>& iLeaderBoard,
+                                     const std::vector<int>& iAliceScores);
+
 }  // namespace algorithms
 
 #endif  // ALGORITHMS__ALG_ARRAYS__HPP
