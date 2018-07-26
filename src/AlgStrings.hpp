@@ -57,8 +57,8 @@ bool oneWay(const std::string& iStr1, const std::string& iStr2);
  *  2abc5c3a.
  *  \note If the "compressed" string does not fit the buffer in output, the
  *  method should return false and output will be trash data.
- *  \note It assumes the string contains only [A-Za-z] (no digits), othewise the
- *  result is ambiguos.
+ *  \note It assumes the string contains only [A-Za-z] (no digits), otherwise
+ *  the result is ambiguos.
  */
 bool stringCompression(const char* iStr, char* oBuffer, const int iSizeBuffer);
 

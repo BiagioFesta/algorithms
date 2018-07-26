@@ -78,7 +78,7 @@ bool palindromePermutation(const char* iStr) {
   std::memset(isOdd, 0, kTableSize);
 
   while (*iStr != '\0') {
-    isOdd[*iStr] ^= 0X1;
+    isOdd[static_cast<int>(*iStr)] ^= 0X1;
     ++iStr;
   }
 
@@ -92,8 +92,8 @@ bool oneWay(const std::string& iStr1, const std::string& iStr2) {
     return false;
   }
 
-  int i = 0;
-  int j = 0;
+  std::size_t i = 0u;
+  std::size_t j = 0u;
 
   while (i < iStr1.size() && j < iStr2.size()) {
     if (iStr1[i] != iStr2[j]) {
@@ -132,7 +132,8 @@ bool stringCompression(const char* iStr, char* oBuffer, const int iSizeBuffer) {
         interBuffer.clear();
         interBuffer += std::to_string(numSame + 1);
         interBuffer += *iStr;
-        if (bytesWritten + interBuffer.size() <= iSizeBuffer) {
+        if (bytesWritten + static_cast<int>(interBuffer.size()) <=
+            iSizeBuffer) {
           std::memcpy(oBuffer, interBuffer.data(), interBuffer.size());
           oBuffer += interBuffer.size();
           bytesWritten += interBuffer.size();
@@ -163,11 +164,11 @@ int maxLenSubWithoutRep(const std::string& iString) {
   int aMax = 0;
   int aCurrent = 0;
 
-  for (int j = 0; j < iString.size(); ++j) {
+  for (std::size_t j = 0u; j < iString.size(); ++j) {
     const char c = iString[j];
-    int& posOfc = posChar[c];
+    int& posOfc = posChar[static_cast<int>(c)];
 
-    if ((posOfc < 0) || (posOfc < j - aCurrent)) {
+    if ((posOfc < 0) || (static_cast<unsigned>(posOfc) < j - aCurrent)) {
       ++aCurrent;
     } else {
       aCurrent = j - posOfc;
@@ -228,7 +229,7 @@ void letterCasePermutation(const std::string& iStr,
   oPermutations->clear();
   oPermutations->push_back(iStr);
 
-  for (int i = 0; i < iStr.size(); ++i) {
+  for (std::size_t i = 0u; i < iStr.size(); ++i) {
     if (std::isalpha(iStr[i], sLocale)) {
       const int s = oPermutations->size();
       for (int j = 0; j < s; ++j) {

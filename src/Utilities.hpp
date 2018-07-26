@@ -47,7 +47,6 @@ bool checkStrictEqualityContainers(const ContainerT& c1, const ContainerU& c2) {
 template <typename ContainerT, typename ContainerU>
 bool haveSameValues(const ContainerT& c1, const ContainerU& c2) {
   using ValueT = typename ContainerT::value_type;
-  using ValueU = typename ContainerU::value_type;
 
   if (c1.size() != c2.size()) return false;
 
