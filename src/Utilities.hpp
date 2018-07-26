@@ -22,20 +22,27 @@
 
 namespace algorithms {
 
-// TODO(biagio): write doxygen and see if you can refactoring and UT
-template <typename T>
-bool checkEqualityVectors(const std::vector<T>& v1, const std::vector<T>& v2) {
-  if (v1.size() != v2.size()) return false;
+/*! \brief It checks whether two container store the same values in the same
+ *  order.
+ *  \Complexity   Time O(N) (because size should be same)
+ */
+template <typename ContainerT, typename ContainerU>
+bool checkStrictEqualityContainers(const ContainerT& c1, const ContainerU& c2) {
+  if (c1.size() != c2.size()) return false;
 
-  for (std::size_t i = 0; i < v1.size(); ++i) {
-    if (v1[i] != v2[i]) return false;
+  auto c1Iterator = c1.cbegin();
+  auto c2Iterator = c2.cbegin();
+
+  while (c1Iterator != c1.cend() && *c1Iterator == *c2Iterator) {
+    ++c1Iterator;
+    ++c2Iterator;
   }
 
-  return true;
+  return c1Iterator == c1.cend();
 }
 
 /*! \brief It checks whether two containers store the same values.
- *  \Complexity  Time O(N + M)    (using an hash table)
+ *  \Complexity  Time O(N)    (using an hash table)
  */
 template <typename ContainerT, typename ContainerU>
 bool haveSameValues(const ContainerT& c1, const ContainerU& c2) {
