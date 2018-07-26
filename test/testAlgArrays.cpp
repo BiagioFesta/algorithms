@@ -56,7 +56,7 @@ TEST(AlgArrays, findDisappearedNumbers) {
 
   const Test test1 = {{4, 3, 2, 7, 8, 2, 3, 1}, {5, 6}};
   const auto result1 = findDisappearedNumbers(test1.first);
-  ASSERT_TRUE(checkEqualityVectors(result1, test1.second));
+  ASSERT_TRUE(checkStrictEqualityContainers(result1, test1.second));
 }
 
 TEST(AlgArrays, findLengthOfLCIS) {
@@ -97,7 +97,8 @@ TEST(AlgArrays, climbingLeaderboard) {
       {{100, 100, 50, 40, 40, 20, 10}, {5, 25, 50, 120}, {6, 4, 2, 1}}};
 
   for (const auto& [board, alice, expt] : testCases) {
-    ASSERT_TRUE(checkEqualityVectors(climbingLeaderboard(board, alice), expt));
+    ASSERT_TRUE(
+        checkStrictEqualityContainers(climbingLeaderboard(board, alice), expt));
   }
 }
 

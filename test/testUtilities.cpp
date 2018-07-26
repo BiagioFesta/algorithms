@@ -22,6 +22,21 @@
 
 namespace algorithms::test {
 
+TEST(Utilities, checkStrictEqualityContainers) {
+  using Container = std::vector<int>;
+  using Test = std::tuple<Container, Container, bool>;
+
+  const std::vector<Test> testCases = {{{1, 2, 3}, {3, 2, 1}, false},
+                                       {{1, 2, 3}, {1, 2, 3}, true},
+                                       {{1, 2, 3}, {1, 2, 4}, false},
+                                       {{1, 2, 3}, {1}, false},
+                                       {{3}, {3}, true}};
+
+  for (const auto& [v1, v2, expt] : testCases) {
+    ASSERT_EQ(checkStrictEqualityContainers(v1, v2), expt);
+  }
+}
+
 TEST(Utilities, haveSameValues) {
   using Container = std::vector<int>;
   using Test = std::tuple<Container, Container, bool>;
