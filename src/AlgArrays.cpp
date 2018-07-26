@@ -90,7 +90,7 @@ int minSizeSubArraySum(const int* iArray, const int iSize, int s) {
 std::vector<int> findDisappearedNumbers(const std::vector<int>& iVector) {
   std::vector<bool> table(iVector.size(), false);
   for (const int n : iVector) {
-    assert(n <= iVector.size());
+    assert(n <= static_cast<int>(iVector.size()));
     assert(n >= 1);
 
     table[n - 1] = true;
@@ -98,7 +98,7 @@ std::vector<int> findDisappearedNumbers(const std::vector<int>& iVector) {
 
   std::vector<int> missing;
   missing.reserve(iVector.size());
-  for (int i = 0; i < iVector.size(); ++i) {
+  for (int i = 0; i < static_cast<int>(iVector.size()); ++i) {
     if (table[i] == false) missing.push_back(i + 1);
   }
 
@@ -110,7 +110,7 @@ int findLengthOfLCIS(const std::vector<int>& iVector) {
 
   int counter = 1;
   int max = 1;
-  for (int i = 1; i < iVector.size(); ++i) {
+  for (int i = 1; i < static_cast<int>(iVector.size()); ++i) {
     if (iVector[i - 1] < iVector[i]) {
       ++counter;
     } else {

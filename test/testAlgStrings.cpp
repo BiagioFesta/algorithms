@@ -80,7 +80,6 @@ TEST(AlgStrings, stringCompression) {
   const char aStr1[] = "aabcccccaaa";
   const char aStr2[] = "abc";
   constexpr int kSizeBuffer1 = sizeof(aStr1);
-  constexpr int kSizeBuffer2 = sizeof(aStr2);
   char aBuffer[kSizeBuffer1];
 
   ASSERT_TRUE(stringCompression(aStr1, aBuffer, kSizeBuffer1));

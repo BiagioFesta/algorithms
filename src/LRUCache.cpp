@@ -42,7 +42,7 @@ void LRUCache::set(const int key, const int value) {
     refreshNode(node);
   } else {
     node = allocateNewHead(key, value);
-    if (_map.size() > _capacity) {
+    if (static_cast<int>(_map.size()) > _capacity) {
       removeTail();
     }
   }
