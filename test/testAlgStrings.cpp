@@ -159,4 +159,17 @@ TEST(AlgStrings, encryptionStr) {
   }
 }
 
+TEST(AlgStrings, biggerIsGreater) {
+  using Test = std::pair<std::string, std::string>;
+  const std::vector<Test> testCases{{"dkhc", "hcdk"},
+                                    {"ab", "ba"},
+                                    {"bb", "no answer"},
+                                    {"hefg", "hegf"},
+                                    {"dhck", "dhkc"}};
+
+  for (const auto& [str, expt] : testCases) {
+    ASSERT_EQ(biggerIsGreater(str), expt);
+  }
+}
+
 }  // namespace algorithms::test
