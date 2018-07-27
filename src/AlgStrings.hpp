@@ -96,6 +96,29 @@ void letterCasePermutation(const std::string& iStr,
  */
 int steadyGene(const std::string& gene);
 
+/*! \brief An English text needs to be encrypted using the following encryption
+ *  scheme.
+ *  First, the spaces are removed from the text. Let 'L'  be the length of this
+ *  text.
+ *  Then, characters are written into a grid, whose rows and columns have the
+ *  following constraints:
+ *     floor(L) <= #rows <= #cols <= ceil(L)
+ *  Ensure #rows * #cols >= L
+ *  In case of multiple grids with the above conditions, pick the minimum area.
+ *  The encoded message is obtained by displaying the characters in a column,
+ *  inserting a space, and then displaying the next column and inserting a
+ *  space, and so on.
+ *
+ *  Eg.   chillout
+ *    c h i
+ *    l l o
+ *    u t
+ *           ---> clu hlt io
+ *
+ *  \Complexity  Time  O(N)     Space O(N)
+ */
+std::string encryptionStr(const std::string& iString);
+
 }  // namespace algorithms
 
 #endif  // ALGORITHMS__ALG_STRINGS__HPP

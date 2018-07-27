@@ -145,4 +145,18 @@ TEST(AlgStrings, steadyGene) {
   }
 }
 
+TEST(AlgStrings, encryptionStr) {
+  using Test = std::pair<std::string, std::string>;
+  const std::vector<Test> testCases{
+      {"haveaniceday", "hae and via ecy"},
+      {"if man was meant to stay on the ground god would have given us roots",
+       "imtgdvs fearwer mayoogo anouuio ntnnlvt wttddes aohghn sseoau"},
+      {"feedthedog", "fto ehg ee dd"},
+      {"chillout", "clu hlt io"}};
+
+  for (const auto& [str, expt] : testCases) {
+    ASSERT_EQ(encryptionStr(str), expt);
+  }
+}
+
 }  // namespace algorithms::test
