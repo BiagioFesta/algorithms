@@ -17,6 +17,8 @@
 */
 #include "AlgStrings.hpp"
 #include <algorithm>
+#include <cassert>
+#include <cmath>
 #include <locale>
 #include <map>
 #include <string>
@@ -285,6 +287,46 @@ int steadyGene(const std::string& gene) {
   }
 
   return min;
+}
+
+std::string encryptionStr(const std::string& iString) {
+  std::string aTrailedString;
+  aTrailedString.reserve(iString.size());
+  std::copy_if(iString.cbegin(),
+               iString.cend(),
+               std::back_inserter(aTrailedString),
+               [](const char c) { return not std::isspace(c, std::locale()); });
+  const int aNewLen = aTrailedString.size();
+  const double aSqrt = std::sqrt(static_cast<double>(aNewLen));
+
+  const int aFloor = static_cast<int>(std::floor(aSqrt));
+  const int aCeil = static_cast<int>(std::ceil(aSqrt));
+
+  int nRows = aCeil;
+  int nCols = aCeil;
+  if (aFloor * aFloor >= aNewLen) {
+    nRows = aFloor;
+    nCols = aFloor;
+  } else if (aFloor * aCeil >= aNewLen) {
+    nRows = aFloor;
+  }
+  assert(nRows * nCols >= aNewLen);
+
+  std::string aRtn;
+  aRtn.reserve(aNewLen);
+
+  for (int j = 0; j < nCols; ++j) {
+    for (int i = 0; i < nRows; ++i) {
+      const int aIndex = i * nCols + j;
+      if (aIndex < aNewLen) {
+        aRtn.push_back(aTrailedString[aIndex]);
+      }
+    }
+    aRtn.push_back(' ');
+  }
+  aRtn.pop_back();
+
+  return aRtn;
 }
 
 }  // namespace algorithms
