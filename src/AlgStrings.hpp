@@ -119,6 +119,17 @@ int steadyGene(const std::string& gene);
  */
 std::string encryptionStr(const std::string& iString);
 
+/*! \brief Given a word, create a new word by swapping some or all of its
+ *  characters. This new word must meet two criteria:
+ *          - It must be greater than the original word.
+ *          - It must be the smallest word that meets the first condition.
+ *  Order for string is given by Lexicographical order.
+ *  \return the new string meeting the criteria. If it is not possible, return
+ *  no answer.
+ * \Complexity  Time O(N)   Space O(N) (Considering the input)
+ */
+std::string biggerIsGreater(std::string iString);
+
 }  // namespace algorithms
 
 #endif  // ALGORITHMS__ALG_STRINGS__HPP

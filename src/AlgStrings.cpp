@@ -329,4 +329,21 @@ std::string encryptionStr(const std::string& iString) {
   return aRtn;
 }
 
+std::string biggerIsGreater(std::string iString) {
+  static const char* kNoAnswer = "no answer";
+
+  const int kSize = iString.size();
+  int aPivot = kSize - 1;
+  while (aPivot > 0 && iString[aPivot - 1] >= iString[aPivot]) --aPivot;
+  --aPivot;
+  if (aPivot < 0) return kNoAnswer;
+
+  int aSwap = kSize - 1;
+  while (iString[aSwap] <= iString[aPivot]) --aSwap;
+
+  std::swap(iString[aPivot], iString[aSwap]);
+  std::reverse(iString.begin() + aPivot + 1, iString.end());
+  return iString;
+}
+
 }  // namespace algorithms
