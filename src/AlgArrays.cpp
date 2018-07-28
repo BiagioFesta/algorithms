@@ -169,4 +169,24 @@ std::vector<int> climbingLeaderboard(const std::vector<int>& iLeaderBoard,
   return aPositions;
 }
 
+bool larrysArray(const std::vector<int>& iVector) {
+  const int kSize = iVector.size();
+  std::vector<bool> visitedTable(kSize, false);
+
+  // Info: aCountSwap will count the number of swaps needed to sort the array
+  // with Intersion Sort.
+  int aCountSwap = 0;
+  for (int i = 0; i < kSize; ++i) {
+    int aSwapForCurrent = 0;
+    int j = i;
+    while (not visitedTable[iVector[j] - 1]) {
+      visitedTable[iVector[j] - 1] = true;
+      ++aSwapForCurrent;
+      j = iVector[j] - 1;
+    }
+    aCountSwap += aSwapForCurrent ? aSwapForCurrent - 1 : 0;
+  }
+  return not(aCountSwap % 2);
+}
+
 }  // namespace algorithms

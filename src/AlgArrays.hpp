@@ -67,6 +67,19 @@ int firstMissingPositive(std::vector<int>* iVector);
 std::vector<int> climbingLeaderboard(const std::vector<int>& iLeaderBoard,
                                      const std::vector<int>& iAliceScores);
 
+/*! \brief Larry has been given a permutation of a sequence of natural numbers
+ *  incrementing from  1 as an array.
+ *  He must determine whether the array can be sorted using the following
+ *  operation any number of times:
+ *    - Choose any  consecutive indices and rotate their elements in such a way
+ *      that:
+ *         ABC -> BCA -> CAB -> ABC
+ *  \return 'true' if the array can be sorted with rotation operation, 'false'
+ *  otherise.
+ *  \Complexity   Time: O(N)     Space: O(N)
+ */
+bool larrysArray(const std::vector<int>& iVector);
+
 }  // namespace algorithms
 
 #endif  // ALGORITHMS__ALG_ARRAYS__HPP
