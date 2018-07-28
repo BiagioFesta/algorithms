@@ -102,4 +102,16 @@ TEST(AlgArrays, climbingLeaderboard) {
   }
 }
 
+TEST(AlgArrays, larrysArray) {
+  using Test = std::pair<std::vector<int>, bool>;
+  const std::vector<Test> testCases = {{{3, 1, 2}, true},
+                                       {{1, 3, 4, 2}, true},
+                                       {{1, 2, 3, 5, 4}, false},
+                                       {{1, 6, 5, 2, 4, 3}, true}};
+
+  for (const auto& [vect, expt] : testCases) {
+    EXPECT_EQ(larrysArray(vect), expt);
+  }
+}
+
 }  // namespace algorithms::test
