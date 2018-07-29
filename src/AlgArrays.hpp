@@ -80,6 +80,18 @@ std::vector<int> climbingLeaderboard(const std::vector<int>& iLeaderBoard,
  */
 bool larrysArray(const std::vector<int>& iVector);
 
+/*! \brief We define 'P' to be a permutation of the first 'n'  natural numbers
+ *  in the range [1, n].
+ *  P is considered to be an absolute permutation if:
+ *         | P[i] - i | = k
+ *  holds true for every i \in [1, n].
+ *  \return given 'n' and 'k', it returns the lexicographically smallest
+ *  absolute permutation P. If no absolute permutation exists, it returns a
+ *  vecotr of {-1}.
+ *  Complexity  Time: O(N)    Space: O(N)
+ */
+std::vector<int> absolutePermutation(const int n, const int k);
+
 }  // namespace algorithms
 
 #endif  // ALGORITHMS__ALG_ARRAYS__HPP

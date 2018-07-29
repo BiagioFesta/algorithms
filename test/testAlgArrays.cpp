@@ -114,4 +114,14 @@ TEST(AlgArrays, larrysArray) {
   }
 }
 
+TEST(AlgArrays, absolutePermutation) {
+  using Test = std::tuple<int, int, std::vector<int>>;
+  const std::vector<Test> testCases = {
+      {2, 1, {2, 1}}, {3, 0, {1, 2, 3}}, {3, 2, {-1}}};
+
+  for (const auto& [n, k, expt] : testCases) {
+    ASSERT_TRUE(checkStrictEqualityContainers(absolutePermutation(n, k), expt));
+  }
+}
+
 }  // namespace algorithms::test
