@@ -189,4 +189,27 @@ bool larrysArray(const std::vector<int>& iVector) {
   return not(aCountSwap % 2);
 }
 
+std::vector<int> absolutePermutation(const int n, const int k) {
+  std::vector<bool> usedTable(n, false);
+  std::vector<int> absPerm;
+  absPerm.resize(n);
+
+  for (int i = 0; i < n; ++i) {
+    const int aNumber = i + 1;
+    if (const int aNegValue = aNumber - k;
+        aNegValue > 0 && usedTable[aNegValue - 1] == false) {
+      absPerm[i] = aNegValue;
+      usedTable[aNegValue - 1] = true;
+    } else if (const int aPosValue = aNumber + k;
+               aPosValue <= n && usedTable[aPosValue - 1] == false) {
+      absPerm[i] = aPosValue;
+      usedTable[aPosValue - i] = true;
+    } else {
+      return {-1};
+    }
+  }
+
+  return absPerm;
+}
+
 }  // namespace algorithms
