@@ -19,6 +19,7 @@
 #include <algorithm>
 #include <cassert>
 #include <limits>
+#include <map>
 #include <set>
 #include <string>
 #include <vector>
@@ -283,6 +284,33 @@ std::string largestNumber(std::vector<int> iNumbers) {
   }
 
   return aRtn;
+}
+
+int maximumGap(const std::vector<int>& iVector) {
+  using ValueType = int;
+  using IndexType = int;
+
+  const int kSize = iVector.size();
+  if (kSize == 0) return -1;
+
+  std::vector<std::pair<ValueType, IndexType>> metaVector;
+  metaVector.reserve(kSize);
+  for (int i = 0; i < kSize; ++i) {
+    metaVector.push_back(std::make_pair(iVector[i], i));
+  }
+
+  std::sort(metaVector.begin(), metaVector.end());
+
+  int maxIndex = metaVector[kSize - 1].second;
+  int max = 0;
+
+  for (int i = kSize - 2; i >= 0; --i) {
+    const IndexType indexI = metaVector[i].second;
+    max = std::max(max, maxIndex - indexI);
+    maxIndex = std::max(maxIndex, indexI);
+  }
+
+  return max;
 }
 
 }  // namespace algorithms

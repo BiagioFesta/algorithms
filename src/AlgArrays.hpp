@@ -105,9 +105,16 @@ std::vector<int> addOneToNumber(const std::vector<int>& iDigits);
  *  they form the largest number.
  *    Eg:
  *        [3, 30, 34, 5, 9]   ==>   "9534330"
- *  Complexity   Time: O(NlogN)     Space O(N)
+ *  \Complexity   Time: O(NlogN)     Space O(N)
  */
 std::string largestNumber(std::vector<int> iNumbers);
+
+/*! \brief Given an array A of integers, it finds the maximum of j - i subjected
+ *  to the constraint of A[i] <= A[j].
+ *  \return the maximum the solution. -1 if vector is empty.
+ *  \Complexity   Time: O(NlogN)     Space: O(N)
+ */
+int maximumGap(const std::vector<int>& iVector);
 
 }  // namespace algorithms
 
