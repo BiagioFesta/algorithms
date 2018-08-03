@@ -92,6 +92,14 @@ bool larrysArray(const std::vector<int>& iVector);
  */
 std::vector<int> absolutePermutation(const int n, const int k);
 
+/*! \brief Given a non-negative number represented as an array of digits, It add
+ *  1 to the number ( increment the number represented by the digits ).
+ *  \note The digits are stored such that the most significant digit is at the
+ *  head of the list.
+ *  \Complexity     Time: O(N)   Space O(N)
+ */
+std::vector<int> addOneToNumber(const std::vector<int>& iDigits);
+
 }  // namespace algorithms
 
 #endif  // ALGORITHMS__ALG_ARRAYS__HPP
