@@ -17,6 +17,7 @@
 */
 #ifndef ALGORITHMS__ALG_ARRAYS__HPP
 #define ALGORITHMS__ALG_ARRAYS__HPP
+#include <string>
 #include <vector>
 
 namespace algorithms {
@@ -99,6 +100,14 @@ std::vector<int> absolutePermutation(const int n, const int k);
  *  \Complexity     Time: O(N)   Space O(N)
  */
 std::vector<int> addOneToNumber(const std::vector<int>& iDigits);
+
+/*! \brief Given a list of non negative integers, it arranges them such that
+ *  they form the largest number.
+ *    Eg:
+ *        [3, 30, 34, 5, 9]   ==>   "9534330"
+ *  Complexity   Time: O(NlogN)     Space O(N)
+ */
+std::string largestNumber(std::vector<int> iNumbers);
 
 }  // namespace algorithms
 
