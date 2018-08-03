@@ -20,6 +20,7 @@
 #include <cassert>
 #include <limits>
 #include <set>
+#include <string>
 #include <vector>
 
 namespace algorithms {
@@ -251,6 +252,37 @@ std::vector<int> addOneToNumber(const std::vector<int>& iDigits) {
   }
 
   return aPlusOne;
+}
+
+std::string largestNumber(std::vector<int> iNumbers) {
+  std::sort(iNumbers.begin(), iNumbers.end(), [](const int x, const int y) {
+    static std::string sComposition;
+
+    sComposition.clear();
+    sComposition += std::to_string(x);
+    sComposition += std::to_string(y);
+    const int xy = std::stoi(sComposition);
+
+    sComposition.clear();
+    sComposition += std::to_string(y);
+    sComposition += std::to_string(x);
+    const int yx = std::stoi(sComposition);
+
+    return xy >= yx;
+  });
+
+  const auto aFirstNonZero = std::find_if(
+      iNumbers.begin(), iNumbers.end() - 1, [](const int n) { return n != 0; });
+  if (aFirstNonZero != iNumbers.begin()) {
+    iNumbers.erase(iNumbers.begin(), aFirstNonZero);
+  }
+
+  std::string aRtn;
+  for (const int n : iNumbers) {
+    aRtn += std::to_string(n);
+  }
+
+  return aRtn;
 }
 
 }  // namespace algorithms
