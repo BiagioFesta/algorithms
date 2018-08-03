@@ -212,4 +212,45 @@ std::vector<int> absolutePermutation(const int n, const int k) {
   return absPerm;
 }
 
+std::vector<int> addOneToNumber(const std::vector<int>& iDigits) {
+  const int kSize = iDigits.size();
+
+  std::vector<int> aPlusOne;
+  aPlusOne.reserve(kSize + 1);
+
+  bool aCarry = true;
+  int aDigit;
+
+  for (int i = 0; i < kSize; ++i) {
+    aDigit = iDigits[kSize - i - 1];
+    assert(aDigit >= 0 && aDigit <= 9);
+
+    if (aCarry) {
+      ++aDigit;
+      aCarry = false;
+    }
+
+    if (aDigit > 9) {
+      aDigit = 0;
+      aCarry = true;
+    }
+
+    aPlusOne.push_back(aDigit);
+  }
+
+  if (aCarry) {
+    aPlusOne.push_back(1);
+  }
+
+  std::reverse(aPlusOne.begin(), aPlusOne.end());
+
+  const auto aNonZeroIt = std::find_if(
+      aPlusOne.cbegin(), aPlusOne.cend(), [](const int n) { return n != 0; });
+  if (aNonZeroIt != aPlusOne.cbegin()) {
+    aPlusOne.erase(aPlusOne.begin(), aNonZeroIt);
+  }
+
+  return aPlusOne;
+}
+
 }  // namespace algorithms
