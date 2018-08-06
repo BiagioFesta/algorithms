@@ -25,6 +25,8 @@ class LRUCache {
  public:
   LRUCache(int capacity);
 
+  ~LRUCache();
+
   /*! \brief Set/insert the value of the key, if present, otherwise add the key
    *  as the most recently used key. If the cache has reached its capacity, it
    *  should replace the least recently used key with a new key.

@@ -99,4 +99,10 @@ void LRUCache::removeTail() {
   _tail = newTail;
 }
 
+LRUCache::~LRUCache() {
+  for (const auto& [k, v] : _map) {
+    delete v;
+  }
+}
+
 }  // namespace algorithms
