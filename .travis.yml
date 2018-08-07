@@ -9,7 +9,7 @@ before_install:
   - sudo apt-get update -qq
 
 install:
-  - sudo apt-get install -qq --allow-unauthenticated g++-8 libgtest-dev cmake
+  - sudo apt-get install -qq --allow-unauthenticated g++-8 libgtest-dev cmake valgrind
   - sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-8 90
 
 before_script:
@@ -28,4 +28,5 @@ script:
   - cmake -DCMAKE_BUILD_TYPE=Debug ..
   - make
   - ./algorithms_test
+  - valgrind ./algorithms_test
 
