@@ -346,4 +346,40 @@ std::string biggerIsGreater(std::string iString) {
   return iString;
 }
 
+int findLongestWord(const std::string& iString,
+                    const std::vector<std::string>& iStringDict) {
+  const int kSizeStr = iString.size();      // N
+  const int kSizeDic = iStringDict.size();  // M
+
+  int indexMax = -1;
+  int i, j, max;
+
+  for (int m = 0; m < kSizeDic; ++m) {  // O(M)
+    const auto& aMatcher = iStringDict[m];
+    const int kSizeMatch = aMatcher.size();
+
+    i = 0;
+    j = 0;
+
+    while (i < kSizeStr && j < kSizeMatch) {  // O(N + M)
+      if (iString[i] == aMatcher[j]) ++j;
+      ++i;
+    }
+
+    if (j == kSizeMatch) {
+      if (indexMax < 0) {
+        indexMax = m;
+        max = kSizeMatch;
+      } else if (kSizeMatch == max) {
+        indexMax = aMatcher < iStringDict[indexMax] ? m : indexMax;  // O(N + M)
+      } else if (max < kSizeMatch) {
+        indexMax = m;
+        max = kSizeMatch;
+      }
+    }
+  }
+
+  return indexMax;
+}
+
 }  // namespace algorithms
