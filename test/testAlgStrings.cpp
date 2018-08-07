@@ -172,4 +172,16 @@ TEST(AlgStrings, biggerIsGreater) {
   }
 }
 
+TEST(AlgStrings, findLongestWord) {
+  using Test = std::tuple<std::string, std::vector<std::string>, int>;
+  const std::vector<Test> testCases{
+      {"abpcplea", {"ale", "apple", "monkey", "plea"}, 1},
+      {"abpcplea", {"a", "b", "c"}, 0},
+      {"abc", {"d"}, -1}};
+
+  for (const auto& [str, dict, expt] : testCases) {
+    ASSERT_EQ(findLongestWord(str, dict), expt);
+  }
+}
+
 }  // namespace algorithms::test

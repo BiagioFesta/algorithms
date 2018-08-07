@@ -130,6 +130,17 @@ std::string encryptionStr(const std::string& iString);
  */
 std::string biggerIsGreater(std::string iString);
 
+/*! \brief Given a string and a string dictionary, it finds the longest string
+ *  in the dictionary that can be formed by deleting some characters of the
+ *  given string. If there are more than one possible results, it returns the
+ *  longest word with the smallest lexicographical order.
+ *  \return the index of longest string in the dictionary. It returns -1 if
+ *  there is no possible result.
+ *  \Complexity   Time: O(N^2 + NM)      Space: O(1)
+ */
+int findLongestWord(const std::string& iString,
+                    const std::vector<std::string>& iStringDict);
+
 }  // namespace algorithms
 
 #endif  // ALGORITHMS__ALG_STRINGS__HPP
