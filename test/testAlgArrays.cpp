@@ -159,4 +159,17 @@ TEST(AlgArrays, maximumGap) {
   }
 }
 
+TEST(AlgArrays, isOneBitCharacter) {
+  using Test = std::pair<std::vector<int>, bool>;
+  const std::vector<Test> testCases = {{{1, 1, 0}, true},
+                                       {{1, 0, 0}, true},
+                                       {{1, 1, 1, 0}, false},
+                                       {{0}, true},
+                                       {{0, 0}, true}};
+
+  for (const auto& [v, expt] : testCases) {
+    ASSERT_EQ(isOneBitCharacter(v), expt);
+  }
+}
+
 }  // namespace algorithms::test
