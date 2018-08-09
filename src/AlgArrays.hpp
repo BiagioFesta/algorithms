@@ -116,6 +116,16 @@ std::string largestNumber(std::vector<int> iNumbers);
  */
 int maximumGap(const std::vector<int>& iVector);
 
+/*! \brief We have two special characters. The first character can be
+ *  represented by one bit 0. The second character can be represented by two
+ *  bits (10 or 11).
+ *  Now given a string represented by several bits.
+ *  It returns whether the last character must be a one-bit character or not.
+ *  The given string will always end with a zero.
+ *  \Complexity   Time: O(N)     Space: O(1)
+ */
+bool isOneBitCharacter(const std::vector<int>& iBits);
+
 }  // namespace algorithms
 
 #endif  // ALGORITHMS__ALG_ARRAYS__HPP
