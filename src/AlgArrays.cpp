@@ -313,4 +313,18 @@ int maximumGap(const std::vector<int>& iVector) {
   return max;
 }
 
+bool isOneBitCharacter(const std::vector<int>& iBits) {
+  const int kSize = iBits.size();
+  if (kSize == 1) return true;
+
+  const int kSizeMinusOne = kSize - 1;
+
+  int i = 0;
+  while (i < kSizeMinusOne) {
+    i += iBits[i] == 1 ? 2 : 1;
+  }
+
+  return i == kSizeMinusOne;
+}
+
 }  // namespace algorithms
