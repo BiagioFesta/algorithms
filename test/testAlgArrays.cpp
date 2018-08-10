@@ -172,4 +172,14 @@ TEST(AlgArrays, isOneBitCharacter) {
   }
 }
 
+TEST(AlgArrays, findMaxLength) {
+  using Test = std::pair<std::vector<int>, int>;
+  const std::vector<Test> testCases = {
+    {{0, 1}, 2}, {{0, 1, 0}, 2}, {{0, 1, 0, 1}, 4}, {{0, 0, 0, 1, 0, 1, 0}, 4}};
+
+  for (const auto& [v, expt] : testCases) {
+    ASSERT_EQ(findMaxLength(v), expt);
+  }
+}
+
 }  // namespace algorithms::test
