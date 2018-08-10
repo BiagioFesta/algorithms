@@ -126,6 +126,13 @@ int maximumGap(const std::vector<int>& iVector);
  */
 bool isOneBitCharacter(const std::vector<int>& iBits);
 
+/*! \brief Given a binary array, it finds the maximum length of a contiguous
+ *  subarray with equal number of 0 and 1.
+ *  \note It returns 0 in case no solution.
+ *  \Complexity     Time: O(N)    Space: O(N)
+ */
+int findMaxLength(const std::vector<int>& iBits);
+
 }  // namespace algorithms
 
 #endif  // ALGORITHMS__ALG_ARRAYS__HPP

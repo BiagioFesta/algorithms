@@ -22,6 +22,7 @@
 #include <map>
 #include <set>
 #include <string>
+#include <unordered_map>
 #include <vector>
 
 namespace algorithms {
@@ -325,6 +326,28 @@ bool isOneBitCharacter(const std::vector<int>& iBits) {
   }
 
   return i == kSizeMinusOne;
+}
+
+int findMaxLength(const std::vector<int>& iBits) {
+  const int kSize = iBits.size();
+
+  std::unordered_map<int, int> diff2index;
+  int diff = 0;
+  int max = 0;
+
+  for (int i = 0; i < kSize; ++i) {
+    diff += iBits[i] ? 1 : -1;
+    if (diff == 0) {
+      max = i + 1;
+    } else if (auto startIt = diff2index.find(diff);
+               startIt != diff2index.cend()) {
+      max = std::max(max, i - startIt->second);
+    } else {
+      diff2index[diff] = i;
+    }
+  }
+
+  return max;
 }
 
 }  // namespace algorithms
