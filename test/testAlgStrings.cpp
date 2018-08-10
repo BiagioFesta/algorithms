@@ -184,4 +184,18 @@ TEST(AlgStrings, findLongestWord) {
   }
 }
 
+TEST(AlgStrings, detectCapitalUse) {
+  using Test = std::pair<std::string, bool>;
+  const std::vector<Test> testCases{{"USA", true},
+                                    {"FlaG", false},
+                                    {"lower", true},
+                                    {"AAAAa", false},
+                                    {"mL", false},
+                                    {"Leetcode", true}};
+
+  for (const auto& [str, expt] : testCases) {
+    ASSERT_EQ(detectCapitalUse(str), expt);
+  }
+}
+
 }  // namespace algorithms::test
