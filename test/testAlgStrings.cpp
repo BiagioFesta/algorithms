@@ -198,4 +198,14 @@ TEST(AlgStrings, detectCapitalUse) {
   }
 }
 
+TEST(AlgStrings, findTheDifference) {
+  using Test = std::tuple<std::string, std::string, char>;
+  const std::vector<Test> testCases{{"abcd", "abcde", 'e'},
+                                    {"abc", "ccba", 'c'}};
+
+  for (const auto& [s, t, expt] : testCases) {
+    ASSERT_EQ(findTheDifference(s, t), expt);
+  }
+}
+
 }  // namespace algorithms::test
