@@ -399,4 +399,20 @@ bool detectCapitalUse(const std::string& iString) {
   return false;
 }
 
+char findTheDifference(const std::string& iStringS,
+                       const std::string& iStringT) {
+  static constexpr int kSizeASCII = 1 << 8;
+
+  int freqCounter[kSizeASCII]{};
+  for (const char c : iStringS) {
+    ++freqCounter[static_cast<int>(c)];
+  }
+
+  for (const char c : iStringT) {
+    if (--freqCounter[static_cast<int>(c)] < 0) return c;
+  }
+
+  return static_cast<char>(0);
+}
+
 }  // namespace algorithms
