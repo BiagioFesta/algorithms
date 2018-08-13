@@ -174,11 +174,23 @@ TEST(AlgArrays, isOneBitCharacter) {
 
 TEST(AlgArrays, findMaxLength) {
   using Test = std::pair<std::vector<int>, int>;
-  const std::vector<Test> testCases = {
-    {{0, 1}, 2}, {{0, 1, 0}, 2}, {{0, 1, 0, 1}, 4}, {{0, 0, 0, 1, 0, 1, 0}, 4}};
+  const std::vector<Test> testCases = {{{0, 1}, 2},
+                                       {{0, 1, 0}, 2},
+                                       {{0, 1, 0, 1}, 4},
+                                       {{0, 0, 0, 1, 0, 1, 0}, 4}};
 
   for (const auto& [v, expt] : testCases) {
     ASSERT_EQ(findMaxLength(v), expt);
+  }
+}
+
+TEST(AlgArrays, pairs) {
+  using Test = std::tuple<std::vector<int>, int, int>;
+  const std::vector<Test> testCases = {{{1, 5, 3, 4, 2}, 2, 3},
+                                       {{1, 3, 5, 8, 6, 4, 2}, 2, 5}};
+
+  for (const auto& [nums, target, expt] : testCases) {
+    ASSERT_EQ(pairs(nums, target), expt);
   }
 }
 

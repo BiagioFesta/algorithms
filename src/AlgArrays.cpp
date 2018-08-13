@@ -350,4 +350,21 @@ int findMaxLength(const std::vector<int>& iBits) {
   return max;
 }
 
+int pairs(std::vector<int> iNums, int iTarget) {
+  const int kSize = iNums.size();  // O(1)
+
+  std::sort(iNums.begin(), iNums.end());  // O(NlogN)
+
+  int counter = 0;                              // O(1)
+  for (int i = 0; i < kSize; ++i) {             // O(N)
+    const int targetPair = iNums[i] - iTarget;  // O(1)
+    if (std::binary_search(
+            iNums.cbegin(), iNums.cend(), targetPair)) {  // O(logN)
+      ++counter;                                          // O(1)
+    }
+  }
+
+  return counter;  // O(1)
+}
+
 }  // namespace algorithms
