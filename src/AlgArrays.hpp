@@ -133,6 +133,14 @@ bool isOneBitCharacter(const std::vector<int>& iBits);
  */
 int findMaxLength(const std::vector<int>& iBits);
 
+/*! \brief You will be given an array of integers and a target value. It
+ *  determines the number of pairs of array elements that have a difference
+ *  equal to a target value.
+ *  \return The number of pairs.
+ *  \Complexity    Time: O(NlogN)    Space: O(N)
+ */
+int pairs(std::vector<int> iNums, int iTarget);
+
 }  // namespace algorithms
 
 #endif  // ALGORITHMS__ALG_ARRAYS__HPP
