@@ -58,4 +58,34 @@ TEST(LRUCache, ZeroCapacity) {
   ASSERT_EQ(cache.get(p1.first), -1);
 }
 
+TEST(LRUCache, SetOverride) {
+  LRUCache cache(1);
+
+  cache.set(1, 1);
+  ASSERT_EQ(cache.get(1), 1);
+
+  cache.set(1, 2);
+  ASSERT_EQ(cache.get(1), 2);
+}
+
+TEST(LRUCache, RefreshInMiddle) {
+  static constexpr std::pair<int, int> p1 = {1, 1};
+  static constexpr std::pair<int, int> p2 = {2, 2};
+  static constexpr std::pair<int, int> p3 = {3, 3};
+
+  LRUCache cache(3);
+
+  cache.set(p1.first, p1.second);
+  ASSERT_EQ(cache.get(p1.first), p1.second);
+
+  cache.set(p2.first, p2.second);
+  ASSERT_EQ(cache.get(p2.first), p2.second);
+
+  cache.set(p3.first, p3.second);
+  ASSERT_EQ(cache.get(p3.first), p3.second);
+
+  cache.set(p2.first, p2.second + 1);
+  ASSERT_EQ(cache.get(p2.first), p2.second + 1);
+}
+
 }  // namespace algorithms::test
