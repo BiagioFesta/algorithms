@@ -127,7 +127,8 @@ TEST(AlgStrings, letterCasePermutation) {
   const std::vector<Test> testCases = {
       {"a1b2", {"a1b2", "a1B2", "A1b2", "A1B2"}},
       {"3z4", {"3z4", "3Z4"}},
-      {"12345", {"12345"}}};
+      {"12345", {"12345"}},
+      {"AB", {"AB", "aB", "Ab", "ab"}}};
 
   std::vector<std::string> result;
   for (const auto& [str, expt] : testCases) {
@@ -200,8 +201,8 @@ TEST(AlgStrings, detectCapitalUse) {
 
 TEST(AlgStrings, findTheDifference) {
   using Test = std::tuple<std::string, std::string, char>;
-  const std::vector<Test> testCases{{"abcd", "abcde", 'e'},
-                                    {"abc", "ccba", 'c'}};
+  const std::vector<Test> testCases{
+      {"abcd", "abcde", 'e'}, {"abc", "ccba", 'c'}, {"abc", "bca", '\0'}};
 
   for (const auto& [s, t, expt] : testCases) {
     ASSERT_EQ(findTheDifference(s, t), expt);
