@@ -39,4 +39,12 @@ TEST(MinStack, KeepMin) {
   }
 }
 
+TEST(MinStack, GetMinOnEmpty) {
+  MinStack<int> mStack;
+  mStack.push(1);
+  ASSERT_EQ(mStack.getMin(), 1);
+  mStack.pop();
+  ASSERT_THROW(mStack.getMin(), std::exception);
+}
+
 }  // namespace algorithms::test

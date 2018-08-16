@@ -19,6 +19,7 @@
 #define ALGORITHMS__MIN_STACK__HPP
 #include <algorithm>
 #include <deque>
+#include <stdexcept>
 #include <utility>
 
 namespace algorithms {
@@ -33,10 +34,22 @@ class MinStack {
   using reference = value_type&;
   using const_reference = const value_type&;
 
+  //! \Complexity  Time O(1)
   void push(value_type v);
+
+  //! \Complexity  Time O(N)
   void pop();
+
+  /*! \Complexity  Time O(1)
+   *  \note Undefined behaviour if the container is empty.
+   */
   const_reference top() const noexcept;
-  const_reference getMin() const noexcept;
+
+  /*! \return the minimum value in the MinStack
+   *  \throw in case the container is emtpy.
+   *  \Complexity  Time O(1)
+   */
+  const_reference getMin() const;
 
  private:
   std::deque<value_type> _data;
@@ -66,11 +79,15 @@ void MinStack<T>::pop() {
 
 template <typename T>
 typename MinStack<T>::const_reference MinStack<T>::top() const noexcept {
+  assert(_data.empty() == false);
   return _data.back();
 }
 
 template <typename T>
-typename MinStack<T>::const_reference MinStack<T>::getMin() const noexcept {
+typename MinStack<T>::const_reference MinStack<T>::getMin() const {
+  if (_min == nullptr) {
+    throw std::runtime_error("Empty container");
+  }
   return *_min;
 }
 
