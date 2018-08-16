@@ -194,4 +194,16 @@ TEST(AlgArrays, pairs) {
   }
 }
 
+TEST(AlgArrays, containsNearbyDuplicate) {
+  using Test = std::tuple<std::vector<int>, int, bool>;
+  const std::vector<Test> testCases = {{{1, 2, 3, 1}, 3, true},
+                                       {{1, 0, 1, 1}, 1, true},
+                                       {{1, 2, 3, 1, 2, 3}, 2, false},
+                                       {{1, 2, 3, 1, 1, 2, 3}, 0, false}};
+
+  for (const auto& [nums, k, expt] : testCases) {
+    ASSERT_EQ(containsNearbyDuplicate(nums, k), expt);
+  }
+}
+
 }  // namespace algorithms::test
