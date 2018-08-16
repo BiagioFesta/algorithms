@@ -141,6 +141,13 @@ int findMaxLength(const std::vector<int>& iBits);
  */
 int pairs(std::vector<int> iNums, int iTarget);
 
+/*! \brief Given an array of integers and an integer k, it finds out whether
+ *  there are two distinct indices i and j in the array such that iNums[i] =
+ *  iNums[j] and the absolute difference between i and j is at most k.
+ *  \Complexity   Time: O(N)        Space: O(N)
+ */
+bool containsNearbyDuplicate(const std::vector<int>& iNums, const int k);
+
 }  // namespace algorithms
 
 #endif  // ALGORITHMS__ALG_ARRAYS__HPP

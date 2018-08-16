@@ -23,6 +23,7 @@
 #include <set>
 #include <string>
 #include <unordered_map>
+#include <unordered_set>
 #include <vector>
 
 namespace algorithms {
@@ -365,6 +366,29 @@ int pairs(std::vector<int> iNums, int iTarget) {
   }
 
   return counter;  // O(1)
+}
+
+bool containsNearbyDuplicate(const std::vector<int>& iNums, const int k) {
+  const int kSize = iNums.size();
+  if (kSize == 0 || kSize == 1 || k == 0) return false;
+
+  std::unordered_set<int> hashTable;
+  hashTable.insert(iNums[0]);
+
+  int i = 0;
+  int j = 1;
+  while (j < iNums.size()) {  // O(N)
+    const int jValue = iNums[j];
+    if (hashTable.count(jValue)) return true;  // O(1)
+    hashTable.insert(jValue);                  // O(1)
+    ++j;
+    if (j - i > k) {
+      hashTable.erase(iNums[i]);               // O(1)
+      ++i;
+    }
+  }
+
+  return false;
 }
 
 }  // namespace algorithms
