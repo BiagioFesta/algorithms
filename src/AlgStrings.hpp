@@ -167,6 +167,13 @@ bool detectCapitalUse(const std::string& iString);
 char findTheDifference(const std::string& iStringS,
                        const std::string& iStringT);
 
+/*! \brief Return the index of the first occurrence of 'iFinder' in 'iStr', or
+ *  -1 if there is no occurrence.
+ *  \note if 'iFinder' is empty it will return 0
+ *  \Complexity    Time: O(NM)    Space: O(1)
+ */
+int strStr(const std::string& iStr, const std::string& iFinder);
+
 }  // namespace algorithms
 
 #endif  // ALGORITHMS__ALG_STRINGS__HPP
