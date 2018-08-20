@@ -19,6 +19,7 @@
 #include <AlgStrings.hpp>
 #include <Utilities.hpp>
 #include <algorithm>
+#include <memory>
 #include <string>
 #include <tuple>
 #include <vector>
@@ -77,15 +78,19 @@ TEST(AlgStrings, oneWay) {
 }
 
 TEST(AlgStrings, stringCompression) {
-  const char aStr1[] = "aabcccccaaa";
-  const char aStr2[] = "abc";
-  constexpr int kSizeBuffer1 = sizeof(aStr1);
-  char aBuffer[kSizeBuffer1];
+  using Test = std::tuple<const char*, int, bool, std::string>;
+  const std::vector<Test> testCases = {{"aabcccccaaa", 11, true, "2ab5c3a"},
+                                       {"abc", 3, false, ""},
+                                       {"abcc", 3, false, ""},
+                                       {"abcccccccccc", 4, false, ""}};
 
-  ASSERT_TRUE(stringCompression(aStr1, aBuffer, kSizeBuffer1));
-  ASSERT_EQ(std::string(aBuffer), "2ab5c3a");
-
-  ASSERT_FALSE(stringCompression(aStr2, aBuffer, 3));
+  for (const auto& [str, bufferSize, expt, result] : testCases) {
+    const auto buffer = std::make_unique<char[]>(bufferSize);
+    ASSERT_EQ(stringCompression(str, buffer.get(), bufferSize), expt);
+    if (expt == true) {
+      ASSERT_EQ(std::string(buffer.get()), result);
+    }
+  }
 }
 
 TEST(AlgStrings, maxLenSubWithoutRep) {
