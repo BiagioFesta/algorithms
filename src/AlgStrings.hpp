@@ -54,7 +54,7 @@ bool oneWay(const std::string& iStr1, const std::string& iStr2);
 
 /*! \brief It performs basic string compression using the counts
  *  of repeated characters. For example, the string aabcccccaaa would become
- *  2abc5c3a.
+ *  2ab5c3a.
  *  \note If the "compressed" string does not fit the buffer in output, the
  *  method should return false and output will be trash data.
  *  \note It assumes the string contains only [A-Za-z] (no digits), otherwise
