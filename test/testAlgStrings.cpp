@@ -159,7 +159,8 @@ TEST(AlgStrings, encryptionStr) {
       {"if man was meant to stay on the ground god would have given us roots",
        "imtgdvs fearwer mayoogo anouuio ntnnlvt wttddes aohghn sseoau"},
       {"feedthedog", "fto ehg ee dd"},
-      {"chillout", "clu hlt io"}};
+      {"chillout", "clu hlt io"},
+      {"halo", "hl ao"}};
 
   for (const auto& [str, expt] : testCases) {
     ASSERT_EQ(encryptionStr(str), expt);
