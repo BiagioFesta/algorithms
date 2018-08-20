@@ -91,7 +91,7 @@ void letterCasePermutation(const std::string& iStr,
  *  by 4), composed of the letters A, C, T, G. It is considered to be steady if
  *  each of the four letters occurs exaclty n/4 times. The algorithm takes as
  *  input a gene which may be steady or not.
- *  \return the smallest popssible substring to replace in the input gene to
+ *  \return the smallest possible substring to replace in the input gene to
  *  make a steady gene.
  */
 int steadyGene(const std::string& gene);
