@@ -415,4 +415,22 @@ char findTheDifference(const std::string& iStringS,
   return static_cast<char>(0);
 }
 
+int strStr(const std::string& iStr, const std::string& iFinder) {
+  const int kSizeFinder = iFinder.size();
+  if (kSizeFinder == 0) return 0;
+  const int kSizeStr = iStr.size();
+
+  int j;
+  for (int i = 0; i < kSizeStr; ++i) {
+    j = 0;
+    while ((j < kSizeFinder) && (i + j < kSizeStr) &&
+           (iStr[i + j] == iFinder[j])) {
+      ++j;
+    }
+    if (j == kSizeFinder) return i;
+  }
+
+  return -1;
+}
+
 }  // namespace algorithms

@@ -209,4 +209,19 @@ TEST(AlgStrings, findTheDifference) {
   }
 }
 
+TEST(AlgStrings, strStr) {
+  using Test = std::tuple<std::string, std::string, int>;
+  const std::vector<Test> testCases{{"hello", "ll", 2},
+                                    {"aaaaa", "bba", -1},
+                                    {"whatever", "", 0},
+                                    {"", "", 0},
+                                    {"", "b", -1},
+                                    {"mississippi", "issip", 4},
+                                    {"aaaabbcc", "bbccdd", -1}};
+
+  for (const auto& [s, t, expt] : testCases) {
+    ASSERT_EQ(strStr(s, t), expt);
+  }
+}
+
 }  // namespace algorithms::test
