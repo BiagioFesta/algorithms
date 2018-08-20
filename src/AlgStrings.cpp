@@ -246,6 +246,7 @@ void letterCasePermutation(const std::string& iStr,
 int steadyGene(const std::string& gene) {
   std::map<char, int> occ;
   const int size = gene.size();
+  assert(size % 4 == 0);
   const int maxOcc = size / 4;
 
   int lb = -1;
