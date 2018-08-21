@@ -17,11 +17,13 @@
 */
 #include "AlgStrings.hpp"
 #include <algorithm>
+#include <array>
 #include <cassert>
 #include <cmath>
 #include <locale>
 #include <map>
 #include <string>
+#include <tuple>
 #include <utility>
 #include <vector>
 
@@ -432,6 +434,44 @@ int strStr(const std::string& iStr, const std::string& iFinder) {
   }
 
   return -1;
+}
+
+std::string originalDigits(const std::string& iString) {
+  static constexpr int kEnglishAlphabetSize = 26;
+  static constexpr int kNumDigits = 10;
+  static constexpr std::array<std::tuple<int, char, const char*>, kNumDigits>
+      kDigitInfo = {std::make_tuple(6, 'x', "six"),
+                    std::make_tuple(7, 's', "seven"),
+                    std::make_tuple(5, 'v', "five"),
+                    std::make_tuple(4, 'f', "four"),
+                    std::make_tuple(8, 'g', "eight"),
+                    std::make_tuple(9, 'i', "nine"),
+                    std::make_tuple(3, 'h', "three"),
+                    std::make_tuple(2, 'w', "two"),
+                    std::make_tuple(0, 'z', "zero"),
+                    std::make_tuple(1, 'o', "one")};
+
+  std::vector<int> frequencies(kEnglishAlphabetSize, 0);
+  for (const char c : iString) ++frequencies[c - 'a'];  // O(N)
+
+  std::vector<int> counterDigit(kNumDigits, 0);
+  for (const auto& digitInfo : kDigitInfo) {  // O(1)
+    const char* digitStr = std::get<2>(digitInfo);
+    const int numRepetitions = frequencies[std::get<1>(digitInfo) - 'a'];
+    while (*digitStr != '\0') {  // O(1)
+      frequencies[*digitStr - 'a'] -= numRepetitions;
+      ++digitStr;
+    }
+
+    counterDigit[std::get<0>(digitInfo)] = numRepetitions;
+  }
+
+  std::string aResult;
+  for (int i = 0; i < kNumDigits; ++i) {  // O(1)
+    aResult += std::string(counterDigit[i], '0' + i);
+  }
+
+  return aResult;
 }
 
 }  // namespace algorithms

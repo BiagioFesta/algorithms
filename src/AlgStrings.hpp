@@ -174,6 +174,20 @@ char findTheDifference(const std::string& iStringS,
  */
 int strStr(const std::string& iStr, const std::string& iFinder);
 
+/*! \brief Given a non-empty string containing an out-of-order English
+ *  representation of digits 0-9, it outputs the digits in ascending order.
+ *  E.g.
+ *          "zerozero"   = "00"
+ *          "owoztneoer" = "012"
+ *
+ *  \note Input must contains only lowercase English letters.
+ *  \note Input must be guaranteed to be valid and can be transformed to its
+ *  original digits. That means invalid inputs such as "abc" or "zerone" are not
+ *  permitted.
+ *  \Complexity   Time: O(N)    Space: O(1)
+ */
+std::string originalDigits(const std::string& iString);
+
 }  // namespace algorithms
 
 #endif  // ALGORITHMS__ALG_STRINGS__HPP
