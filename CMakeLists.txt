@@ -21,7 +21,8 @@ set(TEST
   test/testMinStack.cpp
   test/testUtilities.cpp
   test/testLRUCache.cpp
-  test/testBST.cpp)
+  test/testBST.cpp
+  test/testPriorityQueue.cpp)
 
 add_executable(${PROJECT_NAME}_test ${SRC} ${TEST})
 target_include_directories(${PROJECT_NAME}_test
