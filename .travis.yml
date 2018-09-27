@@ -41,7 +41,7 @@ before_script:
           -DCMAKE_C_COMPILER=${C_COMPILER}
           -DCMAKE_CXX_COMPILER=${CXX_COMPILER}
           -DCMAKE_C_FLAGS="-I${LLVM_HOME}/include/c++/v1"
-          -DCMAKE_CXX_FLAGS="-nostdinc++ -I${LLVM_HOME}/include/c++/v1"
+          -DCMAKE_CXX_FLAGS="-nostdinc++ -std=c++11 -I${LLVM_HOME}/include/c++/v1"
           ..
   - make
   - sudo make install
