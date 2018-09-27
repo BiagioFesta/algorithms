@@ -2,6 +2,7 @@
 
 [![Build Status](https://travis-ci.org/BiagioFesta/algorithms.svg?branch=master)](https://travis-ci.org/BiagioFesta/algorithms)
 [![CodeCoverage](https://codecov.io/gh/BiagioFesta/algorithms/branch/master/graphs/badge.svg)](https://codecov.io/gh/BiagioFesta/algorithms/branch/master)
+[![cppstd](https://img.shields.io/badge/C++-17-blue.svg)](https://en.wikipedia.org/wiki/C%2B%2B17)
 
 ## Brief Description
 Study project on algorithm design and implementation.
