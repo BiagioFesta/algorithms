@@ -183,7 +183,7 @@ bool larrysArray(const std::vector<int>& iVector) {
   for (int i = 0; i < kSize; ++i) {
     int aSwapForCurrent = 0;
     int j = i;
-    while (not visitedTable[iVector[j] - 1]) {
+    while (!visitedTable[iVector[j] - 1]) {
       visitedTable[iVector[j] - 1] = true;
       ++aSwapForCurrent;
       j = iVector[j] - 1;

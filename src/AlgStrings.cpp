@@ -298,7 +298,7 @@ std::string encryptionStr(const std::string& iString) {
   std::copy_if(iString.cbegin(),
                iString.cend(),
                std::back_inserter(aTrailedString),
-               [](const char c) { return not std::isspace(c, std::locale()); });
+               [](const char c) { return !std::isspace(c, std::locale()); });
   const int aNewLen = aTrailedString.size();
   const double aSqrt = std::sqrt(static_cast<double>(aNewLen));
 
