@@ -391,4 +391,26 @@ bool containsNearbyDuplicate(const std::vector<int>& iNums, const int k) {
   return false;
 }
 
+bool isPermutation(const std::vector<int>& iVectA,
+                   const std::vector<int>& iVectB) {
+  if (iVectA.size() != iVectB.size()) return false;
+
+  std::unordered_map<int, int> aOccTable;
+  for (const int aNumber : iVectA) {
+    aOccTable[aNumber] += 1;
+  }
+
+  for (const int aNumber : iVectB) {
+    const int aOccRemain = --aOccTable[aNumber];
+    if (aOccRemain < 0) {
+      return false;
+    }
+    if (aOccRemain == 0) {
+      aOccTable.erase(aNumber);
+    }
+  }
+
+  return aOccTable.empty();
+}
+
 }  // namespace algorithms
