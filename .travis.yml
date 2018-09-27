@@ -12,7 +12,7 @@ env:
     BUILD_TYPE="Debug"
     C_COMPILER="clang"
     CXX_COMPILER="clang++"
-    COMPILATION_FLAGS="-fprofile-instr-generate -fcoverage-mapping"
+    COMPILATION_FLAGS="-fsanitize=address -fprofile-instr-generate -fcoverage-mapping"
 
 
 before_install:
