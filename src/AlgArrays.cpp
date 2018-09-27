@@ -207,7 +207,7 @@ std::vector<int> absolutePermutation(const int n, const int k) {
     } else if (const int aPosValue = aNumber + k;
                aPosValue <= n && usedTable[aPosValue - 1] == false) {
       absPerm[i] = aPosValue;
-      usedTable[aPosValue - i] = true;
+      usedTable[aPosValue - 1] = true;
     } else {
       return {-1};
     }
@@ -383,7 +383,7 @@ bool containsNearbyDuplicate(const std::vector<int>& iNums, const int k) {
     hashTable.insert(jValue);                  // O(1)
     ++j;
     if (j - i > k) {
-      hashTable.erase(iNums[i]);               // O(1)
+      hashTable.erase(iNums[i]);  // O(1)
       ++i;
     }
   }
