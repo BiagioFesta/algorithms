@@ -148,6 +148,13 @@ int pairs(std::vector<int> iNums, int iTarget);
  */
 bool containsNearbyDuplicate(const std::vector<int>& iNums, const int k);
 
+/*! \brief It checks whether the two inputs are one the permutation of the
+ *  other.
+ *  \Complexity     Time: O(N)         Space: O(N)  assuming N == M
+ */
+bool isPermutation(const std::vector<int>& iVectA,
+                   const std::vector<int>& iVectB);
+
 }  // namespace algorithms
 
 #endif  // ALGORITHMS__ALG_ARRAYS__HPP
