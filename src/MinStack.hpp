@@ -60,7 +60,7 @@ template <typename T>
 void MinStack<T>::push(value_type v) {
   _data.push_back(std::move(v));
 
-  if ((not _min) || (top() < *_min)) {
+  if ((! _min) || (top() < *_min)) {
     _min = &top();
   }
 }
