@@ -413,4 +413,22 @@ bool isPermutation(const std::vector<int>& iVectA,
   return aOccTable.empty();
 }
 
+int stockMax(const std::vector<int>& iPrices) {
+  const int kSize = iPrices.size();
+  if (kSize == 0) return 0;
+
+  int aMaxLocal = 0;
+  int aRevenue = 0;
+
+  for (int i = kSize - 1; i >= 0; --i) {
+    const int aPriceI = iPrices[i];
+    assert(aPriceI > 0);
+
+    aMaxLocal = std::max(aMaxLocal, aPriceI);
+    aRevenue += aMaxLocal - aPriceI;
+  }
+
+  return aRevenue;
+}
+
 }  // namespace algorithms
