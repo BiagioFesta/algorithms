@@ -155,6 +155,17 @@ bool containsNearbyDuplicate(const std::vector<int>& iNums, const int k);
 bool isPermutation(const std::vector<int>& iVectA,
                    const std::vector<int>& iVectB);
 
+/*! \brief Your algorithms have become so good at predicting the market that you
+ *  now know what the share price of Wooden Orange Toothpicks Inc. (WOT) will be
+ *  for the next number of days.
+ *  Each day, you can either buy one share of WOT, sell any number of shares of
+ *  WOT that you own, or not make any transaction at all. What is the maximum
+ *  profit you can obtain with an optimum trading strategy?
+ *  \Complexity    Time: O(N)      Space: O(1)
+ *  \url https://www.hackerrank.com/challenges/stockmax/problem
+ */
+int stockMax(const std::vector<int>& iPrices);
+
 }  // namespace algorithms
 
 #endif  // ALGORITHMS__ALG_ARRAYS__HPP
