@@ -190,7 +190,7 @@ bool larrysArray(const std::vector<int>& iVector) {
     }
     aCountSwap += aSwapForCurrent ? aSwapForCurrent - 1 : 0;
   }
-  return not(aCountSwap % 2);
+  return !(aCountSwap % 2);
 }
 
 std::vector<int> absolutePermutation(const int n, const int k) {
