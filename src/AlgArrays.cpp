@@ -271,7 +271,7 @@ std::string largestNumber(std::vector<int> iNumbers) {
     sComposition += std::to_string(x);
     const int yx = std::stoi(sComposition);
 
-    return xy >= yx;
+    return xy > yx;
   });
 
   const auto aFirstNonZero = std::find_if(
