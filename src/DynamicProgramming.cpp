@@ -135,4 +135,18 @@ int substringsSum(const std::string& iStr) {
   return (int)sum;
 }
 
+int keystroke(const int N) {
+  const int kNplusOne = N + 1;
+  std::vector<int> aSolutions(kNplusOne);
+
+  for (int i = 1; i < kNplusOne; ++i) {
+    aSolutions[i] = aSolutions[i - 1] + 1;
+    for (int j = 1; j < i - 2; ++j) {
+      aSolutions[i] = std::max(aSolutions[i], (i - j - 1) * aSolutions[j]);
+    }
+  }
+
+  return aSolutions[N];
+}
+
 }  // namespace algorithms
