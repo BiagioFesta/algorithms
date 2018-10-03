@@ -80,4 +80,14 @@ TEST(dynamicProgramming, substringsSum) {
   }
 }
 
+TEST(dynamicProgramming, keystroke) {
+  using Test = std::pair<int, int>;
+  const std::vector<Test> testCases = {
+      {0, 0}, {1, 1}, {2, 2}, {3, 3}, {4, 4}, {5, 5}, {6, 6}, {7, 9}, {8, 12}};
+
+  for (const auto& [n, expt] : testCases) {
+    ASSERT_EQ(keystroke(n), expt);
+  }
+}
+
 }  // namespace algorithms::test

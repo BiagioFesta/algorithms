@@ -67,6 +67,19 @@ int sherlockAndCost(const std::vector<int>& iUpperBounds);
  */
 int substringsSum(const std::string& iStr);
 
+/*! \brief You are given following four keys on a keyboard:
+ *    1. print A (print a single character A)
+ *    2. Ctrl-A (Select All)
+ *    3. Ctrl-C (Copy selected content)
+ *    4. Ctrl-V (Append the selected content right next to already printed
+ *       content).
+ *
+ *  Pressing any of the above keys is considered a single keystroke. You need to
+ *  find out the maximum number of A's you can print using N such keystrokes.
+ *  \Complexity    Time: O(N^2)         Space: O(N)
+ */
+int keystroke(const int N);
+
 }  // namespace algorithms
 
 #endif  // ALGORITHMS__DYNAMIC_PROGRAMMING__HPP
