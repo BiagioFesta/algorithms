@@ -377,7 +377,7 @@ bool containsNearbyDuplicate(const std::vector<int>& iNums, const int k) {
 
   int i = 0;
   int j = 1;
-  while (j < iNums.size()) {  // O(N)
+  while (j < kSize) {  // O(N)
     const int jValue = iNums[j];
     if (hashTable.count(jValue)) return true;  // O(1)
     hashTable.insert(jValue);                  // O(1)
