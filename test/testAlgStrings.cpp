@@ -244,4 +244,17 @@ TEST(AlgStrings, originalDigits) {
   }
 }
 
+TEST(AlgStrings, longestPalindrome) {
+  using Test = std::pair<std::string, std::vector<std::string>>;
+  const std::vector<Test> testCases = {{"babad", {"bab", "aba"}},
+                                       {"cbbd", {"bb"}},
+                                       {"", {""}},
+                                       {"ab", {"a", "b"}}};
+
+  for (const auto& [str, expt] : testCases) {
+    const auto aResult = longestPalindrome(str);
+    ASSERT_TRUE(std::find(expt.cbegin(), expt.cend(), aResult) != expt.cend());
+  }
+}
+
 }  // namespace algorithms::test

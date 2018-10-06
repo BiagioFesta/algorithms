@@ -474,4 +474,40 @@ std::string originalDigits(const std::string& iString) {
   return aResult;
 }
 
+std::string longestPalindrome(const std::string& iString) {
+  const int kSize = iString.size();
+
+  std::string aResult;
+  int i, j;
+
+  for (int c = 0; c < kSize; ++c) {
+    i = c;
+    j = c + 1;
+    while (i >= 0 && j < kSize && iString[i] == iString[j]) {
+      const int kLen = j + 1 - i;
+      const int kResultSize = static_cast<int>(aResult.size());
+      if (kLen > kResultSize) {
+        aResult = iString.substr(i, kLen);
+      }
+      --i;
+      ++j;
+    }
+
+    i = c;
+    j = c;
+    while (i >= 0 && j < kSize && iString[i] == iString[j]) {
+      const int kLen = j + 1 - i;
+      const int kResultSize = static_cast<int>(aResult.size());
+      if (kLen > kResultSize) {
+        aResult = iString.substr(i, kLen);
+      }
+      --i;
+      ++j;
+    }
+  }
+
+  assert(iString.empty() || !aResult.empty());
+  return aResult;
+}
+
 }  // namespace algorithms
