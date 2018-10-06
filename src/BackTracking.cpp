@@ -18,6 +18,7 @@
 #include "BackTracking.hpp"
 #include <algorithm>
 #include <cassert>
+#include <set>
 #include <stack>
 #include <tuple>
 #include <type_traits>
@@ -34,6 +35,14 @@ bool allStrictlyPositive(const std::vector<T>& iVector) {
   });
 }
 
+//! \return true if all numbers into the vector are different.
+template <typename T>
+bool noDuplicates(const std::vector<T>& iVector) {
+  static_assert(std::is_arithmetic_v<T>);
+  const std::set<T> aSet(iVector.cbegin(), iVector.cend());
+  return aSet.size() == iVector.size();
+}
+
 }  // anonymous namespace
 
 namespace algorithms {
@@ -46,6 +55,7 @@ std::vector<std::vector<int>> combinationSum(
 
   assert(iTarget > 0);
   assert(::allStrictlyPositive(iCandidates));
+  assert(::noDuplicates(iCandidates));
 
   const int kSize = iCandidates.size();
 
