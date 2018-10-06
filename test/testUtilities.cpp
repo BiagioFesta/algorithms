@@ -51,4 +51,18 @@ TEST(Utilities, haveSameValues) {
   }
 }
 
+TEST(Utilities, haveSameValuesNoHash) {
+  using Container = std::vector<int>;
+  using Test = std::tuple<Container, Container, bool>;
+
+  std::vector<Test> testCases = {{{1, 2, 3}, {3, 2, 1}, true},
+                                 {{1, 2, 3}, {1, 2, 1}, false},
+                                 {{1, 2, 3}, {1, 2, 4}, false},
+                                 {{1, 2, 3}, {1}, false}};
+
+  for (const auto& [v1, v2, expt] : testCases) {
+    ASSERT_EQ(haveSameValuesNoHash(v1, v2), expt);
+  }
+}
+
 }  // namespace algorithms::test
