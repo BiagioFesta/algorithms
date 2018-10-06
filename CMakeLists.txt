@@ -12,7 +12,8 @@ set(SRC
   src/AlgStrings.cpp
   src/DynamicProgramming.cpp
   src/AlgArrays.cpp
-  src/LRUCache.cpp)
+  src/LRUCache.cpp
+  src/BackTracking.cpp)
 set(TEST
   test/main.cpp
   test/testAlgStrings.cpp
@@ -22,7 +23,8 @@ set(TEST
   test/testUtilities.cpp
   test/testLRUCache.cpp
   test/testBST.cpp
-  test/testPriorityQueue.cpp)
+  test/testPriorityQueue.cpp
+  test/testBackTracking.cpp)
 
 add_executable(${PROJECT_NAME}_test ${SRC} ${TEST})
 target_include_directories(${PROJECT_NAME}_test
