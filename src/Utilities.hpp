@@ -17,6 +17,7 @@
 */
 #ifndef ALGORITHMS__UTILITIES__HPP
 #define ALGORITHMS__UTILITIES__HPP
+#include <algorithm>
 #include <unordered_map>
 #include <vector>
 
@@ -60,6 +61,32 @@ bool haveSameValues(const ContainerT& c1, const ContainerU& c2) {
     auto& u_occurrences = c1Occurrences[u];
     if (u_occurrences == 0) return false;
     --u_occurrences;
+  }
+
+  return true;
+}
+
+/*! \brief It checks whether two containers store the same values.
+ *  \Complexity  Time O(NM)    (without using hash table)
+ */
+template <typename ContainerT, typename ContainerU>
+bool haveSameValuesNoHash(const ContainerT& c1, const ContainerU& c2) {
+  std::vector<bool> aVisitedIndex(c2.size());
+
+  const int kSize1 = c1.size();
+  const int kSize2 = c2.size();
+
+  if (kSize1 != kSize2) return false;
+
+  for (const auto& t : c1) {
+    const auto aFinder = std::find(std::cbegin(c2), std::cend(c2), t);
+    const auto aIndex = std::distance(std::cbegin(c2), aFinder);
+
+    if (aIndex >= kSize2 || aVisitedIndex[aIndex] == true) {
+      return false;
+    }
+
+    aVisitedIndex[aIndex] = true;
   }
 
   return true;
