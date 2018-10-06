@@ -188,6 +188,11 @@ int strStr(const std::string& iStr, const std::string& iFinder);
  */
 std::string originalDigits(const std::string& iString);
 
+/*! \brief Given a string as input, it finds the longest palindromic substring.
+ *  \Complexity     Time: O(N^2)     Space: O(1)
+ */
+std::string longestPalindrome(const std::string& iString);
+
 }  // namespace algorithms
 
 #endif  // ALGORITHMS__ALG_STRINGS__HPP
