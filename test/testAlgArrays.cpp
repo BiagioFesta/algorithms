@@ -235,4 +235,19 @@ TEST(AlgArrays, stockMax) {
   }
 }
 
+TEST(AlgArrays, isPalindrome) {
+  using Test = std::pair<int, bool>;
+  const std::vector<Test> testCases = {{121, true},
+                                       {-121, false},
+                                       {10, false},
+                                       {0, true},
+                                       {12344321, true},
+                                       {123421, false},
+                                       {1000000001, true}};
+
+  for (const auto [num, expt] : testCases) {
+    ASSERT_EQ(isPalindrome(num), expt);
+  }
+}
+
 }  // namespace algorithms::test
