@@ -18,6 +18,7 @@
 #include "AlgArrays.hpp"
 #include <algorithm>
 #include <cassert>
+#include <cmath>
 #include <limits>
 #include <map>
 #include <set>
@@ -429,6 +430,31 @@ int stockMax(const std::vector<int>& iPrices) {
   }
 
   return aRevenue;
+}
+
+bool isPalindrome(int iNumber) {
+  if (iNumber < 0) return false;
+  if (iNumber < 10) return true;
+
+  int aNumDigit = 1;
+  int aTemp = iNumber;
+  while (aTemp /= 10) {
+    ++aNumDigit;
+  }
+
+  const int aHalfNumberOfDigit = aNumDigit / 2;
+
+  for (int i = 0; i < aHalfNumberOfDigit; ++i) {
+    const std::int64_t aPowerRight = std::pow(10, i + 1);
+    const std::int64_t aPowerLeft = std::pow(10, aNumDigit - i);
+
+    const int aDigitRight = iNumber % aPowerRight / (aPowerRight / 10);
+    const int aDigitLeft = iNumber % aPowerLeft / (aPowerLeft / 10);
+
+    if (aDigitRight != aDigitLeft) return false;
+  }
+
+  return true;
 }
 
 }  // namespace algorithms

@@ -166,6 +166,12 @@ bool isPermutation(const std::vector<int>& iVectA,
  */
 int stockMax(const std::vector<int>& iPrices);
 
+/*! \brief Determine whether an integer is a palindrome. An integer is a
+ *  palindrome when it reads the same backward as forward.
+ *  \Complexity   Time: O(N)   Space: O(1)   where N: number of digits
+ */
+bool isPalindrome(int iNumber);
+
 }  // namespace algorithms
 
 #endif  // ALGORITHMS__ALG_ARRAYS__HPP
