@@ -510,4 +510,13 @@ std::string longestPalindrome(const std::string& iString) {
   return aResult;
 }
 
+void reverseStringInPlace(std::string* ioString) {
+  const int kSize = ioString->size();
+  const int kHalfSize = kSize / 2;
+
+  for (int i = 0; i < kHalfSize; ++i) {
+    std::swap((*ioString)[i], (*ioString)[kSize - 1 - i]);
+  }
+}
+
 }  // namespace algorithms
