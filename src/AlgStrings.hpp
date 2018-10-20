@@ -193,6 +193,12 @@ std::string originalDigits(const std::string& iString);
  */
 std::string longestPalindrome(const std::string& iString);
 
+/*! \brief a function that takes a string as input and returns the string
+ *  reversed. In place.
+ *  \Complexity           Time: O(N)         Space: O(1)
+ */
+void reverseStringInPlace(std::string* ioString);
+
 }  // namespace algorithms
 
 #endif  // ALGORITHMS__ALG_STRINGS__HPP

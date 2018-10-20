@@ -257,4 +257,19 @@ TEST(AlgStrings, longestPalindrome) {
   }
 }
 
+TEST(AlgStrings, reverseStringInPlace) {
+  using Test = std::pair<std::string, std::string>;
+  const std::vector<Test> testCases = {
+      {"hello", "olleh"},
+      {"A man, a plan, a canal: Panama", "amanaP :lanac a ,nalp a ,nam A"},
+      {"", ""}};
+
+  std::string aMutableStr;
+  for (const auto& [str, expt] : testCases) {
+    aMutableStr = str;
+    reverseStringInPlace(&aMutableStr);
+    ASSERT_EQ(aMutableStr, expt);
+  }
+}
+
 }  // namespace algorithms::test
