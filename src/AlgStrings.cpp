@@ -20,11 +20,11 @@
 #include <array>
 #include <cassert>
 #include <cmath>
+#include <cstring>
 #include <locale>
 #include <map>
 #include <string>
 #include <tuple>
-#include <unordered_map>
 #include <utility>
 #include <vector>
 
@@ -523,34 +523,43 @@ void reverseStringInPlace(std::string* ioString) {
 std::vector<std::string> findAndReplacePattern(
     const std::vector<std::string>& iWords,
     const std::string& iPattern) {
+  constexpr std::size_t kSizeTable = 1 << 8;
+
   std::vector<std::string> aMatchedWords;
+
+  std::array<char, kSizeTable> aLeft2RightTable;
+  std::array<char, kSizeTable> aRight2LeftTable;
 
   std::copy_if(
       iWords.cbegin(),
       iWords.cend(),
       std::back_inserter(aMatchedWords),
-      [&iPattern, kSizePattern = iPattern.size()](const std::string& iWord) {
-        using Table_t = std::unordered_map<char, char>;
-
+      [&iPattern,
+       &aLeft2RightTable,
+       &aRight2LeftTable,
+       kSizePattern = iPattern.size()](const std::string& iWord) {
         const auto kSizeWord = iWord.size();
-
         if (kSizePattern != kSizeWord) return false;
 
-        Table_t aLeft2RightTable;
-        Table_t aRight2LeftTable;
+        std::memset(aLeft2RightTable.data(), 0, aLeft2RightTable.size());
+        std::memset(aRight2LeftTable.data(), 0, aRight2LeftTable.size());
 
         for (std::size_t i = 0u; i < kSizeWord; ++i) {
           const char w = iWord[i];
           const char p = iPattern[i];
+          char& aRefLeftTable = aLeft2RightTable[w];
+          char& aRefRightTable = aRight2LeftTable[p];
 
-          if (auto aIt = aLeft2RightTable.try_emplace(w, p);
-              !aIt.second && aIt.first->second != p) {
+          if (aRefLeftTable && aRefLeftTable != p) {
             return false;
+          } else {
+            aRefLeftTable = p;
           }
 
-          if (auto aIt = aRight2LeftTable.try_emplace(p, w);
-              !aIt.second && aIt.first->second != w) {
+          if (aRefRightTable && aRefRightTable != w) {
             return false;
+          } else {
+            aRefRightTable = w;
           }
         }
 
