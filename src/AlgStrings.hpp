@@ -204,7 +204,7 @@ void reverseStringInPlace(std::string* ioString);
  *  exists a permutation of letters p so that after replacing every letter x in
  *  the pattern with p(x), we get the desired word.
  *  \return a list of the words in words that match the given pattern.
- *  \Complexity   Time: O(NM) Space: (M)     N size of iWords; M size Pattern
+ *  \Complexity   Time: O(NM) Space: (1)     N size of iWords; M size Pattern
  */
 std::vector<std::string> findAndReplacePattern(
     const std::vector<std::string>& iWords,
