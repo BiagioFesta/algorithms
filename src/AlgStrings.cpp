@@ -24,6 +24,7 @@
 #include <map>
 #include <string>
 #include <tuple>
+#include <unordered_map>
 #include <utility>
 #include <vector>
 
@@ -517,6 +518,46 @@ void reverseStringInPlace(std::string* ioString) {
   for (int i = 0; i < kHalfSize; ++i) {
     std::swap((*ioString)[i], (*ioString)[kSize - 1 - i]);
   }
+}
+
+std::vector<std::string> findAndReplacePattern(
+    const std::vector<std::string>& iWords,
+    const std::string& iPattern) {
+  std::vector<std::string> aMatchedWords;
+
+  std::copy_if(
+      iWords.cbegin(),
+      iWords.cend(),
+      std::back_inserter(aMatchedWords),
+      [&iPattern, kSizePattern = iPattern.size()](const std::string& iWord) {
+        using Table_t = std::unordered_map<char, char>;
+
+        const auto kSizeWord = iWord.size();
+
+        if (kSizePattern != kSizeWord) return false;
+
+        Table_t aLeft2RightTable;
+        Table_t aRight2LeftTable;
+
+        for (std::size_t i = 0u; i < kSizeWord; ++i) {
+          const char w = iWord[i];
+          const char p = iPattern[i];
+
+          if (auto aIt = aLeft2RightTable.try_emplace(w, p);
+              !aIt.second && aIt.first->second != p) {
+            return false;
+          }
+
+          if (auto aIt = aRight2LeftTable.try_emplace(p, w);
+              !aIt.second && aIt.first->second != w) {
+            return false;
+          }
+        }
+
+        return true;
+      });
+
+  return aMatchedWords;
 }
 
 }  // namespace algorithms

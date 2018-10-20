@@ -19,9 +19,11 @@
 #include <AlgStrings.hpp>
 #include <Utilities.hpp>
 #include <algorithm>
+#include <functional>
 #include <memory>
 #include <string>
 #include <tuple>
+#include <type_traits>
 #include <vector>
 
 namespace algorithms::test {
@@ -269,6 +271,19 @@ TEST(AlgStrings, reverseStringInPlace) {
     aMutableStr = str;
     reverseStringInPlace(&aMutableStr);
     ASSERT_EQ(aMutableStr, expt);
+  }
+}
+
+TEST(AlgStrings, findAndReplacePattern) {
+  using Test = std::
+      tuple<std::vector<std::string>, std::string, std::vector<std::string>>;
+  const std::vector<Test> testCases = {
+      {{"abc", "deq", "mee", "aqq", "dkd", "ccc"}, "abb", {"mee", "aqq"}}};
+
+  for (const auto& [words, pattern, expt] : testCases) {
+    const auto aResult = findAndReplacePattern(words, pattern);
+    ASSERT_TRUE(std::is_permutation(
+        aResult.cbegin(), aResult.cend(), expt.cbegin(), expt.cend()));
   }
 }
 

@@ -199,6 +199,17 @@ std::string longestPalindrome(const std::string& iString);
  */
 void reverseStringInPlace(std::string* ioString);
 
+/*! \brief You have a list of words and a pattern, and you want to know which
+ *  words in words matches the pattern. A word matches the pattern if there
+ *  exists a permutation of letters p so that after replacing every letter x in
+ *  the pattern with p(x), we get the desired word.
+ *  \return a list of the words in words that match the given pattern.
+ *  \Complexity   Time: O(NM) Space: (M)     N size of iWords; M size Pattern
+ */
+std::vector<std::string> findAndReplacePattern(
+    const std::vector<std::string>& iWords,
+    const std::string& iPattern);
+
 }  // namespace algorithms
 
 #endif  // ALGORITHMS__ALG_STRINGS__HPP
