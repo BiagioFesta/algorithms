@@ -250,4 +250,31 @@ TEST(AlgArrays, isPalindrome) {
   }
 }
 
+TEST(AlgArrays, threeSum) {
+  using Test = std::pair<std::vector<int>, std::vector<std::vector<int>>>;
+
+  std::vector<Test> testCases = {
+      {{-1, 0, 1, 2, -1, -4}, {{-1, 0, 1}, {-1, -1, 2}}}, {{-1, 0}, {}}};
+
+  for (auto [nums, expt] : testCases) {
+    const auto aResult = threeSum(&nums);
+
+    ASSERT_EQ(aResult.size(), expt.size());
+
+    for (const auto& aTripletResutl : aResult) {
+      auto aFinder = std::find_if(
+          expt.begin(), expt.end(), [&aTripletResutl](const auto& iTriplet) {
+            return std::is_permutation(iTriplet.cbegin(),
+                                       iTriplet.cend(),
+                                       aTripletResutl.cbegin(),
+                                       aTripletResutl.cend());
+          });
+
+      ASSERT_NE(aFinder, expt.end());
+
+      expt.erase(aFinder);
+    }
+  }
+}
+
 }  // namespace algorithms::test

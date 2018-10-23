@@ -172,6 +172,15 @@ int stockMax(const std::vector<int>& iPrices);
  */
 bool isPalindrome(int iNumber);
 
+/*! \brief Given an array nums of n integers, are there elements a, b, c in nums
+ *  such that a + b + c = 0? Find all unique triplets in the array which gives
+ *  the sum of zero.
+ *  \note The solution set must not contain duplicate triplets.
+ *  \Complexity      Time: O(N^2)    Space: O(1)
+ *  \url https://leetcode.com/problems/3sum/description/
+ */
+std::vector<std::vector<int>> threeSum(std::vector<int>* iNumbers);
+
 }  // namespace algorithms
 
 #endif  // ALGORITHMS__ALG_ARRAYS__HPP
