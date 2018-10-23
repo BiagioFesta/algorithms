@@ -457,4 +457,39 @@ bool isPalindrome(int iNumber) {
   return true;
 }
 
+std::vector<std::vector<int>> threeSum(std::vector<int>* iNumbers) {
+  const int kSize = iNumbers->size();
+  std::vector<std::vector<int>> aTriplets;
+
+  std::sort(iNumbers->begin(), iNumbers->end());
+
+  for (int i = 0; i < kSize; ++i) {
+    const int aCurrentNumber = (*iNumbers)[i];
+    int aLower = i + 1;
+    int aUpper = kSize - 1;
+
+    while (aLower < aUpper) {
+      const int aLowerNumber = (*iNumbers)[aLower];
+      const int aUpperNumber = (*iNumbers)[aUpper];
+      const int aSum = aLowerNumber + aUpperNumber;
+
+      if (aSum < -aCurrentNumber) {
+        ++aLower;
+      } else if (-aCurrentNumber < aSum) {
+        --aUpper;
+      } else {
+        aTriplets.emplace_back(
+            std::vector<int>{aCurrentNumber, aLowerNumber, aUpperNumber});
+
+        while ((*iNumbers)[aLower] == aLowerNumber) ++aLower;
+        while ((*iNumbers)[aUpper] == aUpperNumber) --aUpper;
+      }
+    }
+
+    while (i < kSize - 1 && (*iNumbers)[i + 1] == aCurrentNumber) ++i;
+  }
+
+  return aTriplets;
+}
+
 }  // namespace algorithms
