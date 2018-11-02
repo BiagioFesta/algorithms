@@ -80,6 +80,18 @@ int substringsSum(const std::string& iStr);
  */
 int keystroke(const int N);
 
+/*! \brief Say you have an array for which the i-th element is the price of a
+ *  given stock on day i.
+ *  Design an algorithm to find the maximum profit. You may complete at most two
+ *  transactions.
+ *  \note You may not engage in multiple transactions at the same time (i.e.,
+ *  you must sell the stock before you buy again).
+ *  \url
+ *  https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iii/description/
+ *  \Complexity:    Time: O(N)      Space: O(N)
+ */
+int maxProfit(const std::vector<int>& iPrices);
+
 }  // namespace algorithms
 
 #endif  // ALGORITHMS__DYNAMIC_PROGRAMMING__HPP
