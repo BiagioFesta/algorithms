@@ -149,4 +149,29 @@ int keystroke(const int N) {
   return aSolutions[N];
 }
 
+int maxProfit(const std::vector<int>& iPrices) {
+  const std::size_t kSize = iPrices.size();
+  if (kSize == 0) return 0;
+
+  std::vector<int> aMaxRevenue(kSize);
+
+  int aCurrentMin = iPrices[0];
+  for (std::size_t i = 1; i < kSize; ++i) {
+    const int iCurrentPrice = iPrices[i];
+    aMaxRevenue[i] = std::max(aMaxRevenue[i - 1], iCurrentPrice - aCurrentMin);
+    aCurrentMin = std::min(aCurrentMin, iCurrentPrice);
+  }
+
+  int aMaxProfit = aMaxRevenue.back();
+  int aCurrentMax = iPrices.back();
+  for (std::size_t i = kSize; i > 0; --i) {
+    const int iCurrentPrice = iPrices[i - 1];
+    aMaxProfit =
+        std::max(aMaxProfit, aCurrentMax - iCurrentPrice + aMaxRevenue[i - 1]);
+    aCurrentMax = std::max(aCurrentMax, iCurrentPrice);
+  }
+
+  return aMaxProfit;
+}
+
 }  // namespace algorithms
