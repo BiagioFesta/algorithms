@@ -19,6 +19,7 @@
 #include <algorithm>
 #include <cassert>
 #include <cmath>
+#include <functional>
 #include <limits>
 #include <map>
 #include <set>
@@ -490,6 +491,21 @@ std::vector<std::vector<int>> threeSum(std::vector<int>* iNumbers) {
   }
 
   return aTriplets;
+}
+
+void partition(std::vector<int>* ioVector, std::function<bool(int)> iFn) {
+  const std::size_t kSize = ioVector->size();
+
+  std::size_t i = 0;
+
+  for (std::size_t j = 0; j < kSize; ++j) {
+    if (iFn((*ioVector)[j]) == true) {
+      if (i != j) {
+        std::swap((*ioVector)[i], (*ioVector)[j]);
+      }
+      ++i;
+    }
+  }
 }
 
 }  // namespace algorithms
