@@ -18,6 +18,7 @@
 #include <gtest/gtest.h>
 #include <AlgArrays.hpp>
 #include <Utilities.hpp>
+#include <algorithm>
 #include <tuple>
 #include <vector>
 
@@ -274,6 +275,25 @@ TEST(AlgArrays, threeSum) {
 
       expt.erase(aFinder);
     }
+  }
+}
+
+TEST(AlgArrays, partition) {
+  using Test = std::pair<std::vector<int>, std::function<bool(int)>>;
+
+  static const auto isLessThanFive = [](const int iNumber) {
+    return iNumber < 5;
+  };
+
+  std::vector<Test> testCases = {{{1, 2, 3, 4, 5, 6}, isLessThanFive},
+                                 {{1, 2, 10, 11, 3}, isLessThanFive},
+                                 {{}, isLessThanFive},
+                                 {{1, 2, 3}, isLessThanFive},
+                                 {{6, 7, 8}, isLessThanFive}};
+
+  for (auto& [v, fn] : testCases) {
+    partition(&v, fn);
+    ASSERT_TRUE(std::is_partitioned(v.cbegin(), v.cend(), fn));
   }
 }
 

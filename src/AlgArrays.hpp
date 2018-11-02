@@ -17,6 +17,7 @@
 */
 #ifndef ALGORITHMS__ALG_ARRAYS__HPP
 #define ALGORITHMS__ALG_ARRAYS__HPP
+#include <functional>
 #include <string>
 #include <vector>
 
@@ -180,6 +181,14 @@ bool isPalindrome(int iNumber);
  *  \url https://leetcode.com/problems/3sum/description/
  */
 std::vector<std::vector<int>> threeSum(std::vector<int>* iNumbers);
+
+/*! \brief Reorders the numbers in the vector in such a way that
+ *  all numbers for which the predicate 'iFn' returns true precede the elements
+ *  for which predicate 'iFn' returns false. Relative order of the elements is
+ *  not preserved (not stable).
+ *  \Complexity      Time: O(N)      Space: O(1)
+ */
+void partition(std::vector<int>* ioVector, std::function<bool(int)> iFn);
 
 }  // namespace algorithms
 
