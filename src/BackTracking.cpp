@@ -18,6 +18,7 @@
 #include "BackTracking.hpp"
 #include <algorithm>
 #include <cassert>
+#include <functional>
 #include <set>
 #include <stack>
 #include <tuple>
@@ -88,6 +89,38 @@ std::vector<std::vector<int>> combinationSum(
       }
     }
   }
+
+  return aSolutions;
+}
+
+std::vector<std::vector<int>> combinationSum3(const int K, const int N) {
+  assert(K > 0);
+  assert(N > 0);
+
+  std::vector<std::vector<int>> aSolutions;
+
+  const std::function<void(int, std::vector<int>*)> aHelperFn =
+      [&](int iTarget, std::vector<int>* ioSeq) {
+        const auto aSizeSeq = ioSeq->size();
+
+        if (iTarget >= 0 && aSizeSeq >= 0) {
+          if (iTarget == 0 && aSizeSeq == static_cast<size_t>(K)) {
+            aSolutions.emplace_back(*ioSeq);
+          } else {
+            const int aLastNum = ioSeq->empty() ? 0 : ioSeq->back();
+            for (int i = aLastNum + 1; i <= 9; ++i) {
+              ioSeq->push_back(i);
+              aHelperFn(iTarget - i, ioSeq);
+              ioSeq->pop_back();
+            }
+          }
+        }
+      };
+
+  std::vector<int> aSequence;
+  aSequence.reserve(K + 1);
+
+  aHelperFn(N, &aSequence);
 
   return aSolutions;
 }
