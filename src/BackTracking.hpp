@@ -35,6 +35,17 @@ std::vector<std::vector<int>> combinationSum(
     const std::vector<int>& iCandidates,
     const int iTarget);
 
+/*! \brief It finds all possible combinations of K numbers that add up to a
+ *  number N, given that only numbers from 1 to 9 can be used and each
+ *  combination should be a unique set of numbers (cannot pick the same number
+ *  in the same combination).
+ *  \note All numbers will be positive integers (K and N).
+ *  \note The solution set must not contain duplicate combinations.
+ *  \complexity         Time:  O(9^K)     Space: O(K)
+ *  \url https://leetcode.com/problems/combination-sum-iii/description/
+ */
+std::vector<std::vector<int>> combinationSum3(const int K, const int N);
+
 }  // namespace algorithms
 
 #endif  // ALGORITHMS__BACKTRACKING__HPP
