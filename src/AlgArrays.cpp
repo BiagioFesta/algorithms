@@ -23,6 +23,7 @@
 #include <limits>
 #include <map>
 #include <set>
+#include <stack>
 #include <string>
 #include <unordered_map>
 #include <unordered_set>
@@ -506,6 +507,24 @@ void partition(std::vector<int>* ioVector, std::function<bool(int)> iFn) {
       ++i;
     }
   }
+}
+
+bool find132pattern(const std::vector<int>& iVector) {
+  std::stack<int> aStack;
+  int aS0 = std::numeric_limits<int>::min();
+
+  for (auto it = iVector.crbegin(); it != iVector.crend(); ++it) {
+    const int aNumber = *it;
+    if (aNumber < aS0) return true;
+
+    while (!aStack.empty() && aStack.top() < aNumber) {
+      aS0 = aStack.top();
+      aStack.pop();
+    }
+    aStack.push(aNumber);
+  }
+
+  return false;
 }
 
 }  // namespace algorithms

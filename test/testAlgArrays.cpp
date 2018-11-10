@@ -297,4 +297,16 @@ TEST(AlgArrays, partition) {
   }
 }
 
+TEST(AlgArrays, find132pattern) {
+  using Test = std::pair<std::vector<int>, bool>;
+  const std::vector<Test> testCases = {{{1, 2, 3, 4}, false},
+                                       {{3, 1, 4, 2}, true},
+                                       {{-1, 3, 2, 0}, true},
+                                       {{}, false}};
+
+  for (const auto& [v, expt] : testCases) {
+    ASSERT_EQ(find132pattern(v), expt);
+  }
+}
+
 }  // namespace algorithms::test
