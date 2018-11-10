@@ -212,6 +212,22 @@ std::vector<std::string> findAndReplacePattern(
     const std::vector<std::string>& iWords,
     const std::string& iPattern);
 
+/*! \brief You are given a string representing an attendance record for a
+ *  student. The record only contains the following three characters:
+ *                 'A' : Absent.
+ *                 'L' : Late.
+ *                 'P' : Present.
+ *  A student could be rewarded if his attendance record doesn't contain more
+ *  than one 'A' (absent) or more than two continuous 'L' (late).
+ *
+ *  You need to return whether the student could be rewarded according to his
+ *  attendance record.
+ *
+ *  \Complexity     Time: O(N)        Space: O(1)
+ *  \url https://leetcode.com/problems/student-attendance-record-i/description/
+ */
+bool checkRecord(const std::string& iString);
+
 }  // namespace algorithms
 
 #endif  // ALGORITHMS__ALG_STRINGS__HPP
