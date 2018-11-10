@@ -287,4 +287,14 @@ TEST(AlgStrings, findAndReplacePattern) {
   }
 }
 
+TEST(AlgStrings, checkRecord) {
+  using Test = std::pair<std::string, bool>;
+  const std::vector<Test> testCases = {
+      {"PPALLP", true}, {"PPALLL", false}, {"", true}, {"PPALLPPPA", false}};
+
+  for (const auto& [str, expt] : testCases) {
+    ASSERT_EQ(checkRecord(str), expt);
+  }
+}
+
 }  // namespace algorithms::test

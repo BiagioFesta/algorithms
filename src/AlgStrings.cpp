@@ -569,4 +569,34 @@ std::vector<std::string> findAndReplacePattern(
   return aMatchedWords;
 }
 
+bool checkRecord(const std::string& iString) {
+  constexpr int kMaxLateConsegutiveAllowed = 2;
+  const std::size_t kSize = iString.size();
+
+  int aAbsences = 0;
+  int aCongLate = 0;
+
+  for (std::size_t i = 0; i < kSize; ++i) {
+    const char c = iString[i];
+    assert(c == 'A' || c == 'L' || c == 'P');
+
+    if (c == 'A') {
+      aCongLate = 0;
+      ++aAbsences;
+      if (aAbsences > 1) {
+        return false;
+      }
+    } else if (c == 'L') {
+      ++aCongLate;
+      if (aCongLate > kMaxLateConsegutiveAllowed) {
+        return false;
+      }
+    } else {
+      aCongLate = 0;
+    }
+  }
+
+  return true;
+}
+
 }  // namespace algorithms
