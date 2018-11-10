@@ -83,6 +83,7 @@ int countSegment(const char* iStr);
 /*! \brief Given a string S, we can transform every letter individually to be
  *  lowercase or uppercase to create another string.
  *  \return a list of all possible strings we could create.
+ *  \url https://leetcode.com/problems/letter-case-permutation/description/
  */
 void letterCasePermutation(const std::string& iStr,
                            std::vector<std::string>* oPermutations);
@@ -93,6 +94,7 @@ void letterCasePermutation(const std::string& iStr,
  *  input a gene which may be steady or not.
  *  \return the smallest possible substring to replace in the input gene to
  *  make a steady gene.
+ *  \url https://www.hackerrank.com/challenges/bear-and-steady-gene/problem
  */
 int steadyGene(const std::string& gene);
 
