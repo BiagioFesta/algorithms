@@ -25,12 +25,15 @@ namespace algorithms {
 
 /*! \brief It checks if the array could become non-decreasing by modifying at
  *  most 1 element.
+ *  \Complexity     Time: O(N)        Space: O(1)
+ *  \url https://leetcode.com/problems/non-decreasing-array/description/
  */
 bool isAlmostNonDecreasing(const int* iArray, const int iSize);
 
 /*! \brief Given an array of n positive integers and a positive integer s, it
  *  finds the minimal length of a contiguous subarray of which the sum ≥ s. If
  *  there isn't one, it returns 0 instead.
+ *  \url https://leetcode.com/problems/minimum-size-subarray-sum/description/
  */
 int minSizeSubArraySum(const int* iArray, const int iSize, int s);
 
@@ -38,18 +41,23 @@ int minSizeSubArraySum(const int* iArray, const int iSize, int s);
  *  some elements appear twice and others appear once.
  *  It finds all the elements of [1, n] inclusive that do not appear in this
  *  array.
+ *  \url
+ * https://leetcode.com/problems/find-all-numbers-disappeared-in-an-array/description/
  */
 std::vector<int> findDisappearedNumbers(const std::vector<int>& iVector);
 
 /*! \brief Given an unsorted array of integers, it finds the length of longest
  *  continuous increasing subsequence (subarray).
  *  \Complexity O(n)
+ *  \url
+ * https://leetcode.com/problems/longest-continuous-increasing-subsequence/description/
  */
 int findLengthOfLCIS(const std::vector<int>& iVector);
 
 /*! \brief Given an unsorted integer array, find the smallest missing positive
  *  integer.
  *  \Complexity Time: O(n)      Space: O(1) - it exploits the input.
+ *  \url https://leetcode.com/problems/first-missing-positive/description/
  */
 int firstMissingPositive(std::vector<int>* iVector);
 
@@ -65,6 +73,7 @@ int firstMissingPositive(std::vector<int>* iVector);
  *  \return The position in the leaderboard of Alice after each game (the score
  *  obtained by Alice is identified by the param 'iAliceScores').
  *  \Complexity   Time: O(NlogM)    Space: O(M + N)
+ *  \url https://www.hackerrank.com/challenges/climbing-the-leaderboard/problem
  */
 std::vector<int> climbingLeaderboard(const std::vector<int>& iLeaderBoard,
                                      const std::vector<int>& iAliceScores);
@@ -79,6 +88,7 @@ std::vector<int> climbingLeaderboard(const std::vector<int>& iLeaderBoard,
  *  \return 'true' if the array can be sorted with rotation operation, 'false'
  *  otherise.
  *  \Complexity   Time: O(N)     Space: O(N)
+ *  \url https://www.hackerrank.com/challenges/larrys-array/problem
  */
 bool larrysArray(const std::vector<int>& iVector);
 
@@ -91,6 +101,7 @@ bool larrysArray(const std::vector<int>& iVector);
  *  absolute permutation P. If no absolute permutation exists, it returns a
  *  vecotr of {-1}.
  *  Complexity  Time: O(N)    Space: O(N)
+ *  \url https://www.hackerrank.com/challenges/absolute-permutation/problem
  */
 std::vector<int> absolutePermutation(const int n, const int k);
 
@@ -99,6 +110,7 @@ std::vector<int> absolutePermutation(const int n, const int k);
  *  \note The digits are stored such that the most significant digit is at the
  *  head of the list.
  *  \Complexity     Time: O(N)   Space O(N)
+ *  \url https://leetcode.com/problems/plus-one/description/
  */
 std::vector<int> addOneToNumber(const std::vector<int>& iDigits);
 
@@ -107,6 +119,7 @@ std::vector<int> addOneToNumber(const std::vector<int>& iDigits);
  *    Eg:
  *        [3, 30, 34, 5, 9]   ==>   "9534330"
  *  \Complexity   Time: O(NlogN)     Space O(N)
+ *  \url https://leetcode.com/problems/largest-number/description/
  */
 std::string largestNumber(std::vector<int> iNumbers);
 
@@ -114,6 +127,7 @@ std::string largestNumber(std::vector<int> iNumbers);
  *  to the constraint of A[i] <= A[j].
  *  \return the maximum the solution. -1 if vector is empty.
  *  \Complexity   Time: O(NlogN)     Space: O(N)
+ *  \url https://leetcode.com/problems/maximum-gap/description/
  */
 int maximumGap(const std::vector<int>& iVector);
 
@@ -124,6 +138,7 @@ int maximumGap(const std::vector<int>& iVector);
  *  It returns whether the last character must be a one-bit character or not.
  *  The given string will always end with a zero.
  *  \Complexity   Time: O(N)     Space: O(1)
+ *  \url https://leetcode.com/problems/1-bit-and-2-bit-characters/description/
  */
 bool isOneBitCharacter(const std::vector<int>& iBits);
 
@@ -131,6 +146,7 @@ bool isOneBitCharacter(const std::vector<int>& iBits);
  *  subarray with equal number of 0 and 1.
  *  \note It returns 0 in case no solution.
  *  \Complexity     Time: O(N)    Space: O(N)
+ *  \url https://leetcode.com/problems/contiguous-array/description/
  */
 int findMaxLength(const std::vector<int>& iBits);
 
@@ -139,6 +155,7 @@ int findMaxLength(const std::vector<int>& iBits);
  *  equal to a target value.
  *  \return The number of pairs.
  *  \Complexity    Time: O(NlogN)    Space: O(N)
+ *  \url https://www.hackerrank.com/challenges/pairs/problem
  */
 int pairs(std::vector<int> iNums, int iTarget);
 
@@ -146,6 +163,7 @@ int pairs(std::vector<int> iNums, int iTarget);
  *  there are two distinct indices i and j in the array such that iNums[i] =
  *  iNums[j] and the absolute difference between i and j is at most k.
  *  \Complexity   Time: O(N)        Space: O(N)
+ *  \url https://leetcode.com/problems/contains-duplicate-ii/description/
  */
 bool containsNearbyDuplicate(const std::vector<int>& iNums, const int k);
 
