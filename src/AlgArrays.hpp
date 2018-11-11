@@ -217,6 +217,11 @@ void partition(std::vector<int>* ioVector, std::function<bool(int)> iFn);
  */
 bool find132pattern(const std::vector<int>& iVector);
 
+/*! \brief It computes the greatest common divisor (GCD) of two numbers.
+ *  \url https://en.wikipedia.org/wiki/Euclidean_algorithm
+ */
+int euclideanAlgorithmGCD(int iNumberA, int iNumberB);
+
 }  // namespace algorithms
 
 #endif  // ALGORITHMS__ALG_ARRAYS__HPP
