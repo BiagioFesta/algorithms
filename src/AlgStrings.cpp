@@ -599,41 +599,4 @@ bool checkRecord(const std::string& iString) {
   return true;
 }
 
-int findRotateSteps(const std::string_view iRing, const std::string_view iKey) {
-  constexpr auto kMaxIndex = std::numeric_limits<std::size_t>::max();
-  const auto kK = iKey.size();
-  const auto kR = iRing.size();
-
-  const auto kFnDistance = [kR](const std::size_t i,
-                                const std::size_t j) noexcept {
-    const auto aAbs = i < j ? j - i : i - j;
-    return std::min(aAbs, kR - aAbs);
-  };
-
-  std::vector<std::size_t> aSolutions(kK * kR);
-
-  for (auto c = iKey.crbegin(); c != iKey.crend(); ++c) {  // O(K)
-    const auto i = kK - std::distance(iKey.crbegin(), c) - 1;
-
-    for (std::size_t j = 0; j < kR; ++j) {  // O(R)
-      std::size_t aMin = kMaxIndex;
-
-      for (std::size_t q = 0; q < kR; ++q) {  // O(R)
-        if (iRing[q] == iKey[i]) {
-          const auto aRecur = std::distance(iKey.crbegin(), c) != 0
-                                  ? aSolutions[(i + 1) * kR + q]
-                                  : 0;
-          const auto aDist = kFnDistance(j, q);
-          aMin = std::min(aMin, aRecur + 1 + aDist);
-        }
-      }
-      assert(aMin != kMaxIndex);
-
-      aSolutions[i * kR + j] = aMin;
-    }
-  }
-
-  return static_cast<int>(aSolutions[0]);
-}
-
 }  // namespace algorithms
