@@ -105,12 +105,12 @@ TEST(dynamicProgramming, maxProfit) {
 }
 
 TEST(dynamicProgramming, findRotateSteps) {
-  using Test = std::tuple<const char*, const char*, int>;
+  using Test = std::tuple<const char*, const char*, std::size_t>;
   const std::vector<Test> testCases = {
-      {"godding", "gd", 4},
+      {"godding", "gd", 4u},
       {"caotmcaataijjxi",
        "oatjiioicitatajtijciocjcaaxaaatmctxamacaamjjx",
-       137}};
+       137u}};
 
   for (const auto& [ring, key, expt] : testCases) {
     ASSERT_EQ(findRotateSteps(ring, key), expt);
