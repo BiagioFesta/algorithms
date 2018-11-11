@@ -124,7 +124,8 @@ int maxProfit(const std::vector<int>& iPrices);
  *
  *  \url https://leetcode.com/problems/freedom-trail/description/
  */
-int findRotateSteps(const std::string_view iRing, const std::string_view iKey);
+std::size_t findRotateSteps(const std::string_view iRing,
+                            const std::string_view iKey);
 
 }  // namespace algorithms
 

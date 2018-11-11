@@ -174,7 +174,8 @@ int maxProfit(const std::vector<int>& iPrices) {
   return aMaxProfit;
 }
 
-int findRotateSteps(const std::string_view iRing, const std::string_view iKey) {
+std::size_t findRotateSteps(const std::string_view iRing,
+                            const std::string_view iKey) {
   constexpr auto kMaxIndex = std::numeric_limits<std::size_t>::max();
   const auto kK = iKey.size();
   const auto kR = iRing.size();
@@ -185,7 +186,7 @@ int findRotateSteps(const std::string_view iRing, const std::string_view iKey) {
     return std::min(aAbs, kR - aAbs);
   };
 
-  std::vector<std::size_t> aSolutions(kK * kR);
+  std::vector<std::size_t> aSolutions((kK + 1) * kR);
 
   for (auto c = iKey.crbegin(); c != iKey.crend(); ++c) {  // O(K)
     const auto i = kK - std::distance(iKey.crbegin(), c) - 1;
@@ -195,9 +196,7 @@ int findRotateSteps(const std::string_view iRing, const std::string_view iKey) {
 
       for (std::size_t q = 0; q < kR; ++q) {  // O(R)
         if (iRing[q] == iKey[i]) {
-          const auto aRecur = std::distance(iKey.crbegin(), c) != 0
-                                  ? aSolutions[(i + 1) * kR + q]
-                                  : 0;
+          const auto aRecur = aSolutions[(i + 1) * kR + q];
           const auto aDist = kFnDistance(j, q);
           aMin = std::min(aMin, aRecur + 1 + aDist);
         }
@@ -208,7 +207,7 @@ int findRotateSteps(const std::string_view iRing, const std::string_view iKey) {
     }
   }
 
-  return static_cast<int>(aSolutions[0]);
+  return aSolutions[0];
 }
 
 }  // namespace algorithms
