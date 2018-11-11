@@ -528,9 +528,18 @@ bool find132pattern(const std::vector<int>& iVector) {
 }
 
 int euclideanAlgorithmGCD(int iNumberA, int iNumberB) {
-  if (iNumberA < iNumberB) std::swap(iNumberA, iNumberB);
+  if (iNumberA == 0) return iNumberB;
   if (iNumberB == 0) return iNumberA;
-  return euclideanAlgorithmGCD(iNumberB, iNumberA % iNumberB);
+
+  while (iNumberA != iNumberB) {
+    if (iNumberA < iNumberB) {
+      iNumberB -= iNumberA;
+    } else {
+      iNumberA -= iNumberB;
+    }
+  }
+
+  return iNumberA;
 }
 
 }  // namespace algorithms
