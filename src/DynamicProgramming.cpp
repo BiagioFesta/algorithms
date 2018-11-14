@@ -210,4 +210,31 @@ std::size_t findRotateSteps(const std::string_view iRing,
   return aSolutions[0];
 }
 
+std::pair<int, int> twoEggsDropping(const int iNumFloors) {
+  assert(iNumFloors >= 0);
+
+  std::vector<int> aTable(iNumFloors + 1);
+
+  int aKMin = -1;
+  int aMinValue;
+
+  for (int i = iNumFloors - 1; i >= 0; --i) {
+    aKMin = -1;
+    aMinValue = std::numeric_limits<int>::max();
+
+    for (int k = i; k < iNumFloors; ++k) {
+      const int aKSolution = std::max(k - i, aTable[k + 1]);
+      if (aKSolution < aMinValue) {
+        aMinValue = aKSolution;
+        aKMin = k;
+      }
+    }
+    assert(aKMin != -1);
+
+    aTable[i] = aMinValue + 1;
+  }
+
+  return std::make_pair(aTable[0], aKMin);
+}
+
 }  // namespace algorithms
