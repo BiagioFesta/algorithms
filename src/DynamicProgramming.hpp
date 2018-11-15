@@ -149,7 +149,8 @@ std::size_t findRotateSteps(const std::string_view iRing,
  *  \return a pair. The first is the number of attempts of the worst case of the
  *  optimal strategy required in order to find the floor.
  *  The second is the index (0-based) of the floor where the first attempt
- *  should be performed in the optimal strategy.
+ *  should be performed in the optimal strategy (in case of multiple choise for
+ *  the floor to select, then the smallest index will be returned).
  *
  *  \note You can compute the entire sequence of floors to select in the optimal
  *  strategy (considering the worst case) calling this function recursively on a
