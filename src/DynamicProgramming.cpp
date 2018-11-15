@@ -237,4 +237,47 @@ std::pair<int, int> twoEggsDropping(const int iNumFloors) {
   return std::make_pair(aTable[0], aKMin);
 }
 
+std::vector<int> cheapestJump(const std::vector<int>& iVector,
+                              const int iMaxJump) {
+  assert(iMaxJump >= 0);
+  assert(!iVector.empty());
+
+  const int kSize = iVector.size();
+
+  std::vector<std::pair<int, int>> aTableSolutions(kSize, {0, -1});
+
+  for (int i = kSize - 2; i >= 0; --i) {
+    auto& [aCostFromI, aIndexFromI] = aTableSolutions[i];
+
+    const int kUpperBound = std::min(i + iMaxJump + 1, kSize);
+    for (int k = i + 1; k < kUpperBound; ++k) {
+      const int aKValue = iVector[k];
+
+      if (aKValue >= 0) {
+        const int aSolutionK = aKValue + aTableSolutions[k].first;
+        if (aIndexFromI == -1 || aSolutionK < aCostFromI) {
+          aIndexFromI = k;
+          aCostFromI = aSolutionK;
+        }
+      }
+    }
+  }
+
+  std::vector<int> aPath;
+  aPath.reserve(kSize);
+
+  int aIndex = 0;
+  while (aTableSolutions[aIndex].second != -1) {
+    aPath.push_back(aIndex + 1);
+    aIndex = aTableSolutions[aIndex].second;
+  }
+  aPath.push_back(aIndex + 1);
+
+  if (aPath.back() != kSize) {
+    aPath.clear();
+  }
+
+  return aPath;
+}
+
 }  // namespace algorithms
