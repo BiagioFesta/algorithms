@@ -24,7 +24,8 @@ set(TEST
   test/testLRUCache.cpp
   test/testBST.cpp
   test/testPriorityQueue.cpp
-  test/testBackTracking.cpp)
+  test/testBackTracking.cpp
+  test/testFlatSet.cpp)
 
 add_executable(${PROJECT_NAME}_test ${SRC} ${TEST})
 target_include_directories(${PROJECT_NAME}_test
