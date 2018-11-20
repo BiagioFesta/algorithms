@@ -103,7 +103,7 @@ std::vector<std::vector<int>> combinationSum3(const int K, const int N) {
       [&](int iTarget, std::vector<int>* ioSeq) {
         const auto aSizeSeq = ioSeq->size();
 
-        if (iTarget >= 0 && aSizeSeq >= 0) {
+        if (iTarget >= 0) {
           if (iTarget == 0 && aSizeSeq == static_cast<size_t>(K)) {
             aSolutions.emplace_back(*ioSeq);
           } else {
