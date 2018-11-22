@@ -8,7 +8,6 @@ env:
     CMAKE_HOME="${TRAVIS_BUILD_DIR}/cmake-3.8.2"
     LLVM_TARBALL="http://releases.llvm.org/6.0.1/clang+llvm-6.0.1-x86_64-linux-gnu-ubuntu-14.04.tar.xz"
     LLVM_HOME="${TRAVIS_BUILD_DIR}/llvm-6.0.1"
-    GTEST_REPO="https://github.com/google/googletest.git"
     BUILD_TYPE="Debug"
     C_COMPILER="clang"
     CXX_COMPILER="clang++"
@@ -17,56 +16,54 @@ env:
 
 before_install:
   - sudo apt-get update
-  - sudo apt-get install -y wget tar xz-utils git make valgrind
+  - sudo apt-get install -y curl wget tar xz-utils git make valgrind
 
 install:
   - cd ${TRAVIS_BUILD_DIR}
+  - curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+  - sudo python3 get-pip.py
+  - sudo pip install conan
   - wget ${CMAKE_TARBALL}
-  - tar -zxvf cmake-3.8.2-Linux-x86_64.tar.gz
+  - tar -zxvf cmake-3.8.2-Linux-x86_64.tar.gz > /dev/null
   - mv cmake-3.8.2-Linux-x86_64 ${CMAKE_HOME}
   - export PATH=${PATH}:${CMAKE_HOME}/bin/
   - wget ${LLVM_TARBALL}
-  - tar -xvf clang+llvm-6.0.1-x86_64-linux-gnu-ubuntu-14.04.tar.xz
+  - tar -xvf clang+llvm-6.0.1-x86_64-linux-gnu-ubuntu-14.04.tar.xz > /dev/null
   - mv clang+llvm-6.0.1-x86_64-linux-gnu-ubuntu-14.04 ${LLVM_HOME}
-  - export PATH=${PATH}:${LLVM_HOME}/bin/
-
-before_script:
-  - cd ${TRAVIS_BUILD_DIR}
-  - git clone ${GTEST_REPO}
-  - cd googletest
-  - mkdir build
-  - cd build
-  - cmake -G "Unix Makefiles"
-          -DCMAKE_BUILD_TYPE=RelWithDebInfo
-          -DCMAKE_C_COMPILER=${C_COMPILER}
-          -DCMAKE_CXX_COMPILER=${CXX_COMPILER}
-          -DCMAKE_C_FLAGS="-I${LLVM_HOME}/include/c++/v1"
-          -DCMAKE_CXX_FLAGS="-nostdinc++ -std=c++11 -I${LLVM_HOME}/include/c++/v1"
-          ..
-  - make
-  - sudo make install
+  - export PATH=${LLVM_HOME}/bin/:${PATH}
+  - export LD_LIBRARY_PATH=${LLVM_HOME}/lib:${LD_LIBRARY_PATH}
+  - export LIBRARY_PATH=${LLVM_HOME}/lib:${LIBRARY_PATH}
+  - env
 
 script:
   - cd ${TRAVIS_BUILD_DIR}
   - mkdir build
   - cd build
+  - conan remote add conan-mpusz https://api.bintray.com/conan/mpusz/conan-mpusz
+  - CC=${C_COMPILER}; CXX=${CXX_COMPILER};
+         conan install .. --settings build_type=${BUILD_TYPE}
+                          --settings compiler=clang
+                          --settings compiler.libcxx=libc++
+                          --settings compiler.version=6.0
+                          --build google-benchmark
   - cmake -G "Unix Makefiles"
           -DCMAKE_BUILD_TYPE=${BUILD_TYPE}
           -DCMAKE_C_COMPILER=${C_COMPILER}
           -DCMAKE_CXX_COMPILER=${CXX_COMPILER}
           -DCMAKE_C_FLAGS="${COMPILATION_FLAGS} -I${LLVM_HOME}/include/c++/v1"
-          -DCMAKE_CXX_FLAGS="${COMPILATION_FLAGS} -nostdinc++ -I${LLVM_HOME}/include/c++/v1"
+          -DCMAKE_CXX_FLAGS="${COMPILATION_FLAGS} -I${LLVM_HOME}/include/c++/v1"
           -DCMAKE_EXE_LINKER_FLAGS="-L${LLVM_HOME}/lib -lc++"
           -DCMAKE_EXPORT_COMPILE_COMMANDS=YES
+          -DBUILD_BENCHMARK=YES
           ..
   - make
   - export LD_LIBRARY_PATH="${LD_LIBRARY_PATH}:${LLVM_HOME}/lib"
   - ctest
-  - valgrind ./algorithms_test
+  - valgrind ./bin/algorithms_test
 
 after_success:
   - llvm-profdata merge -sparse default.profraw -o default.profdata
-  - llvm-cov report ./algorithms_test -instr-profile=default.profdata
-  - llvm-cov show ./algorithms_test -instr-profile=default.profdata > coverage.txt
+  - llvm-cov report ./bin/algorithms_test -instr-profile=default.profdata
+  - llvm-cov show ./bin/algorithms_test -instr-profile=default.profdata > coverage.txt
   - bash <(curl -s https://codecov.io/bash) || echo "Codecov did not collect coverage reports"
 
