@@ -325,4 +325,18 @@ TEST(AlgArrays, euclideanAlgorithmGCD) {
   }
 }
 
+TEST(AlgArrays, sieveOfEratosthenes) {
+  using Test = std::pair<int, std::vector<int>>;
+  const std::vector<Test> testCases = {
+      {1, {}},
+      {2, {2}},
+      {3, {2, 3}},
+      {10, {2, 3, 5, 7}},
+      {50, {2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47}}};
+
+  for (const auto& [n, expt] : testCases) {
+    ASSERT_EQ(sieveOfEratosthenes(n), expt);
+  }
+}
+
 }  // namespace algorithms::test

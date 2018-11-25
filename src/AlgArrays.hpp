@@ -222,6 +222,13 @@ bool find132pattern(const std::vector<int>& iVector);
  */
 int euclideanAlgorithmGCD(int iNumberA, int iNumberB);
 
+/*! \brief The sieve of Eratosthenes is a simple, ancient algorithm for finding
+ *  all prime numbers up to any given limit (iN).
+ *  \Complexity      Time: O(N x loglogN)     Space: O(N)
+ *  \url https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes
+ */
+std::vector<int> sieveOfEratosthenes(const int iN);
+
 }  // namespace algorithms
 
 #endif  // ALGORITHMS__ALG_ARRAYS__HPP

@@ -542,4 +542,21 @@ int euclideanAlgorithmGCD(int iNumberA, int iNumberB) {
   return iNumberA;
 }
 
+std::vector<int> sieveOfEratosthenes(const int iN) {
+  assert(iN > 0);
+  std::vector<int> aPrimes;
+
+  std::vector<bool> aVector(iN + 1);
+  for (int p = 2; p <= iN; ++p) {
+    if (aVector[p] == false) {
+      aPrimes.push_back(p);
+      for (int q = 2 * p; q <= iN; q += p) {
+        aVector[q] = true;
+      }
+    }
+  }
+
+  return aPrimes;
+}
+
 }  // namespace algorithms
