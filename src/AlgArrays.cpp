@@ -559,4 +559,50 @@ std::vector<int> sieveOfEratosthenes(const int iN) {
   return aPrimes;
 }
 
+void radixSort(std::vector<unsigned int>* ioVector) {
+  constexpr std::size_t kBytesPartition = 1;
+  constexpr std::size_t kBitsPartition = kBytesPartition * 8;
+  constexpr std::size_t kNumPartitions = sizeof(unsigned int) / kBytesPartition;
+  constexpr std::size_t kSizeBucket = 1 << kBitsPartition;
+  constexpr std::size_t kBaseMask = kSizeBucket - 1;
+
+  static_assert(sizeof(unsigned int) % kBytesPartition == 0,
+                "Cannot Paritioning uniform");
+  static_assert(kBytesPartition <= sizeof(std::size_t),
+                "Partition size too big");
+
+  std::array<std::size_t, kSizeBucket> aBucket;
+  std::vector<unsigned int> aPartialSort;
+  aPartialSort.resize(ioVector->size());
+
+  for (std::size_t p = 0; p < kNumPartitions; ++p) {
+    const std::size_t kMask = kBaseMask << (p * kBitsPartition);
+    std::fill(aBucket.begin(), aBucket.end(), 0);
+
+    for (const auto iNumber : *ioVector) {
+      const std::size_t kIndex = (iNumber & kMask) >> (p * kBitsPartition);
+      assert(kIndex < aBucket.size());
+
+      ++aBucket[kIndex];
+    }
+
+    for (std::size_t i = 1; i < aBucket.size(); ++i) {
+      aBucket[i] += aBucket[i - 1];
+    }
+
+    for (auto it = ioVector->crbegin(); it != ioVector->crend(); ++it) {
+      const auto kValue = *it;
+      const std::size_t kIndexBucket = (kValue & kMask) >> (p * kBitsPartition);
+      assert(kIndexBucket < aBucket.size());
+
+      const std::size_t kIndexVect = --aBucket[kIndexBucket];
+      assert(kIndexVect < aPartialSort.size());
+
+      aPartialSort[kIndexVect] = kValue;
+    }
+
+    std::swap(*ioVector, aPartialSort);
+  }
+}
+
 }  // namespace algorithms

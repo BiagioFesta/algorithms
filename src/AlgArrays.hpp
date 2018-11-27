@@ -229,6 +229,12 @@ int euclideanAlgorithmGCD(int iNumberA, int iNumberB);
  */
 std::vector<int> sieveOfEratosthenes(const int iN);
 
+/*! \brief Radix sort is a non-comparative integer sorting algorithm.
+ *  \Complexity   Time: O(N)       Space: O(N)
+ *  \url https://en.wikipedia.org/wiki/Radix_sort
+ */
+void radixSort(std::vector<unsigned int>* ioVector);
+
 }  // namespace algorithms
 
 #endif  // ALGORITHMS__ALG_ARRAYS__HPP

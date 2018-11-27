@@ -19,6 +19,7 @@
 #include <AlgArrays.hpp>
 #include <Utilities.hpp>
 #include <algorithm>
+#include <random>
 #include <tuple>
 #include <vector>
 
@@ -336,6 +337,34 @@ TEST(AlgArrays, sieveOfEratosthenes) {
 
   for (const auto& [n, expt] : testCases) {
     ASSERT_EQ(sieveOfEratosthenes(n), expt);
+  }
+}
+
+TEST(AlgArrays, radixSort) {
+  using RndEngine_t = std::mt19937_64;
+  constexpr int kNumTest = 64;
+  constexpr std::size_t kMaxSize = 64;
+
+  RndEngine_t aRndEngine;
+  std::uniform_int_distribution<unsigned int> aDistribution;
+
+  std::vector<unsigned int> aVector, aSortedVector;
+
+  for (int i = 0; i < kNumTest; ++i) {
+    aVector.resize(aDistribution(aRndEngine) % kMaxSize);
+    std::generate(
+        aVector.begin(), aVector.end(), [&aRndEngine, &aDistribution]() {
+          return aDistribution(aRndEngine);
+        });
+
+    aSortedVector = aVector;
+    radixSort(&aSortedVector);
+
+    ASSERT_TRUE(std::is_sorted(aSortedVector.cbegin(), aSortedVector.cend()));
+    ASSERT_TRUE(std::is_permutation(aSortedVector.cbegin(),
+                                    aSortedVector.cend(),
+                                    aVector.cbegin(),
+                                    aVector.cend()));
   }
 }
 
