@@ -41,10 +41,11 @@ if(${BUILD_BENCHMARK})
 
   set(SRC_BENCHMARK
     benchmark/main.cpp
-    benchmark/benchmarkFlatSetVsSet.cpp)
+    benchmark/benchmarkFlatSetVsSet.cpp
+    benchmark/benchmarkRadixSort.cpp)
 
   add_executable(${PROJECT_NAME}_benchmark ${SRC_BENCHMARK})
   target_include_directories(${PROJECT_NAME}_benchmark PRIVATE src/)
-  target_link_libraries(${PROJECT_NAME}_benchmark PRIVATE benchmark::benchmark)
+  target_link_libraries(${PROJECT_NAME}_benchmark PRIVATE SRC_CORE benchmark::benchmark)
   target_compile_features(${PROJECT_NAME}_benchmark PRIVATE cxx_std_17)
 endif()

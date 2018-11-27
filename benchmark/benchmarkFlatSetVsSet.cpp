@@ -17,25 +17,16 @@
 */
 #include <benchmark/benchmark.h>
 #include <FlatSet.hpp>
-#include <random>
+#include <cstdint>
 #include <set>
 #include <type_traits>
+#include "Utilities.hpp"
 
 namespace {
 
-struct RndIntGenerator {
-  using RndEngine_t = std::mt19937_64;
-  using Seed_t = RndEngine_t::result_type;
-
-  explicit RndIntGenerator(Seed_t iSeed) : _rndEngine(iSeed) {}
-
-  int operator()() noexcept { return _rndDistribution(_rndEngine); }
-
-  RndEngine_t _rndEngine;
-  std::uniform_int_distribution<int> _rndDistribution;
-};
-
-RndIntGenerator sRandomIntsEngine{0};
+constexpr std::int64_t kMinValue = 1;
+constexpr std::int64_t kMaxValue = 1 << 15;
+static_assert(kMinValue <= kMaxValue);
 
 template <typename T, typename = std::void_t<>>
 struct hasReserve : std::false_type {};
@@ -48,12 +39,17 @@ static_assert(!hasReserve<std::set<int>>::value);
 
 template <typename ContainerOfInts>
 void InsertRndInts(const std::size_t iSize, ContainerOfInts* oContainer) {
+  using Type = typename ContainerOfInts::value_type;
+  using algorithms::benchmark::RndIntGenerator;
+
+  RndIntGenerator<Type> aRandomIntsEngine{0};
+
   if constexpr (hasReserve<ContainerOfInts>::value) {
     oContainer->reserve(iSize);
   }
 
   for (std::size_t i = 0; i < iSize; ++i) {
-    oContainer->insert(sRandomIntsEngine());
+    oContainer->insert(aRandomIntsEngine());
   }
 }
 
@@ -66,37 +62,39 @@ void BMinsert(::benchmark::State& iState) {
   using RangeType = decltype(iState.range());
   const RangeType kSize = iState.range();
 
-  Container aContainer;
   while (iState.KeepRunning()) {
+    Container aContainer;
     InsertRndInts(kSize, &aContainer);
   }
-  ::benchmark::DoNotOptimize(aContainer.count(::sRandomIntsEngine()));
 }
 BENCHMARK_TEMPLATE(BMinsert, std::set<int>)
     ->RangeMultiplier(2)
-    ->Range(1, 1 << 15);
+    ->Range(kMinValue, kMaxValue);
 BENCHMARK_TEMPLATE(BMinsert, FlatSet<int>)
     ->RangeMultiplier(2)
-    ->Range(1, 1 << 15);
+    ->Range(kMinValue, kMaxValue);
 
 template <typename Container>
 void BMlookup(::benchmark::State& ioState) {
+  using Type = typename Container::value_type;
   using RangeType = decltype(ioState.range());
 
   const RangeType kSize = ioState.range();
+
+  RndIntGenerator<Type> aRandomIntsEngine{0};
 
   Container aContainer;
   InsertRndInts(kSize, &aContainer);
 
   while (ioState.KeepRunning()) {
-    ::benchmark::DoNotOptimize(aContainer.count(::sRandomIntsEngine()));
+    ::benchmark::DoNotOptimize(aContainer.count(aRandomIntsEngine()));
   }
 }
 BENCHMARK_TEMPLATE(BMlookup, std::set<int>)
     ->RangeMultiplier(2)
-    ->Range(1, 1 << 15);
+    ->Range(kMinValue, kMaxValue);
 BENCHMARK_TEMPLATE(BMlookup, FlatSet<int>)
     ->RangeMultiplier(2)
-    ->Range(1, 1 << 15);
+    ->Range(kMinValue, kMaxValue);
 
 }  // namespace algorithms::benchmark
