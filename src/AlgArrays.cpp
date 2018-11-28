@@ -23,6 +23,7 @@
 #include <functional>
 #include <limits>
 #include <map>
+#include <numeric>
 #include <set>
 #include <stack>
 #include <string>
@@ -604,6 +605,41 @@ void radixSort(std::vector<unsigned int>* ioVector) {
 
     std::swap(*ioVector, aPartialSort);
   }
+}
+
+int maximumProduct(const std::vector<int>& iVector) {
+  constexpr std::size_t kMaxSizeMin = 2;
+  constexpr std::size_t kMaxSizeMax = 3;
+  assert(iVector.size() > 0);
+
+  if (iVector.size() <= 3) {
+    return std::accumulate(
+        iVector.cbegin(), iVector.cend(), 1, std::multiplies<int>{});
+  }
+
+  std::vector<int> aLower;
+  std::vector<int> aUpper;
+
+  for (const int aNum : iVector) {
+    aLower.push_back(aNum);
+    std::sort(aLower.begin(), aLower.end(), std::less<int>{});
+    if (aLower.size() > kMaxSizeMin) {
+      aLower.pop_back();
+    }
+
+    aUpper.push_back(aNum);
+    std::sort(aUpper.begin(), aUpper.end(), std::greater<int>{});
+    if (aUpper.size() > kMaxSizeMax) {
+      aUpper.pop_back();
+    }
+  }
+  assert(aLower.size() == kMaxSizeMin);
+  assert(aUpper.size() == kMaxSizeMax);
+
+  const int aCase1 = aLower[0] * aLower[1] * aUpper[0];
+  const int aCase2 = aUpper[0] * aUpper[1] * aUpper[2];
+
+  return std::max(aCase1, aCase2);
 }
 
 }  // namespace algorithms
