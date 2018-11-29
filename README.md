@@ -9,19 +9,4 @@
 Study project on algorithm design and implementation.
 
 ## Compilation
-### Requirements
-* Compiler support *C++17*.
-* [Conan](https://conan.io/).
-* [CMake](https://cmake.org/).
-
-### Build
-~~~
-git clone https://github.com/BiagioFesta/algorithms.git && \
-cd algorithms && \
-mkdir build && \
-cd build && \
-conan install --settings build_type=Debug .. && \
-cmake -DCMAKE_BUILD_TYPE=Debug .. && \
-make && \
-./algorithms_test
-~~~
+See the [Guide Here](https://github.com/BiagioFesta/algorithms/wiki/Compilation-Guide) in order to compile the project.
