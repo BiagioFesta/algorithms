@@ -618,7 +618,9 @@ int maximumProduct(const std::vector<int>& iVector) {
   }
 
   std::vector<int> aLower;
+  aLower.reserve(kMaxSizeMin);
   std::vector<int> aUpper;
+  aUpper.reserve(kMaxSizeMax);
 
   for (const int aNum : iVector) {
     aLower.push_back(aNum);
