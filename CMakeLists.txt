@@ -7,7 +7,8 @@ target_sources(SRC_CORE INTERFACE
   ${PROJECT_SOURCE_DIR}/src/DynamicProgramming.cpp
   ${PROJECT_SOURCE_DIR}/src/AlgArrays.cpp
   ${PROJECT_SOURCE_DIR}/src/LRUCache.cpp
-  ${PROJECT_SOURCE_DIR}/src/BackTracking.cpp)
+  ${PROJECT_SOURCE_DIR}/src/BackTracking.cpp
+  ${PROJECT_SOURCE_DIR}/src/Twitter.cpp)
 
 if(EXISTS ${CMAKE_BINARY_DIR}/conanbuildinfo.cmake)
   include(${CMAKE_BINARY_DIR}/conanbuildinfo.cmake)
@@ -27,7 +28,8 @@ add_executable(${PROJECT_NAME}_test
   test/testBST.cpp
   test/testPriorityQueue.cpp
   test/testBackTracking.cpp
-  test/testFlatSet.cpp)
+  test/testFlatSet.cpp
+  test/testTwitter.cpp)
 target_include_directories(${PROJECT_NAME}_test PRIVATE src/)
 target_link_libraries(${PROJECT_NAME}_test SRC_CORE GTest::GTest GTest::Main)
 target_compile_features(${PROJECT_NAME}_test PRIVATE cxx_std_17)
