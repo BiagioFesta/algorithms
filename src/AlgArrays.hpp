@@ -253,6 +253,18 @@ int maximumProduct(const std::vector<int>& iVector);
  */
 void rotateRight(std::vector<int>* ioVector, int k);
 
+/*! \brief Given an array of citations (each citation is a non-negative integer)
+ *  of a researcher, write a function to compute the researcher's h-index.
+ *
+ *  According to the definition of h-index on Wikipedia: "A scientist has
+ *  index h if h of his/her N papers have at least h citations each, and the
+ *  other N − h papers have no more than h citations each."
+ *
+ *  \Complexity       Time: O(NlogN)     Space: O(1)
+ *  \url https://leetcode.com/problems/h-index/
+ */
+int hIndex(std::vector<int>* iCitations);
+
 }  // namespace algorithms
 
 #endif  // ALGORITHMS__ALG_ARRAYS__HPP
