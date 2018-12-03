@@ -405,12 +405,28 @@ TEST(AlgArrays, hIndex) {
                                        {{3, 0, 3, 6, 3, 1, 5, 3}, 3},
                                        {{1, 1}, 1},
                                        {{0, 0, 0}, 0},
+                                       {{}, 0},
                                        {{100}, 1},
                                        {{1, 2}, 1}};
 
   for (const auto& [v, expt] : testCases) {
     auto input = v;
     ASSERT_EQ(hIndex(&input), expt);
+  }
+}
+
+TEST(AlgArrays, hIndexLinear) {
+  using Test = std::pair<std::vector<int>, int>;
+  const std::vector<Test> testCases = {{{3, 0, 6, 1, 5}, 3},
+                                       {{3, 0, 3, 6, 3, 1, 5, 3}, 3},
+                                       {{1, 1}, 1},
+                                       {{0, 0, 0}, 0},
+                                       {{}, 0},
+                                       {{100}, 1},
+                                       {{1, 2}, 1}};
+
+  for (const auto& [v, expt] : testCases) {
+    ASSERT_EQ(hIndexLinear(v), expt);
   }
 }
 

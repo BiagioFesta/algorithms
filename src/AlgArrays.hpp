@@ -265,6 +265,19 @@ void rotateRight(std::vector<int>* ioVector, int k);
  */
 int hIndex(std::vector<int>* iCitations);
 
+/*! \brief Given an array of citations (each citation is a non-negative integer)
+ *  of a researcher, write a function to compute the researcher's h-index.
+ *
+ *  According to the definition of h-index on Wikipedia: "A scientist has
+ *  index h if h of his/her N papers have at least h citations each, and the
+ *  other N − h papers have no more than h citations each."
+ *
+ *  \see hIndex
+ *  \Complexity       Time: O(N)     Space: O(N)
+ *  \url https://leetcode.com/problems/h-index/
+ */
+int hIndexLinear(const std::vector<int>& iCitations);
+
 }  // namespace algorithms
 
 #endif  // ALGORITHMS__ALG_ARRAYS__HPP

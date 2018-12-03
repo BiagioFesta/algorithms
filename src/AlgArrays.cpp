@@ -692,4 +692,26 @@ int hIndex(std::vector<int>* iCitations) {
   return aIndexH;
 }
 
+int hIndexLinear(const std::vector<int>& iCitations) {
+  const int kSize = iCitations.size();
+
+  std::vector<int> freq(kSize + 1);
+  for (int cit : iCitations) {
+    assert(cit >= 0);
+    cit = std::min(kSize, cit);
+    ++freq[cit];
+  }
+
+  int aCounter = 0;
+  for (int i = kSize; i > 0; --i) {
+    aCounter += freq[i];
+
+    if (i <= aCounter) {
+      return i;
+    }
+  }
+
+  return 0;
+}
+
 }  // namespace algorithms
