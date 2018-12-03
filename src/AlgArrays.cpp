@@ -668,4 +668,28 @@ void rotateRight(std::vector<int>* ioVector, int k) {
   }      // if kSize > 0
 }
 
+int hIndex(std::vector<int>* iCitations) {
+  assert(std::all_of(iCitations->cbegin(),
+                     iCitations->cend(),
+                     [](const int num) { return num >= 0; }));
+
+  std::sort(iCitations->begin(), iCitations->end());
+
+  int aIndexH = iCitations->size();
+
+  while (aIndexH) {
+    const auto ub =
+        std::upper_bound(iCitations->cbegin(), iCitations->cend(), aIndexH);
+    const auto lb =
+        std::lower_bound(iCitations->cbegin(), iCitations->cend(), aIndexH);
+    const auto maxH = std::distance(lb, iCitations->cend());
+    const auto minH = std::min(maxH, std::distance(ub, iCitations->cend()));
+
+    if (minH <= aIndexH && aIndexH <= maxH) return aIndexH;
+    --aIndexH;
+  }
+
+  return aIndexH;
+}
+
 }  // namespace algorithms
