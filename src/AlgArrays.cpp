@@ -644,4 +644,28 @@ int maximumProduct(const std::vector<int>& iVector) {
   return std::max(aCase1, aCase2);
 }
 
+void rotateRight(std::vector<int>* ioVector, int k) {
+  const std::int64_t kSize = ioVector->size();  // we assume size < INT64_MAX
+  if (kSize > 0) {
+    k %= kSize;
+    if (k < 0) {
+      k = kSize + k;
+    }
+
+    const int numPartitions = euclideanAlgorithmGCD(kSize, k);
+    const int numPermutations = kSize / numPartitions;
+
+    int value, idx;
+    for (int i = 0; i < numPartitions; ++i) {
+      value = (*ioVector)[i];
+      idx = i;
+
+      for (int j = 0; j < numPermutations; ++j) {
+        idx = (idx + k) % kSize;
+        std::swap(value, (*ioVector)[idx]);
+      }  // for j
+    }    // for i
+  }      // if kSize > 0
+}
+
 }  // namespace algorithms
