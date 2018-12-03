@@ -381,4 +381,22 @@ TEST(AlgArrays, maximumProduct) {
   }
 }
 
+TEST(AlgArrays, rotateRight) {
+  using Test = std::tuple<std::vector<int>, int, std::vector<int>>;
+  const std::vector<Test> testCases = {
+      {{1, 2, 3, 4, 5, 6, 7}, 3, {5, 6, 7, 1, 2, 3, 4}},
+      {{}, 10, {}},
+      {{1, 2, 3, 4, 5, 6, 7}, 0, {1, 2, 3, 4, 5, 6, 7}},
+      {{1, 2, 3, 4, 5, 6, 7}, -1, {2, 3, 4, 5, 6, 7, 1}},
+      {{1, 2, 3}, 3, {1, 2, 3}},
+      {{1, 2, 3}, -6, {1, 2, 3}},
+      {{1, 2, 3, 4, 5, 6}, 2, {5, 6, 1, 2, 3, 4}}};
+
+  for (const auto& [v, k, expt] : testCases) {
+    auto rotated = v;
+    rotateRight(&rotated, k);
+    ASSERT_EQ(rotated, expt);
+  }
+}
+
 }  // namespace algorithms::test
