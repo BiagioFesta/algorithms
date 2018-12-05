@@ -17,8 +17,11 @@
 */
 #ifndef ALGORITHMS__BENCHMARK__UTILITIES__HPP
 #define ALGORITHMS__BENCHMARK__UTILITIES__HPP
+#include <algorithm>
+#include <cstdint>
 #include <random>
 #include <type_traits>
+#include <vector>
 
 namespace algorithms::benchmark {
 
@@ -37,6 +40,16 @@ struct RndIntGenerator {
   RndEngine_t _rndEngine;
   std::uniform_int_distribution<value_type> _rndDistribution;
 };
+
+template <typename T, typename RndGenerator = RndIntGenerator<T>>
+std::vector<T> generateVector(const std::size_t iSize,
+                              typename RndGenerator::Seed_t iSeed = 0) {
+  RndGenerator aRndGenerator{iSeed};
+
+  std::vector<T> aVector(iSize);
+  std::generate(aVector.begin(), aVector.end(), aRndGenerator);
+  return aVector;
+}
 
 }  // namespace algorithms::benchmark
 
