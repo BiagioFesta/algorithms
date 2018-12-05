@@ -44,7 +44,8 @@ if(${BUILD_BENCHMARK})
   set(SRC_BENCHMARK
     benchmark/main.cpp
     benchmark/benchmarkFlatSetVsSet.cpp
-    benchmark/benchmarkRadixSort.cpp)
+    benchmark/benchmarkRadixSort.cpp
+    benchmark/benchmarkHIndex.cpp)
 
   add_executable(${PROJECT_NAME}_benchmark ${SRC_BENCHMARK})
   target_include_directories(${PROJECT_NAME}_benchmark PRIVATE src/)
