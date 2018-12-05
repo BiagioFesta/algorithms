@@ -62,7 +62,7 @@ void BMinsert(::benchmark::State& iState) {
   using RangeType = decltype(iState.range());
   const RangeType kSize = iState.range();
 
-  while (iState.KeepRunning()) {
+  for (auto _ : iState) {
     Container aContainer;
     InsertRndInts(kSize, &aContainer);
   }
@@ -75,18 +75,18 @@ BENCHMARK_TEMPLATE(BMinsert, FlatSet<int>)
     ->Range(kMinValue, kMaxValue);
 
 template <typename Container>
-void BMlookup(::benchmark::State& ioState) {
+void BMlookup(::benchmark::State& iState) {
   using Type = typename Container::value_type;
-  using RangeType = decltype(ioState.range());
+  using RangeType = decltype(iState.range());
 
-  const RangeType kSize = ioState.range();
+  const RangeType kSize = iState.range();
 
   RndIntGenerator<Type> aRandomIntsEngine{0};
 
   Container aContainer;
   InsertRndInts(kSize, &aContainer);
 
-  while (ioState.KeepRunning()) {
+  for (auto _ : iState) {
     ::benchmark::DoNotOptimize(aContainer.count(aRandomIntsEngine()));
   }
 }
