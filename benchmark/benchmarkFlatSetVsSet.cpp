@@ -16,7 +16,7 @@
 
 */
 #include <benchmark/benchmark.h>
-#include <FlatSet.hpp>
+#include <algorithms/FlatSet/FlatSet.hpp>
 #include <cstdint>
 #include <set>
 #include <type_traits>

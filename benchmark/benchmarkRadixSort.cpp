@@ -16,8 +16,8 @@
 
 */
 #include <benchmark/benchmark.h>
-#include <AlgArrays.hpp>
 #include <algorithm>
+#include <algorithms/Array/RadixSort.hpp>
 #include <cstdint>
 #include <vector>
 #include "Utilities.hpp"
@@ -37,7 +37,7 @@ void bmRadixSort(::benchmark::State& iState) {
 
   for (auto _ : iState) {
     auto v = generateVector<unsigned int>(kSize);
-    radixSort(&v);
+    RadixSort(&v);
     ::benchmark::DoNotOptimize(std::is_sorted(v.cbegin(), v.cend()));
   }
 }
