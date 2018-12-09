@@ -17,8 +17,6 @@
 */
 #include <benchmark/benchmark.h>
 #include <AlgArrays.hpp>
-#include <algorithm>
-#include <array>
 #include <cstdint>
 #include <limits>
 #include <vector>
@@ -30,36 +28,34 @@ constexpr std::int64_t kMinValue = 1;
 constexpr std::int64_t kMaxValue = 1 << 15;
 static_assert(kMinValue <= kMaxValue);
 
-std::vector<int> generateVector(const std::size_t iSize) {
-  using algorithms::benchmark::RndIntGenerator;
-  using RndInteger_t = std::uint16_t;
+std::vector<int> generatePositiveInts(const std::size_t iSize) {
+  using algorithms::benchmark::generateVector;
+  using PositiveInt_t = std::uint16_t;
 
-  RndIntGenerator<RndInteger_t> aRndGenerator{0};
-  static_assert(std::numeric_limits<RndInteger_t>::max() <=
+  static_assert(std::numeric_limits<PositiveInt_t>::max() <=
                 std::numeric_limits<int>::max());
 
-  std::vector<int> aVector(iSize);
-  std::generate(aVector.begin(), aVector.end(), aRndGenerator);
-  return aVector;
+  auto aVector = generateVector<PositiveInt_t>(iSize);
+  return {aVector.cbegin(), aVector.cend()};
 }
 
 }  // anonymous namespace
 
 namespace algorithms::benchmark {
 
-void bmHIndex(::benchmark::State& ioState) {
-  auto v = ::generateVector(ioState.range());
+void bmHIndex(::benchmark::State& iState) {
+  auto v = ::generatePositiveInts(iState.range());
 
-  for (auto _ : ioState) {
+  for (auto _ : iState) {
     ::benchmark::DoNotOptimize(hIndex(&v));
   }
 }
 BENCHMARK(bmHIndex)->RangeMultiplier(2)->Range(::kMinValue, ::kMaxValue);
 
-void bmHIndexLinear(::benchmark::State& ioState) {
-  auto v = ::generateVector(ioState.range());
+void bmHIndexLinear(::benchmark::State& iState) {
+  auto v = ::generatePositiveInts(iState.range());
 
-  for (auto _ : ioState) {
+  for (auto _ : iState) {
     ::benchmark::DoNotOptimize(hIndexLinear(v));
   }
 }
