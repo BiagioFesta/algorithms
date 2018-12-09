@@ -16,7 +16,7 @@
 
 */
 #include <benchmark/benchmark.h>
-#include <AlgArrays.hpp>
+#include <algorithms/Array/HIndex.hpp>
 #include <cstdint>
 #include <limits>
 #include <vector>
@@ -47,7 +47,7 @@ void bmHIndex(::benchmark::State& iState) {
   auto v = ::generatePositiveInts(iState.range());
 
   for (auto _ : iState) {
-    ::benchmark::DoNotOptimize(hIndex(&v));
+    ::benchmark::DoNotOptimize(HIndex(&v));
   }
 }
 BENCHMARK(bmHIndex)->RangeMultiplier(2)->Range(::kMinValue, ::kMaxValue);
@@ -56,7 +56,7 @@ void bmHIndexLinear(::benchmark::State& iState) {
   auto v = ::generatePositiveInts(iState.range());
 
   for (auto _ : iState) {
-    ::benchmark::DoNotOptimize(hIndexLinear(v));
+    ::benchmark::DoNotOptimize(HIndexLinear(v));
   }
 }
 BENCHMARK(bmHIndexLinear)->RangeMultiplier(2)->Range(::kMinValue, ::kMaxValue);
