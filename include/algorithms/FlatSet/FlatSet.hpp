@@ -42,7 +42,7 @@ class FlatSet {
   using size_type = std::size_t;
   using reference = value_type&;
   using pointer = typename std::allocator_traits<Allocator>::pointer;
-  using internal_container = std::vector<value_type>;
+  using internal_container = std::vector<value_type, allocator_type>;
   using iterator = typename internal_container::iterator;
   using const_iterator = typename internal_container::const_iterator;
 
