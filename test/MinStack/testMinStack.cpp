@@ -17,13 +17,12 @@
 */
 #include <gtest/gtest.h>
 #include <algorithms/MinStack/MinStack.hpp>
-#include <stdexcept>
 
 namespace algorithms::test {
 
-static constexpr int kSize = 42;
-
 TEST(MinStack, PushAndTop) {
+  const int kSize = 42;
+
   MinStack<int> mStack;
   for (int i = 0; i < kSize; ++i) {
     mStack.push(i);
@@ -32,20 +31,16 @@ TEST(MinStack, PushAndTop) {
 }
 
 TEST(MinStack, KeepMin) {
-  MinStack<int> mStack;
-  for (int i = 0; i < kSize; ++i) {
-    mStack.push(i);
-    if ((i + 1) % 3 == 0) mStack.pop();
-    ASSERT_EQ(mStack.getMin(), 0);
-  }
-}
+  const std::vector<int> aNumsSequence = {10, 20, 30, 5, 15, 25, 2, 9, 18};
 
-TEST(MinStack, GetMinOnEmpty) {
   MinStack<int> mStack;
-  mStack.push(1);
-  ASSERT_EQ(mStack.getMin(), 1);
-  mStack.pop();
-  ASSERT_THROW(mStack.getMin(), std::exception);
+  for (std::size_t i = 0; i < aNumsSequence.size(); ++i) {
+    mStack.push(aNumsSequence[i]);
+
+    ASSERT_EQ(*std::min_element(aNumsSequence.cbegin(),
+                                aNumsSequence.cbegin() + i + 1),
+              mStack.getMin());
+  }
 }
 
 }  // namespace algorithms::test

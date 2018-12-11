@@ -17,9 +17,8 @@
 */
 #ifndef ALGORITHMS__MIN_STACK__HPP
 #define ALGORITHMS__MIN_STACK__HPP
-#include <algorithm>
-#include <deque>
-#include <stdexcept>
+#include <functional>
+#include <stack>
 #include <utility>
 
 namespace algorithms {
@@ -28,68 +27,66 @@ namespace algorithms {
  *  minimum element in constant time.
  *  \note https://leetcode.com/problems/min-stack/
  */
-template <typename T>
+template <typename T, typename Compare = std::less<T>>
 class MinStack {
  public:
   using value_type = T;
   using reference = value_type&;
   using const_reference = const value_type&;
 
-  //! \Complexity  Time O(1)
+  //! \note Complexity ->  Time: O(1)
   void push(value_type v);
 
-  //! \Complexity  Time O(N)
+  //! \note Complexity ->  Time: O(1)
   void pop();
 
-  /*! \Complexity  Time O(1)
+  /*! \note Complexity ->  Time: O(1)
    *  \note Undefined behaviour if the container is empty.
    */
   const_reference top() const noexcept;
 
-  /*! \return the minimum value in the MinStack
-   *  \throw in case the container is emtpy.
-   *  \Complexity  Time O(1)
+  /*! \return the minimum value in the MinStack.
+   *  \note Undefined behaviour if the container is empty.
+   *  \note Complexity ->  Time: O(1)
    */
   const_reference getMin() const;
 
  private:
-  std::deque<value_type> _data;
-  const value_type* _min = nullptr;
+  std::stack<value_type> _data;
+  std::stack<const value_type*> _mins;
 };
 
-template <typename T>
-void MinStack<T>::push(value_type v) {
-  _data.push_back(std::move(v));
+template <typename T, typename Compare>
+void MinStack<T, Compare>::push(value_type v) {
+  _data.push(std::move(v));
 
-  if ((!_min) || (top() < *_min)) {
-    _min = &top();
+  const auto& aTop = _data.top();
+  if (_mins.empty() || Compare{}(aTop, *(_mins.top()))) {
+    _mins.push(&aTop);
   }
 }
 
-template <typename T>
-void MinStack<T>::pop() {
-  _data.pop_back();
-
-  const auto min = std::min_element(_data.cbegin(), _data.cend());
-  if (min == _data.cend()) {
-    _min = nullptr;
-  } else {
-    _min = &(*min);
+template <typename T, typename Compare>
+void MinStack<T, Compare>::pop() {
+  if (_mins.top() == &_data.top()) {
+    _mins.pop();
   }
+
+  _data.pop();
 }
 
-template <typename T>
-typename MinStack<T>::const_reference MinStack<T>::top() const noexcept {
+template <typename T, typename Compare>
+typename MinStack<T, Compare>::const_reference MinStack<T, Compare>::top() const
+    noexcept {
   assert(_data.empty() == false);
-  return _data.back();
+  return _data.top();
 }
 
-template <typename T>
-typename MinStack<T>::const_reference MinStack<T>::getMin() const {
-  if (_min == nullptr) {
-    throw std::runtime_error("Empty container");
-  }
-  return *_min;
+template <typename T, typename Compare>
+typename MinStack<T, Compare>::const_reference MinStack<T, Compare>::getMin()
+    const {
+  assert(_mins.empty() == false);
+  return *(_mins.top());
 }
 
 }  // namespace algorithms
