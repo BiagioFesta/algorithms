@@ -33,6 +33,7 @@ class MinStack {
   using value_type = T;
   using reference = value_type&;
   using const_reference = const value_type&;
+  using size_type = std::size_t;
 
   //! \note Complexity ->  Time: O(1)
   void push(value_type v);
@@ -50,6 +51,9 @@ class MinStack {
    *  \note Complexity ->  Time: O(1)
    */
   const_reference getMin() const;
+
+  //! \return the size of the container.
+  size_type size() const noexcept;
 
  private:
   std::stack<value_type> _data;
@@ -87,6 +91,12 @@ typename MinStack<T, Compare>::const_reference MinStack<T, Compare>::getMin()
     const {
   assert(_mins.empty() == false);
   return *(_mins.top());
+}
+
+template <typename T, typename Compare>
+typename MinStack<T, Compare>::size_type MinStack<T, Compare>::size() const
+    noexcept {
+  return _data.size();
 }
 
 }  // namespace algorithms

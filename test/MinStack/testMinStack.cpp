@@ -43,4 +43,32 @@ TEST(MinStack, KeepMin) {
   }
 }
 
+TEST(MinStack, PushAndSize) {
+  const int kSize = 42;
+
+  MinStack<int> mStack;
+  for (int i = 0; i < kSize; ++i) {
+    ASSERT_EQ(mStack.size(), static_cast<std::size_t>(i));
+    mStack.push(i);
+  }
+
+  ASSERT_EQ(mStack.size(), static_cast<std::size_t>(kSize));
+}
+
+TEST(MinStack, PushAndPop) {
+  const int kSize = 42;
+
+  MinStack<int> mStack;
+  for (int i = 0; i < kSize; ++i) {
+    mStack.push(i);
+  }
+
+  for (int i = 0; i < kSize; ++i) {
+    ASSERT_EQ(mStack.size(), static_cast<std::size_t>(kSize - i));
+    mStack.pop();
+  }
+
+  ASSERT_EQ(mStack.size(), 0ull);
+}
+
 }  // namespace algorithms::test
