@@ -25,10 +25,10 @@ namespace algorithms {
  *  determines the number of pairs of array elements that have a difference
  *  equal to a target value.
  *  \return The number of pairs.
- *  \Complexity    Time: O(NlogN)    Space: O(N)
- *  \url https://www.hackerrank.com/challenges/pairs/problem
+ *  \note   Complexity ->   Time: O(N)    Space: O(N)
+ *  \note https://www.hackerrank.com/challenges/pairs/problem
  */
-int Pairs(std::vector<int> iNums, int iTarget);
+int Pairs(const std::vector<int>& iNums, int iTarget);
 
 }  // namespace algorithms
 
