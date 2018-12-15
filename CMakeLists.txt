@@ -110,6 +110,7 @@ add_executable(${PROJECT_NAME}_test
   ${PROJECT_SOURCE_DIR}/test/BackTracking/testCombinationSum3.cpp
   ${PROJECT_SOURCE_DIR}/test/BackTracking/testCombinationSum.cpp
   ${PROJECT_SOURCE_DIR}/test/BST/testBST.cpp
+  ${PROJECT_SOURCE_DIR}/test/CTCI/Chapter2/testDoubleLinkedList.cpp
   ${PROJECT_SOURCE_DIR}/test/DynamicProgramming/testBinomialCoefficient.cpp
   ${PROJECT_SOURCE_DIR}/test/DynamicProgramming/testCheapestJump.cpp
   ${PROJECT_SOURCE_DIR}/test/DynamicProgramming/testFibonacci.cpp
