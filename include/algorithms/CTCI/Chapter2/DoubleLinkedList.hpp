@@ -36,6 +36,11 @@ class DoubleLinkedList final {
   //! \brief Default constructore. Initializes an empty list.
   DoubleLinkedList() = default;
 
+  /*! \brief Destructor. Call `clean`.
+   *  \see clean.
+   */
+  ~DoubleLinkedList();
+
   //! \brief Initializes the list copying values from another sequence.
   template <typename InputIt>
   DoubleLinkedList(InputIt first, InputIt last);
@@ -79,11 +84,6 @@ class DoubleLinkedList final {
    *  \note  Complexity -> Time: O(N) where N is the size.
    */
   void clean();
-
-  /*! \brief Destructor. Call `clean`.
-   *  \see clean.
-   */
-  ~DoubleLinkedList();
 
  private:
   struct Node {

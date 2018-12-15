@@ -104,4 +104,29 @@ TEST_F(DoubleLinkedListTest, MoveOperator) {
   }
 }
 
+TEST_F(DoubleLinkedListTest, CopyConstructor) {
+  _list = DoubleLinkedList(kSequence.cbegin(), kSequence.cend());
+
+  DoubleLinkedList copyList(_list);
+
+  ASSERT_EQ(_list.size(), copyList.size());
+
+  for (std::size_t i = 0ll; i < _list.size(); ++i) {
+    ASSERT_EQ(_list.getByIndex(i), copyList.getByIndex(i));
+  }
+}
+
+TEST_F(DoubleLinkedListTest, MoveConstructor) {
+  _list = DoubleLinkedList(kSequence.cbegin(), kSequence.cend());
+
+  DoubleLinkedList initList(std::move(_list));
+
+  ASSERT_EQ(_list.size(), 0ull);
+  ASSERT_EQ(initList.size(), kSequence.size());
+
+  for (std::size_t i = 0ll; i < initList.size(); ++i) {
+    ASSERT_EQ(initList.getByIndex(i), kSequence[i]);
+  }
+}
+
 }  // namespace algorithms::test
