@@ -21,7 +21,7 @@
 namespace algorithms {
 
 /*! \brief It computes the greatest common divisor (GCD) of two numbers.
- *  \url https://en.wikipedia.org/wiki/Euclidean_algorithm
+ *  \note https://en.wikipedia.org/wiki/Euclidean_algorithm
  */
 int EuclideanAlgorithmGCD(int iNumberA, int iNumberB);
 

@@ -24,8 +24,8 @@ namespace algorithms {
 /*! \brief Given an array of integers and an integer k, it finds out whether
  *  there are two distinct indices i and j in the array such that iNums[i] =
  *  iNums[j] and the absolute difference between i and j is at most k.
- *  \Complexity   Time: O(N)        Space: O(N)
- *  \url https://leetcode.com/problems/contains-duplicate-ii/description/
+ *  \note  Complexity ->  Time: O(N)        Space: O(N)
+ *  \note https://leetcode.com/problems/contains-duplicate-ii/description/
  */
 bool ContainsNearbyDuplicate(const std::vector<int>& iNums, const int k);
 

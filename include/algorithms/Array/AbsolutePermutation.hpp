@@ -29,8 +29,8 @@ namespace algorithms {
  *  \return given 'n' and 'k', it returns the lexicographically smallest
  *  absolute permutation P. If no absolute permutation exists, it returns a
  *  vecotr of {-1}.
- *  Complexity  Time: O(N)    Space: O(N)
- *  \url https://www.hackerrank.com/challenges/absolute-permutation/problem
+ *  \note  Complexity -> Time: O(N)    Space: O(N)
+ *  \note https://www.hackerrank.com/challenges/absolute-permutation/problem
  */
 std::vector<int> AbsolutePermutation(const int n, const int k);
 

@@ -24,8 +24,8 @@ namespace algorithms {
 /*! \brief Given a binary array, it finds the maximum length of a contiguous
  *  subarray with equal number of 0 and 1.
  *  \note It returns 0 in case no solution.
- *  \Complexity     Time: O(N)    Space: O(N)
- *  \url https://leetcode.com/problems/contiguous-array/description/
+ *  \note  Complexity ->     Time: O(N)    Space: O(N)
+ *  \note https://leetcode.com/problems/contiguous-array/description/
  */
 int ContiguousArray(const std::vector<int>& iBits);
 

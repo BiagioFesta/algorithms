@@ -32,8 +32,8 @@ namespace algorithms {
  *                                 Size: N
  *  \return The position in the leaderboard of Alice after each game (the score
  *  obtained by Alice is identified by the param 'iAliceScores').
- *  \Complexity   Time: O(NlogM)    Space: O(M + N)
- *  \url https://www.hackerrank.com/challenges/climbing-the-leaderboard/problem
+ *  \note  Complexity ->  Time: O(NlogM)    Space: O(M + N)
+ *  \note https://www.hackerrank.com/challenges/climbing-the-leaderboard/problem
  */
 std::vector<int> climbingLeaderboard(const std::vector<int>& iLeaderBoard,
                                      const std::vector<int>& iAliceScores);
