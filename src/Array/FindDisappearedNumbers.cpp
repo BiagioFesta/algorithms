@@ -22,18 +22,21 @@
 namespace algorithms {
 
 std::vector<int> FindDisappearedNumbers(const std::vector<int>& iVector) {
-  std::vector<bool> table(iVector.size(), false);
-  for (const int n : iVector) {
-    assert(n <= static_cast<int>(iVector.size()));
-    assert(n >= 1);
+  const int kSize = static_cast<int>(iVector.size());
 
+  std::vector<bool> table(kSize, false);
+  for (const int n : iVector) {
+    assert(n >= 1 && n <= kSize);
     table[n - 1] = true;
   }
 
   std::vector<int> missing;
-  missing.reserve(iVector.size());
-  for (int i = 0; i < static_cast<int>(iVector.size()); ++i) {
-    if (table[i] == false) missing.push_back(i + 1);
+  missing.reserve(kSize);
+
+  for (int i = 0; i < kSize; ++i) {
+    if (table[i] == false) {
+      missing.push_back(i + 1);
+    }
   }
 
   return missing;
