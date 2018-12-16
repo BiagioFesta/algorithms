@@ -25,8 +25,8 @@ namespace algorithms {
  *  subsequence ai, aj, ak such that i < j < k and ai < ak < aj.
  *  Design an algorithm that takes a list of n numbers as input and checks
  *  whether there is a 132 pattern in the list.
- *  \Complexity          Time: O(N)     Space: O(N)
- *  \url https://leetcode.com/problems/132-pattern/description/
+ *  \note  Complexity ->  Time: O(N)     Space: O(N)
+ *  \note https://leetcode.com/problems/132-pattern/description/
  */
 bool Find132pattern(const std::vector<int>& iVector);
 

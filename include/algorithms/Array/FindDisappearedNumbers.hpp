@@ -25,8 +25,9 @@ namespace algorithms {
  *  some elements appear twice and others appear once.
  *  It finds all the elements of [1, n] inclusive that do not appear in this
  *  array.
- *  \url
- * https://leetcode.com/problems/find-all-numbers-disappeared-in-an-array/description/
+ *  \note  Complexity -> Time: O(N)    Space: O(N)
+ *  \note
+ *  https://leetcode.com/problems/find-all-numbers-disappeared-in-an-array/description/
  */
 std::vector<int> FindDisappearedNumbers(const std::vector<int>& iVector);
 
