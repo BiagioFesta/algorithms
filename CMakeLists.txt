@@ -17,6 +17,7 @@ target_sources(${PROJECT_NAME}
   ${PROJECT_SOURCE_DIR}/src/Array/IsOneBitCharacter.cpp
   ${PROJECT_SOURCE_DIR}/src/Array/IsPalindrome.cpp
   ${PROJECT_SOURCE_DIR}/src/Array/IsPermutation.cpp
+  ${PROJECT_SOURCE_DIR}/src/Array/JumpGame2.cpp
   ${PROJECT_SOURCE_DIR}/src/Array/KokoEatingBananas.cpp
   ${PROJECT_SOURCE_DIR}/src/Array/LargestNumber.cpp
   ${PROJECT_SOURCE_DIR}/src/Array/LarrysArray.cpp
@@ -94,6 +95,7 @@ add_executable(${PROJECT_NAME}_test
   ${PROJECT_SOURCE_DIR}/test/Array/testIsOneBitCharacter.cpp
   ${PROJECT_SOURCE_DIR}/test/Array/testIsPalindrome.cpp
   ${PROJECT_SOURCE_DIR}/test/Array/testIsPermutation.cpp
+  ${PROJECT_SOURCE_DIR}/test/Array/testJumpGame2.cpp
   ${PROJECT_SOURCE_DIR}/test/Array/testKokoEatingBananas.cpp
   ${PROJECT_SOURCE_DIR}/test/Array/testLargestNumber.cpp
   ${PROJECT_SOURCE_DIR}/test/Array/testLarrysArray.cpp
