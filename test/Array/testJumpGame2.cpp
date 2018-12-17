@@ -27,7 +27,8 @@ TEST(Array, JumpGame2) {
   const std::vector<Test> testCases = {
       {{2, 3, 1, 1, 4}, 2},
       {{10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 1, 0}, 2},
-      {{3, 2, 1}, 1}};
+      {{3, 2, 1}, 1},
+      {{0}, 0}};
 
   for (const auto& [nums, expt] : testCases) {
     ASSERT_EQ(JumpGame2(nums), expt);
