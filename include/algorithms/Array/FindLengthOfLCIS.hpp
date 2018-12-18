@@ -23,9 +23,9 @@ namespace algorithms {
 
 /*! \brief Given an unsorted array of integers, it finds the length of longest
  *  continuous increasing subsequence (subarray).
- *  \Complexity    Time:  O(N)
- *  \url
- * https://leetcode.com/problems/longest-continuous-increasing-subsequence/description/
+ *  \note  Complexity ->  Time:  O(N)   Space: O(1)
+ *  \note
+ *  https://leetcode.com/problems/longest-continuous-increasing-subsequence/description/
  */
 int FindLengthOfLCIS(const std::vector<int>& iVector);
 

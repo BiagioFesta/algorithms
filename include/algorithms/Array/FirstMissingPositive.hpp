@@ -23,8 +23,8 @@ namespace algorithms {
 
 /*! \brief Given an unsorted integer array, find the smallest missing positive
  *  integer.
- *  \Complexity Time: O(n)      Space: O(1) - it exploits the input.
- *  \url https://leetcode.com/problems/first-missing-positive/description/
+ *  \note  Complexity  -> Time: O(N)   Space: O(1) - it exploits the input.
+ *  \note https://leetcode.com/problems/first-missing-positive/description/
  */
 int FirstMissingPositive(std::vector<int>* iVector);
 
