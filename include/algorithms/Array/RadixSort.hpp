@@ -22,8 +22,8 @@
 namespace algorithms {
 
 /*! \brief Radix sort is a non-comparative integer sorting algorithm.
- *  \Complexity   Time: O(N)       Space: O(N)
- *  \url https://en.wikipedia.org/wiki/Radix_sort
+ *  \note   Complexity ->  Time: O(N)       Space: O(N)
+ *  \note https://en.wikipedia.org/wiki/Radix_sort
  */
 void RadixSort(std::vector<unsigned int>* ioVector);
 

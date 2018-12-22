@@ -23,7 +23,7 @@ namespace algorithms {
 
 /*! \brief It checks whether the two inputs are one the permutation of the
  *  other.
- *  \Complexity     Time: O(N)         Space: O(N)  assuming N == M
+ *  \note   Complexity ->  Time: O(N)         Space: O(N)  assuming N == M
  */
 bool IsPermutation(const std::vector<int>& iVectA,
                    const std::vector<int>& iVectB);

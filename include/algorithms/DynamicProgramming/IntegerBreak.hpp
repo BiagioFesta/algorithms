@@ -25,8 +25,8 @@ namespace algorithms {
  *  maximum product you can get.
  *  \note You may assume that n is not less than 2 and not larger than 58.
  *
- *  \note https://leetcode.com/problems/integer-break/
  *  \note  Complexity ->  Time: O(N^2)    Space: O(N)
+ *  \note https://leetcode.com/problems/integer-break/
  */
 int IntegerBreak(const int n);
 

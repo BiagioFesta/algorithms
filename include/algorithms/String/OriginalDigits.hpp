@@ -32,6 +32,7 @@ namespace algorithms {
  *  original digits. That means invalid inputs such as "abc" or "zerone" are not
  *  permitted.
  *  \note Complexity ->   Time: O(N)    Space: O(1)
+ *  \note http://www.cnblogs.com/grandyang/p/5996239.html
  */
 std::string OriginalDigits(const std::string& iString);
 

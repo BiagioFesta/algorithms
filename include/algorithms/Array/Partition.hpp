@@ -26,7 +26,7 @@ namespace algorithms {
  *  all numbers for which the predicate 'iFn' returns true precede the elements
  *  for which predicate 'iFn' returns false. Relative order of the elements is
  *  not preserved (not stable).
- *  \Complexity      Time: O(N)      Space: O(1)
+ *  \note   Complexity  ->    Time: O(N)      Space: O(1)
  */
 void Partition(std::vector<int>* ioVector, std::function<bool(int)> iFn);
 

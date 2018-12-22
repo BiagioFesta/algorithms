@@ -25,6 +25,7 @@ namespace algorithms {
  *  -1 if there is no occurrence.
  *  \note if 'iFinder' is empty it will return 0
  *  \note Complexity ->   Time: O(NM)    Space: O(1)
+ *  \note http://man7.org/linux/man-pages/man3/strstr.3.html
  */
 int StrStr(const std::string& iStr, const std::string& iFinder);
 

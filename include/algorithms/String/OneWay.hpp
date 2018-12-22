@@ -24,6 +24,8 @@ namespace algorithms {
 /*! \brief There are three types of edits that can be performed on strings:
  *  insert a character, remove a character, or replace a character. Given two
  *  strings, it checks if they are one edit (or zero edits) away.
+ *  \note
+ * https://www.geeksforgeeks.org/check-if-two-given-strings-are-at-edit-distance-one/
  */
 bool OneWay(const std::string& iStr1, const std::string& iStr2);
 

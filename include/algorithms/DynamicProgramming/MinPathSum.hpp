@@ -27,6 +27,7 @@ namespace algorithms {
  *  time.
  *  \note M and N must be positive (> 0).
  *  \note Complexity -> Time: (M x N)    Space: (M x N)
+ *  \note https://leetcode.com/problems/minimum-path-sum/
  */
 int MinPathSum(const int* const iMatrix, const int M, const int N);
 

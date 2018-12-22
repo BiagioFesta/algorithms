@@ -21,8 +21,9 @@
 namespace algorithms {
 
 /*! \brief Given a string s consists of upper/lower-case alphabets and empty
- * space characters ' ', it returns the length of last word in the string.
- * \note If the last word does not exist, it returns 0.
+ *  space characters ' ', it returns the length of last word in the string.
+ *  \note If the last word does not exist, it returns 0.
+ *  \note https://www.geeksforgeeks.org/length-of-last-word-in-a-string/
  */
 int LenLastWord(const char* iStr);
 

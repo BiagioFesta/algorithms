@@ -29,6 +29,7 @@ namespace algorithms {
  *   I.e.     S = sum_i |A[i] - A[i - 1]|
  *  \return S
  *  \note Complexity -> Time: O(N)    Space: O(1)
+ *  \note https://www.hackerrank.com/challenges/sherlock-and-cost/problem
  */
 int SherlockAndCost(const std::vector<int>& iUpperBounds);
 

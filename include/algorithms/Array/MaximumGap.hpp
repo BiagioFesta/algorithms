@@ -24,8 +24,8 @@ namespace algorithms {
 /*! \brief Given an array A of integers, it finds the maximum of j - i subjected
  *  to the constraint of A[i] <= A[j].
  *  \return the maximum the solution. -1 if vector is empty.
- *  \Complexity   Time: O(NlogN)     Space: O(N)
- *  \url https://leetcode.com/problems/maximum-gap/description/
+ *  \note  Complexity ->   Time: O(NlogN)     Space: O(N)
+ *  \note https://leetcode.com/problems/maximum-gap/description/
  */
 int MaximumGap(const std::vector<int>& iVector);
 

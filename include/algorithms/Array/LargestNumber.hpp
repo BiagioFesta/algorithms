@@ -26,8 +26,8 @@ namespace algorithms {
  *  they form the largest number.
  *    Eg:
  *        [3, 30, 34, 5, 9]   ==>   "9534330"
- *  \Complexity   Time: O(NlogN)     Space O(N)
- *  \url https://leetcode.com/problems/largest-number/description/
+ *  \note   Complexity -> Time: O(NlogN)     Space O(N)
+ *  \note https://leetcode.com/problems/largest-number/description/
  */
 std::string LargestNumber(std::vector<int> iNumbers);
 

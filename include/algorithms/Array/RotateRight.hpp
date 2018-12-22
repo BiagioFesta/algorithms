@@ -22,8 +22,8 @@
 namespace algorithms {
 
 /*! \brief Given an array, rotate the array to the right by k steps.
- *  \url https://leetcode.com/problems/rotate-array/
- *  \Complexity        Time: O(N)     Space: O(1)
+ *  \note   Complexity  ->  Time: O(N)     Space: O(1)
+ *  \note https://leetcode.com/problems/rotate-array/
  *  \note This implementation of the algorithm is less restrictive than the
  *  original assignment. The number of steps to rotate can even be negative
  *  allowing left rotations. Moreover, this solution does not use additional

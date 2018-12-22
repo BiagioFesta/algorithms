@@ -27,8 +27,8 @@ namespace algorithms {
  *  Now given a string represented by several bits.
  *  It returns whether the last character must be a one-bit character or not.
  *  The given string will always end with a zero.
- *  \Complexity   Time: O(N)     Space: O(1)
- *  \url https://leetcode.com/problems/1-bit-and-2-bit-characters/description/
+ *  \note  Complexity -> Time: O(N)     Space: O(1)
+ *  \note https://leetcode.com/problems/1-bit-and-2-bit-characters/description/
  */
 bool IsOneBitCharacter(const std::vector<int>& iBits);
 

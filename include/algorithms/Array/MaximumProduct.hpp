@@ -24,8 +24,8 @@ namespace algorithms {
 /*! \brief Given an integer array, find three numbers whose product is maximum
  *  and output the maximum product.
  *  \note The behaviour is undefined is the array is empty.
- *  \Complexity      Time: O(N)       Space: O(1)
- *  \url https://leetcode.com/problems/maximum-product-of-three-numbers/
+ *  \note  Complexity  ->    Time: O(N)       Space: O(1)
+ *  \note https://leetcode.com/problems/maximum-product-of-three-numbers/
  */
 int MaximumProduct(const std::vector<int>& iVector);
 

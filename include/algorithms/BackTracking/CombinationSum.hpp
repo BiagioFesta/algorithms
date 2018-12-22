@@ -30,6 +30,8 @@ namespace algorithms {
  *
  *  \note All numbers (including target) will be positive integers.
  *  \note The solution set must not contain duplicate combinations.
+ *
+ *  \note https://leetcode.com/problems/combination-sum/
  */
 std::vector<std::vector<int>> CombinationSum(
     const std::vector<int>& iCandidates,

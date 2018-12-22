@@ -25,8 +25,8 @@ namespace algorithms {
  *  such that a + b + c = 0? Find all unique triplets in the array which gives
  *  the sum of zero.
  *  \note The solution set must not contain duplicate triplets.
- *  \Complexity      Time: O(N^2)    Space: O(1)
- *  \url https://leetcode.com/problems/3sum/description/
+ *  \note   Complexity ->  Time: O(N^2)    Space: O(1)
+ *  \note https://leetcode.com/problems/3sum/description/
  */
 std::vector<std::vector<int>> ThreeSum(std::vector<int>* iNumbers);
 

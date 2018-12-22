@@ -27,8 +27,8 @@ namespace algorithms {
  *  Each day, you can either buy one share of WOT, sell any number of shares of
  *  WOT that you own, or not make any transaction at all. What is the maximum
  *  profit you can obtain with an optimum trading strategy?
- *  \Complexity    Time: O(N)      Space: O(1)
- *  \url https://www.hackerrank.com/challenges/stockmax/problem
+ *  \note   Complexity  ->  Time: O(N)      Space: O(1)
+ *  \note https://www.hackerrank.com/challenges/stockmax/problem
  */
 int StockMaximize(const std::vector<int>& iPrices);
 

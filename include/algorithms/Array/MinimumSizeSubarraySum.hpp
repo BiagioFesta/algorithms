@@ -23,7 +23,7 @@ namespace algorithms {
 /*! \brief Given an array of n positive integers and a positive integer s, it
  *  finds the minimal length of a contiguous subarray of which the sum ≥ s. If
  *  there isn't one, it returns 0 instead.
- *  \url https://leetcode.com/problems/minimum-size-subarray-sum/description/
+ *  \note https://leetcode.com/problems/minimum-size-subarray-sum/description/
  */
 int MinimumSizeSubarraySum(const int* iArray, const int iSize, int s);
 

@@ -28,7 +28,8 @@ namespace algorithms {
  *  Order for string is given by Lexicographical order.
  *  \return the new string meeting the criteria. If it is not possible, return
  *  no answer.
- * \note Complexity ->  Time: O(N)   Space: O(N) (Considering the input)
+ *  \note Complexity ->  Time: O(N)   Space: O(N) (Considering the input)
+ *  \note https://www.hackerrank.com/challenges/bigger-is-greater/problem
  */
 std::string BiggerIsGreater(std::string iString);
 

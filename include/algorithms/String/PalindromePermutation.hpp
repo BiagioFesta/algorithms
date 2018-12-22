@@ -23,6 +23,7 @@ namespace algorithms {
 /*! \brief It checks if it is a permutation of a palindrome.
  *  \note Assumptions: case sensitive, white spaces make difference, ASCII.
  *  \node  Complexity -> Time: O(N)  Space: O(1)
+ *  \note https://leetcode.com/articles/palindrome-permutation/
  */
 bool PalindromePermutation(const char* iStr);
 

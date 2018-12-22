@@ -26,6 +26,10 @@
 
 namespace algorithms {
 
+/*! \class PriorityQueue
+ *  \brief Implement a priority queue data structure.
+ *  \note https://en.wikipedia.org/wiki/Priority_queue
+ */
 template <typename T, typename Comparator = std::less<T>>
 class PriorityQueue {
  public:

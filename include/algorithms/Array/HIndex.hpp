@@ -28,8 +28,8 @@ namespace algorithms {
  *  index h if h of his/her N papers have at least h citations each, and the
  *  other N − h papers have no more than h citations each."
  *
- *  \Complexity       Time: O(NlogN)     Space: O(1)
- *  \url https://leetcode.com/problems/h-index/
+ *  \note  Complexity -> Time: O(NlogN)     Space: O(1)
+ *  \note https://leetcode.com/problems/h-index/
  */
 int HIndex(std::vector<int>* iCitations);
 
@@ -41,8 +41,8 @@ int HIndex(std::vector<int>* iCitations);
  *  other N − h papers have no more than h citations each."
  *
  *  \see hIndex
- *  \Complexity       Time: O(N)     Space: O(N)
- *  \url https://leetcode.com/problems/h-index/
+ *  \note   Complexity ->  Time: O(N)     Space: O(N)
+ *  \note https://leetcode.com/problems/h-index/
  */
 int HIndexLinear(const std::vector<int>& iCitations);
 

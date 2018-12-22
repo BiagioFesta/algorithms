@@ -27,9 +27,10 @@ namespace algorithms {
  *  transactions.
  *  \note You may not engage in multiple transactions at the same time (i.e.,
  *  you must sell the stock before you buy again).
+ *
+ *  \note  Complexity ->  Time: O(N)      Space: O(N)
  *  \note
  *  https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iii/description/
- *  \note  Complexity ->  Time: O(N)      Space: O(N)
  */
 int MaxProfit(const std::vector<int>& iPrices);
 

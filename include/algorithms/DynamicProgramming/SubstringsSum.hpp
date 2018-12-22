@@ -25,6 +25,7 @@ namespace algorithms {
  *  of all integer values of substrings of the string.
  *  \note As the number may become large, return the value modulo (10^9 + 7).
  *  \note  Complexity ->   Time: O(N)    Space: O(1)
+ *  \note https://www.hackerrank.com/challenges/sam-and-substrings/problem
  */
 int SubstringsSum(const std::string& iStr);
 

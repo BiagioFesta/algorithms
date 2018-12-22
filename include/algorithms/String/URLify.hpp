@@ -24,7 +24,7 @@ namespace algorithms {
  *  \note It assumes that the string has sufficient space at the end to hold the
  *  additional characters, and that you are given the "true" length of the
  *  string.
- *  \note  Complexity ->  Time = O(N^2)    Space = O(1)
+ *  \note  Complexity ->  Time: O(N^2)    Space: O(1)
  */
 void URLify(char* iStr, int iLenString);
 

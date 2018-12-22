@@ -23,8 +23,8 @@ namespace algorithms {
 
 /*! \brief The sieve of Eratosthenes is a simple, ancient algorithm for finding
  *  all prime numbers up to any given limit (iN).
- *  \Complexity      Time: O(N x loglogN)     Space: O(N)
- *  \url https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes
+ *  \note   Complexity   ->    Time: O(N x loglogN)     Space: O(N)
+ *  \note https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes
  */
 std::vector<int> SieveOfEratosthenes(const int iN);
 

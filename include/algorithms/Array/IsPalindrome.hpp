@@ -22,7 +22,7 @@ namespace algorithms {
 
 /*! \brief Determine whether an integer is a palindrome. An integer is a
  *  palindrome when it reads the same backward as forward.
- *  \Complexity   Time: O(N)   Space: O(1)   where N: number of digits
+ *  \note  Complexity  -> Time: O(N)   Space: O(1)   where N: number of digits
  */
 bool IsPalindrome(int iNumber);
 

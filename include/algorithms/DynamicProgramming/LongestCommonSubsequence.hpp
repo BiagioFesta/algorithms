@@ -23,6 +23,7 @@ namespace algorithms {
 
 /*! \brief It returns the longest common subsequence among two strings.
  *  \note Complexity -> Time: (N x M)   Space: (N x M)
+ *  \note https://en.wikipedia.org/wiki/Longest_common_subsequence_problem
  */
 int LongestCommonSubsequence(const std::string& iStr1,
                              const std::string& iStr2);

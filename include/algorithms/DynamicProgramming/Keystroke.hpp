@@ -30,6 +30,8 @@ namespace algorithms {
  *  Pressing any of the above keys is considered a single keystroke. You need to
  *  find out the maximum number of A's you can print using N such keystrokes.
  *  \note  Complexity ->  Time: O(N^2)     Space: O(N)
+ *  \note
+ * https://www.geeksforgeeks.org/how-to-print-maximum-number-of-a-using-given-four-keys/
  */
 int Keystroke(const int N);
 

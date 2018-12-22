@@ -27,7 +27,8 @@ namespace algorithms {
  *  more letter at a random position.
  *  It finds the letter that was added in t.
  *  \return the added letter, otherwise '\0'.
- *  \Complexity    Time: O(N + M)    Space: O(1)
+ *  \note   Complexity -> Time: O(N + M)    Space: O(1)
+ *  \note https://leetcode.com/problems/find-the-difference/
  */
 char FindTheDifference(const std::string& iStringS,
                        const std::string& iStringT);

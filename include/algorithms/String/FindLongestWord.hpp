@@ -29,6 +29,8 @@ namespace algorithms {
  *  \return the index of longest string in the dictionary. It returns -1 if
  *  there is no possible result.
  *  \note Complexity ->   Time: O(N^2 + NM)      Space: O(1)
+ *  \note
+ * https://leetcode.com/problems/longest-word-in-dictionary-through-deleting/
  */
 int FindLongestWord(const std::string& iString,
                     const std::vector<std::string>& iStringDict);

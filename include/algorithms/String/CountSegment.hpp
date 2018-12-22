@@ -24,6 +24,7 @@ namespace algorithms {
  *  defined to be a contiguous sequence of non-space characters.
  *  \note The string must not contain any non-printable character.
  *  \note Complexity ->  Time: O(N)   Space: O(1)
+ *  \note https://leetcode.com/articles/number-of-segments-in-a-string/
  */
 int CountSegment(const char* iStr);
 

@@ -23,6 +23,7 @@ namespace algorithms {
 
 /*! \brief Given a string as input, it finds the longest palindromic substring.
  *  \note  Complexity ->   Time: O(N^2)     Space: O(1)
+ *  \note https://www.geeksforgeeks.org/longest-palindrome-substring-set-1/
  */
 std::string LongestPalindrome(const std::string& iString);
 

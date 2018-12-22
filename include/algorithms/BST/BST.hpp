@@ -25,6 +25,7 @@ namespace algorithms {
 
 /*! \brief This class implements a simple Binary Search Tree (BST).
  *  Simple common operation are implemented, such as insertion and lookup.
+ *  \note https://en.wikipedia.org/wiki/Binary_search_tree
  */
 template <typename T>
 class BST {

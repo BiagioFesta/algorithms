@@ -22,8 +22,8 @@ namespace algorithms {
 
 /*! \brief It checks if the array could become non-decreasing by modifying at
  *  most 1 element.
- *  \Complexity     Time: O(N)        Space: O(1)
- *  \url https://leetcode.com/problems/non-decreasing-array/description/
+ *  \note   Complexity  ->  Time: O(N)        Space: O(1)
+ *  \note https://leetcode.com/problems/non-decreasing-array/description/
  */
 bool NonDecreasingArray(const int* iArray, const int iSize);
 

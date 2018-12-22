@@ -22,6 +22,7 @@ namespace algorithms {
 
 /*! \brief It computes the binomial coefficient (n, k)
  *  \note  Complexity -> Time: O(k) Space: O(k)
+ *  \note https://en.wikipedia.org/wiki/Binomial_coefficient
  */
 int BinomialCoefficient(const int n, const int k);
 

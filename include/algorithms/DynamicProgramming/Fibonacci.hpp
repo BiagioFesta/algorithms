@@ -22,7 +22,8 @@ namespace algorithms {
 
 /*! \brief It computes the n-th fibonacci number.
  *  \note n must to be greater or equal zero.
- *  \complexity Time O(n)  Space O(1)
+ *  \note Complexity -> Time: O(N)  Space: O(1)
+ *  \note https://en.wikipedia.org/wiki/Fibonacci_number
  */
 int Fibonacci(const int n);
 

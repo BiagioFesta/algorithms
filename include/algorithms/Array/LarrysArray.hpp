@@ -30,8 +30,8 @@ namespace algorithms {
  *         ABC -> BCA -> CAB -> ABC
  *  \return 'true' if the array can be sorted with rotation operation, 'false'
  *  otherise.
- *  \Complexity   Time: O(N)     Space: O(N)
- *  \url https://www.hackerrank.com/challenges/larrys-array/problem
+ *  \note   Complexity ->  Time: O(N)     Space: O(N)
+ *  \note https://www.hackerrank.com/challenges/larrys-array/problem
  */
 bool LarrysArray(const std::vector<int>& iVector);
 
