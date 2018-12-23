@@ -33,8 +33,8 @@ target_sources(${PROJECT_NAME}
   ${PROJECT_SOURCE_DIR}/src/Array/SieveOfEratosthenes.cpp
   ${PROJECT_SOURCE_DIR}/src/Array/StockMaximize.cpp
   ${PROJECT_SOURCE_DIR}/src/Array/ThreeSum.cpp
-  ${PROJECT_SOURCE_DIR}/src/BackTracking/CombinationSum3.cpp
   ${PROJECT_SOURCE_DIR}/src/BackTracking/CombinationSum.cpp
+  ${PROJECT_SOURCE_DIR}/src/BackTracking/CombinationSum3.cpp
   ${PROJECT_SOURCE_DIR}/src/CTCI/Chapter2/KthToLast.cpp
   ${PROJECT_SOURCE_DIR}/src/CTCI/Chapter2/RemoveDuplicates.cpp
   ${PROJECT_SOURCE_DIR}/src/DynamicProgramming/BinomialCoefficient.cpp
@@ -69,8 +69,8 @@ target_sources(${PROJECT_NAME}
   ${PROJECT_SOURCE_DIR}/src/String/PalindromePermutation.cpp
   ${PROJECT_SOURCE_DIR}/src/String/ReverseStringInPlace.cpp
   ${PROJECT_SOURCE_DIR}/src/String/SteadyGene.cpp
-  ${PROJECT_SOURCE_DIR}/src/String/StringCompression.cpp
   ${PROJECT_SOURCE_DIR}/src/String/StrStr.cpp
+  ${PROJECT_SOURCE_DIR}/src/String/StringCompression.cpp
   ${PROJECT_SOURCE_DIR}/src/String/URLify.cpp
   ${PROJECT_SOURCE_DIR}/src/Twitter/Twitter.cpp)
 target_include_directories(${PROJECT_NAME} PUBLIC include)
@@ -113,9 +113,9 @@ add_executable(${PROJECT_NAME}_test
   ${PROJECT_SOURCE_DIR}/test/Array/testSieveOfEratosthenes.cpp
   ${PROJECT_SOURCE_DIR}/test/Array/testStockMaximize.cpp
   ${PROJECT_SOURCE_DIR}/test/Array/testThreeSum.cpp
-  ${PROJECT_SOURCE_DIR}/test/BackTracking/testCombinationSum3.cpp
-  ${PROJECT_SOURCE_DIR}/test/BackTracking/testCombinationSum.cpp
   ${PROJECT_SOURCE_DIR}/test/BST/testBST.cpp
+  ${PROJECT_SOURCE_DIR}/test/BackTracking/testCombinationSum.cpp
+  ${PROJECT_SOURCE_DIR}/test/BackTracking/testCombinationSum3.cpp
   ${PROJECT_SOURCE_DIR}/test/CTCI/Chapter2/testDoubleLinkedList.cpp
   ${PROJECT_SOURCE_DIR}/test/CTCI/Chapter2/testKthToLast.cpp
   ${PROJECT_SOURCE_DIR}/test/CTCI/Chapter2/testRemoveDuplicates.cpp
@@ -154,8 +154,8 @@ add_executable(${PROJECT_NAME}_test
   ${PROJECT_SOURCE_DIR}/test/String/testPalindromePermutation.cpp
   ${PROJECT_SOURCE_DIR}/test/String/testReverseStringInPlace.cpp
   ${PROJECT_SOURCE_DIR}/test/String/testSteadyGene.cpp
-  ${PROJECT_SOURCE_DIR}/test/String/testStringCompression.cpp
   ${PROJECT_SOURCE_DIR}/test/String/testStrStr.cpp
+  ${PROJECT_SOURCE_DIR}/test/String/testStringCompression.cpp
   ${PROJECT_SOURCE_DIR}/test/String/testURLify.cpp
   ${PROJECT_SOURCE_DIR}/test/Twitter/testTwitter.cpp)
 target_link_libraries(${PROJECT_NAME}_test ${PROJECT_NAME} GTest::GTest GTest::Main)
