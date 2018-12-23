@@ -16,6 +16,7 @@
 
 */
 #include <algorithm>
+#include <algorithms/DynamicProgramming/MinSwap.hpp>
 #include <array>
 #include <cassert>
 #include <limits>
