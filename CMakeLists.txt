@@ -158,6 +158,13 @@ add_executable(${PROJECT_NAME}_test
   ${PROJECT_SOURCE_DIR}/test/Twitter/testTwitter.cpp)
 target_link_libraries(${PROJECT_NAME}_test ${PROJECT_NAME} GTest::GTest GTest::Main)
 
+get_target_property(INSTALL_INCLUDES ${PROJECT_NAME} INTERFACE_INCLUDE_DIRECTORIES)
+install(TARGETS ${PROJECT_NAME} ${PROJECT_NAME}_test
+  RUNTIME DESTINATION bin
+  LIBRARY DESTINATION lib
+  ARCHIVE DESTINATION lib)
+install(DIRECTORY ${INSTALL_INCLUDES} DESTINATION .)
+
 include(CTest)
 add_test(NAME TestAll COMMAND ${PROJECT_NAME}_test)
 
@@ -171,4 +178,6 @@ if(${BUILD_BENCHMARK})
     benchmark/benchmarkRadixSort.cpp
     benchmark/benchmarkHIndex.cpp)
   target_link_libraries(${PROJECT_NAME}_benchmark PRIVATE ${PROJECT_NAME} benchmark::benchmark)
+
+  install(TARGETS ${PROJECT_NAME}_benchmark RUNTIME DESTINATION bin)
 endif()
