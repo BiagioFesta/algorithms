@@ -26,7 +26,8 @@ TEST(DynamicProgramming, MinSwap) {
   using Test = std::tuple<std::vector<int>, std::vector<int>, int>;
   const std::vector<Test> testCases = {{{0, 3, 5, 8, 9}, {2, 1, 4, 6, 9}, 1},
                                        {{1, 3, 5, 4}, {2, 2, 3, 7}, 2},
-                                       {{1, 3, 5, 4}, {1, 2, 3, 7}, 1}};
+                                       {{1, 3, 5, 4}, {1, 2, 3, 7}, 1},
+                                       {{2}, {3}, 0}};
 
   for (const auto& [v1, v2, expt] : testCases) {
     ASSERT_EQ(MinSwap(v1, v2), expt);
