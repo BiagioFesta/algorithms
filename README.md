@@ -12,5 +12,5 @@ Study project on algorithm design and implementation.
 ## Problem List
 See the [Problems List Here](https://github.com/BiagioFesta/algorithms/wiki/Problems-List).
 
-## Compilation
-See the [Guide Here](https://github.com/BiagioFesta/algorithms/wiki/Compilation-Guide) in order to compile the project.
+## Installation Guide
+See the [Guide Here](https://github.com/BiagioFesta/algorithms/wiki/Installation-Guide) in order to install the project.
