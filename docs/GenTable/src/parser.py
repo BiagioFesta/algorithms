@@ -117,8 +117,9 @@ class Parser:
         url = urls.pop() if urls else ""
 
         meta = self.__get_meta(url)
-
-        function_name = Parser.__get_pure_name_of_file(header_file) if not meta[1] else meta[1]
+        function_name = meta[1] if meta[1] else re.sub('([a-z])([A-Z])',
+                                                       '\\g<1> \\g<2>',
+                                                       Parser.__get_pure_name_of_file(header_file))
         cpp_file = self.__find_cpp_file(root_directory, header_file)
         difficulty = meta[0]
 
@@ -132,10 +133,15 @@ class Parser:
         """
         leet_code_url = 'leetcode.com/'
         hacker_rank_url = 'hackerrank.com/'
+        wiki_url = 'wikipedia.org'
+
         if leet_code_url in url:
             return self.__get_meta_leetcode(url)
         if hacker_rank_url in url:
             return self.__get_meta_hacker_rank(url)
+        if wiki_url in url:
+            return self.__get_meta_wikipedia(url)
+
         return ('', '')
 
     def __get_meta_leetcode(self, url):
@@ -170,6 +176,20 @@ class Parser:
             raise Exception('Cannot parse metadata for url "{}" (Difficulty Not Found)'
                             .format(url))
         return (matches_difficulty.group(1), matches_title.group(1))
+
+    @staticmethod
+    def __get_meta_wikipedia(url):
+        response = requests.get(url)
+        if response.status_code != 200:
+            raise Exception('Cannot parse metadata for url "{}" (Get Failed)'
+                            .format(url))
+
+        pattern_title = 'class="firstHeading" [^>]+>([^<]+)</'
+        matches_title = re.search(pattern_title, response.text)
+        if not matches_title:
+            raise Exception('Cannot parse metadata for url "{}" (Title Not Found)'
+                            .format(url))
+        return ('', matches_title.group(1))
 
 if __name__ == "__main__":
     PARSER = Parser()
