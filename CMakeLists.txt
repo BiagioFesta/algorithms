@@ -13,6 +13,7 @@ target_sources(${PROJECT_NAME}
   ${PROJECT_SOURCE_DIR}/src/Array/FindDisappearedNumbers.cpp
   ${PROJECT_SOURCE_DIR}/src/Array/FindLengthOfLCIS.cpp
   ${PROJECT_SOURCE_DIR}/src/Array/FirstMissingPositive.cpp
+  ${PROJECT_SOURCE_DIR}/src/Array/GlobalLocalInversions.cpp
   ${PROJECT_SOURCE_DIR}/src/Array/HIndex.cpp
   ${PROJECT_SOURCE_DIR}/src/Array/IsOneBitCharacter.cpp
   ${PROJECT_SOURCE_DIR}/src/Array/IsPalindrome.cpp
@@ -94,6 +95,7 @@ add_executable(${PROJECT_NAME}_test
   ${PROJECT_SOURCE_DIR}/test/Array/testFindDisappearedNumbers.cpp
   ${PROJECT_SOURCE_DIR}/test/Array/testFindLengthOfLCIS.cpp
   ${PROJECT_SOURCE_DIR}/test/Array/testFirstMissingPositive.cpp
+  ${PROJECT_SOURCE_DIR}/test/Array/testGlobalLocalInversions.cpp
   ${PROJECT_SOURCE_DIR}/test/Array/testHIndex.cpp
   ${PROJECT_SOURCE_DIR}/test/Array/testIsOneBitCharacter.cpp
   ${PROJECT_SOURCE_DIR}/test/Array/testIsPalindrome.cpp
