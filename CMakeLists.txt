@@ -5,6 +5,7 @@ add_library(${PROJECT_NAME} STATIC)
 target_sources(${PROJECT_NAME}
   PRIVATE
   ${PROJECT_SOURCE_DIR}/src/Array/AbsolutePermutation.cpp
+  ${PROJECT_SOURCE_DIR}/src/Array/AsteroidCollision.cpp
   ${PROJECT_SOURCE_DIR}/src/Array/ClimbingLeaderboard.cpp
   ${PROJECT_SOURCE_DIR}/src/Array/ContainsNearbyDuplicate.cpp
   ${PROJECT_SOURCE_DIR}/src/Array/ContiguousArray.cpp
@@ -87,6 +88,7 @@ find_package(GTest REQUIRED)
 
 add_executable(${PROJECT_NAME}_test
   ${PROJECT_SOURCE_DIR}/test/Array/testAbsolutePermutation.cpp
+  ${PROJECT_SOURCE_DIR}/test/Array/testAsteroidCollision.cpp
   ${PROJECT_SOURCE_DIR}/test/Array/testClimbingLeaderboard.cpp
   ${PROJECT_SOURCE_DIR}/test/Array/testContainsNearbyDuplicate.cpp
   ${PROJECT_SOURCE_DIR}/test/Array/testContiguousArray.cpp
