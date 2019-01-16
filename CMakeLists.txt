@@ -52,6 +52,7 @@ target_sources(${PROJECT_NAME}
   ${PROJECT_SOURCE_DIR}/src/DynamicProgramming/SherlockAndCost.cpp
   ${PROJECT_SOURCE_DIR}/src/DynamicProgramming/SubstringsSum.cpp
   ${PROJECT_SOURCE_DIR}/src/DynamicProgramming/TwoEggsDropping.cpp
+  ${PROJECT_SOURCE_DIR}/src/DynamicProgramming/UniquePathsWithObstacles.cpp
   ${PROJECT_SOURCE_DIR}/src/LRUCache/LRUCache.cpp
   ${PROJECT_SOURCE_DIR}/src/String/BiggerIsGreater.cpp
   ${PROJECT_SOURCE_DIR}/src/String/CheckRecord.cpp
@@ -163,7 +164,8 @@ add_executable(${PROJECT_NAME}_test
   ${PROJECT_SOURCE_DIR}/test/String/testStrStr.cpp
   ${PROJECT_SOURCE_DIR}/test/String/testStringCompression.cpp
   ${PROJECT_SOURCE_DIR}/test/String/testURLify.cpp
-  ${PROJECT_SOURCE_DIR}/test/Twitter/testTwitter.cpp)
+  ${PROJECT_SOURCE_DIR}/test/Twitter/testTwitter.cpp
+  ${PROJECT_SOURCE_DIR}/test/DynamicProgramming/testUniquePathsWithObstacles.cpp)
 target_link_libraries(${PROJECT_NAME}_test ${PROJECT_NAME} GTest::GTest GTest::Main)
 
 get_target_property(INSTALL_INCLUDES ${PROJECT_NAME} INTERFACE_INCLUDE_DIRECTORIES)
