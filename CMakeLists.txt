@@ -183,10 +183,11 @@ if(${BUILD_BENCHMARK})
   find_package(benchmark REQUIRED)
 
   add_executable(${PROJECT_NAME}_benchmark
-    benchmark/main.cpp
-    benchmark/benchmarkFlatSetVsSet.cpp
-    benchmark/benchmarkRadixSort.cpp
-    benchmark/benchmarkHIndex.cpp)
+    ${PROJECT_SOURCE_DIR}/benchmark/main.cpp
+    ${PROJECT_SOURCE_DIR}/benchmark/benchmarkFlatSetVsSet.cpp
+    ${PROJECT_SOURCE_DIR}/benchmark/benchmarkRadixSort.cpp
+    ${PROJECT_SOURCE_DIR}/benchmark/benchmarkHIndex.cpp
+    ${PROJECT_SOURCE_DIR}/benchmark/benchmarkTreeVsHash.cpp)
   target_link_libraries(${PROJECT_NAME}_benchmark PRIVATE ${PROJECT_NAME} benchmark::benchmark)
 
   install(TARGETS ${PROJECT_NAME}_benchmark RUNTIME DESTINATION bin)
