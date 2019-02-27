@@ -82,7 +82,7 @@ target_compile_features(${PROJECT_NAME} PUBLIC cxx_std_17)
 
 if(EXISTS ${CMAKE_BINARY_DIR}/conanbuildinfo.cmake)
   include(${CMAKE_BINARY_DIR}/conanbuildinfo.cmake)
-  conan_basic_setup(TARGET)
+  conan_basic_setup(TARGETS)
 endif()
 
 find_package(GTest REQUIRED)
@@ -166,7 +166,7 @@ add_executable(${PROJECT_NAME}_test
   ${PROJECT_SOURCE_DIR}/test/String/testURLify.cpp
   ${PROJECT_SOURCE_DIR}/test/Twitter/testTwitter.cpp
   ${PROJECT_SOURCE_DIR}/test/DynamicProgramming/testUniquePathsWithObstacles.cpp)
-target_link_libraries(${PROJECT_NAME}_test ${PROJECT_NAME} GTest::GTest GTest::Main)
+target_link_libraries(${PROJECT_NAME}_test ${PROJECT_NAME} CONAN_PKG::gtest)
 
 get_target_property(INSTALL_INCLUDES ${PROJECT_NAME} INTERFACE_INCLUDE_DIRECTORIES)
 install(TARGETS ${PROJECT_NAME} ${PROJECT_NAME}_test
@@ -188,7 +188,7 @@ if(${BUILD_BENCHMARK})
     ${PROJECT_SOURCE_DIR}/benchmark/benchmarkRadixSort.cpp
     ${PROJECT_SOURCE_DIR}/benchmark/benchmarkHIndex.cpp
     ${PROJECT_SOURCE_DIR}/benchmark/benchmarkTreeVsHash.cpp)
-  target_link_libraries(${PROJECT_NAME}_benchmark PRIVATE ${PROJECT_NAME} benchmark::benchmark)
+  target_link_libraries(${PROJECT_NAME}_benchmark PRIVATE ${PROJECT_NAME} CONAN_PKG::google-benchmark)
 
   install(TARGETS ${PROJECT_NAME}_benchmark RUNTIME DESTINATION bin)
 endif()
