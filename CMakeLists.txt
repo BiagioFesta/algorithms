@@ -191,10 +191,16 @@ if(${BUILD_BENCHMARK})
     ${PROJECT_SOURCE_DIR}/benchmark/benchmarkRadixSort.cpp
     ${PROJECT_SOURCE_DIR}/benchmark/benchmarkHIndex.cpp
     ${PROJECT_SOURCE_DIR}/benchmark/benchmarkTreeVsHash.cpp)
+
+  if (MSVC)
+    set(ADDITIONAL_DEPENDENCIES Shlwapi.lib)
+  endif()
+
   target_link_libraries(${PROJECT_NAME}_benchmark
     PRIVATE ${PROJECT_NAME}
     PRIVATE CONAN_PKG::google-benchmark
-    PRIVATE Threads::Threads)
+    PRIVATE Threads::Threads
+    ${ADDITIONAL_DEPENDENCIES})
 
   install(TARGETS ${PROJECT_NAME}_benchmark RUNTIME DESTINATION bin)
 endif()
