@@ -166,7 +166,9 @@ add_executable(${PROJECT_NAME}_test
   ${PROJECT_SOURCE_DIR}/test/String/testURLify.cpp
   ${PROJECT_SOURCE_DIR}/test/Twitter/testTwitter.cpp
   ${PROJECT_SOURCE_DIR}/test/DynamicProgramming/testUniquePathsWithObstacles.cpp)
-target_link_libraries(${PROJECT_NAME}_test ${PROJECT_NAME} CONAN_PKG::gtest)
+target_link_libraries(${PROJECT_NAME}_test
+  PRIVATE ${PROJECT_NAME}
+  PRIVATE CONAN_PKG::gtest)
 
 get_target_property(INSTALL_INCLUDES ${PROJECT_NAME} INTERFACE_INCLUDE_DIRECTORIES)
 install(TARGETS ${PROJECT_NAME} ${PROJECT_NAME}_test
@@ -181,6 +183,7 @@ add_test(NAME TestAll COMMAND ${PROJECT_NAME}_test)
 option(BUILD_BENCHMARK "Compile Benchmark program" NO)
 if(${BUILD_BENCHMARK})
   find_package(benchmark REQUIRED)
+  find_package(Threads REQUIRED)
 
   add_executable(${PROJECT_NAME}_benchmark
     ${PROJECT_SOURCE_DIR}/benchmark/main.cpp
@@ -188,7 +191,10 @@ if(${BUILD_BENCHMARK})
     ${PROJECT_SOURCE_DIR}/benchmark/benchmarkRadixSort.cpp
     ${PROJECT_SOURCE_DIR}/benchmark/benchmarkHIndex.cpp
     ${PROJECT_SOURCE_DIR}/benchmark/benchmarkTreeVsHash.cpp)
-  target_link_libraries(${PROJECT_NAME}_benchmark PRIVATE ${PROJECT_NAME} CONAN_PKG::google-benchmark)
+  target_link_libraries(${PROJECT_NAME}_benchmark
+    PRIVATE ${PROJECT_NAME}
+    PRIVATE CONAN_PKG::google-benchmark
+    PRIVATE Threads::Threads)
 
   install(TARGETS ${PROJECT_NAME}_benchmark RUNTIME DESTINATION bin)
 endif()
