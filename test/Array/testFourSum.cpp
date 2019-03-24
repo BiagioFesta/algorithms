@@ -21,6 +21,7 @@
 
 namespace {
 
+//! \return 'true' whether the container has no duplicated elements.
 template <typename Container>
 bool NoDuplicate(const Container& c) {
   return std::all_of(std::begin(c), std::end(c), [&c](const auto& e) {
@@ -28,7 +29,7 @@ bool NoDuplicate(const Container& c) {
   });
 }
 
-}  // namespace
+}  // anonymous namespace
 
 namespace algorithms::test {
 
@@ -39,8 +40,9 @@ TEST(Array, FourSum) {
       {{1, 0, -1, 0, -2, 2}, 0, {{-1, 0, 0, 1}, {-2, -1, 1, 2}, {-2, 0, 0, 2}}},
       {{0, 0, 0, 0}, 0, {{0, 0, 0, 0}}}};
 
-  for (auto [nums, target, expt] : testCases) {
-    const auto result = FourSum(&nums, target);
+  for (const auto& [nums, target, expt] : testCases) {
+    auto numsMutable = nums;
+    const auto result = FourSum(&numsMutable, target);
 
     ASSERT_TRUE(::NoDuplicate(result));
     ASSERT_TRUE(std::is_permutation(
