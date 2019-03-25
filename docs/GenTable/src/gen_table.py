@@ -12,6 +12,8 @@ def gen_markdown_table(table_data):
         'Medium' : '![Medium](https://img.shields.io/badge/Difficulty-Medium-yellow.svg)',
         'Hard' : '![Hard](https://img.shields.io/badge/Difficulty-Hard-red.svg)'}
     table = []
+    table.append('# Problems List')
+    table.append('')
     table.append('| Problem Name | Difficulty | Implementation |')
     table.append('| - | - | - |')
     for data in table_data:
