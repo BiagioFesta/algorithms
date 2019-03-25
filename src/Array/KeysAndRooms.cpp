@@ -15,35 +15,38 @@
   along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 */
-#include <vector>
-#include <unordered_set>
-#include <stack>
 #include <cassert>
+#include <stack>
+#include <vector>
 
 namespace algorithms {
 
 bool KeysAndRooms(const std::vector<std::vector<int>>& iRooms) {
   assert(!iRooms.empty());
 
-  std::unordered_set<int> explored;
+  std::vector<bool> explored(iRooms.size(), false);
   std::stack<int> toExplore;
+  std::size_t numExplored = 1;
 
   toExplore.push(0);
+  explored[0] = true;
+
   while (!toExplore.empty()) {
     const int roomIndex = toExplore.top();
     toExplore.pop();
-    explored.insert(roomIndex);
 
-    assert(roomIndex >= 0);
-    assert(static_cast<std::size_t>(roomIndex) < iRooms.size());
     for (const int key : iRooms[roomIndex]) {
-      if (explored.count(key) == 0) {
+      assert(key >= 0);
+      assert(static_cast<std::size_t>(key) < iRooms.size());
+      if (!explored[key]) {
         toExplore.push(key);
+        explored[key] = true;
+        ++numExplored;
       }
     }
   }
 
-  return explored.size() == iRooms.size();
+  return numExplored == iRooms.size();
 }
 
 }  // namespace algorithms
