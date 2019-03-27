@@ -11,4 +11,5 @@ done
 DIR="$( cd -P "$( dirname "$SOURCE" )" >/dev/null 2>&1 && pwd )"
 
 (cd ${DIR} && \
+  rm -f ./ProblemsListTable.md && \
   python3 ${PY_SOURCE}  --project-directory ../.. --output-file ./ProblemsListTable.md)

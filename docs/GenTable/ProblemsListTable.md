@@ -84,3 +84,4 @@
 | [URLify]() | ![Not Defined](https://img.shields.io/badge/Difficulty-ND-lightgray.svg) | [Source](https://github.com/BiagioFesta/algorithms/blob/master/src/String/URLify.cpp) |
 | [Unique Paths II](https://leetcode.com/problems/unique-paths-ii/) | ![Medium](https://img.shields.io/badge/Difficulty-Medium-yellow.svg) | [Source](https://github.com/BiagioFesta/algorithms/blob/master/src/DynamicProgramming/UniquePathsWithObstacles.cpp) |
 | [Valid Perfect Square](https://leetcode.com/problems/valid-perfect-square/) | ![Easy](https://img.shields.io/badge/Difficulty-Easy-green.svg) | [Source](https://github.com/BiagioFesta/algorithms/blob/master/src/Misc/IsPerfectSquare.cpp) |
+| [Word Search](https://leetcode.com/problems/word-search/) | ![Medium](https://img.shields.io/badge/Difficulty-Medium-yellow.svg) | [Source](https://github.com/BiagioFesta/algorithms/blob/master/src/BackTracking/WordSearch.cpp) |

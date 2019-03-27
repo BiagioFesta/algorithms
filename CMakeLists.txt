@@ -39,6 +39,7 @@ target_sources(${PROJECT_NAME}
   ${PROJECT_SOURCE_DIR}/src/Array/ThreeSum.cpp
   ${PROJECT_SOURCE_DIR}/src/BackTracking/CombinationSum.cpp
   ${PROJECT_SOURCE_DIR}/src/BackTracking/CombinationSum3.cpp
+  ${PROJECT_SOURCE_DIR}/src/BackTracking/WordSearch.cpp
   ${PROJECT_SOURCE_DIR}/src/CTCI/Chapter2/KthToLast.cpp
   ${PROJECT_SOURCE_DIR}/src/CTCI/Chapter2/RemoveDuplicates.cpp
   ${PROJECT_SOURCE_DIR}/src/DynamicProgramming/BinomialCoefficient.cpp
@@ -127,6 +128,7 @@ add_executable(${PROJECT_NAME}_test
   ${PROJECT_SOURCE_DIR}/test/BST/testBST.cpp
   ${PROJECT_SOURCE_DIR}/test/BackTracking/testCombinationSum.cpp
   ${PROJECT_SOURCE_DIR}/test/BackTracking/testCombinationSum3.cpp
+  ${PROJECT_SOURCE_DIR}/test/BackTracking/testWordSearch.cpp
   ${PROJECT_SOURCE_DIR}/test/CTCI/Chapter2/testDoubleLinkedList.cpp
   ${PROJECT_SOURCE_DIR}/test/CTCI/Chapter2/testKthToLast.cpp
   ${PROJECT_SOURCE_DIR}/test/CTCI/Chapter2/testRemoveDuplicates.cpp
