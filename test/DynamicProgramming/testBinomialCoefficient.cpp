@@ -24,7 +24,7 @@ namespace algorithms::test {
 
 TEST(DynamicProgramming, BinomialCoefficient) {
   static const std::vector<std::tuple<int, int, int>> testCases = {
-      {4, 2, 6}, {1, 1, 1}, {20, 3, 1140}};
+      {4, 2, 6}, {1, 1, 1}, {20, 3, 1140}, {10, 0, 1}, {11, 0, 1}, {3, 3, 1}};
 
   for (const auto& [n, k, exp] : testCases) {
     ASSERT_EQ(BinomialCoefficient(n, k), exp);

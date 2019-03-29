@@ -17,7 +17,6 @@
 */
 #include <algorithms/DynamicProgramming/BinomialCoefficient.hpp>
 #include <cassert>
-#include <vector>
 
 namespace algorithms {
 
@@ -25,15 +24,18 @@ int BinomialCoefficient(const int n, const int k) {
   assert(n >= k);
   assert(k >= 0);
 
-  // Recursion ->  (n, k) = (n - 1, k - 1) * n / k
-  std::vector<int> aSolutions(k);
-  aSolutions[0] = n - k + 1;
-
-  for (int i = 1; i < k; ++i) {
-    aSolutions[i] = aSolutions[i - 1] * (n - k + 1 + i) / (i + 1);
+  if (k == 0) {
+    return 1;
   }
 
-  return aSolutions[k - 1];
+  // Recursion ->  (n, k) = (n - 1, k - 1) * n / k
+  int step1 = n - k + 1;
+  int step0;
+  for (int i = 1; i < k; ++i) {
+    step1 = (step0 = step1) * (n - k + 1 + i) / (i + 1);
+  }
+
+  return step1;
 }
 
 }  // namespace algorithms
