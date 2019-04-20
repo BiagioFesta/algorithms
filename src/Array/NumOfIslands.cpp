@@ -16,6 +16,7 @@
 
 */
 #include <algorithm>
+#include <algorithms/Array/NumOfIslands.hpp>
 #include <cassert>
 #include <queue>
 #include <vector>
