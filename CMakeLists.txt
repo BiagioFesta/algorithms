@@ -59,6 +59,7 @@ target_sources(${PROJECT_NAME}
   ${PROJECT_SOURCE_DIR}/src/DynamicProgramming/UniquePathsWithObstacles.cpp
   ${PROJECT_SOURCE_DIR}/src/LRUCache/LRUCache.cpp
   ${PROJECT_SOURCE_DIR}/src/Misc/IsPerfectSquare.cpp
+  ${PROJECT_SOURCE_DIR}/src/Misc/KSymbolInGrammar.cpp
   ${PROJECT_SOURCE_DIR}/src/String/BiggerIsGreater.cpp
   ${PROJECT_SOURCE_DIR}/src/String/CheckRecord.cpp
   ${PROJECT_SOURCE_DIR}/src/String/CountSegment.cpp
@@ -152,6 +153,7 @@ add_executable(${PROJECT_NAME}_test
   ${PROJECT_SOURCE_DIR}/test/LRUCache/testLRUCache.cpp
   ${PROJECT_SOURCE_DIR}/test/MinStack/testMinStack.cpp
   ${PROJECT_SOURCE_DIR}/test/Misc/testIsPerfectSquare.cpp
+  ${PROJECT_SOURCE_DIR}/test/Misc/testKSymbolInGrammar.cpp
   ${PROJECT_SOURCE_DIR}/test/PriorityQueue/testPriorityQueue.cpp
   ${PROJECT_SOURCE_DIR}/test/String/testBiggerIsGreater.cpp
   ${PROJECT_SOURCE_DIR}/test/String/testCheckRecord.cpp
