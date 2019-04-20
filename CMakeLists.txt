@@ -29,6 +29,7 @@ target_sources(${PROJECT_NAME}
   ${PROJECT_SOURCE_DIR}/src/Array/MaximumProduct.cpp
   ${PROJECT_SOURCE_DIR}/src/Array/MinimumSizeSubarraySum.cpp
   ${PROJECT_SOURCE_DIR}/src/Array/NonDecreasingArray.cpp
+  ${PROJECT_SOURCE_DIR}/src/Array/NumOfIslands.cpp
   ${PROJECT_SOURCE_DIR}/src/Array/Pairs.cpp
   ${PROJECT_SOURCE_DIR}/src/Array/Partition.cpp
   ${PROJECT_SOURCE_DIR}/src/Array/PlusOne.cpp
@@ -117,6 +118,7 @@ add_executable(${PROJECT_NAME}_test
   ${PROJECT_SOURCE_DIR}/test/Array/testMaximumProduct.cpp
   ${PROJECT_SOURCE_DIR}/test/Array/testMinimumSizeSubarraySum.cpp
   ${PROJECT_SOURCE_DIR}/test/Array/testNonDecreasingArray.cpp
+  ${PROJECT_SOURCE_DIR}/test/Array/testNumOfIslands.cpp
   ${PROJECT_SOURCE_DIR}/test/Array/testPairs.cpp
   ${PROJECT_SOURCE_DIR}/test/Array/testPartition.cpp
   ${PROJECT_SOURCE_DIR}/test/Array/testPlusOne.cpp
