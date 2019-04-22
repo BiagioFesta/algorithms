@@ -7,6 +7,7 @@ target_sources(${PROJECT_NAME}
   ${PROJECT_SOURCE_DIR}/src/Array/AbsolutePermutation.cpp
   ${PROJECT_SOURCE_DIR}/src/Array/AsteroidCollision.cpp
   ${PROJECT_SOURCE_DIR}/src/Array/ClimbingLeaderboard.cpp
+  ${PROJECT_SOURCE_DIR}/src/Array/ContainsDuplicateIII.cpp
   ${PROJECT_SOURCE_DIR}/src/Array/ContainsNearbyDuplicate.cpp
   ${PROJECT_SOURCE_DIR}/src/Array/ContiguousArray.cpp
   ${PROJECT_SOURCE_DIR}/src/Array/EuclideanAlgorithmGCD.cpp
@@ -97,6 +98,7 @@ add_executable(${PROJECT_NAME}_test
   ${PROJECT_SOURCE_DIR}/test/Array/testAbsolutePermutation.cpp
   ${PROJECT_SOURCE_DIR}/test/Array/testAsteroidCollision.cpp
   ${PROJECT_SOURCE_DIR}/test/Array/testClimbingLeaderboard.cpp
+  ${PROJECT_SOURCE_DIR}/test/Array/testContainsDuplicateIII.cpp
   ${PROJECT_SOURCE_DIR}/test/Array/testContainsNearbyDuplicate.cpp
   ${PROJECT_SOURCE_DIR}/test/Array/testContiguousArray.cpp
   ${PROJECT_SOURCE_DIR}/test/Array/testEuclideanAlgorithmGCD.cpp
