@@ -59,6 +59,7 @@ target_sources(${PROJECT_NAME}
   ${PROJECT_SOURCE_DIR}/src/DynamicProgramming/TwoEggsDropping.cpp
   ${PROJECT_SOURCE_DIR}/src/DynamicProgramming/UniquePathsWithObstacles.cpp
   ${PROJECT_SOURCE_DIR}/src/LRUCache/LRUCache.cpp
+  ${PROJECT_SOURCE_DIR}/src/Misc/FindItinerary.cpp
   ${PROJECT_SOURCE_DIR}/src/Misc/IsPerfectSquare.cpp
   ${PROJECT_SOURCE_DIR}/src/Misc/KSymbolInGrammar.cpp
   ${PROJECT_SOURCE_DIR}/src/String/BiggerIsGreater.cpp
@@ -154,6 +155,7 @@ add_executable(${PROJECT_NAME}_test
   ${PROJECT_SOURCE_DIR}/test/FlatSet/testFlatSet.cpp
   ${PROJECT_SOURCE_DIR}/test/LRUCache/testLRUCache.cpp
   ${PROJECT_SOURCE_DIR}/test/MinStack/testMinStack.cpp
+  ${PROJECT_SOURCE_DIR}/test/Misc/testFindItinerary.cpp
   ${PROJECT_SOURCE_DIR}/test/Misc/testIsPerfectSquare.cpp
   ${PROJECT_SOURCE_DIR}/test/Misc/testKSymbolInGrammar.cpp
   ${PROJECT_SOURCE_DIR}/test/PriorityQueue/testPriorityQueue.cpp
