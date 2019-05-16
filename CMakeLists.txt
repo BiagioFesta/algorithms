@@ -54,6 +54,7 @@ target_sources(${PROJECT_NAME}
   ${PROJECT_SOURCE_DIR}/src/DynamicProgramming/MaxProfit.cpp
   ${PROJECT_SOURCE_DIR}/src/DynamicProgramming/MinPathSum.cpp
   ${PROJECT_SOURCE_DIR}/src/DynamicProgramming/MinSwap.cpp
+  ${PROJECT_SOURCE_DIR}/src/DynamicProgramming/PartitionEqualSubSum.cpp
   ${PROJECT_SOURCE_DIR}/src/DynamicProgramming/SherlockAndCost.cpp
   ${PROJECT_SOURCE_DIR}/src/DynamicProgramming/SubstringsSum.cpp
   ${PROJECT_SOURCE_DIR}/src/DynamicProgramming/TwoEggsDropping.cpp
@@ -148,6 +149,7 @@ add_executable(${PROJECT_NAME}_test
   ${PROJECT_SOURCE_DIR}/test/DynamicProgramming/testMaxProfit.cpp
   ${PROJECT_SOURCE_DIR}/test/DynamicProgramming/testMinPathSum.cpp
   ${PROJECT_SOURCE_DIR}/test/DynamicProgramming/testMinSwap.cpp
+  ${PROJECT_SOURCE_DIR}/test/DynamicProgramming/testPartitionEqualSubSum.cpp
   ${PROJECT_SOURCE_DIR}/test/DynamicProgramming/testSherlockAndCost.cpp
   ${PROJECT_SOURCE_DIR}/test/DynamicProgramming/testSubstringsSum.cpp
   ${PROJECT_SOURCE_DIR}/test/DynamicProgramming/testTwoEggsDropping.cpp
