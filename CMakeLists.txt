@@ -60,6 +60,7 @@ target_sources(${PROJECT_NAME}
   ${PROJECT_SOURCE_DIR}/src/DynamicProgramming/SubstringsSum.cpp
   ${PROJECT_SOURCE_DIR}/src/DynamicProgramming/TwoEggsDropping.cpp
   ${PROJECT_SOURCE_DIR}/src/DynamicProgramming/UniquePathsWithObstacles.cpp
+  ${PROJECT_SOURCE_DIR}/src/Graph/CourseSchedule.cpp
   ${PROJECT_SOURCE_DIR}/src/LRUCache/LRUCache.cpp
   ${PROJECT_SOURCE_DIR}/src/Misc/FindItinerary.cpp
   ${PROJECT_SOURCE_DIR}/src/Misc/IsPerfectSquare.cpp
@@ -157,6 +158,7 @@ add_executable(${PROJECT_NAME}_test
   ${PROJECT_SOURCE_DIR}/test/DynamicProgramming/testTwoEggsDropping.cpp
   ${PROJECT_SOURCE_DIR}/test/DynamicProgramming/testUniquePathsWithObstacles.cpp
   ${PROJECT_SOURCE_DIR}/test/FlatSet/testFlatSet.cpp
+  ${PROJECT_SOURCE_DIR}/test/Graph/testCourseSchedule.cpp
   ${PROJECT_SOURCE_DIR}/test/LRUCache/testLRUCache.cpp
   ${PROJECT_SOURCE_DIR}/test/MinStack/testMinStack.cpp
   ${PROJECT_SOURCE_DIR}/test/Misc/testFindItinerary.cpp
