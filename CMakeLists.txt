@@ -68,6 +68,7 @@ target_sources(${PROJECT_NAME}
   ${PROJECT_SOURCE_DIR}/src/String/BiggerIsGreater.cpp
   ${PROJECT_SOURCE_DIR}/src/String/CheckRecord.cpp
   ${PROJECT_SOURCE_DIR}/src/String/CountSegment.cpp
+  ${PROJECT_SOURCE_DIR}/src/String/DecodeString.cpp
   ${PROJECT_SOURCE_DIR}/src/String/DetectCapitalUse.cpp
   ${PROJECT_SOURCE_DIR}/src/String/EncryptionStr.cpp
   ${PROJECT_SOURCE_DIR}/src/String/FindAndReplacePattern.cpp
@@ -168,6 +169,7 @@ add_executable(${PROJECT_NAME}_test
   ${PROJECT_SOURCE_DIR}/test/String/testBiggerIsGreater.cpp
   ${PROJECT_SOURCE_DIR}/test/String/testCheckRecord.cpp
   ${PROJECT_SOURCE_DIR}/test/String/testCountSegment.cpp
+  ${PROJECT_SOURCE_DIR}/test/String/testDecodeString.cpp
   ${PROJECT_SOURCE_DIR}/test/String/testDetectCapitalUse.cpp
   ${PROJECT_SOURCE_DIR}/test/String/testEncryptionStr.cpp
   ${PROJECT_SOURCE_DIR}/test/String/testFindAndReplacePattern.cpp
