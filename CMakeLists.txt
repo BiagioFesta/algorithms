@@ -163,6 +163,7 @@ add_executable(${PROJECT_NAME}_test
   ${PROJECT_SOURCE_DIR}/test/FlatSet/testFlatSet.cpp
   ${PROJECT_SOURCE_DIR}/test/Graph/testCourseSchedule.cpp
   ${PROJECT_SOURCE_DIR}/test/LRUCache/testLRUCache.cpp
+  ${PROJECT_SOURCE_DIR}/test/Matrix/testMatrix2D.cpp
   ${PROJECT_SOURCE_DIR}/test/MinStack/testMinStack.cpp
   ${PROJECT_SOURCE_DIR}/test/Misc/testFindItinerary.cpp
   ${PROJECT_SOURCE_DIR}/test/Misc/testIsPerfectSquare.cpp
@@ -212,11 +213,12 @@ if(${BUILD_BENCHMARK})
   find_package(Threads REQUIRED)
 
   add_executable(${PROJECT_NAME}_benchmark
-    ${PROJECT_SOURCE_DIR}/benchmark/main.cpp
     ${PROJECT_SOURCE_DIR}/benchmark/benchmarkFlatSetVsSet.cpp
-    ${PROJECT_SOURCE_DIR}/benchmark/benchmarkRadixSort.cpp
     ${PROJECT_SOURCE_DIR}/benchmark/benchmarkHIndex.cpp
-    ${PROJECT_SOURCE_DIR}/benchmark/benchmarkTreeVsHash.cpp)
+    ${PROJECT_SOURCE_DIR}/benchmark/benchmarkMatrix2D.cpp
+    ${PROJECT_SOURCE_DIR}/benchmark/benchmarkRadixSort.cpp
+    ${PROJECT_SOURCE_DIR}/benchmark/benchmarkTreeVsHash.cpp
+    ${PROJECT_SOURCE_DIR}/benchmark/main.cpp)
 
   if (MSVC)
     set(ADDITIONAL_DEPENDENCIES Shlwapi.lib)
