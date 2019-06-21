@@ -14,6 +14,7 @@ target_sources(${PROJECT_NAME}
   ${PROJECT_SOURCE_DIR}/src/Array/EuclideanAlgorithmGCD.cpp
   ${PROJECT_SOURCE_DIR}/src/Array/Find132Pattern.cpp
   ${PROJECT_SOURCE_DIR}/src/Array/FindDisappearedNumbers.cpp
+  ${PROJECT_SOURCE_DIR}/src/Array/FindKLargest.cpp
   ${PROJECT_SOURCE_DIR}/src/Array/FindLengthOfLCIS.cpp
   ${PROJECT_SOURCE_DIR}/src/Array/FirstMissingPositive.cpp
   ${PROJECT_SOURCE_DIR}/src/Array/FourSum.cpp
@@ -114,6 +115,7 @@ add_executable(${PROJECT_NAME}_test
   ${PROJECT_SOURCE_DIR}/test/Array/testEuclideanAlgorithmGCD.cpp
   ${PROJECT_SOURCE_DIR}/test/Array/testFind132Pattern.cpp
   ${PROJECT_SOURCE_DIR}/test/Array/testFindDisappearedNumbers.cpp
+  ${PROJECT_SOURCE_DIR}/test/Array/testFindKLargest.cpp
   ${PROJECT_SOURCE_DIR}/test/Array/testFindLengthOfLCIS.cpp
   ${PROJECT_SOURCE_DIR}/test/Array/testFirstMissingPositive.cpp
   ${PROJECT_SOURCE_DIR}/test/Array/testFourSum.cpp
