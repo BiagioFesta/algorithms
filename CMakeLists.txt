@@ -79,6 +79,7 @@ target_sources(${PROJECT_NAME}
   ${PROJECT_SOURCE_DIR}/src/String/FindAndReplacePattern.cpp
   ${PROJECT_SOURCE_DIR}/src/String/FindLongestWord.cpp
   ${PROJECT_SOURCE_DIR}/src/String/FindTheDifference.cpp
+  ${PROJECT_SOURCE_DIR}/src/String/FrequencySort.cpp
   ${PROJECT_SOURCE_DIR}/src/String/IsPermutation.cpp
   ${PROJECT_SOURCE_DIR}/src/String/LenLastWord.cpp
   ${PROJECT_SOURCE_DIR}/src/String/LetterCasePermutation.cpp
@@ -186,6 +187,7 @@ add_executable(${PROJECT_NAME}_test
   ${PROJECT_SOURCE_DIR}/test/String/testFindAndReplacePattern.cpp
   ${PROJECT_SOURCE_DIR}/test/String/testFindLongestWord.cpp
   ${PROJECT_SOURCE_DIR}/test/String/testFindTheDifference.cpp
+  ${PROJECT_SOURCE_DIR}/test/String/testFrequencySort.cpp
   ${PROJECT_SOURCE_DIR}/test/String/testIsPermutation.cpp
   ${PROJECT_SOURCE_DIR}/test/String/testLenLastWord.cpp
   ${PROJECT_SOURCE_DIR}/test/String/testLetterCasePermutation.cpp
