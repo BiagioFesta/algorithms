@@ -36,7 +36,7 @@ void bmRadixSort(::benchmark::State& iState) {
   const auto kSize = iState.range();
 
   for (auto _ : iState) {
-    auto v = generateVector<unsigned int>(kSize);
+    auto v = GenerateVector<unsigned int>(kSize);
     RadixSort(&v);
     ::benchmark::DoNotOptimize(std::is_sorted(v.cbegin(), v.cend()));
   }
@@ -47,7 +47,7 @@ void bmStdSort(::benchmark::State& iState) {
   const auto kSize = iState.range();
 
   for (auto _ : iState) {
-    auto v = generateVector<unsigned int>(kSize);
+    auto v = GenerateVector<unsigned int>(kSize);
     std::sort(v.begin(), v.end());
     ::benchmark::DoNotOptimize(std::is_sorted(v.cbegin(), v.cend()));
   }

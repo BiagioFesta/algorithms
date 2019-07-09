@@ -20,49 +20,34 @@
 #include <string>
 #include <vector>
 
-namespace {
-
-using CacheTable = std::vector<std::vector<std::vector<int>>>;
-
-int OnesAndZeroesImpl(const std::vector<std::string>& strs,
-                      const std::size_t i,
-                      const int p,
-                      const int q,
-                      CacheTable* cacheTable) {
-  if (i >= strs.size() || p < 0 || q < 0) {
-    return 0;
-  }
-
-  int& value = (*cacheTable)[i][p][q];
-  if (value == -1) {
-    value = OnesAndZeroesImpl(strs, i + 1, p, q, cacheTable);
-
-    if (const auto newZeroes =
-            p - std::count(strs[i].cbegin(), strs[i].cend(), '0');
-        newZeroes >= 0) {
-      if (const auto newOnes =
-              q - std::count(strs[i].cbegin(), strs[i].cend(), '1');
-          newOnes >= 0) {
-        value = std::max(
-            value,
-            1 + OnesAndZeroesImpl(strs, i + 1, newZeroes, newOnes, cacheTable));
-      }
-    }
-  }
-  return value;
-}
-
-}  // anonymous namespace
-
 namespace algorithms {
 
 int OnesAndZeroes(const std::vector<std::string>& strs,
                   const int m,
                   const int n) {
-  CacheTable cacheTable(
-      strs.size(),
-      std::vector<std::vector<int>>(m + 1, std::vector<int>(n + 1, -1)));
-  return ::OnesAndZeroesImpl(strs, 0, m, n, &cacheTable);
+  const int Mplus = m + 1;
+  const int Nplus = n + 1;
+  std::vector<int> table(Mplus * Nplus);
+
+  int numZeroes, numOnes;
+
+  for (const auto& str : strs) {  // O(S)
+    numZeroes = numOnes = 0;
+    for (const char c : str) {
+      numZeroes += (c & 0x1) ^ 0x1;
+      numOnes += c & 0x1;
+    }
+
+    for (int i = m; i >= numZeroes; --i) {  // O(M)
+      for (int j = n; j >= numOnes; --j) {  // O(N)
+        table[i * Nplus + j] =
+            std::max(table[i * Nplus + j],
+                     table[(i - numZeroes) * Nplus + (j - numOnes)] + 1);
+      }
+    }
+  }
+
+  return table.back();
 }
 
 }  // namespace algorithms

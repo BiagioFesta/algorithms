@@ -228,6 +228,7 @@ if(${BUILD_BENCHMARK})
     ${PROJECT_SOURCE_DIR}/benchmark/benchmarkFlatSetVsSet.cpp
     ${PROJECT_SOURCE_DIR}/benchmark/benchmarkHIndex.cpp
     ${PROJECT_SOURCE_DIR}/benchmark/benchmarkMatrix2D.cpp
+    ${PROJECT_SOURCE_DIR}/benchmark/benchmarkOnesAndZeroes.cpp
     ${PROJECT_SOURCE_DIR}/benchmark/benchmarkRadixSort.cpp
     ${PROJECT_SOURCE_DIR}/benchmark/benchmarkTreeVsHash.cpp
     ${PROJECT_SOURCE_DIR}/benchmark/main.cpp)

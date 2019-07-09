@@ -33,16 +33,32 @@ struct RndIntGenerator {
   using RndEngine_t = std::mt19937_64;
   using Seed_t = RndEngine_t::result_type;
 
-  explicit RndIntGenerator(Seed_t iSeed) : _rndEngine(iSeed) {}
+  explicit RndIntGenerator(Seed_t iSeed) : rndEngine_(iSeed) {}
 
-  value_type operator()() noexcept { return _rndDistribution(_rndEngine); }
+  value_type operator()() noexcept { return rndDistribution_(rndEngine_); }
 
-  RndEngine_t _rndEngine;
-  std::uniform_int_distribution<value_type> _rndDistribution;
+  RndEngine_t rndEngine_;
+  std::uniform_int_distribution<value_type> rndDistribution_;
+};
+
+template <typename T>
+struct RndRealGenerator {
+  static_assert(std::is_floating_point_v<T>);
+
+  using value_type = T;
+  using RndEngine_t = std::mt19937_64;
+  using Seed_t = RndEngine_t::result_type;
+
+  explicit RndRealGenerator(Seed_t seed) : rndEngine_(seed) {}
+
+  value_type operator()() noexcept { return rndDistribution_(rndEngine_); }
+
+  RndEngine_t rndEngine_;
+  std::uniform_real_distribution<value_type> rndDistribution_;
 };
 
 template <typename T, typename RndGenerator = RndIntGenerator<T>>
-std::vector<T> generateVector(const std::size_t iSize,
+std::vector<T> GenerateVector(const std::size_t iSize,
                               typename RndGenerator::Seed_t iSeed = 0) {
   RndGenerator aRndGenerator{iSeed};
 

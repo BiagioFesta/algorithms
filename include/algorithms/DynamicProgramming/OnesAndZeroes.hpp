@@ -29,7 +29,7 @@ namespace algorithms {
  *  Now your task is to find the maximum number of strings that you can form
  *  with given m 0s and n 1s. Each 0 and 1 can be used at most once.
  *
- *  \note  Complexity  -->  Time: O(S x M x N)   Space: O(S x M x N)
+ *  \note  Complexity  -->  Time: O(S x M x N)   Space: O(M x N)
  *  \note https://leetcode.com/problems/ones-and-zeroes/
  */
 int OnesAndZeroes(const std::vector<std::string>& strs,
