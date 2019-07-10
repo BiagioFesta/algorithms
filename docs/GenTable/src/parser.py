@@ -9,7 +9,6 @@ class Parser:
     """
     def __init__(self):
         self.table = []
-        self.cquery_directory = '.cquery_cached_index'
         self.gnu_link = 'www.gnu.org'
         self.leetcode_table = Parser.__fill_leetcode_table()
         self.leetcode_diff_map = {1:'Easy', 2:'Medium', 3:'Hard'}
@@ -19,7 +18,7 @@ class Parser:
         """
         self.table = []
         root_directory = os.path.abspath(root_directory)
-        header_files = self.__get_headers_from_root(root_directory)
+        header_files = Parser.__get_headers_from_root(root_directory)
 
         for header_file in header_files:
             if verbose:
@@ -55,7 +54,8 @@ class Parser:
             raise Exception('Error parsing HTML website "{}"'.format(leet_code_api))
         return response.json()
 
-    def __get_headers_from_root(self, root_directory):
+    @staticmethod
+    def __get_headers_from_root(root_directory):
         include_directory = root_directory + '/include'
         if not os.path.exists(include_directory):
             raise Exception('Not found the include directory of the project ({})'
@@ -63,10 +63,9 @@ class Parser:
 
         files = []
         for items in os.walk(include_directory):
-            if self.cquery_directory not in items[0]:
-                for file in items[2]:
-                    file_name = items[0] + '/' + file
-                    files.append(file_name)
+            for file in items[2]:
+                file_name = items[0] + '/' + file
+                files.append(file_name)
         return files
 
     @staticmethod
@@ -90,7 +89,8 @@ class Parser:
     def __purge_root_from_directory(root_directory, file_name):
         return file_name.replace(root_directory + '/', '')
 
-    def __find_cpp_file(self, root_directory, header_file):
+    @staticmethod
+    def __find_cpp_file(root_directory, header_file):
         src_directory = root_directory + '/src'
         if not os.path.exists(src_directory):
             raise Exception('Not found the src directory of the project ({})'
@@ -99,12 +99,11 @@ class Parser:
         name_to_find = Parser.__get_pure_name_of_file(header_file)
 
         for items in os.walk(src_directory):
-            if self.cquery_directory not in items[0]:
-                for file in items[2]:
-                    if os.path.splitext(file)[0] == name_to_find:
-                        complete_filename = items[0] + '/' + file
-                        return Parser.__purge_root_from_directory(root_directory,
-                                                                  complete_filename)
+            for file in items[2]:
+                if os.path.splitext(file)[0] == name_to_find:
+                    complete_filename = items[0] + '/' + file
+                    return Parser.__purge_root_from_directory(root_directory,
+                                                              complete_filename)
 
         return Parser.__purge_root_from_directory(root_directory, header_file)
 
@@ -120,7 +119,7 @@ class Parser:
         function_name = meta[1] if meta[1] else re.sub('([a-z])([A-Z])',
                                                        '\\g<1> \\g<2>',
                                                        Parser.__get_pure_name_of_file(header_file))
-        cpp_file = self.__find_cpp_file(root_directory, header_file)
+        cpp_file = Parser.__find_cpp_file(root_directory, header_file)
         difficulty = meta[0]
 
         return (url, function_name, cpp_file, difficulty)
