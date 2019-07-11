@@ -26,6 +26,7 @@
 | [Decode String](https://leetcode.com/problems/decode-string/) | ![Medium](https://img.shields.io/badge/Difficulty-Medium-yellow.svg) | [Source](https://github.com/BiagioFesta/algorithms/blob/master/src/String/DecodeString.cpp) |
 | [Design Twitter](https://leetcode.com/problems/design-twitter/) | ![Medium](https://img.shields.io/badge/Difficulty-Medium-yellow.svg) | [Source](https://github.com/BiagioFesta/algorithms/blob/master/src/Twitter/Twitter.cpp) |
 | [Detect Capital Use]() | ![Not Defined](https://img.shields.io/badge/Difficulty-ND-lightgray.svg) | [Source](https://github.com/BiagioFesta/algorithms/blob/master/src/String/DetectCapitalUse.cpp) |
+| [Distant Barcodes](https://leetcode.com/problems/distant-barcodes/) | ![Medium](https://img.shields.io/badge/Difficulty-Medium-yellow.svg) | [Source](https://github.com/BiagioFesta/algorithms/blob/master/src/Array/DistantBarcodes.cpp) |
 | [Double Linked List]() | ![Not Defined](https://img.shields.io/badge/Difficulty-ND-lightgray.svg) | [Source](https://github.com/BiagioFesta/algorithms/blob/master/include/algorithms/CTCI/Chapter2/DoubleLinkedList.hpp) |
 | [Encryption Str]() | ![Not Defined](https://img.shields.io/badge/Difficulty-ND-lightgray.svg) | [Source](https://github.com/BiagioFesta/algorithms/blob/master/src/String/EncryptionStr.cpp) |
 | [Euclidean algorithm](https://en.wikipedia.org/wiki/Euclidean_algorithm) | ![Not Defined](https://img.shields.io/badge/Difficulty-ND-lightgray.svg) | [Source](https://github.com/BiagioFesta/algorithms/blob/master/src/Array/EuclideanAlgorithmGCD.cpp) |
