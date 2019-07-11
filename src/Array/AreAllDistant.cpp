@@ -15,27 +15,18 @@
   along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 */
-#include <gtest/gtest.h>
 #include <algorithms/Array/AreAllDistant.hpp>
-#include <algorithms/Array/DistantBarcodes.hpp>
 #include <vector>
 
-namespace algorithms::test {
+namespace algorithms {
 
-TEST(Array, DistantBarcodes) {
-  using Test = std::vector<int>;
-  const std::vector<Test> testCases = {{1, 1, 1, 2, 2, 2},
-                                       {1, 1, 1, 1, 2, 2, 3, 3},
-                                       {1},
-                                       {1, 2},
-                                       {1, 2, 3},
-                                       {1, 2, 3, 3}};
-
-  for (const auto& v : testCases) {
-    const auto result = DistantBarcodes(v);
-    ASSERT_EQ(v.size(), result.size());
-    ASSERT_TRUE(AreAllDistant(result));
+bool AreAllDistant(const std::vector<int>& nums) {
+  for (std::size_t i = 1; i < nums.size(); ++i) {
+    if (nums[i] == nums[i - 1]) {
+      return false;
+    }
   }
+  return true;
 }
 
-}  // namespace algorithms::test
+}  // namespace algorithms
