@@ -23,6 +23,7 @@ target_sources(${PROJECT_NAME}
   ${PROJECT_SOURCE_DIR}/src/Array/FruitIntoBaskets.cpp
   ${PROJECT_SOURCE_DIR}/src/Array/GlobalLocalInversions.cpp
   ${PROJECT_SOURCE_DIR}/src/Array/HIndex.cpp
+  ${PROJECT_SOURCE_DIR}/src/Array/InsertInterval.cpp
   ${PROJECT_SOURCE_DIR}/src/Array/IsOneBitCharacter.cpp
   ${PROJECT_SOURCE_DIR}/src/Array/IsPalindrome.cpp
   ${PROJECT_SOURCE_DIR}/src/Array/IsPermutation.cpp
@@ -130,6 +131,7 @@ add_executable(${PROJECT_NAME}_test
   ${PROJECT_SOURCE_DIR}/test/Array/testFruitIntoBaskets.cpp
   ${PROJECT_SOURCE_DIR}/test/Array/testGlobalLocalInversions.cpp
   ${PROJECT_SOURCE_DIR}/test/Array/testHIndex.cpp
+  ${PROJECT_SOURCE_DIR}/test/Array/testInsertInterval.cpp
   ${PROJECT_SOURCE_DIR}/test/Array/testIsOneBitCharacter.cpp
   ${PROJECT_SOURCE_DIR}/test/Array/testIsPalindrome.cpp
   ${PROJECT_SOURCE_DIR}/test/Array/testIsPermutation.cpp
