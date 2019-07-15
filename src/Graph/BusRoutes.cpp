@@ -27,32 +27,41 @@ namespace algorithms {
 int BusRoutes(const std::vector<std::vector<int>>& routes,
               const int S,
               const int T) {
-  std::unordered_map<int, std::unordered_set<std::size_t>> stop2bus;
+  using Stop2Bus = std::unordered_map<int, std::unordered_set<std::size_t>>;
+  using Queue = std::queue<std::pair<int, int>>;
+  using VisitedSet = std::unordered_set<int>;
+
+  if (S == T) {
+    return 0;
+  }
+
+  Stop2Bus stop2bus;  // Given a stop, what bus we can take
   for (std::size_t i = 0; i < routes.size(); ++i) {
     for (const int j : routes[i]) {
       stop2bus[j].insert(i);
     }
   }
 
-  std::queue<std::pair<int, int>> bfs;
-  std::unordered_set<int> visited;
+  Queue bfs;
+  VisitedSet visited;
 
-  bfs.emplace(S, 0);
-  visited.insert(S);
+  for (const std::size_t bus : stop2bus[S]) {
+    bfs.emplace(bus, 1);
+    visited.insert(bus);
+  }
 
   while (!bfs.empty()) {
-    const auto [currentStop, depth] = bfs.front();
+    const auto [bus, depth] = bfs.front();
     bfs.pop();
 
-    if (currentStop == T) {
+    if (stop2bus[T].count(bus)) {
       return depth;
     }
 
-    for (const std::size_t bus : stop2bus[currentStop]) {
-      for (const int nextStop : routes[bus]) {
-        if (!visited.count(nextStop)) {
-          bfs.emplace(nextStop, depth + 1);
-          visited.insert(nextStop);
+    for (const int stop : routes[bus]) {
+      for (const std::size_t nextBus : stop2bus[stop]) {
+        if (auto r = visited.insert(nextBus); r.second) {
+          bfs.emplace(nextBus, depth + 1);
         }
       }
     }
