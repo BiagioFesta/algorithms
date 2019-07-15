@@ -70,6 +70,7 @@ target_sources(${PROJECT_NAME}
   ${PROJECT_SOURCE_DIR}/src/DynamicProgramming/TargetSum.cpp
   ${PROJECT_SOURCE_DIR}/src/DynamicProgramming/TwoEggsDropping.cpp
   ${PROJECT_SOURCE_DIR}/src/DynamicProgramming/UniquePathsWithObstacles.cpp
+  ${PROJECT_SOURCE_DIR}/src/Graph/BusRoutes.cpp
   ${PROJECT_SOURCE_DIR}/src/Graph/CourseSchedule.cpp
   ${PROJECT_SOURCE_DIR}/src/Graph/CourseScheduleII.cpp
   ${PROJECT_SOURCE_DIR}/src/LRUCache/LRUCache.cpp
@@ -182,6 +183,7 @@ add_executable(${PROJECT_NAME}_test
   ${PROJECT_SOURCE_DIR}/test/DynamicProgramming/testTwoEggsDropping.cpp
   ${PROJECT_SOURCE_DIR}/test/DynamicProgramming/testUniquePathsWithObstacles.cpp
   ${PROJECT_SOURCE_DIR}/test/FlatSet/testFlatSet.cpp
+  ${PROJECT_SOURCE_DIR}/test/Graph/testBusRoutes.cpp
   ${PROJECT_SOURCE_DIR}/test/Graph/testCourseSchedule.cpp
   ${PROJECT_SOURCE_DIR}/test/Graph/testCourseScheduleII.cpp
   ${PROJECT_SOURCE_DIR}/test/LRUCache/testLRUCache.cpp
