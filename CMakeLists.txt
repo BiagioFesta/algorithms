@@ -5,6 +5,7 @@ add_library(${PROJECT_NAME} STATIC)
 target_sources(${PROJECT_NAME}
   PRIVATE
   ${PROJECT_SOURCE_DIR}/src/Array/AbsolutePermutation.cpp
+  ${PROJECT_SOURCE_DIR}/src/Array/AdvantageShuffle.cpp
   ${PROJECT_SOURCE_DIR}/src/Array/AreAllDistant.cpp
   ${PROJECT_SOURCE_DIR}/src/Array/ArrayDoubledPairs.cpp
   ${PROJECT_SOURCE_DIR}/src/Array/AsteroidCollision.cpp
@@ -116,6 +117,7 @@ find_package(GTest REQUIRED)
 
 add_executable(${PROJECT_NAME}_test
   ${PROJECT_SOURCE_DIR}/test/Array/testAbsolutePermutation.cpp
+  ${PROJECT_SOURCE_DIR}/test/Array/testAdvantageShuffle.cpp
   ${PROJECT_SOURCE_DIR}/test/Array/testAreAllDistant.cpp
   ${PROJECT_SOURCE_DIR}/test/Array/testArrayDoubledPairs.cpp
   ${PROJECT_SOURCE_DIR}/test/Array/testAsteroidCollision.cpp
