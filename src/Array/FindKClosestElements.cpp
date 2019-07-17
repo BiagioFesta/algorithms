@@ -29,32 +29,38 @@ std::vector<int> FindKClosestElements(const std::vector<int>& arr,
   assert(std::is_sorted(arr.cbegin(), arr.cend()));
   assert(static_cast<std::size_t>(k) <= arr.size());
 
-  std::vector<int> result;
-  result.reserve(k);
+  if (arr.empty()) {
+    return {};
+  }
 
-  const auto lb = arr.cbegin() - 1;
-  auto j = std::lower_bound(arr.cbegin(), arr.cend(), x);  // O(logN)
-  auto i = j - 1;                                          // O(1)
+  auto lo = std::lower_bound(arr.cbegin(), arr.cend(), x);  // O(logN);
+  if (lo == arr.cend()) {
+    lo = arr.cend() - k;
+  } else if (lo != arr.cbegin() && (x - *(lo - 1) <= (*lo - x))) {
+    --lo;
+  }
+  auto hi = lo + 1;
 
-  while (result.size() < static_cast<std::size_t>(k)) {  // O(K)
-    if (i == lb) {
-      assert(j != arr.cend());
-      result.push_back(*(j++));
-    } else if (j == arr.cend()) {
-      assert(i != arr.cend());
-      result.push_back(*(i--));
+  while (std::distance(lo, hi) < k) {  // O(K)
+    if (hi == arr.cend()) {
+      assert(lo != arr.cbegin());
+      --lo;
     } else {
-      const int di = x - *i;
-      const int dj = *j - x;
-      if (di <= dj) {
-        result.push_back(*(i--));
+      if (lo == arr.cbegin()) {
+        ++hi;
       } else {
-        result.push_back(*(j++));
+        const int di = x - *(lo - 1);
+        const int dj = *hi - x;
+        if (di <= dj) {
+          --lo;
+        } else {
+          ++hi;
+        }
       }
     }
   }
 
-  std::sort(result.begin(), result.end());  // O(KlogK)
+  std::vector<int> result(lo, hi);  // O(K)
   return result;
 }
 

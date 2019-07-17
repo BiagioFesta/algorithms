@@ -25,7 +25,7 @@ namespace algorithms {
  *  elements to x in the array. The result should also be sorted in ascending
  *  order. If there is a tie, the smaller elements are always preferred.
  *
- *  \note  Complexity  -->  Time: O(KlogK + logN)   Space: O(1)  without output
+ *  \note  Complexity  -->  Time: O(K + logN)   Space: O(1)  without output
  *  \note https://leetcode.com/problems/find-k-closest-elements/
  */
 std::vector<int> FindKClosestElements(const std::vector<int>& arr,

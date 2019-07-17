@@ -25,9 +25,11 @@ namespace algorithms::test {
 TEST(Array, FindKClosestElements) {
   using Test = std::tuple<std::vector<int>, int, int, std::vector<int>>;
   const std::vector<Test> testCases = {
+      {{0, 0, 1, 2, 3, 3, 4, 7, 7, 8}, 3, 5, {3, 3, 4}},
       {{1, 2, 3, 4, 5}, 4, 3, {1, 2, 3, 4}},
       {{1, 2, 3, 4, 5}, 4, -1, {1, 2, 3, 4}},
-      {{0, 1, 1, 1, 2, 3, 6, 7, 8, 9}, 9, 4, {0, 1, 1, 1, 2, 3, 6, 7, 8}}};
+      {{0, 1, 1, 1, 2, 3, 6, 7, 8, 9}, 9, 4, {0, 1, 1, 1, 2, 3, 6, 7, 8}},
+      {{}, 0, 100, {}}};
 
   for (const auto& [v, k, x, expt] : testCases) {
     ASSERT_EQ(FindKClosestElements(v, k, x), expt);
