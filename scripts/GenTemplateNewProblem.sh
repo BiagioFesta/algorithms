@@ -45,11 +45,15 @@ readProblemType() {
     esac
 }
 
+getYear() {
+    date | awk '{print $4}'
+}
+
 genCpp() {
     fileCpp="src/${problemType}/${problemName}.cpp"
     touch ${fileCpp}
     echo "/*
-  Copyright (C) 2019  Biagio Festa
+  Copyright (C) $(getYear)  Biagio Festa
 
   This program is free software: you can redistribute it and/or modify
   it under the terms of the GNU General Public License as published by
@@ -81,7 +85,7 @@ genHpp() {
     fileHpp="include/algorithms/${problemType}/${problemName}.hpp"
     touch ${fileHpp}
     echo "/*
-  Copyright (C) 2019  Biagio Festa
+  Copyright (C) $(getYear)  Biagio Festa
 
   This program is free software: you can redistribute it and/or modify
   it under the terms of the GNU General Public License as published by
@@ -114,7 +118,7 @@ genTest() {
     fileTest="test/${problemType}/test${problemName}.cpp"
     touch ${fileTest}
     echo "/*
-  Copyright (C) 2019  Biagio Festa
+  Copyright (C) $(getYear)  Biagio Festa
 
   This program is free software: you can redistribute it and/or modify
   it under the terms of the GNU General Public License as published by
