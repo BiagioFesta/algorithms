@@ -1,6 +1,6 @@
 # Problems List
 ![Easy_counter](https://img.shields.io/badge/Easy-15-green.svg?style=for-the-badge&logo=c%2b%2b)
-![Medium_counter](https://img.shields.io/badge/Medium-54-yellow.svg?style=for-the-badge&logo=c%2b%2b)
+![Medium_counter](https://img.shields.io/badge/Medium-55-yellow.svg?style=for-the-badge&logo=c%2b%2b)
 ![Hard_counter](https://img.shields.io/badge/Hard-7-red.svg?style=for-the-badge&logo=c%2b%2b)
 ![Undefined_counter](https://img.shields.io/badge/Undefined-34-lightgray.svg?style=for-the-badge&logo=c%2b%2b)
 
@@ -98,6 +98,7 @@
 | [Radix sort](https://en.wikipedia.org/wiki/Radix_sort) | ![Not Defined](https://img.shields.io/badge/Difficulty-ND-lightgray.svg) | [Source](https://github.com/BiagioFesta/algorithms/blob/master/src/Array/RadixSort.cpp) |
 | [Reconstruct Itinerary](https://leetcode.com/problems/reconstruct-itinerary/) | ![Medium](https://img.shields.io/badge/Difficulty-Medium-yellow.svg) | [Source](https://github.com/BiagioFesta/algorithms/blob/master/src/Misc/FindItinerary.cpp) |
 | [Remove Duplicates]() | ![Not Defined](https://img.shields.io/badge/Difficulty-ND-lightgray.svg) | [Source](https://github.com/BiagioFesta/algorithms/blob/master/src/CTCI/Chapter2/RemoveDuplicates.cpp) |
+| [Repeated DNA Sequences](https://leetcode.com/problems/repeated-dna-sequences/) | ![Medium](https://img.shields.io/badge/Difficulty-Medium-yellow.svg) | [Source](https://github.com/BiagioFesta/algorithms/blob/master/src/String/RepeatedDNASequences.cpp) |
 | [Reverse String In Place]() | ![Not Defined](https://img.shields.io/badge/Difficulty-ND-lightgray.svg) | [Source](https://github.com/BiagioFesta/algorithms/blob/master/src/String/ReverseStringInPlace.cpp) |
 | [Rotate Array](https://leetcode.com/problems/rotate-array/) | ![Easy](https://img.shields.io/badge/Difficulty-Easy-green.svg) | [Source](https://github.com/BiagioFesta/algorithms/blob/master/src/Array/RotateRight.cpp) |
 | [Sam and substrings](https://www.hackerrank.com/challenges/sam-and-substrings/problem) | ![Medium](https://img.shields.io/badge/Difficulty-Medium-yellow.svg) | [Source](https://github.com/BiagioFesta/algorithms/blob/master/src/DynamicProgramming/SubstringsSum.cpp) |

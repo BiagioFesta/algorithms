@@ -101,6 +101,7 @@ target_sources(${PROJECT_NAME}
   ${PROJECT_SOURCE_DIR}/src/String/OneWay.cpp
   ${PROJECT_SOURCE_DIR}/src/String/OriginalDigits.cpp
   ${PROJECT_SOURCE_DIR}/src/String/PalindromePermutation.cpp
+  ${PROJECT_SOURCE_DIR}/src/String/RepeatedDNASequences.cpp
   ${PROJECT_SOURCE_DIR}/src/String/ReverseStringInPlace.cpp
   ${PROJECT_SOURCE_DIR}/src/String/SteadyGene.cpp
   ${PROJECT_SOURCE_DIR}/src/String/StrStr.cpp
@@ -222,6 +223,7 @@ add_executable(${PROJECT_NAME}_test
   ${PROJECT_SOURCE_DIR}/test/String/testOneWay.cpp
   ${PROJECT_SOURCE_DIR}/test/String/testOriginalDigits.cpp
   ${PROJECT_SOURCE_DIR}/test/String/testPalindromePermutation.cpp
+  ${PROJECT_SOURCE_DIR}/test/String/testRepeatedDNASequences.cpp
   ${PROJECT_SOURCE_DIR}/test/String/testReverseStringInPlace.cpp
   ${PROJECT_SOURCE_DIR}/test/String/testSteadyGene.cpp
   ${PROJECT_SOURCE_DIR}/test/String/testStrStr.cpp
