@@ -1,7 +1,7 @@
 # Problems List
 ![Easy_counter](https://img.shields.io/badge/Easy-15-green.svg?style=for-the-badge&logo=c%2b%2b)
 ![Medium_counter](https://img.shields.io/badge/Medium-55-yellow.svg?style=for-the-badge&logo=c%2b%2b)
-![Hard_counter](https://img.shields.io/badge/Hard-7-red.svg?style=for-the-badge&logo=c%2b%2b)
+![Hard_counter](https://img.shields.io/badge/Hard-8-red.svg?style=for-the-badge&logo=c%2b%2b)
 ![Undefined_counter](https://img.shields.io/badge/Undefined-34-lightgray.svg?style=for-the-badge&logo=c%2b%2b)
 
 | Problem Name | Difficulty | Implementation |
@@ -55,6 +55,7 @@
 | [Is Permutation]() | ![Not Defined](https://img.shields.io/badge/Difficulty-ND-lightgray.svg) | [Source](https://github.com/BiagioFesta/algorithms/blob/master/src/String/IsPermutation.cpp) |
 | [Is Permutation]() | ![Not Defined](https://img.shields.io/badge/Difficulty-ND-lightgray.svg) | [Source](https://github.com/BiagioFesta/algorithms/blob/master/src/String/IsPermutation.cpp) |
 | [Jump Game II](https://leetcode.com/problems/jump-game-ii/) | ![Hard](https://img.shields.io/badge/Difficulty-Hard-red.svg) | [Source](https://github.com/BiagioFesta/algorithms/blob/master/src/Array/JumpGame2.cpp) |
+| [K-Similar Strings](https://leetcode.com/problems/k-similar-strings/) | ![Hard](https://img.shields.io/badge/Difficulty-Hard-red.svg) | [Source](https://github.com/BiagioFesta/algorithms/blob/master/src/String/KSimilarStrings.cpp) |
 | [K-th Symbol in Grammar](https://leetcode.com/problems/k-th-symbol-in-grammar/) | ![Medium](https://img.shields.io/badge/Difficulty-Medium-yellow.svg) | [Source](https://github.com/BiagioFesta/algorithms/blob/master/src/Misc/KSymbolInGrammar.cpp) |
 | [Keys and Rooms](https://leetcode.com/problems/keys-and-rooms/) | ![Medium](https://img.shields.io/badge/Difficulty-Medium-yellow.svg) | [Source](https://github.com/BiagioFesta/algorithms/blob/master/src/Array/KeysAndRooms.cpp) |
 | [Keystroke](https://www.geeksforgeeks.org/how-to-print-maximum-number-of-a-using-given-four-keys/) | ![Not Defined](https://img.shields.io/badge/Difficulty-ND-lightgray.svg) | [Source](https://github.com/BiagioFesta/algorithms/blob/master/src/DynamicProgramming/Keystroke.cpp) |
