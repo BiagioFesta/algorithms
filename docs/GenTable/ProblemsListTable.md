@@ -1,6 +1,6 @@
 # Problems List
 ![Easy_counter](https://img.shields.io/badge/Easy-15-green.svg?style=for-the-badge&logo=c%2b%2b)
-![Medium_counter](https://img.shields.io/badge/Medium-55-yellow.svg?style=for-the-badge&logo=c%2b%2b)
+![Medium_counter](https://img.shields.io/badge/Medium-56-yellow.svg?style=for-the-badge&logo=c%2b%2b)
 ![Hard_counter](https://img.shields.io/badge/Hard-8-red.svg?style=for-the-badge&logo=c%2b%2b)
 ![Undefined_counter](https://img.shields.io/badge/Undefined-34-lightgray.svg?style=for-the-badge&logo=c%2b%2b)
 
@@ -106,6 +106,7 @@
 | [Sherlock and Cost](https://www.hackerrank.com/challenges/sherlock-and-cost/problem) | ![Medium](https://img.shields.io/badge/Difficulty-Medium-yellow.svg) | [Source](https://github.com/BiagioFesta/algorithms/blob/master/src/DynamicProgramming/SherlockAndCost.cpp) |
 | [Sieve of Eratosthenes](https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes) | ![Not Defined](https://img.shields.io/badge/Difficulty-ND-lightgray.svg) | [Source](https://github.com/BiagioFesta/algorithms/blob/master/src/Array/SieveOfEratosthenes.cpp) |
 | [Sort Characters By Frequency](https://leetcode.com/problems/sort-characters-by-frequency/) | ![Medium](https://img.shields.io/badge/Difficulty-Medium-yellow.svg) | [Source](https://github.com/BiagioFesta/algorithms/blob/master/src/String/FrequencySort.cpp) |
+| [Sort Colors](https://leetcode.com/problems/sort-colors/) | ![Medium](https://img.shields.io/badge/Difficulty-Medium-yellow.svg) | [Source](https://github.com/BiagioFesta/algorithms/blob/master/src/Array/SortColors.cpp) |
 | [Stock Maximize](https://www.hackerrank.com/challenges/stockmax/problem) | ![Medium](https://img.shields.io/badge/Difficulty-Medium-yellow.svg) | [Source](https://github.com/BiagioFesta/algorithms/blob/master/src/Array/StockMaximize.cpp) |
 | [Str Str](http://man7.org/linux/man-pages/man3/strstr.3.html) | ![Not Defined](https://img.shields.io/badge/Difficulty-ND-lightgray.svg) | [Source](https://github.com/BiagioFesta/algorithms/blob/master/src/String/StrStr.cpp) |
 | [String Compression]() | ![Not Defined](https://img.shields.io/badge/Difficulty-ND-lightgray.svg) | [Source](https://github.com/BiagioFesta/algorithms/blob/master/src/String/StringCompression.cpp) |
