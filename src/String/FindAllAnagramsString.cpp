@@ -27,39 +27,28 @@ namespace algorithms {
 
 std::vector<int> FindAllAnagramsString(const std::string& s,
                                        const std::string& p) {
-  using Counter = int;
   constexpr std::size_t kSizeTable = 1 << 8;
-  constexpr std::size_t kMemorySize = sizeof(Counter) * kSizeTable;
-
-  static const std::array<char, kMemorySize> sZeroes{};
-
-  std::vector<int> result;
 
   const int kSizeS = s.size();
   const int kSizeP = p.size();
-  const int kSizeDelta = kSizeS - kSizeP;
-  if (kSizeDelta < 0) {
-    return result;
+  std::array<int, kSizeTable> needs{};
+  std::vector<int> result;
+  int l = 0, r = 0, missing = kSizeP;
+
+  for (const char c : p) {  // O(P)
+    ++needs[c];
   }
 
-  std::array<Counter, kSizeTable> deltaFreq{};
-
-  for (int i = 0; i < kSizeP; ++i) {        // O(P)
-    --(deltaFreq[static_cast<int>(p[i])]);  // O(1)
-    ++(deltaFreq[static_cast<int>(s[i])]);  // O(1)
-  }
-
-  int i;
-  for (i = 0; i < kSizeDelta; ++i) {  // O(S)
-    if (std::memcmp(deltaFreq.data(), sZeroes.data(), kMemorySize) == 0) {
-      result.push_back(i);
+  while (r < kSizeS) {  // O(S)
+    if (--needs[s[r++]] >= 0) {
+      --missing;
     }
-
-    --(deltaFreq[static_cast<int>(s[i])]);
-    ++(deltaFreq[static_cast<int>(s[i + kSizeP])]);
-  }
-  if (std::memcmp(deltaFreq.data(), sZeroes.data(), kMemorySize) == 0) {
-    result.push_back(i);
+    if (!missing) {
+      result.push_back(l);
+    }
+    if (r - l == kSizeP && ++needs[s[l++]] > 0) {
+      ++missing;
+    }
   }
 
   return result;
