@@ -52,6 +52,7 @@ target_sources(${PROJECT_NAME}
   ${PROJECT_SOURCE_DIR}/src/Array/SieveOfEratosthenes.cpp
   ${PROJECT_SOURCE_DIR}/src/Array/SortColors.cpp
   ${PROJECT_SOURCE_DIR}/src/Array/StockMaximize.cpp
+  ${PROJECT_SOURCE_DIR}/src/Array/SubarraySumEqualsK.cpp
   ${PROJECT_SOURCE_DIR}/src/Array/Subsets.cpp
   ${PROJECT_SOURCE_DIR}/src/Array/ThreeSum.cpp
   ${PROJECT_SOURCE_DIR}/src/BackTracking/CombinationSum.cpp
@@ -170,6 +171,7 @@ add_executable(${PROJECT_NAME}_test
   ${PROJECT_SOURCE_DIR}/test/Array/testSieveOfEratosthenes.cpp
   ${PROJECT_SOURCE_DIR}/test/Array/testSortColors.cpp
   ${PROJECT_SOURCE_DIR}/test/Array/testStockMaximize.cpp
+  ${PROJECT_SOURCE_DIR}/test/Array/testSubarraySumEqualsK.cpp
   ${PROJECT_SOURCE_DIR}/test/Array/testSubsets.cpp
   ${PROJECT_SOURCE_DIR}/test/Array/testThreeSum.cpp
   ${PROJECT_SOURCE_DIR}/test/BST/testBST.cpp
