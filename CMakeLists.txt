@@ -266,6 +266,7 @@ if(${BUILD_BENCHMARK})
     ${PROJECT_SOURCE_DIR}/benchmark/benchmarkMatrix2D.cpp
     ${PROJECT_SOURCE_DIR}/benchmark/benchmarkOnesAndZeroes.cpp
     ${PROJECT_SOURCE_DIR}/benchmark/benchmarkRadixSort.cpp
+    ${PROJECT_SOURCE_DIR}/benchmark/benchmarkTemplateTest.cpp
     ${PROJECT_SOURCE_DIR}/benchmark/benchmarkTreeVsHash.cpp
     ${PROJECT_SOURCE_DIR}/benchmark/main.cpp)
 
