@@ -91,6 +91,7 @@ target_sources(${PROJECT_NAME}
   ${PROJECT_SOURCE_DIR}/src/String/DecodeString.cpp
   ${PROJECT_SOURCE_DIR}/src/String/DetectCapitalUse.cpp
   ${PROJECT_SOURCE_DIR}/src/String/EncryptionStr.cpp
+  ${PROJECT_SOURCE_DIR}/src/String/FindAllAnagramsString.cpp
   ${PROJECT_SOURCE_DIR}/src/String/FindAndReplacePattern.cpp
   ${PROJECT_SOURCE_DIR}/src/String/FindLongestWord.cpp
   ${PROJECT_SOURCE_DIR}/src/String/FindTheDifference.cpp
@@ -217,6 +218,7 @@ add_executable(${PROJECT_NAME}_test
   ${PROJECT_SOURCE_DIR}/test/String/testDecodeString.cpp
   ${PROJECT_SOURCE_DIR}/test/String/testDetectCapitalUse.cpp
   ${PROJECT_SOURCE_DIR}/test/String/testEncryptionStr.cpp
+  ${PROJECT_SOURCE_DIR}/test/String/testFindAllAnagramsString.cpp
   ${PROJECT_SOURCE_DIR}/test/String/testFindAndReplacePattern.cpp
   ${PROJECT_SOURCE_DIR}/test/String/testFindLongestWord.cpp
   ${PROJECT_SOURCE_DIR}/test/String/testFindTheDifference.cpp
