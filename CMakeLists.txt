@@ -62,6 +62,7 @@ target_sources(${PROJECT_NAME}
   ${PROJECT_SOURCE_DIR}/src/CTCI/Chapter2/RemoveDuplicates.cpp
   ${PROJECT_SOURCE_DIR}/src/DynamicProgramming/BinomialCoefficient.cpp
   ${PROJECT_SOURCE_DIR}/src/DynamicProgramming/CheapestJump.cpp
+  ${PROJECT_SOURCE_DIR}/src/DynamicProgramming/CoinChange.cpp
   ${PROJECT_SOURCE_DIR}/src/DynamicProgramming/Fibonacci.cpp
   ${PROJECT_SOURCE_DIR}/src/DynamicProgramming/FindRotateSteps.cpp
   ${PROJECT_SOURCE_DIR}/src/DynamicProgramming/IntegerBreak.cpp
@@ -183,6 +184,7 @@ add_executable(${PROJECT_NAME}_test
   ${PROJECT_SOURCE_DIR}/test/CTCI/Chapter2/testRemoveDuplicates.cpp
   ${PROJECT_SOURCE_DIR}/test/DynamicProgramming/testBinomialCoefficient.cpp
   ${PROJECT_SOURCE_DIR}/test/DynamicProgramming/testCheapestJump.cpp
+  ${PROJECT_SOURCE_DIR}/test/DynamicProgramming/testCoinChange.cpp
   ${PROJECT_SOURCE_DIR}/test/DynamicProgramming/testFibonacci.cpp
   ${PROJECT_SOURCE_DIR}/test/DynamicProgramming/testFindRotateSteps.cpp
   ${PROJECT_SOURCE_DIR}/test/DynamicProgramming/testIntegerBreak.cpp
