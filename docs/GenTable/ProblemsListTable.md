@@ -2,7 +2,7 @@
 ![Easy_counter](https://img.shields.io/badge/Easy-15-green.svg?style=for-the-badge&logo=c%2b%2b)
 ![Medium_counter](https://img.shields.io/badge/Medium-59-yellow.svg?style=for-the-badge&logo=c%2b%2b)
 ![Hard_counter](https://img.shields.io/badge/Hard-8-red.svg?style=for-the-badge&logo=c%2b%2b)
-![Undefined_counter](https://img.shields.io/badge/Undefined-34-lightgray.svg?style=for-the-badge&logo=c%2b%2b)
+![Undefined_counter](https://img.shields.io/badge/Undefined-35-lightgray.svg?style=for-the-badge&logo=c%2b%2b)
 
 | Problem Name | Difficulty | Implementation |
 | - | - | - |
@@ -12,6 +12,7 @@
 | [4Sum](https://leetcode.com/problems/4sum/) | ![Medium](https://img.shields.io/badge/Difficulty-Medium-yellow.svg) | [Source](https://github.com/BiagioFesta/algorithms/blob/master/src/Array/FourSum.cpp) |
 | [Absolute Permutation](https://www.hackerrank.com/challenges/absolute-permutation/problem) | ![Medium](https://img.shields.io/badge/Difficulty-Medium-yellow.svg) | [Source](https://github.com/BiagioFesta/algorithms/blob/master/src/Array/AbsolutePermutation.cpp) |
 | [Advantage Shuffle](https://leetcode.com/problems/advantage-shuffle/) | ![Medium](https://img.shields.io/badge/Difficulty-Medium-yellow.svg) | [Source](https://github.com/BiagioFesta/algorithms/blob/master/src/Array/AdvantageShuffle.cpp) |
+| [Alphabet Board Path](https://leetcode.com/problems/alphabet-board-path/) | ![Not Defined](https://img.shields.io/badge/Difficulty-ND-lightgray.svg) | [Source](https://github.com/BiagioFesta/algorithms/blob/master/src/String/AlphabetBoardPath.cpp) |
 | [Are All Distant]() | ![Not Defined](https://img.shields.io/badge/Difficulty-ND-lightgray.svg) | [Source](https://github.com/BiagioFesta/algorithms/blob/master/src/Array/AreAllDistant.cpp) |
 | [Array of Doubled Pairs](https://leetcode.com/problems/array-of-doubled-pairs/) | ![Medium](https://img.shields.io/badge/Difficulty-Medium-yellow.svg) | [Source](https://github.com/BiagioFesta/algorithms/blob/master/src/Array/ArrayDoubledPairs.cpp) |
 | [Asteroid Collision](https://leetcode.com/problems/asteroid-collision/) | ![Medium](https://img.shields.io/badge/Difficulty-Medium-yellow.svg) | [Source](https://github.com/BiagioFesta/algorithms/blob/master/src/Array/AsteroidCollision.cpp) |
