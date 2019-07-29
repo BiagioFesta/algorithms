@@ -77,6 +77,7 @@ target_sources(${PROJECT_NAME}
   ${PROJECT_SOURCE_DIR}/src/DynamicProgramming/SubstringsSum.cpp
   ${PROJECT_SOURCE_DIR}/src/DynamicProgramming/TargetSum.cpp
   ${PROJECT_SOURCE_DIR}/src/DynamicProgramming/TwoEggsDropping.cpp
+  ${PROJECT_SOURCE_DIR}/src/DynamicProgramming/TwoKeysKeyboard.cpp
   ${PROJECT_SOURCE_DIR}/src/DynamicProgramming/UniquePathsWithObstacles.cpp
   ${PROJECT_SOURCE_DIR}/src/Graph/BusRoutes.cpp
   ${PROJECT_SOURCE_DIR}/src/Graph/CourseSchedule.cpp
@@ -201,6 +202,7 @@ add_executable(${PROJECT_NAME}_test
   ${PROJECT_SOURCE_DIR}/test/DynamicProgramming/testSubstringsSum.cpp
   ${PROJECT_SOURCE_DIR}/test/DynamicProgramming/testTargetSum.cpp
   ${PROJECT_SOURCE_DIR}/test/DynamicProgramming/testTwoEggsDropping.cpp
+  ${PROJECT_SOURCE_DIR}/test/DynamicProgramming/testTwoKeysKeyboard.cpp
   ${PROJECT_SOURCE_DIR}/test/DynamicProgramming/testUniquePathsWithObstacles.cpp
   ${PROJECT_SOURCE_DIR}/test/FlatSet/testFlatSet.cpp
   ${PROJECT_SOURCE_DIR}/test/Graph/testBusRoutes.cpp
