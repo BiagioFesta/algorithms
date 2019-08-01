@@ -38,6 +38,7 @@ target_sources(${PROJECT_NAME}
   ${PROJECT_SOURCE_DIR}/src/Array/LongestMountainArray.cpp
   ${PROJECT_SOURCE_DIR}/src/Array/MajorityElementII.cpp
   ${PROJECT_SOURCE_DIR}/src/Array/MaxWidthRamp.cpp
+  ${PROJECT_SOURCE_DIR}/src/Array/MaximumAbsoluteValueExpression.cpp
   ${PROJECT_SOURCE_DIR}/src/Array/MaximumGap.cpp
   ${PROJECT_SOURCE_DIR}/src/Array/MaximumProduct.cpp
   ${PROJECT_SOURCE_DIR}/src/Array/MinimumSizeSubarraySum.cpp
@@ -161,6 +162,7 @@ add_executable(${PROJECT_NAME}_test
   ${PROJECT_SOURCE_DIR}/test/Array/testLongestMountainArray.cpp
   ${PROJECT_SOURCE_DIR}/test/Array/testMajorityElementII.cpp
   ${PROJECT_SOURCE_DIR}/test/Array/testMaxWidthRamp.cpp
+  ${PROJECT_SOURCE_DIR}/test/Array/testMaximumAbsoluteValueExpression.cpp
   ${PROJECT_SOURCE_DIR}/test/Array/testMaximumGap.cpp
   ${PROJECT_SOURCE_DIR}/test/Array/testMaximumProduct.cpp
   ${PROJECT_SOURCE_DIR}/test/Array/testMinimumSizeSubarraySum.cpp
