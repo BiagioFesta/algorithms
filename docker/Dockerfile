@@ -5,6 +5,8 @@ ENV ALGORITHMS_BUILD_TYPE Release
 ENV ALGORITHMS_HOME /opt/algorithms
 ENV ALGORITHMS_BUILD_BENCHMARKS YES
 ENV ALGORITHMS_REPOSITORY https://github.com/BiagioFesta/algorithms.git
+ENV ALGORITHMS_CXX_FLAGS "-flto"
+ENV ALGORITHMS_EXE_LINKER_FLAGS "-flto"
 
 # Install dependencies
 RUN apt-get update && \
@@ -23,6 +25,13 @@ RUN cd ${HOME} && \
   mkdir build && \
   cd build && \
   conan install --settings build_type=${ALGORITHMS_BUILD_TYPE} --settings compiler.libcxx=libstdc++11 --build=missing .. && \
-  cmake -DCMAKE_INSTALL_PREFIX=${ALGORITHMS_HOME} -DCMAKE_BUILD_TYPE=${ALGORITHMS_BUILD_TYPE} -DBUILD_BENCHMARK=${ALGORITHMS_BUILD_BENCHMARKS} .. && \
+  cmake \
+  -DCMAKE_INSTALL_PREFIX=${ALGORITHMS_HOME} \
+  -DCMAKE_BUILD_TYPE=${ALGORITHMS_BUILD_TYPE} \
+  -DCMAKE_CXX_FLAGS=${ALGORITHMS_CXX_FLAGS} \
+  -DCMAKE_EXE_LINKER_FLAGS=${ALGORITHMS_EXE_LINKER_FLAGS} \
+  -DBUILD_BENCHMARK=${ALGORITHMS_BUILD_BENCHMARKS} \
+  -DCMAKE_EXPORT_COMPILE_COMMANDS=YES \
+  .. && \
   cmake --build . && \
   cmake --build . --target install
