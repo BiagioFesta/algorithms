@@ -16,6 +16,7 @@
 
 */
 #include <benchmark/benchmark.h>
+#include <algorithms/Array/ValidateStackSequences.hpp>
 #include <algorithms/String/FindAllAnagramsString.hpp>
 
 /*! \brief Macro generate a benchmark for a specific algorithm.
@@ -33,5 +34,6 @@
 namespace algorithms::benchmark {
 
 GENERATE_BENCHMARK(FindAllAnagramsString, "cbaebabacd", "abc");
+GENERATE_BENCHMARK(ValidateStackSequences, {1, 2, 3, 4, 5}, {4, 5, 3, 2, 1});
 
 }  // namespace algorithms::benchmark

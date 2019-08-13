@@ -45,17 +45,19 @@ bool ValidateStackSequences(const std::vector<int>& pushed,
     return false;
   }
 
+  const std::size_t ps = pushed.size();
+  const std::size_t qs = popped.size();
   std::size_t p = 0, q = 0;
   std::stack<int> s;
 
-  while (true) {
-    if (q < popped.size() && !s.empty() && s.top() == popped[q]) {
+  while (q < qs) {
+    if (!s.empty() && s.top() == popped[q]) {
       s.pop();
       ++q;
-    } else if (p < pushed.size()) {
+    } else if (p < ps) {
       s.push(pushed[p++]);
     } else {
-      break;
+      q = qs;
     }
   }
 
