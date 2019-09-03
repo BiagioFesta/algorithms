@@ -18,53 +18,39 @@
 #include <algorithm>
 #include <algorithms/DynamicProgramming/TallestBillboard.hpp>
 #include <cassert>
-#include <limits>
-#include <unordered_map>
-#include <utility>
+#include <cmath>
+#include <numeric>
 #include <vector>
-
-namespace {
-
-using HashTable = std::unordered_map<std::size_t, int>;
-
-int TallestBillboardImpl(const std::vector<int>& rods,
-                         const std::size_t i,
-                         const int d,
-                         HashTable* hashTable) {
-  static constexpr std::size_t kMaxI = 20;
-  static constexpr int kInvalid = std::numeric_limits<int>::min();
-  assert(d >= 0);
-  assert(i <= kMaxI);
-
-  if (i == rods.size()) {
-    return d == 0 ? 0 : kInvalid;
-  }
-
-  const auto hash = static_cast<std::size_t>(d) * kMaxI + i;
-
-  if (const auto finder = hashTable->find(hash); finder != hashTable->cend()) {
-    return finder->second;
-  }
-
-  int ans = TallestBillboardImpl(rods, i + 1, d, hashTable);
-  ans =
-      std::max(ans, TallestBillboardImpl(rods, i + 1, d + rods[i], hashTable));
-  ans = std::max(
-      ans,
-      TallestBillboardImpl(rods, i + 1, std::abs(d - rods[i]), hashTable) +
-          (d - rods[i] >= 0 ? rods[i] : d));
-
-  hashTable->emplace(hash, ans);
-  return ans;
-}
-
-}  // anonymous namespace
 
 namespace algorithms {
 
 int TallestBillboard(const std::vector<int>& rods) {
-  ::HashTable hashTable;
-  return ::TallestBillboardImpl(rods, 0, 0, &hashTable);
+  static constexpr int kInvalid = std::numeric_limits<int>::min();
+  const int n = rods.size();
+  if (n < 2) {
+    return 0;
+  }
+  const int sum = std::accumulate(rods.cbegin(), rods.cend(), 0);  // O(N)
+  assert(sum <= 5000);
+
+  std::vector<int> tableA(sum + 1, kInvalid);
+  std::vector<int> tableB(sum + 1, kInvalid);
+
+  tableA[0] = 0;
+  tableA[rods.back()] = rods.back();
+
+  for (int i = n - 2; i >= 0; --i) {  // O(N)
+    const int rod = rods[i];
+    for (int d = 0; d <= sum - rod; ++d) {  // O(S)
+      auto& ans = tableB[d];
+      ans = tableA[d];
+      ans = std::max(ans, tableA[d + rod]);
+      ans = std::max(ans, tableA[std::abs(d - rod)] + std::min(d, rod));
+    }
+    tableA.swap(tableB);
+  }
+
+  return tableA.front();
 }
 
 }  // namespace algorithms

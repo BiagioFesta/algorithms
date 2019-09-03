@@ -30,6 +30,7 @@ namespace algorithms {
  *  Return the largest possible height of your billboard installation. If you
  *  cannot support the billboard, return 0.
  *
+ *  \note  Complexity  --> Time: O(N x S); Space: O(S)  S = sum all rods' values
  *  \note https://leetcode.com/problems/tallest-billboard/
  */
 int TallestBillboard(const std::vector<int>& rods);

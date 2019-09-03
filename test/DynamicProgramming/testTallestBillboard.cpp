@@ -24,8 +24,11 @@ namespace algorithms::test {
 
 TEST(DynamicProgramming, TallestBillboard) {
   using Test = std::pair<std::vector<int>, int>;
-  const std::vector<Test> testCases = {
-      {{1, 2, 3, 6}, 6}, {{1, 2, 3, 4, 5, 6}, 10}, {{1, 2}, 0}};
+  const std::vector<Test> testCases = {{{1, 2, 3, 6}, 6},
+                                       {{1, 2, 3, 4, 5, 6}, 10},
+                                       {{1, 2}, 0},
+                                       {{2, 4, 8, 16}, 0},
+                                       {{}, 0}};
 
   for (const auto& [rods, expt] : testCases) {
     ASSERT_EQ(TallestBillboard(rods), expt);
