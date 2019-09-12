@@ -16,8 +16,10 @@
 
 */
 #include <benchmark/benchmark.h>
+#include <algorithms/Array/DeckIncreasingReveal.hpp>
 #include <algorithms/Array/ValidateStackSequences.hpp>
 #include <algorithms/String/FindAllAnagramsString.hpp>
+#include <vector>
 
 /*! \brief Macro generate a benchmark for a specific algorithm.
  *  \param [in] FunctionName  The function name implementing the algorithm.
@@ -31,9 +33,31 @@
   }                                                  \
   BENCHMARK(BM##FunctionName)
 
+namespace {
+
+template <typename Container, typename T, T... Values>
+constexpr Container SeqListImpl(const std::integer_sequence<T, Values...>) {
+  return Container{Values...};
+}
+
+/*! \brief Return a container initialized with a progressive sequence of
+ *  integers.
+ *    E.g.:
+ *      std::vector<int>{0, 1, 2, 3, ,4 ..., Size - 1}
+ */
+template <std::size_t Size,
+          typename T = int,
+          typename Container = std::vector<T>>
+constexpr Container SeqList() {
+  return SeqListImpl<Container>(std::make_integer_sequence<T, Size>());
+}
+
+}  // anonymous namespace
+
 namespace algorithms::benchmark {
 
 GENERATE_BENCHMARK(FindAllAnagramsString, "cbaebabacd", "abc");
 GENERATE_BENCHMARK(ValidateStackSequences, {1, 2, 3, 4, 5}, {4, 5, 3, 2, 1});
+GENERATE_BENCHMARK(DeckIncreasingReveal, SeqList<1024>());
 
 }  // namespace algorithms::benchmark
