@@ -110,6 +110,7 @@ target_sources(${PROJECT_NAME}
   ${PROJECT_SOURCE_DIR}/src/String/LongestPalindrome.cpp
   ${PROJECT_SOURCE_DIR}/src/String/MaxLenSubWithoutRep.cpp
   ${PROJECT_SOURCE_DIR}/src/String/MinAddParentheses.cpp
+  ${PROJECT_SOURCE_DIR}/src/String/MinimumWindowSubstring.cpp
   ${PROJECT_SOURCE_DIR}/src/String/OneWay.cpp
   ${PROJECT_SOURCE_DIR}/src/String/OriginalDigits.cpp
   ${PROJECT_SOURCE_DIR}/src/String/PalindromePermutation.cpp
@@ -244,6 +245,7 @@ add_executable(${PROJECT_NAME}_test
   ${PROJECT_SOURCE_DIR}/test/String/testLongestPalindrome.cpp
   ${PROJECT_SOURCE_DIR}/test/String/testMaxLenSubWithoutRep.cpp
   ${PROJECT_SOURCE_DIR}/test/String/testMinAddParentheses.cpp
+  ${PROJECT_SOURCE_DIR}/test/String/testMinimumWindowSubstring.cpp
   ${PROJECT_SOURCE_DIR}/test/String/testOneWay.cpp
   ${PROJECT_SOURCE_DIR}/test/String/testOriginalDigits.cpp
   ${PROJECT_SOURCE_DIR}/test/String/testPalindromePermutation.cpp
