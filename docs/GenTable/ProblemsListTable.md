@@ -1,7 +1,7 @@
 # Problems List
 ![Easy_counter](https://img.shields.io/badge/Easy-15-green.svg?style=for-the-badge&logo=c%2b%2b)
 ![Medium_counter](https://img.shields.io/badge/Medium-65-yellow.svg?style=for-the-badge&logo=c%2b%2b)
-![Hard_counter](https://img.shields.io/badge/Hard-10-red.svg?style=for-the-badge&logo=c%2b%2b)
+![Hard_counter](https://img.shields.io/badge/Hard-11-red.svg?style=for-the-badge&logo=c%2b%2b)
 ![Undefined_counter](https://img.shields.io/badge/Undefined-34-lightgray.svg?style=for-the-badge&logo=c%2b%2b)
 
 | Problem Name | Difficulty | Implementation |
@@ -129,4 +129,5 @@
 | [Unique Paths II](https://leetcode.com/problems/unique-paths-ii/) | ![Medium](https://img.shields.io/badge/Difficulty-Medium-yellow.svg) | [Source](https://github.com/BiagioFesta/algorithms/blob/master/src/DynamicProgramming/UniquePathsWithObstacles.cpp) |
 | [Valid Perfect Square](https://leetcode.com/problems/valid-perfect-square/) | ![Easy](https://img.shields.io/badge/Difficulty-Easy-green.svg) | [Source](https://github.com/BiagioFesta/algorithms/blob/master/src/Misc/IsPerfectSquare.cpp) |
 | [Validate Stack Sequences](https://leetcode.com/problems/validate-stack-sequences/) | ![Medium](https://img.shields.io/badge/Difficulty-Medium-yellow.svg) | [Source](https://github.com/BiagioFesta/algorithms/blob/master/src/Array/ValidateStackSequences.cpp) |
+| [Wildcard Matching](https://leetcode.com/problems/wildcard-matching/) | ![Hard](https://img.shields.io/badge/Difficulty-Hard-red.svg) | [Source](https://github.com/BiagioFesta/algorithms/blob/master/src/BackTracking/WildcardMatching.cpp) |
 | [Word Search](https://leetcode.com/problems/word-search/) | ![Medium](https://img.shields.io/badge/Difficulty-Medium-yellow.svg) | [Source](https://github.com/BiagioFesta/algorithms/blob/master/src/BackTracking/WordSearch.cpp) |
