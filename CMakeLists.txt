@@ -88,6 +88,7 @@ target_sources(${PROJECT_NAME}
   ${PROJECT_SOURCE_DIR}/src/Graph/BusRoutes.cpp
   ${PROJECT_SOURCE_DIR}/src/Graph/CourseSchedule.cpp
   ${PROJECT_SOURCE_DIR}/src/Graph/CourseScheduleII.cpp
+  ${PROJECT_SOURCE_DIR}/src/Graph/MinimumGeneticMutation.cpp
   ${PROJECT_SOURCE_DIR}/src/LRUCache/LRUCache.cpp
   ${PROJECT_SOURCE_DIR}/src/Misc/FindItinerary.cpp
   ${PROJECT_SOURCE_DIR}/src/Misc/IsPerfectSquare.cpp
@@ -221,6 +222,7 @@ add_executable(${PROJECT_NAME}_test
   ${PROJECT_SOURCE_DIR}/test/Graph/testBusRoutes.cpp
   ${PROJECT_SOURCE_DIR}/test/Graph/testCourseSchedule.cpp
   ${PROJECT_SOURCE_DIR}/test/Graph/testCourseScheduleII.cpp
+  ${PROJECT_SOURCE_DIR}/test/Graph/testMinimumGeneticMutation.cpp
   ${PROJECT_SOURCE_DIR}/test/LRUCache/testLRUCache.cpp
   ${PROJECT_SOURCE_DIR}/test/Matrix/testMatrix2D.cpp
   ${PROJECT_SOURCE_DIR}/test/MinStack/testMinStack.cpp

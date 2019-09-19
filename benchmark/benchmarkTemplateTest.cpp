@@ -18,6 +18,7 @@
 #include <benchmark/benchmark.h>
 #include <algorithms/Array/DeckIncreasingReveal.hpp>
 #include <algorithms/Array/ValidateStackSequences.hpp>
+#include <algorithms/Graph/MinimumGeneticMutation.hpp>
 #include <algorithms/String/FindAllAnagramsString.hpp>
 #include <vector>
 
@@ -59,5 +60,17 @@ namespace algorithms::benchmark {
 GENERATE_BENCHMARK(FindAllAnagramsString, "cbaebabacd", "abc");
 GENERATE_BENCHMARK(ValidateStackSequences, {1, 2, 3, 4, 5}, {4, 5, 3, 2, 1});
 GENERATE_BENCHMARK(DeckIncreasingReveal, SeqList<1024>());
+GENERATE_BENCHMARK(MinimumGeneticMutation,
+                   "AAAAAAAA",
+                   "CCCCCCCC",
+                   {"AAAAAAAA",
+                    "AAAAAAAC",
+                    "AAAAAACC",
+                    "AAAAACCC",
+                    "AAAACCCC",
+                    "AACACCCC",
+                    "ACCACCCC",
+                    "ACCCCCCC",
+                    "CCCCCCCA"});
 
 }  // namespace algorithms::benchmark
