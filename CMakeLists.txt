@@ -52,6 +52,7 @@ target_sources(${PROJECT_NAME}
   ${PROJECT_SOURCE_DIR}/src/Array/RadixSort.cpp
   ${PROJECT_SOURCE_DIR}/src/Array/RotateRight.cpp
   ${PROJECT_SOURCE_DIR}/src/Array/SieveOfEratosthenes.cpp
+  ${PROJECT_SOURCE_DIR}/src/Array/SingleElementInSortedArray.cpp
   ${PROJECT_SOURCE_DIR}/src/Array/SortColors.cpp
   ${PROJECT_SOURCE_DIR}/src/Array/StockMaximize.cpp
   ${PROJECT_SOURCE_DIR}/src/Array/SubarraySumEqualsK.cpp
@@ -185,6 +186,7 @@ add_executable(${PROJECT_NAME}_test
   ${PROJECT_SOURCE_DIR}/test/Array/testRadixSort.cpp
   ${PROJECT_SOURCE_DIR}/test/Array/testRotateRight.cpp
   ${PROJECT_SOURCE_DIR}/test/Array/testSieveOfEratosthenes.cpp
+  ${PROJECT_SOURCE_DIR}/test/Array/testSingleElementInSortedArray.cpp
   ${PROJECT_SOURCE_DIR}/test/Array/testSortColors.cpp
   ${PROJECT_SOURCE_DIR}/test/Array/testStockMaximize.cpp
   ${PROJECT_SOURCE_DIR}/test/Array/testSubarraySumEqualsK.cpp
