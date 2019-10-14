@@ -61,6 +61,7 @@ target_sources(${PROJECT_NAME}
   ${PROJECT_SOURCE_DIR}/src/Array/ValidateStackSequences.cpp
   ${PROJECT_SOURCE_DIR}/src/BackTracking/CombinationSum.cpp
   ${PROJECT_SOURCE_DIR}/src/BackTracking/CombinationSum3.cpp
+  ${PROJECT_SOURCE_DIR}/src/BackTracking/LetterCombinationsPhoneNumber.cpp
   ${PROJECT_SOURCE_DIR}/src/BackTracking/PalindromePartitioning.cpp
   ${PROJECT_SOURCE_DIR}/src/BackTracking/WildcardMatching.cpp
   ${PROJECT_SOURCE_DIR}/src/BackTracking/WordSearch.cpp
@@ -196,6 +197,7 @@ add_executable(${PROJECT_NAME}_test
   ${PROJECT_SOURCE_DIR}/test/BST/testBST.cpp
   ${PROJECT_SOURCE_DIR}/test/BackTracking/testCombinationSum.cpp
   ${PROJECT_SOURCE_DIR}/test/BackTracking/testCombinationSum3.cpp
+  ${PROJECT_SOURCE_DIR}/test/BackTracking/testLetterCombinationsPhoneNumber.cpp
   ${PROJECT_SOURCE_DIR}/test/BackTracking/testPalindromePartitioning.cpp
   ${PROJECT_SOURCE_DIR}/test/BackTracking/testWildcardMatching.cpp
   ${PROJECT_SOURCE_DIR}/test/BackTracking/testWordSearch.cpp
