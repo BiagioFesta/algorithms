@@ -51,6 +51,7 @@ target_sources(${PROJECT_NAME}
   ${PROJECT_SOURCE_DIR}/src/Array/PlusOne.cpp
   ${PROJECT_SOURCE_DIR}/src/Array/RadixSort.cpp
   ${PROJECT_SOURCE_DIR}/src/Array/RotateRight.cpp
+  ${PROJECT_SOURCE_DIR}/src/Array/SearchRotatedSortedArray.cpp
   ${PROJECT_SOURCE_DIR}/src/Array/SieveOfEratosthenes.cpp
   ${PROJECT_SOURCE_DIR}/src/Array/SingleElementInSortedArray.cpp
   ${PROJECT_SOURCE_DIR}/src/Array/SortColors.cpp
@@ -187,6 +188,7 @@ add_executable(${PROJECT_NAME}_test
   ${PROJECT_SOURCE_DIR}/test/Array/testPlusOne.cpp
   ${PROJECT_SOURCE_DIR}/test/Array/testRadixSort.cpp
   ${PROJECT_SOURCE_DIR}/test/Array/testRotateRight.cpp
+  ${PROJECT_SOURCE_DIR}/test/Array/testSearchRotatedSortedArray.cpp
   ${PROJECT_SOURCE_DIR}/test/Array/testSieveOfEratosthenes.cpp
   ${PROJECT_SOURCE_DIR}/test/Array/testSingleElementInSortedArray.cpp
   ${PROJECT_SOURCE_DIR}/test/Array/testSortColors.cpp
@@ -296,6 +298,7 @@ if(${BUILD_BENCHMARK})
     ${PROJECT_SOURCE_DIR}/benchmark/benchmarkMatrix2D.cpp
     ${PROJECT_SOURCE_DIR}/benchmark/benchmarkOnesAndZeroes.cpp
     ${PROJECT_SOURCE_DIR}/benchmark/benchmarkRadixSort.cpp
+    ${PROJECT_SOURCE_DIR}/benchmark/benchmarkSearchRotatedSortedArray.cpp
     ${PROJECT_SOURCE_DIR}/benchmark/benchmarkTemplateTest.cpp
     ${PROJECT_SOURCE_DIR}/benchmark/benchmarkTreeVsHash.cpp
     ${PROJECT_SOURCE_DIR}/benchmark/main.cpp)
