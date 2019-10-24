@@ -16,9 +16,9 @@
 
 */
 #include <benchmark/benchmark.h>
-
 #include <algorithms/Array/DeckIncreasingReveal.hpp>
 #include <algorithms/Array/ValidateStackSequences.hpp>
+#include <algorithms/BackTracking/NumbersConsecutiveDifferences.hpp>
 #include <algorithms/Graph/MinimumGeneticMutation.hpp>
 #include <algorithms/Misc/BrokenCalculator.hpp>
 #include <algorithms/String/FindAllAnagramsString.hpp>
@@ -75,5 +75,6 @@ GENERATE_BENCHMARK(MinimumGeneticMutation,
                     "ACCCCCCC",
                     "CCCCCCCA"});
 GENERATE_BENCHMARK(BrokenCalculator, 2, 10000);
+GENERATE_BENCHMARK(NumbersConsecutiveDifferences, 9, 0);
 
 }  // namespace algorithms::benchmark
