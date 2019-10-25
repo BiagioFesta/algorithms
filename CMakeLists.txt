@@ -96,6 +96,7 @@ target_sources(${PROJECT_NAME}
   ${PROJECT_SOURCE_DIR}/src/Graph/MinimumGeneticMutation.cpp
   ${PROJECT_SOURCE_DIR}/src/Graph/NetworkDelayTime.cpp
   ${PROJECT_SOURCE_DIR}/src/LRUCache/LRUCache.cpp
+  ${PROJECT_SOURCE_DIR}/src/Misc/BasicCalculator.cpp
   ${PROJECT_SOURCE_DIR}/src/Misc/BrokenCalculator.cpp
   ${PROJECT_SOURCE_DIR}/src/Misc/FindItinerary.cpp
   ${PROJECT_SOURCE_DIR}/src/Misc/IsPerfectSquare.cpp
@@ -239,6 +240,7 @@ add_executable(${PROJECT_NAME}_test
   ${PROJECT_SOURCE_DIR}/test/LRUCache/testLRUCache.cpp
   ${PROJECT_SOURCE_DIR}/test/Matrix/testMatrix2D.cpp
   ${PROJECT_SOURCE_DIR}/test/MinStack/testMinStack.cpp
+  ${PROJECT_SOURCE_DIR}/test/Misc/testBasicCalculator.cpp
   ${PROJECT_SOURCE_DIR}/test/Misc/testBrokenCalculator.cpp
   ${PROJECT_SOURCE_DIR}/test/Misc/testFindItinerary.cpp
   ${PROJECT_SOURCE_DIR}/test/Misc/testIsPerfectSquare.cpp
