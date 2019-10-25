@@ -25,12 +25,12 @@ namespace algorithms {
 int BasicCalculator(const std::string& s) {
   const std::size_t size = s.size();
 
-  std::stack<std::pair<int, int>> stack;
+  std::stack<std::pair<bool, int>> stack;
   char c;
   int num;
-  int sign = 1;
+  bool sign = false;
 
-  stack.emplace(1, 0);
+  stack.emplace(false, 0);
   for (std::size_t i = 0; i < size; ++i) {
     c = s[i];
     if (c >= '0') {
@@ -38,18 +38,18 @@ int BasicCalculator(const std::string& s) {
       while (s[i + 1] >= '0') {
         num = num * 10 + static_cast<int>(s[++i] - '0');
       }
-      stack.top().second += num * sign;
+      stack.top().second += sign ? -num : num;
     } else if (c == '-') {
-      sign = -1;
+      sign = true;
     } else if (c == '+') {
-      sign = 1;
+      sign = false;
     } else if (c == '(') {
       stack.emplace(sign, 0);
-      sign = 1;
+      sign = false;
     } else if (c == ')') {
       const auto [s, t] = stack.top();
       stack.pop();
-      stack.top().second += s * t;
+      stack.top().second += s ? -t : t;
     }
   }
 

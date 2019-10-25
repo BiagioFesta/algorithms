@@ -20,6 +20,7 @@
 #include <algorithms/Array/ValidateStackSequences.hpp>
 #include <algorithms/BackTracking/NumbersConsecutiveDifferences.hpp>
 #include <algorithms/Graph/MinimumGeneticMutation.hpp>
+#include <algorithms/Misc/BasicCalculator.hpp>
 #include <algorithms/Misc/BrokenCalculator.hpp>
 #include <algorithms/String/FindAllAnagramsString.hpp>
 #include <vector>
@@ -76,5 +77,7 @@ GENERATE_BENCHMARK(MinimumGeneticMutation,
                     "CCCCCCCA"});
 GENERATE_BENCHMARK(BrokenCalculator, 2, 10000);
 GENERATE_BENCHMARK(NumbersConsecutiveDifferences, 9, 0);
+GENERATE_BENCHMARK(BasicCalculator,
+                   "(2+3-(5+(3)-(4)+(5+6+7-3-(3)+(3+2)+3)-4+5)-2)+10");
 
 }  // namespace algorithms::benchmark
