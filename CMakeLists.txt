@@ -72,6 +72,7 @@ target_sources(${PROJECT_NAME}
   ${PROJECT_SOURCE_DIR}/src/DynamicProgramming/BinomialCoefficient.cpp
   ${PROJECT_SOURCE_DIR}/src/DynamicProgramming/CheapestJump.cpp
   ${PROJECT_SOURCE_DIR}/src/DynamicProgramming/CoinChange.cpp
+  ${PROJECT_SOURCE_DIR}/src/DynamicProgramming/CoinChange2.cpp
   ${PROJECT_SOURCE_DIR}/src/DynamicProgramming/Fibonacci.cpp
   ${PROJECT_SOURCE_DIR}/src/DynamicProgramming/FindRotateSteps.cpp
   ${PROJECT_SOURCE_DIR}/src/DynamicProgramming/HouseRobberII.cpp
@@ -213,6 +214,7 @@ add_executable(${PROJECT_NAME}_test
   ${PROJECT_SOURCE_DIR}/test/DynamicProgramming/testBinomialCoefficient.cpp
   ${PROJECT_SOURCE_DIR}/test/DynamicProgramming/testCheapestJump.cpp
   ${PROJECT_SOURCE_DIR}/test/DynamicProgramming/testCoinChange.cpp
+  ${PROJECT_SOURCE_DIR}/test/DynamicProgramming/testCoinChange2.cpp
   ${PROJECT_SOURCE_DIR}/test/DynamicProgramming/testFibonacci.cpp
   ${PROJECT_SOURCE_DIR}/test/DynamicProgramming/testFindRotateSteps.cpp
   ${PROJECT_SOURCE_DIR}/test/DynamicProgramming/testHouseRobberII.cpp
