@@ -26,7 +26,7 @@ namespace algorithms {
  *  that amount. You may assume that you have infinite number of each kind of
  *  coin.
  *
- *  \note  Complexity  -->  Time: O(N x M)   Space: O(N x M)
+ *  \note  Complexity  -->  Time: O(N x M)   Space: O(M)
  *                          where N = coins.size(); M = amount
  *  \note https://leetcode.com/problems/coin-change-2/
  */

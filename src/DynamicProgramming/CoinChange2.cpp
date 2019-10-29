@@ -23,27 +23,18 @@ namespace algorithms {
 int CoinChange2(const int amount, const std::vector<int>& coins) {
   if (coins.empty()) return amount == 0;
 
-  const int N = coins.size();
   const int M = amount + 1;
 
-  std::vector<int> dp(N * M);
+  std::vector<int> dp(M);
+  dp[0] = 1;
 
-  for (int i = 0; i < N; ++i) {
-    dp[i * M] = 1;
-  }
-
-  for (int i = 0; i < N; ++i) {
-    for (int j = 1; j < M; ++j) {
-      if (int diff = j - coins[i]; diff >= 0) {
-        dp[i * M + j] += dp[i * M + diff];
-      }
-      if (i > 0) {
-        dp[i * M + j] += dp[(i - 1) * M + j];
-      }
+  for (const int c : coins) {      // O(N)
+    for (int j = c; j < M; ++j) {  // O(M)
+      dp[j] += dp[j - c];
     }
   }
 
-  return dp.back();
+  return dp[amount];
 }
 
 }  // namespace algorithms
