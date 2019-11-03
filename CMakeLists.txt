@@ -42,6 +42,7 @@ target_sources(${PROJECT_NAME}
   ${PROJECT_SOURCE_DIR}/src/Array/MaximumAbsoluteValueExpression.cpp
   ${PROJECT_SOURCE_DIR}/src/Array/MaximumGap.cpp
   ${PROJECT_SOURCE_DIR}/src/Array/MaximumProduct.cpp
+  ${PROJECT_SOURCE_DIR}/src/Array/MinimumMovesEqualArrayElementsII.cpp
   ${PROJECT_SOURCE_DIR}/src/Array/MinimumSizeSubarraySum.cpp
   ${PROJECT_SOURCE_DIR}/src/Array/NextPermutation.cpp
   ${PROJECT_SOURCE_DIR}/src/Array/NonDecreasingArray.cpp
@@ -182,6 +183,7 @@ add_executable(${PROJECT_NAME}_test
   ${PROJECT_SOURCE_DIR}/test/Array/testMaximumAbsoluteValueExpression.cpp
   ${PROJECT_SOURCE_DIR}/test/Array/testMaximumGap.cpp
   ${PROJECT_SOURCE_DIR}/test/Array/testMaximumProduct.cpp
+  ${PROJECT_SOURCE_DIR}/test/Array/testMinimumMovesEqualArrayElementsII.cpp
   ${PROJECT_SOURCE_DIR}/test/Array/testMinimumSizeSubarraySum.cpp
   ${PROJECT_SOURCE_DIR}/test/Array/testNextPermutation.cpp
   ${PROJECT_SOURCE_DIR}/test/Array/testNonDecreasingArray.cpp
