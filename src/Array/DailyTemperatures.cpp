@@ -17,7 +17,6 @@
 */
 #include <algorithms/Array/DailyTemperatures.hpp>
 #include <stack>
-#include <utility>
 #include <vector>
 
 namespace algorithms {
@@ -27,14 +26,14 @@ std::vector<int> DailyTemperatures(const std::vector<int>& temps) {
 
   std::size_t i = 0;
   std::vector<int> ans(size, 0);
-  std::stack<std::pair<int, int>> stack;
+  std::stack<int> stack;
 
-  while (i < size) {  // O(N)
-    while (!stack.empty() && stack.top().first < temps[i]) {
-      ans[stack.top().second] = i - stack.top().second;
+  while (i < size) {
+    while (!stack.empty() && temps[stack.top()] < temps[i]) {
+      ans[stack.top()] = i - stack.top();
       stack.pop();
     }
-    stack.emplace(temps[i], i);
+    stack.push(i);
     ++i;
   }
 
