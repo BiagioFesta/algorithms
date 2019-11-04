@@ -14,6 +14,7 @@ target_sources(${PROJECT_NAME}
   ${PROJECT_SOURCE_DIR}/src/Array/ContainsDuplicateIII.cpp
   ${PROJECT_SOURCE_DIR}/src/Array/ContainsNearbyDuplicate.cpp
   ${PROJECT_SOURCE_DIR}/src/Array/ContiguousArray.cpp
+  ${PROJECT_SOURCE_DIR}/src/Array/DailyTemperatures.cpp
   ${PROJECT_SOURCE_DIR}/src/Array/DeckIncreasingReveal.cpp
   ${PROJECT_SOURCE_DIR}/src/Array/DistantBarcodes.cpp
   ${PROJECT_SOURCE_DIR}/src/Array/EuclideanAlgorithmGCD.cpp
@@ -155,6 +156,7 @@ add_executable(${PROJECT_NAME}_test
   ${PROJECT_SOURCE_DIR}/test/Array/testContainsDuplicateIII.cpp
   ${PROJECT_SOURCE_DIR}/test/Array/testContainsNearbyDuplicate.cpp
   ${PROJECT_SOURCE_DIR}/test/Array/testContiguousArray.cpp
+  ${PROJECT_SOURCE_DIR}/test/Array/testDailyTemperatures.cpp
   ${PROJECT_SOURCE_DIR}/test/Array/testDeckIncreasingReveal.cpp
   ${PROJECT_SOURCE_DIR}/test/Array/testDistantBarcodes.cpp
   ${PROJECT_SOURCE_DIR}/test/Array/testEuclideanAlgorithmGCD.cpp
@@ -301,6 +303,7 @@ if(${BUILD_BENCHMARK})
   find_package(Threads REQUIRED)
 
   add_executable(${PROJECT_NAME}_benchmark
+    ${PROJECT_SOURCE_DIR}/benchmark/benchmarkDailyTemperatures.cpp
     ${PROJECT_SOURCE_DIR}/benchmark/benchmarkFlatSetVsSet.cpp
     ${PROJECT_SOURCE_DIR}/benchmark/benchmarkHIndex.cpp
     ${PROJECT_SOURCE_DIR}/benchmark/benchmarkMatrix2D.cpp
