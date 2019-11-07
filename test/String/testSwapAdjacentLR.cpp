@@ -25,7 +25,8 @@ namespace algorithms::test {
 
 TEST(String, SwapAdjacentLR) {
   using Test = std::tuple<std::string, std::string, bool>;
-  const std::vector<Test> testCases = {{"XXRXXLXXXX", "XXXXRXXLXX", false},
+  const std::vector<Test> testCases = {{"LR", "RL", false},
+                                       {"XXRXXLXXXX", "XXXXRXXLXX", false},
                                        {"RXXLRXRXL", "XRLXXRRLX", true},
                                        {"R", "L", false},
                                        {"X", "L", false}};

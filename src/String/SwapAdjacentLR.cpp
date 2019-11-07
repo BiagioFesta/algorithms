@@ -23,35 +23,26 @@
 namespace algorithms {
 
 bool SwapAdjacentLR(const std::string& start, const std::string& end) {
-  enum Diffs {
-    R_DIFF = static_cast<int>('R') - static_cast<int>('X'),
-    L_DIFF = static_cast<int>('X') - static_cast<int>('L'),
-  };
-
   const std::size_t size = start.size();
   assert(size == end.size());
 
   int r = 0, l = 0;
 
   for (std::size_t i = 0; i < size; ++i) {
-    const int diff = static_cast<int>(start[i]) - static_cast<int>(end[i]);
-    switch (diff) {
-      case R_DIFF:
+    const char s = start[i];
+    const char e = end[i];
+    if (s != e) {
+      if (s == 'R' && e == 'X' && l == 0) {
         ++r;
-        break;
-      case -R_DIFF:
+      } else if (s == 'X' && e == 'R' && r > 0) {
         --r;
-        if (r < 0) return false;
-        break;
-      case L_DIFF:
+      } else if (s == 'X' && e == 'L' && r == 0) {
         ++l;
-        break;
-      case -L_DIFF:
+      } else if (s == 'L' && e == 'X' && l > 0) {
         --l;
-        if (l < 0) return false;
-        break;
-      default:
-        if (diff) return false;
+      } else {
+        return false;
+      }
     }
   }
 

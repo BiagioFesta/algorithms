@@ -24,6 +24,7 @@
 #include <algorithms/Misc/BasicCalculator.hpp>
 #include <algorithms/Misc/BrokenCalculator.hpp>
 #include <algorithms/String/FindAllAnagramsString.hpp>
+#include <algorithms/String/SwapAdjacentLR.hpp>
 #include <vector>
 
 /*! \brief Macro generate a benchmark for a specific algorithm.
@@ -81,5 +82,10 @@ GENERATE_BENCHMARK(NumbersConsecutiveDifferences, 9, 0);
 GENERATE_BENCHMARK(BasicCalculator,
                    "(2+3-(5+(3)-(4)+(5+6+7-3-(3)+(3+2)+3)-4+5)-2)+10");
 GENERATE_BENCHMARK(CoinChange2, 5, {1, 2, 5});
+GENERATE_BENCHMARK(SwapAdjacentLR,
+                   "RXXXXLXXXXXRXXXXXLXXXXXLXXXXXRXXXXLXXXXXRXXXXXLXXXXXRXXXXXL"
+                   "XXXLXXXXRXXXRXX",
+                   "XXRXLXXXXXXXXRXLXXXXLXXXXXXXXXXRXLXXXXXXXXRXLXXXXXXXXRXLXXX"
+                   "XLXXXXXXXXRXRXX");
 
 }  // namespace algorithms::benchmark
