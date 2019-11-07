@@ -26,6 +26,7 @@ target_sources(${PROJECT_NAME}
   ${PROJECT_SOURCE_DIR}/src/Array/FirstMissingPositive.cpp
   ${PROJECT_SOURCE_DIR}/src/Array/FourSum.cpp
   ${PROJECT_SOURCE_DIR}/src/Array/FruitIntoBaskets.cpp
+  ${PROJECT_SOURCE_DIR}/src/Array/GetEqualSubstringsWithinBudget.cpp
   ${PROJECT_SOURCE_DIR}/src/Array/GlobalLocalInversions.cpp
   ${PROJECT_SOURCE_DIR}/src/Array/HIndex.cpp
   ${PROJECT_SOURCE_DIR}/src/Array/InsertInterval.cpp
@@ -169,6 +170,7 @@ add_executable(${PROJECT_NAME}_test
   ${PROJECT_SOURCE_DIR}/test/Array/testFirstMissingPositive.cpp
   ${PROJECT_SOURCE_DIR}/test/Array/testFourSum.cpp
   ${PROJECT_SOURCE_DIR}/test/Array/testFruitIntoBaskets.cpp
+  ${PROJECT_SOURCE_DIR}/test/Array/testGetEqualSubstringsWithinBudget.cpp
   ${PROJECT_SOURCE_DIR}/test/Array/testGlobalLocalInversions.cpp
   ${PROJECT_SOURCE_DIR}/test/Array/testHIndex.cpp
   ${PROJECT_SOURCE_DIR}/test/Array/testInsertInterval.cpp
