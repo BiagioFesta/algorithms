@@ -29,6 +29,7 @@ target_sources(${PROJECT_NAME}
   ${PROJECT_SOURCE_DIR}/src/Array/GetEqualSubstringsWithinBudget.cpp
   ${PROJECT_SOURCE_DIR}/src/Array/GlobalLocalInversions.cpp
   ${PROJECT_SOURCE_DIR}/src/Array/HIndex.cpp
+  ${PROJECT_SOURCE_DIR}/src/Array/IncreasingTripletSubsequence.cpp
   ${PROJECT_SOURCE_DIR}/src/Array/InsertInterval.cpp
   ${PROJECT_SOURCE_DIR}/src/Array/IsOneBitCharacter.cpp
   ${PROJECT_SOURCE_DIR}/src/Array/IsPalindrome.cpp
@@ -174,6 +175,7 @@ add_executable(${PROJECT_NAME}_test
   ${PROJECT_SOURCE_DIR}/test/Array/testGetEqualSubstringsWithinBudget.cpp
   ${PROJECT_SOURCE_DIR}/test/Array/testGlobalLocalInversions.cpp
   ${PROJECT_SOURCE_DIR}/test/Array/testHIndex.cpp
+  ${PROJECT_SOURCE_DIR}/test/Array/testIncreasingTripletSubsequence.cpp
   ${PROJECT_SOURCE_DIR}/test/Array/testInsertInterval.cpp
   ${PROJECT_SOURCE_DIR}/test/Array/testIsOneBitCharacter.cpp
   ${PROJECT_SOURCE_DIR}/test/Array/testIsPalindrome.cpp
