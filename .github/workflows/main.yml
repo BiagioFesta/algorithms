@@ -1,0 +1,154 @@
+name: BiagioFesta/Algorithms
+on: [push]
+jobs:
+  build-debug-sanitize:
+    name: Build-Debug-Sanitize
+    env:
+      BUILD_TYPE: Debug
+      C_COMPILER: clang
+      CXX_COMPILER: clang++
+      COMPILATION_FLAGS: -Wall -Wextra -fsanitize=undefined -fsanitize=address
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install Build Dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get upgrade -y
+          sudo apt-get install -y cmake clang ninja-build python3 python-pip
+          sudo pip install --upgrade conan
+          conan remote add conan-mpusz https://api.bintray.com/conan/mpusz/conan-mpusz
+      - name: Get Source Code
+        uses: actions/checkout@v1
+      - name : Build Software
+        run: |
+          export CC=${C_COMPILER}
+          export CXX=${CXX_COMPILER}
+          mkdir build
+          cd build
+          conan install .. --settings build_type=${BUILD_TYPE} --settings compiler=${C_COMPILER} --settings compiler.libcxx=libstdc++11 --settings compiler.version=6.0 --build missing
+          cmake -GNinja -DCMAKE_INSTALL_PREFIX=./dist/ -DCMAKE_BUILD_TYPE=${BUILD_TYPE} -DCMAKE_CXX_COMPILER=${CXX_COMPILER} -DCMAKE_CXX_FLAGS="${COMPILATION_FLAGS}" -DCMAKE_EXE_LINKER_FLAGS="${COMPILATION_FLAGS}" -DBUILD_BENCHMARK=YES ..
+          ninja
+          ninja install
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v1
+        with:
+          name: algorithms-dist-debug-sanitize
+          path: build/dist
+
+  build-debug:
+    name: Build-Debug
+    env:
+      BUILD_TYPE: Debug
+      C_COMPILER: clang
+      CXX_COMPILER: clang++
+      COMPILATION_FLAGS: -Wall -Wextra
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install Build Dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get upgrade -y
+          sudo apt-get install -y cmake clang ninja-build python3 python-pip
+          sudo pip install --upgrade conan
+          conan remote add conan-mpusz https://api.bintray.com/conan/mpusz/conan-mpusz
+      - name: Get Source Code
+        uses: actions/checkout@v1
+      - name : Build Software
+        run: |
+          export CC=${C_COMPILER}
+          export CXX=${CXX_COMPILER}
+          mkdir build
+          cd build
+          conan install .. --settings build_type=${BUILD_TYPE} --settings compiler=${C_COMPILER} --settings compiler.libcxx=libstdc++11 --settings compiler.version=6.0 --build missing
+          cmake -GNinja -DCMAKE_INSTALL_PREFIX=./dist/ -DCMAKE_BUILD_TYPE=${BUILD_TYPE} -DCMAKE_CXX_COMPILER=${CXX_COMPILER} -DCMAKE_CXX_FLAGS="${COMPILATION_FLAGS}" -DCMAKE_EXE_LINKER_FLAGS="${COMPILATION_FLAGS}" -DBUILD_BENCHMARK=YES ..
+          ninja
+          ninja install
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v1
+        with:
+          name: algorithms-dist-debug
+          path: build/dist
+
+  build-release:
+    name: Build-Release
+    env:
+      BUILD_TYPE: Release
+      C_COMPILER: clang
+      CXX_COMPILER: clang++
+      COMPILATION_FLAGS:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install Build Dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get upgrade -y
+          sudo apt-get install -y cmake clang ninja-build python3 python-pip
+          sudo pip install --upgrade conan
+          conan remote add conan-mpusz https://api.bintray.com/conan/mpusz/conan-mpusz
+      - name: Get Source Code
+        uses: actions/checkout@v1
+      - name : Build Software
+        run: |
+          export CC=${C_COMPILER}
+          export CXX=${CXX_COMPILER}
+          mkdir build
+          cd build
+          conan install .. --settings build_type=${BUILD_TYPE} --settings compiler=${C_COMPILER} --settings compiler.libcxx=libstdc++11 --settings compiler.version=6.0 --build missing
+          cmake -GNinja -DCMAKE_INSTALL_PREFIX=./dist/ -DCMAKE_BUILD_TYPE=${BUILD_TYPE} -DCMAKE_CXX_COMPILER=${CXX_COMPILER} -DCMAKE_CXX_FLAGS="${COMPILATION_FLAGS}" -DCMAKE_EXE_LINKER_FLAGS="${COMPILATION_FLAGS}" -DBUILD_BENCHMARK=YES ..
+          ninja
+          ninja install
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v1
+        with:
+          name: algorithms-dist-release
+          path: build/dist
+  
+  test-sanitize:
+    name: Sanitize Test
+    needs: build-debug-sanitize
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download Artifact
+        uses: actions/download-artifact@v1
+        with:
+          name: algorithms-dist-debug-sanitize
+      - name: Unit Tests
+        run: |
+          chmod u+x algorithms-dist-debug-sanitize/bin/algorithms_test
+          algorithms-dist-debug-sanitize/bin/algorithms_test
+
+  valgrind-test:
+    name: Valgrind Test
+    needs: build-debug
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install Valgrind
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y valgrind
+      - name: Download Artifact
+        uses: actions/download-artifact@v1
+        with:
+          name: algorithms-dist-debug
+      - name: Test with valgrind
+        run: |
+          chmod u+x algorithms-dist-debug/bin/algorithms_test
+          valgrind algorithms-dist-debug/bin/algorithms_test
+
+  valgrind-test-release:
+    name: Valgrind Test Release
+    needs: build-release
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install Valgrind
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y valgrind
+      - name: Download Artifact
+        uses: actions/download-artifact@v1
+        with:
+          name: algorithms-dist-release
+      - name: Test with valgrind
+        run: |
+          chmod u+x algorithms-dist-release/bin/algorithms_test
+          valgrind algorithms-dist-release/bin/algorithms_test
