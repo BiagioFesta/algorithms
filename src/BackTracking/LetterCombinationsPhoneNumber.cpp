@@ -38,7 +38,7 @@ void LetterCombinationsPhoneNumberImpl(const char* digits,
       out->push_back(*comp);
     }
   } else {
-    assert(d - '2' < kSizeMap);
+    assert(static_cast<std::size_t>(d - '2') < kSizeMap);
     const char* n = kKeyMap[d - '2'];
     while (*n != '\0') {
       comp->push_back(*n);

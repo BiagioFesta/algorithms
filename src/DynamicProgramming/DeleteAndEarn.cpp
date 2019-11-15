@@ -28,7 +28,7 @@ int DeleteAndEarn(const std::vector<int>& nums) {
   std::array<int, kUbValue> freq{};
   for (const auto n : nums) {
     assert(n > 0);
-    assert(n < kUbValue);
+    assert(static_cast<std::size_t>(n) < kUbValue);
     ++freq[n];
   }
 
