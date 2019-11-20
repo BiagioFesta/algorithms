@@ -107,6 +107,7 @@ target_sources(${PROJECT_NAME}
   ${PROJECT_SOURCE_DIR}/src/Misc/FindItinerary.cpp
   ${PROJECT_SOURCE_DIR}/src/Misc/IsPerfectSquare.cpp
   ${PROJECT_SOURCE_DIR}/src/Misc/KSymbolInGrammar.cpp
+  ${PROJECT_SOURCE_DIR}/src/Misc/SumSquareNumbers.cpp
   ${PROJECT_SOURCE_DIR}/src/String/AlphabetBoardPath.cpp
   ${PROJECT_SOURCE_DIR}/src/String/BiggerIsGreater.cpp
   ${PROJECT_SOURCE_DIR}/src/String/CheckRecord.cpp
@@ -258,6 +259,7 @@ add_executable(${PROJECT_NAME}_test
   ${PROJECT_SOURCE_DIR}/test/Misc/testFindItinerary.cpp
   ${PROJECT_SOURCE_DIR}/test/Misc/testIsPerfectSquare.cpp
   ${PROJECT_SOURCE_DIR}/test/Misc/testKSymbolInGrammar.cpp
+  ${PROJECT_SOURCE_DIR}/test/Misc/testSumSquareNumbers.cpp
   ${PROJECT_SOURCE_DIR}/test/PriorityQueue/testPriorityQueue.cpp
   ${PROJECT_SOURCE_DIR}/test/String/testAlphabetBoardPath.cpp
   ${PROJECT_SOURCE_DIR}/test/String/testBiggerIsGreater.cpp
