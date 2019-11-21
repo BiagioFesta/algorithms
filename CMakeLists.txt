@@ -124,6 +124,7 @@ target_sources(${PROJECT_NAME}
   ${PROJECT_SOURCE_DIR}/src/String/KSimilarStrings.cpp
   ${PROJECT_SOURCE_DIR}/src/String/LenLastWord.cpp
   ${PROJECT_SOURCE_DIR}/src/String/LetterCasePermutation.cpp
+  ${PROJECT_SOURCE_DIR}/src/String/LongestCommonPrefix.cpp
   ${PROJECT_SOURCE_DIR}/src/String/LongestPalindrome.cpp
   ${PROJECT_SOURCE_DIR}/src/String/MaxLenSubWithoutRep.cpp
   ${PROJECT_SOURCE_DIR}/src/String/MinAddParentheses.cpp
@@ -277,6 +278,7 @@ add_executable(${PROJECT_NAME}_test
   ${PROJECT_SOURCE_DIR}/test/String/testKSimilarStrings.cpp
   ${PROJECT_SOURCE_DIR}/test/String/testLenLastWord.cpp
   ${PROJECT_SOURCE_DIR}/test/String/testLetterCasePermutation.cpp
+  ${PROJECT_SOURCE_DIR}/test/String/testLongestCommonPrefix.cpp
   ${PROJECT_SOURCE_DIR}/test/String/testLongestPalindrome.cpp
   ${PROJECT_SOURCE_DIR}/test/String/testMaxLenSubWithoutRep.cpp
   ${PROJECT_SOURCE_DIR}/test/String/testMinAddParentheses.cpp
