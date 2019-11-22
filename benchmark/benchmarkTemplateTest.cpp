@@ -19,6 +19,7 @@
 #include <algorithms/Array/DeckIncreasingReveal.hpp>
 #include <algorithms/Array/ValidateStackSequences.hpp>
 #include <algorithms/BackTracking/NumbersConsecutiveDifferences.hpp>
+#include <algorithms/DynamicProgramming/BuySellStockWithCooldown.hpp>
 #include <algorithms/DynamicProgramming/CoinChange2.hpp>
 #include <algorithms/Graph/MinimumGeneticMutation.hpp>
 #include <algorithms/Misc/BasicCalculator.hpp>
@@ -87,5 +88,6 @@ GENERATE_BENCHMARK(SwapAdjacentLR,
                    "XXXLXXXXRXXXRXX",
                    "XXRXLXXXXXXXXRXLXXXXLXXXXXXXXXXRXLXXXXXXXXRXLXXXXXXXXRXLXXX"
                    "XLXXXXXXXXRXRXX");
+GENERATE_BENCHMARK(BuySellStockWithCooldown, {1, 2, 3, 0, 2});
 
 }  // namespace algorithms::benchmark

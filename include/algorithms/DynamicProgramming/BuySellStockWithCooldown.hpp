@@ -31,7 +31,7 @@ namespace algorithms {
  *      - After you sell your stock, you cannot buy stock on next day. (ie,
  *        cooldown 1 day)
  *
- *  \note  Complexity  -->  Time: O(N)   Space: O(N)
+ *  \note  Complexity  -->  Time: O(N)   Space: O(1)
  *  \note
  * https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-cooldown/
  */

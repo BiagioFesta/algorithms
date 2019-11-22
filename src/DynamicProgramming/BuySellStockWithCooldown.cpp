@@ -17,36 +17,22 @@
 */
 #include <algorithm>
 #include <algorithms/DynamicProgramming/BuySellStockWithCooldown.hpp>
-#include <cassert>
+#include <limits>
 #include <vector>
 
 namespace algorithms {
 
 int BuySellStockWithCooldown(const std::vector<int>& prices) {
-  const auto kSize = prices.size();
-  if (kSize == 0) {
-    return 0;
+  int f = std::numeric_limits<int>::min(), g = 0, h = 0, t;
+
+  for (const int p : prices) {
+    t = std::max(f, g - p);
+    g = std::max(g, h);
+    h = std::max(h, f + p);
+    f = t;
   }
 
-  std::vector<std::pair<int, int>> dp(kSize);
-
-  for (std::size_t i = kSize; i > 0; --i) {
-    assert(prices[i - 1] >= 0);
-
-    auto& [wo, w] = dp[i - 1];
-    w = prices[i - 1];
-
-    if (i < kSize) {
-      wo = dp[i].first;
-      wo = std::max(wo, dp[i].second - w);
-      if (i + 1 < kSize) {
-        w += dp[i + 1].first;
-      }
-      w = std::max(w, dp[i].second);
-    }
-  }
-
-  return dp[0].first;
+  return h;
 }
 
 }  // namespace algorithms
