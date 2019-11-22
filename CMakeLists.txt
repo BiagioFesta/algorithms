@@ -74,6 +74,7 @@ target_sources(${PROJECT_NAME}
   ${PROJECT_SOURCE_DIR}/src/CTCI/Chapter2/KthToLast.cpp
   ${PROJECT_SOURCE_DIR}/src/CTCI/Chapter2/RemoveDuplicates.cpp
   ${PROJECT_SOURCE_DIR}/src/DynamicProgramming/BinomialCoefficient.cpp
+  ${PROJECT_SOURCE_DIR}/src/DynamicProgramming/BuySellStockWithCooldown.cpp
   ${PROJECT_SOURCE_DIR}/src/DynamicProgramming/CheapestJump.cpp
   ${PROJECT_SOURCE_DIR}/src/DynamicProgramming/CoinChange.cpp
   ${PROJECT_SOURCE_DIR}/src/DynamicProgramming/CoinChange2.cpp
@@ -224,6 +225,7 @@ add_executable(${PROJECT_NAME}_test
   ${PROJECT_SOURCE_DIR}/test/CTCI/Chapter2/testKthToLast.cpp
   ${PROJECT_SOURCE_DIR}/test/CTCI/Chapter2/testRemoveDuplicates.cpp
   ${PROJECT_SOURCE_DIR}/test/DynamicProgramming/testBinomialCoefficient.cpp
+  ${PROJECT_SOURCE_DIR}/test/DynamicProgramming/testBuySellStockWithCooldown.cpp
   ${PROJECT_SOURCE_DIR}/test/DynamicProgramming/testCheapestJump.cpp
   ${PROJECT_SOURCE_DIR}/test/DynamicProgramming/testCoinChange.cpp
   ${PROJECT_SOURCE_DIR}/test/DynamicProgramming/testCoinChange2.cpp
