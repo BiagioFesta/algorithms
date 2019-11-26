@@ -16,12 +16,46 @@
 
 */
 #include <algorithms/BackTracking/RestoreIPAddresses.hpp>
-#include <cassert>
-#include <stack>
 #include <string>
 #include <string_view>
 #include <utility>
 #include <vector>
+
+namespace {
+
+constexpr std::size_t kNumFieldsIp = 4ull;
+constexpr char kIpCharSep = '.';
+constexpr std::size_t kSizeFieldMax = 3ull;
+
+void RestoreIPAddressImpl(std::string_view s,
+                          std::vector<std::string_view>* fields,
+                          std::vector<std::string>* ips) {
+  if (s.empty() && fields->size() == kNumFieldsIp) {
+    std::string ip;
+    for (std::size_t i = 0; i < kNumFieldsIp; ++i) {
+      if (i != 0) ip += kIpCharSep;
+      ip += (*fields)[i];
+    }
+    ips->push_back(std::move(ip));
+  } else if (fields->size() < kNumFieldsIp) {
+    for (std::size_t i = 0; i < kSizeFieldMax; ++i) {
+      if (i < s.size()) {
+        const auto field = s.substr(0, i + 1);
+        const int num = std::stoi(std::string(field.data(), field.size()));
+        if (num < 256) {
+          fields->push_back(field);
+          RestoreIPAddressImpl(s.substr(i + 1), fields, ips);
+          fields->pop_back();
+          if (num == 0) {
+            break;
+          }
+        }
+      }
+    }
+  }
+}
+
+}  // anonymous namespace
 
 namespace algorithms {
 
@@ -37,49 +71,9 @@ namespace algorithms {
 
  */
 std::vector<std::string> RestoreIPAddresses(const std::string& s) {
-  struct State {
-    std::string_view str_;
-    std::vector<std::string_view> fields_;
-
-    State(const std::string& s) : str_{s.data(), s.size()} {}
-    State(std::string_view sv, std::vector<std::string_view> fields)
-        : str_{sv}, fields_{std::move(fields)} {}
-  };
-
-  std::stack<State> dfs;
-  dfs.emplace(s);
-
+  std::vector<std::string_view> fields;
   std::vector<std::string> ips;
-  while (!dfs.empty()) {
-    auto [str, fields] = std::move(dfs.top());
-    dfs.pop();
-
-    if (str.empty() && fields.size() == 4) {
-      std::string ip;
-      for (std::size_t i = 0; i < 4; ++i) {
-        ip += fields[i];
-        if (i < 3) {
-          ip += '.';
-        }
-      }
-      ips.push_back(std::move(ip));
-    } else if (fields.size() < 4) {
-      for (std::size_t i = 0; i < 3; ++i) {
-        if (i < str.size()) {
-          const auto field = str.substr(0, i + 1);
-          const int num = std::stoi(std::string(field.data(), field.size()));
-          if (num < 256) {
-            fields.emplace_back(field);
-            dfs.emplace(str.substr(i + 1), fields);
-            fields.pop_back();
-            if (num == 0) {
-              break;
-            }
-          }
-        }
-      }
-    }
-  }
+  ::RestoreIPAddressImpl(s, &fields, &ips);
   return ips;
 }
 
