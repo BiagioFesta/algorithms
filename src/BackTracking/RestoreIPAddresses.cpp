@@ -59,17 +59,6 @@ void RestoreIPAddressImpl(std::string_view s,
 
 namespace algorithms {
 
-/*
-     255.255.255.255
-      3 + 3 + 3 + 3   = 12 char
-
-     1 . 1 . 1 . 1 = 4 char
-
-     0 1 2     3 4 5     6 7 8     9 10 11
-     --------------------------------------
-     2 5 5  .  2 5 5  .  2 5 5  .  2 5 5
-
- */
 std::vector<std::string> RestoreIPAddresses(const std::string& s) {
   std::vector<std::string_view> fields;
   std::vector<std::string> ips;
