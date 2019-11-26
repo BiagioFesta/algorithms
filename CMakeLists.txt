@@ -69,6 +69,7 @@ target_sources(${PROJECT_NAME}
   ${PROJECT_SOURCE_DIR}/src/BackTracking/LetterCombinationsPhoneNumber.cpp
   ${PROJECT_SOURCE_DIR}/src/BackTracking/NumbersConsecutiveDifferences.cpp
   ${PROJECT_SOURCE_DIR}/src/BackTracking/PalindromePartitioning.cpp
+  ${PROJECT_SOURCE_DIR}/src/BackTracking/RestoreIPAddresses.cpp
   ${PROJECT_SOURCE_DIR}/src/BackTracking/WildcardMatching.cpp
   ${PROJECT_SOURCE_DIR}/src/BackTracking/WordSearch.cpp
   ${PROJECT_SOURCE_DIR}/src/CTCI/Chapter2/KthToLast.cpp
@@ -220,6 +221,7 @@ add_executable(${PROJECT_NAME}_test
   ${PROJECT_SOURCE_DIR}/test/BackTracking/testLetterCombinationsPhoneNumber.cpp
   ${PROJECT_SOURCE_DIR}/test/BackTracking/testNumbersConsecutiveDifferences.cpp
   ${PROJECT_SOURCE_DIR}/test/BackTracking/testPalindromePartitioning.cpp
+  ${PROJECT_SOURCE_DIR}/test/BackTracking/testRestoreIPAddresses.cpp
   ${PROJECT_SOURCE_DIR}/test/BackTracking/testWildcardMatching.cpp
   ${PROJECT_SOURCE_DIR}/test/BackTracking/testWordSearch.cpp
   ${PROJECT_SOURCE_DIR}/test/CTCI/Chapter2/testDoubleLinkedList.cpp
