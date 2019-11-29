@@ -20,6 +20,7 @@ target_sources(${PROJECT_NAME}
   ${PROJECT_SOURCE_DIR}/src/Array/EuclideanAlgorithmGCD.cpp
   ${PROJECT_SOURCE_DIR}/src/Array/Find132Pattern.cpp
   ${PROJECT_SOURCE_DIR}/src/Array/FindDisappearedNumbers.cpp
+  ${PROJECT_SOURCE_DIR}/src/Array/FindDuplicateNumber.cpp
   ${PROJECT_SOURCE_DIR}/src/Array/FindKClosestElements.cpp
   ${PROJECT_SOURCE_DIR}/src/Array/FindKLargest.cpp
   ${PROJECT_SOURCE_DIR}/src/Array/FindLengthOfLCIS.cpp
@@ -171,6 +172,7 @@ add_executable(${PROJECT_NAME}_test
   ${PROJECT_SOURCE_DIR}/test/Array/testEuclideanAlgorithmGCD.cpp
   ${PROJECT_SOURCE_DIR}/test/Array/testFind132Pattern.cpp
   ${PROJECT_SOURCE_DIR}/test/Array/testFindDisappearedNumbers.cpp
+  ${PROJECT_SOURCE_DIR}/test/Array/testFindDuplicateNumber.cpp
   ${PROJECT_SOURCE_DIR}/test/Array/testFindKClosestElements.cpp
   ${PROJECT_SOURCE_DIR}/test/Array/testFindKLargest.cpp
   ${PROJECT_SOURCE_DIR}/test/Array/testFindLengthOfLCIS.cpp
