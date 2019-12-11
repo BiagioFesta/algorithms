@@ -36,6 +36,11 @@ namespace algorithms {
  */
 int FindDuplicateNumber(const std::vector<int>& nums);
 
+/*! \see FindDuplicateNumber
+ *  \note  Complexity  -->  Time: O(N)  Space: O(1)
+ */
+int FindDuplicateNumberFloydLoop(const std::vector<int>& nums);
+
 }  // namespace algorithms
 
 #endif  // ALGORITHMS__ARRAY__FINDDUPLICATENUMBER__HPP

@@ -42,4 +42,57 @@ int FindDuplicateNumber(const std::vector<int>& nums) {
   return lo;
 }
 
+int FindDuplicateNumberFloydLoop(const std::vector<int>& nums) {
+  /*
+      Brief Explanation:
+          We can think the array `nums` as a linked list, with the following
+          structure interpretation:
+
+          Let us assume, for instance, the array is:
+
+                        0  1  2  3  4  5   (indices)
+             nums :=   [2  3  4  2  5  1]
+
+          Each value in the array represent the index associate with the
+          following node in the list. Therefore, we obtain:
+
+               [2]  ->  [4]  ->  [5]  ->  [1]  -> [3]  -> [2] -> ...
+
+          If we reason with that approach, we can apply Floyd's algorithm
+          for loop detection (or Tortoise-Hare).
+
+          Another example:
+
+                        0  1  2  3  4  5
+             nums :=   [1  2  4  3  5  1]
+
+               [1]  ->  [2]  ->  [4]  ->  [5]  ->  [2]  -> ...
+
+          The duplicate number always is the "starting node" of the loop.
+
+      See also:
+      https://en.wikipedia.org/wiki/Cycle_detection#Floyd's_Tortoise_and_Hare
+   */
+
+  assert(nums.size() > 0);
+
+  int p, q;
+
+  p = nums[0];
+  q = nums[p];
+
+  while (p != q) {
+    p = nums[p];
+    q = nums[nums[q]];
+  }
+
+  q = 0;
+  while (p != q) {
+    q = nums[q];
+    p = nums[p];
+  }
+
+  return p;
+}
+
 }  // namespace algorithms
