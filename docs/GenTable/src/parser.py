@@ -158,7 +158,7 @@ class Parser:
 
     @staticmethod
     def __get_meta_hacker_rank(url):
-        response = requests.get(url)
+        response = requests.get(url, headers={'User-Agent': None})
         if response.status_code != 200:
             raise Exception('Cannot parse metadata for url "{}" (Get Failed)'
                             .format(url))
