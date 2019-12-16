@@ -86,6 +86,7 @@ target_sources(${PROJECT_NAME}
   ${PROJECT_SOURCE_DIR}/src/DynamicProgramming/HouseRobberII.cpp
   ${PROJECT_SOURCE_DIR}/src/DynamicProgramming/IntegerBreak.cpp
   ${PROJECT_SOURCE_DIR}/src/DynamicProgramming/Keystroke.cpp
+  ${PROJECT_SOURCE_DIR}/src/DynamicProgramming/LongestArithmeticSubsequenceDifference.cpp
   ${PROJECT_SOURCE_DIR}/src/DynamicProgramming/LongestCommonSubsequence.cpp
   ${PROJECT_SOURCE_DIR}/src/DynamicProgramming/MaxProfit.cpp
   ${PROJECT_SOURCE_DIR}/src/DynamicProgramming/MinPathSum.cpp
@@ -240,6 +241,7 @@ add_executable(${PROJECT_NAME}_test
   ${PROJECT_SOURCE_DIR}/test/DynamicProgramming/testHouseRobberII.cpp
   ${PROJECT_SOURCE_DIR}/test/DynamicProgramming/testIntegerBreak.cpp
   ${PROJECT_SOURCE_DIR}/test/DynamicProgramming/testKeystroke.cpp
+  ${PROJECT_SOURCE_DIR}/test/DynamicProgramming/testLongestArithmeticSubsequenceDifference.cpp
   ${PROJECT_SOURCE_DIR}/test/DynamicProgramming/testLongestCommonSubsequence.cpp
   ${PROJECT_SOURCE_DIR}/test/DynamicProgramming/testMaxProfit.cpp
   ${PROJECT_SOURCE_DIR}/test/DynamicProgramming/testMinPathSum.cpp
