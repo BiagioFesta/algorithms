@@ -16,30 +16,15 @@
 
 */
 #include <gtest/gtest.h>
+#include <algorithm>
 #include <algorithms/Array/RemoveDuplicatesSortedArrayII.hpp>
 #include <utility>
 #include <vector>
 
-namespace {
-
-bool SortedDuplicateAtMostTwice(const std::vector<int>& nums, const int len) {
-  constexpr int kMaxDupsAllowed = 2;
-  for (int i = 0; i < len; ++i) {
-    if (i != 0 && nums[i] < nums[i - 1]) {
-      return false;
-    }
-    if (i >= kMaxDupsAllowed && nums[i] == nums[i - kMaxDupsAllowed]) {
-      return false;
-    }
-  }
-  return true;
-}
-
-}  // anonymous namespace
-
 namespace algorithms::test {
 
 TEST(Array, RemoveDuplicatesSortedArrayII) {
+  constexpr int kMaxDupsAllowed = 2;
   using Test = std::pair<std::vector<int>, int>;
   const std::vector<Test> testCases = {{{1, 1, 1, 2, 2, 3}, 5},
                                        {{0, 0, 1, 1, 1, 1, 2, 3, 3}, 7}};
@@ -49,7 +34,14 @@ TEST(Array, RemoveDuplicatesSortedArrayII) {
     const auto ans = RemoveDuplicatesSortedArrayII(&mutableNums);
 
     ASSERT_EQ(ans, expt);
-    ASSERT_TRUE(SortedDuplicateAtMostTwice(mutableNums, ans));
+    ASSERT_TRUE(
+        std::is_sorted(mutableNums.cbegin(), mutableNums.cbegin() + ans));
+    ASSERT_TRUE(std::all_of(
+        mutableNums.cbegin(), mutableNums.cbegin() + ans, [&](const int n) {
+          return std::count(mutableNums.cbegin(),
+                            mutableNums.cbegin() + ans,
+                            n) <= kMaxDupsAllowed;
+        }));
   }
 }
 
