@@ -3,6 +3,7 @@ compile_commands.json
 .projectile
 .cquery_cached_index/
 .ccls-cache/
+.clangd/
 c_cpp_properties.json
 .vscode/
 .dir-locals.el
