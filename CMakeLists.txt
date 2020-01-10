@@ -108,6 +108,7 @@ target_sources(${PROJECT_NAME}
   ${PROJECT_SOURCE_DIR}/src/Graph/CourseScheduleII.cpp
   ${PROJECT_SOURCE_DIR}/src/Graph/MinimumGeneticMutation.cpp
   ${PROJECT_SOURCE_DIR}/src/Graph/NetworkDelayTime.cpp
+  ${PROJECT_SOURCE_DIR}/src/Graph/ShortestPathBinaryMatrix.cpp
   ${PROJECT_SOURCE_DIR}/src/LRUCache/LRUCache.cpp
   ${PROJECT_SOURCE_DIR}/src/Misc/BasicCalculator.cpp
   ${PROJECT_SOURCE_DIR}/src/Misc/BrokenCalculator.cpp
@@ -266,6 +267,7 @@ add_executable(${PROJECT_NAME}_test
   ${PROJECT_SOURCE_DIR}/test/Graph/testCourseScheduleII.cpp
   ${PROJECT_SOURCE_DIR}/test/Graph/testMinimumGeneticMutation.cpp
   ${PROJECT_SOURCE_DIR}/test/Graph/testNetworkDelayTime.cpp
+  ${PROJECT_SOURCE_DIR}/test/Graph/testShortestPathBinaryMatrix.cpp
   ${PROJECT_SOURCE_DIR}/test/LRUCache/testLRUCache.cpp
   ${PROJECT_SOURCE_DIR}/test/Matrix/testMatrix2D.cpp
   ${PROJECT_SOURCE_DIR}/test/MinStack/testMinStack.cpp
