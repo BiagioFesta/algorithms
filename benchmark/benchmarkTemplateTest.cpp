@@ -18,6 +18,7 @@
 #include <benchmark/benchmark.h>
 #include <algorithms/Array/DeckIncreasingReveal.hpp>
 #include <algorithms/Array/ValidateStackSequences.hpp>
+#include <algorithms/BackTracking/BeautifulArrangement.hpp>
 #include <algorithms/BackTracking/NumbersConsecutiveDifferences.hpp>
 #include <algorithms/BackTracking/RestoreIPAddresses.hpp>
 #include <algorithms/DynamicProgramming/BuySellStockWithCooldown.hpp>
@@ -91,5 +92,6 @@ GENERATE_BENCHMARK(SwapAdjacentLR,
                    "XLXXXXXXXXRXRXX");
 GENERATE_BENCHMARK(BuySellStockWithCooldown, {1, 2, 3, 0, 2});
 GENERATE_BENCHMARK(RestoreIPAddresses, "25525511135");
+GENERATE_BENCHMARK(BeautifulArrangement, 6);
 
 }  // namespace algorithms::benchmark

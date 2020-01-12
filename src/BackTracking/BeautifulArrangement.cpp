@@ -17,25 +17,33 @@
 */
 #include <algorithms/BackTracking/BeautifulArrangement.hpp>
 #include <cassert>
+#include <numeric>
+#include <utility>
 #include <vector>
 
 namespace {
 
-int BeautifulArrangementImpl(const std::size_t ith,
-                             std::vector<bool>* poolNums) {
+template <typename T>
+constexpr bool Divisible(T a, T b) noexcept {
+  while (a >= b) a -= b;
+  return a == 0;
+}
+
+int BeautifulArrangementImpl(const std::size_t poolSize,
+                             std::vector<std::size_t>* poolNums) {
   const auto N = poolNums->size();
-  if (ith == N) {
+  const auto ith = N - poolSize + 1;
+  if (poolSize == 0) {
     return 1;
   }
+  const auto newPoolSize = poolSize - 1;
 
   int numSolutions = 0;
-  for (std::size_t k = 0; k < N; ++k) {
-    if ((*poolNums)[k] == false) {
-      if (((k + 1) % (ith + 1) == 0) || ((ith + 1) % (k + 1) == 0)) {
-        (*poolNums)[k] = true;
-        numSolutions += BeautifulArrangementImpl(ith + 1, poolNums);
-        (*poolNums)[k] = false;
-      }
+  for (std::size_t k = 0; k < poolSize; ++k) {
+    if (Divisible((*poolNums)[k], ith) || Divisible(ith, (*poolNums)[k])) {
+      std::swap((*poolNums)[k], (*poolNums)[newPoolSize]);
+      numSolutions += BeautifulArrangementImpl(newPoolSize, poolNums);
+      std::swap((*poolNums)[newPoolSize], (*poolNums)[k]);
     }
   }
   return numSolutions;
@@ -47,8 +55,9 @@ namespace algorithms {
 
 int BeautifulArrangement(const int N) {
   assert(N > 0);
-  std::vector<bool> poolNums(N);
-  return ::BeautifulArrangementImpl(0, &poolNums);
+  std::vector<std::size_t> poolNums(N);
+  std::iota(poolNums.begin(), poolNums.end(), 1);
+  return ::BeautifulArrangementImpl(N, &poolNums);
 }
 
 }  // namespace algorithms
