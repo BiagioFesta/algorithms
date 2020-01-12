@@ -1,6 +1,6 @@
 # Problems List
 ![Easy_counter](https://img.shields.io/badge/Easy-17-green.svg?style=for-the-badge&logo=c%2b%2b)
-![Medium_counter](https://img.shields.io/badge/Medium-88-yellow.svg?style=for-the-badge&logo=c%2b%2b)
+![Medium_counter](https://img.shields.io/badge/Medium-89-yellow.svg?style=for-the-badge&logo=c%2b%2b)
 ![Hard_counter](https://img.shields.io/badge/Hard-12-red.svg?style=for-the-badge&logo=c%2b%2b)
 ![Undefined_counter](https://img.shields.io/badge/Undefined-34-lightgray.svg?style=for-the-badge&logo=c%2b%2b)
 
@@ -19,6 +19,7 @@
 | [Asteroid Collision](https://leetcode.com/problems/asteroid-collision/) | ![Medium](https://img.shields.io/badge/Difficulty-Medium-yellow.svg) | [Source](https://github.com/BiagioFesta/algorithms/blob/master/src/Array/AsteroidCollision.cpp) |
 | [Basic Calculator](https://leetcode.com/problems/basic-calculator/) | ![Hard](https://img.shields.io/badge/Difficulty-Hard-red.svg) | [Source](https://github.com/BiagioFesta/algorithms/blob/master/src/Misc/BasicCalculator.cpp) |
 | [Bear and Steady Gene](https://www.hackerrank.com/challenges/bear-and-steady-gene/problem) | ![Medium](https://img.shields.io/badge/Difficulty-Medium-yellow.svg) | [Source](https://github.com/BiagioFesta/algorithms/blob/master/src/String/SteadyGene.cpp) |
+| [Beautiful Arrangement](https://leetcode.com/problems/beautiful-arrangement/) | ![Medium](https://img.shields.io/badge/Difficulty-Medium-yellow.svg) | [Source](https://github.com/BiagioFesta/algorithms/blob/master/src/BackTracking/BeautifulArrangement.cpp) |
 | [Best Sightseeing Pair](https://leetcode.com/problems/best-sightseeing-pair/) | ![Medium](https://img.shields.io/badge/Difficulty-Medium-yellow.svg) | [Source](https://github.com/BiagioFesta/algorithms/blob/master/src/Array/BestSightseeingPair.cpp) |
 | [Best Time to Buy and Sell Stock III](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iii/description/) | ![Hard](https://img.shields.io/badge/Difficulty-Hard-red.svg) | [Source](https://github.com/BiagioFesta/algorithms/blob/master/src/DynamicProgramming/MaxProfit.cpp) |
 | [Best Time to Buy and Sell Stock with Cooldown](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-cooldown/) | ![Medium](https://img.shields.io/badge/Difficulty-Medium-yellow.svg) | [Source](https://github.com/BiagioFesta/algorithms/blob/master/src/DynamicProgramming/BuySellStockWithCooldown.cpp) |

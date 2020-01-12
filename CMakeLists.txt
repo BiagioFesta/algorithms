@@ -67,6 +67,7 @@ target_sources(${PROJECT_NAME}
   ${PROJECT_SOURCE_DIR}/src/Array/Subsets.cpp
   ${PROJECT_SOURCE_DIR}/src/Array/ThreeSum.cpp
   ${PROJECT_SOURCE_DIR}/src/Array/ValidateStackSequences.cpp
+  ${PROJECT_SOURCE_DIR}/src/BackTracking/BeautifulArrangement.cpp
   ${PROJECT_SOURCE_DIR}/src/BackTracking/CombinationSum.cpp
   ${PROJECT_SOURCE_DIR}/src/BackTracking/CombinationSum3.cpp
   ${PROJECT_SOURCE_DIR}/src/BackTracking/LetterCombinationsPhoneNumber.cpp
@@ -224,6 +225,7 @@ add_executable(${PROJECT_NAME}_test
   ${PROJECT_SOURCE_DIR}/test/Array/testThreeSum.cpp
   ${PROJECT_SOURCE_DIR}/test/Array/testValidateStackSequences.cpp
   ${PROJECT_SOURCE_DIR}/test/BST/testBST.cpp
+  ${PROJECT_SOURCE_DIR}/test/BackTracking/testBeautifulArrangement.cpp
   ${PROJECT_SOURCE_DIR}/test/BackTracking/testCombinationSum.cpp
   ${PROJECT_SOURCE_DIR}/test/BackTracking/testCombinationSum3.cpp
   ${PROJECT_SOURCE_DIR}/test/BackTracking/testLetterCombinationsPhoneNumber.cpp
