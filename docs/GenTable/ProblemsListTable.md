@@ -1,6 +1,6 @@
 # Problems List
 ![Easy_counter](https://img.shields.io/badge/Easy-17-green.svg?style=for-the-badge&logo=c%2b%2b)
-![Medium_counter](https://img.shields.io/badge/Medium-89-yellow.svg?style=for-the-badge&logo=c%2b%2b)
+![Medium_counter](https://img.shields.io/badge/Medium-90-yellow.svg?style=for-the-badge&logo=c%2b%2b)
 ![Hard_counter](https://img.shields.io/badge/Hard-12-red.svg?style=for-the-badge&logo=c%2b%2b)
 ![Undefined_counter](https://img.shields.io/badge/Undefined-34-lightgray.svg?style=for-the-badge&logo=c%2b%2b)
 
@@ -132,6 +132,7 @@
 | [Reverse String In Place]() | ![Not Defined](https://img.shields.io/badge/Difficulty-ND-lightgray.svg) | [Source](https://github.com/BiagioFesta/algorithms/blob/master/src/String/ReverseStringInPlace.cpp) |
 | [Rotate Array](https://leetcode.com/problems/rotate-array/) | ![Easy](https://img.shields.io/badge/Difficulty-Easy-green.svg) | [Source](https://github.com/BiagioFesta/algorithms/blob/master/src/Array/RotateRight.cpp) |
 | [Sam and substrings](https://www.hackerrank.com/challenges/sam-and-substrings/problem) | ![Medium](https://img.shields.io/badge/Difficulty-Medium-yellow.svg) | [Source](https://github.com/BiagioFesta/algorithms/blob/master/src/DynamicProgramming/SubstringsSum.cpp) |
+| [Search a 2D Matrix](https://leetcode.com/problems/search-a-2d-matrix/) | ![Medium](https://img.shields.io/badge/Difficulty-Medium-yellow.svg) | [Source](https://github.com/BiagioFesta/algorithms/blob/master/src/Array/Search2DMatrix.cpp) |
 | [Search in Rotated Sorted Array](https://leetcode.com/problems/search-in-rotated-sorted-array/) | ![Medium](https://img.shields.io/badge/Difficulty-Medium-yellow.svg) | [Source](https://github.com/BiagioFesta/algorithms/blob/master/src/Array/SearchRotatedSortedArray.cpp) |
 | [Sherlock and Cost](https://www.hackerrank.com/challenges/sherlock-and-cost/problem) | ![Medium](https://img.shields.io/badge/Difficulty-Medium-yellow.svg) | [Source](https://github.com/BiagioFesta/algorithms/blob/master/src/DynamicProgramming/SherlockAndCost.cpp) |
 | [Shortest Path in Binary Matrix](https://leetcode.com/problems/shortest-path-in-binary-matrix/) | ![Medium](https://img.shields.io/badge/Difficulty-Medium-yellow.svg) | [Source](https://github.com/BiagioFesta/algorithms/blob/master/src/Graph/ShortestPathBinaryMatrix.cpp) |
