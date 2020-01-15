@@ -2,7 +2,7 @@
 ![Easy_counter](https://img.shields.io/badge/Easy-17-green.svg?style=for-the-badge&logo=c%2b%2b)
 ![Medium_counter](https://img.shields.io/badge/Medium-90-yellow.svg?style=for-the-badge&logo=c%2b%2b)
 ![Hard_counter](https://img.shields.io/badge/Hard-12-red.svg?style=for-the-badge&logo=c%2b%2b)
-![Undefined_counter](https://img.shields.io/badge/Undefined-34-lightgray.svg?style=for-the-badge&logo=c%2b%2b)
+![Undefined_counter](https://img.shields.io/badge/Undefined-35-lightgray.svg?style=for-the-badge&logo=c%2b%2b)
 
 | Problem Name | Difficulty | Implementation |
 | - | - | - |
@@ -74,6 +74,7 @@
 | [K-th Symbol in Grammar](https://leetcode.com/problems/k-th-symbol-in-grammar/) | ![Medium](https://img.shields.io/badge/Difficulty-Medium-yellow.svg) | [Source](https://github.com/BiagioFesta/algorithms/blob/master/src/Misc/KSymbolInGrammar.cpp) |
 | [Keys and Rooms](https://leetcode.com/problems/keys-and-rooms/) | ![Medium](https://img.shields.io/badge/Difficulty-Medium-yellow.svg) | [Source](https://github.com/BiagioFesta/algorithms/blob/master/src/Array/KeysAndRooms.cpp) |
 | [Keystroke](https://www.geeksforgeeks.org/how-to-print-maximum-number-of-a-using-given-four-keys/) | ![Not Defined](https://img.shields.io/badge/Difficulty-ND-lightgray.svg) | [Source](https://github.com/BiagioFesta/algorithms/blob/master/src/DynamicProgramming/Keystroke.cpp) |
+| [Knuth–Morris–Pratt algorithm](https://en.wikipedia.org/wiki/Knuth%E2%80%93Morris%E2%80%93Pratt_algorithm) | ![Not Defined](https://img.shields.io/badge/Difficulty-ND-lightgray.svg) | [Source](https://github.com/BiagioFesta/algorithms/blob/master/src/String/KMPstrstr.cpp) |
 | [Koko Eating Bananas](https://leetcode.com/problems/koko-eating-bananas/) | ![Medium](https://img.shields.io/badge/Difficulty-Medium-yellow.svg) | [Source](https://github.com/BiagioFesta/algorithms/blob/master/src/Array/KokoEatingBananas.cpp) |
 | [Kth Largest Element in an Array](https://leetcode.com/problems/kth-largest-element-in-an-array/) | ![Medium](https://img.shields.io/badge/Difficulty-Medium-yellow.svg) | [Source](https://github.com/BiagioFesta/algorithms/blob/master/src/Array/FindKLargest.cpp) |
 | [Kth To Last]() | ![Not Defined](https://img.shields.io/badge/Difficulty-ND-lightgray.svg) | [Source](https://github.com/BiagioFesta/algorithms/blob/master/src/CTCI/Chapter2/KthToLast.cpp) |
