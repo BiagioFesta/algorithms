@@ -1,7 +1,7 @@
 # Problems List
 ![Easy_counter](https://img.shields.io/badge/Easy-17-green.svg?style=for-the-badge&logo=c%2b%2b)
 ![Medium_counter](https://img.shields.io/badge/Medium-90-yellow.svg?style=for-the-badge&logo=c%2b%2b)
-![Hard_counter](https://img.shields.io/badge/Hard-12-red.svg?style=for-the-badge&logo=c%2b%2b)
+![Hard_counter](https://img.shields.io/badge/Hard-13-red.svg?style=for-the-badge&logo=c%2b%2b)
 ![Undefined_counter](https://img.shields.io/badge/Undefined-35-lightgray.svg?style=for-the-badge&logo=c%2b%2b)
 
 | Problem Name | Difficulty | Implementation |
@@ -86,6 +86,7 @@
 | [Letter Combinations of a Phone Number](https://leetcode.com/problems/letter-combinations-of-a-phone-number/) | ![Medium](https://img.shields.io/badge/Difficulty-Medium-yellow.svg) | [Source](https://github.com/BiagioFesta/algorithms/blob/master/src/BackTracking/LetterCombinationsPhoneNumber.cpp) |
 | [Longest Arithmetic Subsequence of Given Difference](https://leetcode.com/problems/longest-arithmetic-subsequence-of-given-difference/) | ![Medium](https://img.shields.io/badge/Difficulty-Medium-yellow.svg) | [Source](https://github.com/BiagioFesta/algorithms/blob/master/src/DynamicProgramming/LongestArithmeticSubsequenceDifference.cpp) |
 | [Longest Common Prefix](https://leetcode.com/problems/longest-common-prefix/) | ![Easy](https://img.shields.io/badge/Difficulty-Easy-green.svg) | [Source](https://github.com/BiagioFesta/algorithms/blob/master/src/String/LongestCommonPrefix.cpp) |
+| [Longest Consecutive Sequence](https://leetcode.com/problems/longest-consecutive-sequence/) | ![Hard](https://img.shields.io/badge/Difficulty-Hard-red.svg) | [Source](https://github.com/BiagioFesta/algorithms/blob/master/src/Array/LongestConsecutiveSequence.cpp) |
 | [Longest Continuous Increasing Subsequence](https://leetcode.com/problems/longest-continuous-increasing-subsequence/description/) | ![Easy](https://img.shields.io/badge/Difficulty-Easy-green.svg) | [Source](https://github.com/BiagioFesta/algorithms/blob/master/src/Array/FindLengthOfLCIS.cpp) |
 | [Longest Mountain in Array](https://leetcode.com/problems/longest-mountain-in-array/) | ![Medium](https://img.shields.io/badge/Difficulty-Medium-yellow.svg) | [Source](https://github.com/BiagioFesta/algorithms/blob/master/src/Array/LongestMountainArray.cpp) |
 | [Longest Palindrome](https://www.geeksforgeeks.org/longest-palindrome-substring-set-1/) | ![Not Defined](https://img.shields.io/badge/Difficulty-ND-lightgray.svg) | [Source](https://github.com/BiagioFesta/algorithms/blob/master/src/String/LongestPalindrome.cpp) |

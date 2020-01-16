@@ -40,6 +40,7 @@ target_sources(${PROJECT_NAME}
   ${PROJECT_SOURCE_DIR}/src/Array/KokoEatingBananas.cpp
   ${PROJECT_SOURCE_DIR}/src/Array/LargestNumber.cpp
   ${PROJECT_SOURCE_DIR}/src/Array/LarrysArray.cpp
+  ${PROJECT_SOURCE_DIR}/src/Array/LongestConsecutiveSequence.cpp
   ${PROJECT_SOURCE_DIR}/src/Array/LongestMountainArray.cpp
   ${PROJECT_SOURCE_DIR}/src/Array/MajorityElementII.cpp
   ${PROJECT_SOURCE_DIR}/src/Array/MaxWidthRamp.cpp
@@ -199,6 +200,7 @@ add_executable(${PROJECT_NAME}_test
   ${PROJECT_SOURCE_DIR}/test/Array/testKokoEatingBananas.cpp
   ${PROJECT_SOURCE_DIR}/test/Array/testLargestNumber.cpp
   ${PROJECT_SOURCE_DIR}/test/Array/testLarrysArray.cpp
+  ${PROJECT_SOURCE_DIR}/test/Array/testLongestConsecutiveSequence.cpp
   ${PROJECT_SOURCE_DIR}/test/Array/testLongestMountainArray.cpp
   ${PROJECT_SOURCE_DIR}/test/Array/testMajorityElementII.cpp
   ${PROJECT_SOURCE_DIR}/test/Array/testMaxWidthRamp.cpp
