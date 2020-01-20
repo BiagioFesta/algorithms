@@ -23,6 +23,7 @@
 #include <algorithms/BackTracking/RestoreIPAddresses.hpp>
 #include <algorithms/DynamicProgramming/BuySellStockWithCooldown.hpp>
 #include <algorithms/DynamicProgramming/CoinChange2.hpp>
+#include <algorithms/DynamicProgramming/PalindromePartitioningII.hpp>
 #include <algorithms/Graph/MinimumGeneticMutation.hpp>
 #include <algorithms/Misc/BasicCalculator.hpp>
 #include <algorithms/Misc/BrokenCalculator.hpp>
@@ -93,5 +94,7 @@ GENERATE_BENCHMARK(SwapAdjacentLR,
 GENERATE_BENCHMARK(BuySellStockWithCooldown, {1, 2, 3, 0, 2});
 GENERATE_BENCHMARK(RestoreIPAddresses, "25525511135");
 GENERATE_BENCHMARK(BeautifulArrangement, 6);
+GENERATE_BENCHMARK(PalindromePartitioningII,
+                   "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
 
 }  // namespace algorithms::benchmark

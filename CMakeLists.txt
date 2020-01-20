@@ -97,6 +97,7 @@ target_sources(${PROJECT_NAME}
   ${PROJECT_SOURCE_DIR}/src/DynamicProgramming/MinPathSum.cpp
   ${PROJECT_SOURCE_DIR}/src/DynamicProgramming/MinSwap.cpp
   ${PROJECT_SOURCE_DIR}/src/DynamicProgramming/OnesAndZeroes.cpp
+  ${PROJECT_SOURCE_DIR}/src/DynamicProgramming/PalindromePartitioningII.cpp
   ${PROJECT_SOURCE_DIR}/src/DynamicProgramming/PartitionEqualSubSum.cpp
   ${PROJECT_SOURCE_DIR}/src/DynamicProgramming/SherlockAndCost.cpp
   ${PROJECT_SOURCE_DIR}/src/DynamicProgramming/SubstringsSum.cpp
@@ -259,6 +260,7 @@ add_executable(${PROJECT_NAME}_test
   ${PROJECT_SOURCE_DIR}/test/DynamicProgramming/testMinPathSum.cpp
   ${PROJECT_SOURCE_DIR}/test/DynamicProgramming/testMinSwap.cpp
   ${PROJECT_SOURCE_DIR}/test/DynamicProgramming/testOnesAndZeroes.cpp
+  ${PROJECT_SOURCE_DIR}/test/DynamicProgramming/testPalindromePartitioningII.cpp
   ${PROJECT_SOURCE_DIR}/test/DynamicProgramming/testPartitionEqualSubSum.cpp
   ${PROJECT_SOURCE_DIR}/test/DynamicProgramming/testSherlockAndCost.cpp
   ${PROJECT_SOURCE_DIR}/test/DynamicProgramming/testSubstringsSum.cpp

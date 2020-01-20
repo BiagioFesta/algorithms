@@ -1,7 +1,7 @@
 # Problems List
 ![Easy_counter](https://img.shields.io/badge/Easy-17-green.svg?style=for-the-badge&logo=c%2b%2b)
 ![Medium_counter](https://img.shields.io/badge/Medium-90-yellow.svg?style=for-the-badge&logo=c%2b%2b)
-![Hard_counter](https://img.shields.io/badge/Hard-13-red.svg?style=for-the-badge&logo=c%2b%2b)
+![Hard_counter](https://img.shields.io/badge/Hard-14-red.svg?style=for-the-badge&logo=c%2b%2b)
 ![Undefined_counter](https://img.shields.io/badge/Undefined-35-lightgray.svg?style=for-the-badge&logo=c%2b%2b)
 
 | Problem Name | Difficulty | Implementation |
@@ -119,6 +119,7 @@
 | [Original Digits](http://www.cnblogs.com/grandyang/p/5996239.html) | ![Not Defined](https://img.shields.io/badge/Difficulty-ND-lightgray.svg) | [Source](https://github.com/BiagioFesta/algorithms/blob/master/src/String/OriginalDigits.cpp) |
 | [Pairs](https://www.hackerrank.com/challenges/pairs/problem) | ![Medium](https://img.shields.io/badge/Difficulty-Medium-yellow.svg) | [Source](https://github.com/BiagioFesta/algorithms/blob/master/src/Array/Pairs.cpp) |
 | [Palindrome Partitioning](https://leetcode.com/problems/palindrome-partitioning/) | ![Medium](https://img.shields.io/badge/Difficulty-Medium-yellow.svg) | [Source](https://github.com/BiagioFesta/algorithms/blob/master/src/BackTracking/PalindromePartitioning.cpp) |
+| [Palindrome Partitioning II](https://leetcode.com/problems/palindrome-partitioning-ii/) | ![Hard](https://img.shields.io/badge/Difficulty-Hard-red.svg) | [Source](https://github.com/BiagioFesta/algorithms/blob/master/src/DynamicProgramming/PalindromePartitioningII.cpp) |
 | [Palindrome Permutation](https://leetcode.com/articles/palindrome-permutation/) | ![Easy](https://img.shields.io/badge/Difficulty-Easy-green.svg) | [Source](https://github.com/BiagioFesta/algorithms/blob/master/src/String/PalindromePermutation.cpp) |
 | [Partition]() | ![Not Defined](https://img.shields.io/badge/Difficulty-ND-lightgray.svg) | [Source](https://github.com/BiagioFesta/algorithms/blob/master/src/Array/Partition.cpp) |
 | [Partition Equal Subset Sum](https://leetcode.com/problems/partition-equal-subset-sum/) | ![Medium](https://img.shields.io/badge/Difficulty-Medium-yellow.svg) | [Source](https://github.com/BiagioFesta/algorithms/blob/master/src/DynamicProgramming/PartitionEqualSubSum.cpp) |
