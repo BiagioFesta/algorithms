@@ -10,6 +10,7 @@ target_sources(${PROJECT_NAME}
   ${PROJECT_SOURCE_DIR}/src/Array/ArrayDoubledPairs.cpp
   ${PROJECT_SOURCE_DIR}/src/Array/AsteroidCollision.cpp
   ${PROJECT_SOURCE_DIR}/src/Array/BestSightseeingPair.cpp
+  ${PROJECT_SOURCE_DIR}/src/Array/CapacityShipPackagesWithinDays.cpp
   ${PROJECT_SOURCE_DIR}/src/Array/ClimbingLeaderboard.cpp
   ${PROJECT_SOURCE_DIR}/src/Array/ContainsDuplicateIII.cpp
   ${PROJECT_SOURCE_DIR}/src/Array/ContainsNearbyDuplicate.cpp
@@ -171,6 +172,7 @@ add_executable(${PROJECT_NAME}_test
   ${PROJECT_SOURCE_DIR}/test/Array/testArrayDoubledPairs.cpp
   ${PROJECT_SOURCE_DIR}/test/Array/testAsteroidCollision.cpp
   ${PROJECT_SOURCE_DIR}/test/Array/testBestSightseeingPair.cpp
+  ${PROJECT_SOURCE_DIR}/test/Array/testCapacityShipPackagesWithinDays.cpp
   ${PROJECT_SOURCE_DIR}/test/Array/testClimbingLeaderboard.cpp
   ${PROJECT_SOURCE_DIR}/test/Array/testContainsDuplicateIII.cpp
   ${PROJECT_SOURCE_DIR}/test/Array/testContainsNearbyDuplicate.cpp
