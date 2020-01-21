@@ -16,6 +16,7 @@
 
 */
 #include <benchmark/benchmark.h>
+#include <algorithms/Array/CountSmallerAfterSelf.hpp>
 #include <algorithms/Array/DeckIncreasingReveal.hpp>
 #include <algorithms/Array/ValidateStackSequences.hpp>
 #include <algorithms/BackTracking/BeautifulArrangement.hpp>
@@ -96,5 +97,6 @@ GENERATE_BENCHMARK(RestoreIPAddresses, "25525511135");
 GENERATE_BENCHMARK(BeautifulArrangement, 6);
 GENERATE_BENCHMARK(PalindromePartitioningII,
                    "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
+GENERATE_BENCHMARK(CountSmallerAfterSelf, SeqList<1024>());
 
 }  // namespace algorithms::benchmark

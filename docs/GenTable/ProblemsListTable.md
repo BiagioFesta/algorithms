@@ -1,7 +1,7 @@
 # Problems List
 ![Easy_counter](https://img.shields.io/badge/Easy-17-green.svg?style=for-the-badge&logo=c%2b%2b)
 ![Medium_counter](https://img.shields.io/badge/Medium-91-yellow.svg?style=for-the-badge&logo=c%2b%2b)
-![Hard_counter](https://img.shields.io/badge/Hard-14-red.svg?style=for-the-badge&logo=c%2b%2b)
+![Hard_counter](https://img.shields.io/badge/Hard-15-red.svg?style=for-the-badge&logo=c%2b%2b)
 ![Undefined_counter](https://img.shields.io/badge/Undefined-35-lightgray.svg?style=for-the-badge&logo=c%2b%2b)
 
 | Problem Name | Difficulty | Implementation |
@@ -38,6 +38,7 @@
 | [Contains Duplicate II](https://leetcode.com/problems/contains-duplicate-ii/description/) | ![Easy](https://img.shields.io/badge/Difficulty-Easy-green.svg) | [Source](https://github.com/BiagioFesta/algorithms/blob/master/src/Array/ContainsNearbyDuplicate.cpp) |
 | [Contains Duplicate III](https://leetcode.com/problems/contains-duplicate-iii/) | ![Medium](https://img.shields.io/badge/Difficulty-Medium-yellow.svg) | [Source](https://github.com/BiagioFesta/algorithms/blob/master/src/Array/ContainsDuplicateIII.cpp) |
 | [Contiguous Array](https://leetcode.com/problems/contiguous-array/description/) | ![Medium](https://img.shields.io/badge/Difficulty-Medium-yellow.svg) | [Source](https://github.com/BiagioFesta/algorithms/blob/master/src/Array/ContiguousArray.cpp) |
+| [Count of Smaller Numbers After Self](https://leetcode.com/problems/count-of-smaller-numbers-after-self/) | ![Hard](https://img.shields.io/badge/Difficulty-Hard-red.svg) | [Source](https://github.com/BiagioFesta/algorithms/blob/master/src/Array/CountSmallerAfterSelf.cpp) |
 | [Course Schedule](https://leetcode.com/problems/course-schedule/) | ![Medium](https://img.shields.io/badge/Difficulty-Medium-yellow.svg) | [Source](https://github.com/BiagioFesta/algorithms/blob/master/src/Graph/CourseSchedule.cpp) |
 | [Course Schedule II](https://leetcode.com/problems/course-schedule-ii/) | ![Medium](https://img.shields.io/badge/Difficulty-Medium-yellow.svg) | [Source](https://github.com/BiagioFesta/algorithms/blob/master/src/Graph/CourseScheduleII.cpp) |
 | [Daily Temperatures](https://leetcode.com/problems/daily-temperatures/) | ![Medium](https://img.shields.io/badge/Difficulty-Medium-yellow.svg) | [Source](https://github.com/BiagioFesta/algorithms/blob/master/src/Array/DailyTemperatures.cpp) |
