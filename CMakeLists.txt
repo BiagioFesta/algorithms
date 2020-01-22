@@ -244,6 +244,7 @@ add_executable(${PROJECT_NAME}_test
   ${PROJECT_SOURCE_DIR}/test/BackTracking/testRestoreIPAddresses.cpp
   ${PROJECT_SOURCE_DIR}/test/BackTracking/testWildcardMatching.cpp
   ${PROJECT_SOURCE_DIR}/test/BackTracking/testWordSearch.cpp
+  ${PROJECT_SOURCE_DIR}/test/BinaryIndexedTree/testBinaryIndexedTree.cpp
   ${PROJECT_SOURCE_DIR}/test/CTCI/Chapter2/testDoubleLinkedList.cpp
   ${PROJECT_SOURCE_DIR}/test/CTCI/Chapter2/testKthToLast.cpp
   ${PROJECT_SOURCE_DIR}/test/CTCI/Chapter2/testRemoveDuplicates.cpp
