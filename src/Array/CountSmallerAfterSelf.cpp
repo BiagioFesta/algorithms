@@ -15,21 +15,37 @@
   along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 */
+#include <algorithm>
 #include <algorithms/Array/CountSmallerAfterSelf.hpp>
-#include <iterator>
-#include <set>
+#include <algorithms/BinaryIndexedTree/BinaryIndexedTree.hpp>
+#include <utility>
 #include <vector>
 
 namespace algorithms {
 
 std::vector<int> CountSmallerAfterSelf(const std::vector<int>& nums) {
-  std::size_t size = nums.size();
-  std::vector<int> ans(size);
-  std::multiset<int> sorted;
+  const std::size_t size = nums.size();
 
-  for (auto ith = nums.crbegin(); ith != nums.crend(); ++ith) {
-    ans[--size] = std::distance(sorted.cbegin(), sorted.lower_bound(*ith));
-    sorted.insert(*ith);
+  std::vector<std::pair<int, std::size_t>> metaSort;
+  metaSort.reserve(size);
+  for (std::size_t i = 0; i < size; ++i) {  // O(N)
+    metaSort.emplace_back(nums[i], i);      // O(1)
+  }
+  std::sort(metaSort.begin(), metaSort.end());  // O(NlogN)
+
+  std::vector<std::size_t> imap(size);
+  for (std::size_t i = 0; i < size; ++i) {  // O(N)
+    imap[metaSort[i].second] = i;           // O(1)
+  }
+
+  BinaryIndexedTree<> bit(size);
+  std::vector<int> ans(size);
+  std::size_t ri;
+
+  for (std::size_t i = 0; i < size; ++i) {  // O(N)
+    ri = size - i - 1;
+    ans[ri] = bit.sum(imap[ri]);  // O(logN)
+    bit.update(imap[ri], 1);      // O(logN)
   }
 
   return ans;
