@@ -40,6 +40,7 @@ target_sources(${PROJECT_NAME}
   ${PROJECT_SOURCE_DIR}/src/Array/JumpGame2.cpp
   ${PROJECT_SOURCE_DIR}/src/Array/KeysAndRooms.cpp
   ${PROJECT_SOURCE_DIR}/src/Array/KokoEatingBananas.cpp
+  ${PROJECT_SOURCE_DIR}/src/Array/KthSmallestSortedMatrix.cpp
   ${PROJECT_SOURCE_DIR}/src/Array/LargestNumber.cpp
   ${PROJECT_SOURCE_DIR}/src/Array/LarrysArray.cpp
   ${PROJECT_SOURCE_DIR}/src/Array/LongestConsecutiveSequence.cpp
@@ -203,6 +204,7 @@ add_executable(${PROJECT_NAME}_test
   ${PROJECT_SOURCE_DIR}/test/Array/testJumpGame2.cpp
   ${PROJECT_SOURCE_DIR}/test/Array/testKeysAndRooms.cpp
   ${PROJECT_SOURCE_DIR}/test/Array/testKokoEatingBananas.cpp
+  ${PROJECT_SOURCE_DIR}/test/Array/testKthSmallestSortedMatrix.cpp
   ${PROJECT_SOURCE_DIR}/test/Array/testLargestNumber.cpp
   ${PROJECT_SOURCE_DIR}/test/Array/testLarrysArray.cpp
   ${PROJECT_SOURCE_DIR}/test/Array/testLongestConsecutiveSequence.cpp
