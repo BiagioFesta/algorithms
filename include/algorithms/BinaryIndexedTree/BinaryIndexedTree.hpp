@@ -46,6 +46,7 @@ class BinaryIndexedTree {
    *  It computes the sum of the elements in the array [0...index].
    *  `index`-th element is included in the sum.
    *  \note `index` must be less than size, otherwise undefined behavior.
+   *  \note  Complexity  -->  Time: O(logN)  where N := size of container.
    */
   value_type sum(std::size_t index) const noexcept;
 
@@ -55,6 +56,7 @@ class BinaryIndexedTree {
    *  where the i-th and j-th elements are included in the sum.
    *  \note Both indices must be less than size, otherwise the behavior is
    *  undefined.
+   *  \note  Complexity  -->  Time: O(logN)  where N := size of container.
    */
   value_type partialSum(std::size_t i, std::size_t j) const noexcept;
 
@@ -63,6 +65,7 @@ class BinaryIndexedTree {
    *  \param [in] delta   The delta (incremental update) to the new value.
    *  \note `index` must be less than size, otherwise the behaviour is
    *  undefined.
+   *  \note  Complexity  -->  Time: O(logN)  where N := size of container.
    */
   void update(std::size_t index, value_type delta) noexcept;
 
