@@ -15,6 +15,7 @@ target_sources(${PROJECT_NAME}
   ${PROJECT_SOURCE_DIR}/src/Array/ContainsDuplicateIII.cpp
   ${PROJECT_SOURCE_DIR}/src/Array/ContainsNearbyDuplicate.cpp
   ${PROJECT_SOURCE_DIR}/src/Array/ContiguousArray.cpp
+  ${PROJECT_SOURCE_DIR}/src/Array/CountServersCommunicate.cpp
   ${PROJECT_SOURCE_DIR}/src/Array/CountSmallerAfterSelf.cpp
   ${PROJECT_SOURCE_DIR}/src/Array/DailyTemperatures.cpp
   ${PROJECT_SOURCE_DIR}/src/Array/DeckIncreasingReveal.cpp
@@ -179,6 +180,7 @@ add_executable(${PROJECT_NAME}_test
   ${PROJECT_SOURCE_DIR}/test/Array/testContainsDuplicateIII.cpp
   ${PROJECT_SOURCE_DIR}/test/Array/testContainsNearbyDuplicate.cpp
   ${PROJECT_SOURCE_DIR}/test/Array/testContiguousArray.cpp
+  ${PROJECT_SOURCE_DIR}/test/Array/testCountServersCommunicate.cpp
   ${PROJECT_SOURCE_DIR}/test/Array/testCountSmallerAfterSelf.cpp
   ${PROJECT_SOURCE_DIR}/test/Array/testDailyTemperatures.cpp
   ${PROJECT_SOURCE_DIR}/test/Array/testDeckIncreasingReveal.cpp
