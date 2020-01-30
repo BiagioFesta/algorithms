@@ -28,6 +28,7 @@
 #include <algorithms/Graph/MinimumGeneticMutation.hpp>
 #include <algorithms/Misc/BasicCalculator.hpp>
 #include <algorithms/Misc/BrokenCalculator.hpp>
+#include <algorithms/Misc/NextGreaterElementIII.hpp>
 #include <algorithms/String/FindAllAnagramsString.hpp>
 #include <algorithms/String/SwapAdjacentLR.hpp>
 #include <vector>
@@ -98,5 +99,6 @@ GENERATE_BENCHMARK(BeautifulArrangement, 6);
 GENERATE_BENCHMARK(PalindromePartitioningII,
                    "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
 GENERATE_BENCHMARK(CountSmallerAfterSelf, SeqList<1024>());
+GENERATE_BENCHMARK(NextGreaterElementIII, 1999999999);
 
 }  // namespace algorithms::benchmark

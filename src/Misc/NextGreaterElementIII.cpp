@@ -24,6 +24,9 @@
 namespace algorithms {
 
 int NextGreaterElementIII(const int n) {
+  static_assert(sizeof(int) == 4);
+  const std::string kMaxStr = "2147483647";
+
   assert(n >= 0);
   auto s = std::to_string(n);
   auto min = s.rbegin();
@@ -35,11 +38,11 @@ int NextGreaterElementIII(const int n) {
   std::iter_swap(pivot, min);
   std::reverse(s.rbegin(), pivot);  // O(N)
 
-  try {
-    return std::stoi(s);
-  } catch (const std::out_of_range&) {
+  if (kMaxStr.size() <= s.size() && kMaxStr < s) {
     return -1;
   }
+
+  return std::stoi(s);
 }
 
 }  // namespace algorithms
