@@ -1,6 +1,6 @@
 # Problems List
 ![Easy_counter](https://img.shields.io/badge/Easy-17-green.svg?style=for-the-badge&logo=c%2b%2b)
-![Medium_counter](https://img.shields.io/badge/Medium-92-yellow.svg?style=for-the-badge&logo=c%2b%2b)
+![Medium_counter](https://img.shields.io/badge/Medium-94-yellow.svg?style=for-the-badge&logo=c%2b%2b)
 ![Hard_counter](https://img.shields.io/badge/Hard-15-red.svg?style=for-the-badge&logo=c%2b%2b)
 ![Undefined_counter](https://img.shields.io/badge/Undefined-36-lightgray.svg?style=for-the-badge&logo=c%2b%2b)
 
@@ -38,6 +38,7 @@
 | [Contains Duplicate II](https://leetcode.com/problems/contains-duplicate-ii/description/) | ![Easy](https://img.shields.io/badge/Difficulty-Easy-green.svg) | [Source](https://github.com/BiagioFesta/algorithms/blob/master/src/Array/ContainsNearbyDuplicate.cpp) |
 | [Contains Duplicate III](https://leetcode.com/problems/contains-duplicate-iii/) | ![Medium](https://img.shields.io/badge/Difficulty-Medium-yellow.svg) | [Source](https://github.com/BiagioFesta/algorithms/blob/master/src/Array/ContainsDuplicateIII.cpp) |
 | [Contiguous Array](https://leetcode.com/problems/contiguous-array/description/) | ![Medium](https://img.shields.io/badge/Difficulty-Medium-yellow.svg) | [Source](https://github.com/BiagioFesta/algorithms/blob/master/src/Array/ContiguousArray.cpp) |
+| [Count Servers that Communicate](https://leetcode.com/problems/count-servers-that-communicate/) | ![Medium](https://img.shields.io/badge/Difficulty-Medium-yellow.svg) | [Source](https://github.com/BiagioFesta/algorithms/blob/master/src/Array/CountServersCommunicate.cpp) |
 | [Count of Smaller Numbers After Self](https://leetcode.com/problems/count-of-smaller-numbers-after-self/) | ![Hard](https://img.shields.io/badge/Difficulty-Hard-red.svg) | [Source](https://github.com/BiagioFesta/algorithms/blob/master/src/Array/CountSmallerAfterSelf.cpp) |
 | [Course Schedule](https://leetcode.com/problems/course-schedule/) | ![Medium](https://img.shields.io/badge/Difficulty-Medium-yellow.svg) | [Source](https://github.com/BiagioFesta/algorithms/blob/master/src/Graph/CourseSchedule.cpp) |
 | [Course Schedule II](https://leetcode.com/problems/course-schedule-ii/) | ![Medium](https://img.shields.io/badge/Difficulty-Medium-yellow.svg) | [Source](https://github.com/BiagioFesta/algorithms/blob/master/src/Graph/CourseScheduleII.cpp) |
@@ -113,6 +114,7 @@
 | [Minimum Swaps To Make Sequences Increasing](https://leetcode.com/problems/minimum-swaps-to-make-sequences-increasing/) | ![Medium](https://img.shields.io/badge/Difficulty-Medium-yellow.svg) | [Source](https://github.com/BiagioFesta/algorithms/blob/master/src/DynamicProgramming/MinSwap.cpp) |
 | [Minimum Window Substring](https://leetcode.com/problems/minimum-window-substring/) | ![Hard](https://img.shields.io/badge/Difficulty-Hard-red.svg) | [Source](https://github.com/BiagioFesta/algorithms/blob/master/src/String/MinimumWindowSubstring.cpp) |
 | [Network Delay Time](https://leetcode.com/problems/network-delay-time/) | ![Medium](https://img.shields.io/badge/Difficulty-Medium-yellow.svg) | [Source](https://github.com/BiagioFesta/algorithms/blob/master/src/Graph/NetworkDelayTime.cpp) |
+| [Next Greater Element III](https://leetcode.com/problems/next-greater-element-iii/) | ![Medium](https://img.shields.io/badge/Difficulty-Medium-yellow.svg) | [Source](https://github.com/BiagioFesta/algorithms/blob/master/src/Misc/NextGreaterElementIII.cpp) |
 | [Next Permutation](https://leetcode.com/problems/next-permutation/) | ![Medium](https://img.shields.io/badge/Difficulty-Medium-yellow.svg) | [Source](https://github.com/BiagioFesta/algorithms/blob/master/src/Array/NextPermutation.cpp) |
 | [Non-decreasing Array](https://leetcode.com/problems/non-decreasing-array/description/) | ![Easy](https://img.shields.io/badge/Difficulty-Easy-green.svg) | [Source](https://github.com/BiagioFesta/algorithms/blob/master/src/Array/NonDecreasingArray.cpp) |
 | [Number of Islands](https://leetcode.com/problems/number-of-islands/) | ![Medium](https://img.shields.io/badge/Difficulty-Medium-yellow.svg) | [Source](https://github.com/BiagioFesta/algorithms/blob/master/src/Array/NumOfIslands.cpp) |
