@@ -26,7 +26,7 @@ TEST(Misc, IsPerfectSquare) {
   const std::vector<Test> testCases = {
       {16, true}, {14, false}, {1, true}, {64, true}, {2147395600, true}};
 
-  for (const auto [num, expt] : testCases) {
+  for (const auto& [num, expt] : testCases) {
     ASSERT_EQ(IsPerfectSquare(num), expt);
   }
 }

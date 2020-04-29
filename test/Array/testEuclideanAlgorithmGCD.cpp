@@ -32,7 +32,7 @@ TEST(Array, EuclideanAlgorithmGCD) {
                                        {36, 144, 36},
                                        {8, 12, 4}};
 
-  for (const auto [i, j, expt] : testCases) {
+  for (const auto& [i, j, expt] : testCases) {
     ASSERT_EQ(EuclideanAlgorithmGCD(i, j), expt);
     ASSERT_EQ(EuclideanAlgorithmGCD(i, j), EuclideanAlgorithmGCD(j, i));
   }

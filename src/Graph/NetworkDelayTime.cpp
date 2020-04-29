@@ -57,7 +57,7 @@ int NetworkDelayTime(const std::vector<std::vector<int>>& times,
     const int current = dfs.top();
     dfs.pop();
 
-    for (const auto [next, time] : nextHopMap[current]) {
+    for (const auto& [next, time] : nextHopMap[current]) {
       const auto delay = delays[current] + time;
       if (delay < delays[next]) {
         delays[next] = delay;

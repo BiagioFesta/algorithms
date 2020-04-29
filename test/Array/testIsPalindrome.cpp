@@ -32,7 +32,7 @@ TEST(Array, IsPalindrome) {
                                        {123421, false},
                                        {1000000001, true}};
 
-  for (const auto [num, expt] : testCases) {
+  for (const auto& [num, expt] : testCases) {
     ASSERT_EQ(IsPalindrome(num), expt);
   }
 }
