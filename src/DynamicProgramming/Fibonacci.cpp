@@ -17,25 +17,19 @@
 */
 #include <algorithms/DynamicProgramming/Fibonacci.hpp>
 #include <cassert>
+#include <utility>
 
 namespace algorithms {
 
 int Fibonacci(const int n) {
   assert(n >= 0);
 
-  if (n == 0 || n == 1) return 1;
-
+  int n_0 = 0;
   int n_1 = 1;
-  int n_2 = 0;
-
-  int current;
-  for (int i = 2; i <= n; ++i) {
-    current = n_1 + n_2;
-    n_2 = n_1;
-    n_1 = current;
+  for (int i = 0; i < n; ++i) {
+    n_0 = std::exchange(n_1, n_0 + n_1);
   }
-
-  return current;
+  return n_0;
 }
 
 }  // namespace algorithms
