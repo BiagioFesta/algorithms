@@ -16,19 +16,18 @@
 
 */
 #include <algorithms/String/ValidPalindrome.hpp>
-#include <locale>
+#include <cctype>
 #include <string>
 
 namespace algorithms {
 
 bool ValidPalindrome(const std::string& str) {
   int i = 0, j = static_cast<int>(str.size()) - 1;
-  std::locale loc;
 
   while (i < j) {
-    if (!std::isalnum(str[i], loc)) {
+    if (!std::isalnum(str[i])) {
       ++i;
-    } else if (!std::isalnum(str[j], loc)) {
+    } else if (!std::isalnum(str[j])) {
       --j;
     } else if (std::tolower(str[i]) != std::tolower(str[j])) {
       return false;
