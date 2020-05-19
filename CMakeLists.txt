@@ -78,6 +78,7 @@ target_sources(${PROJECT_NAME}
   ${PROJECT_SOURCE_DIR}/src/BackTracking/CombinationSum.cpp
   ${PROJECT_SOURCE_DIR}/src/BackTracking/CombinationSum3.cpp
   ${PROJECT_SOURCE_DIR}/src/BackTracking/LetterCombinationsPhoneNumber.cpp
+  ${PROJECT_SOURCE_DIR}/src/BackTracking/MaxConcatUniqueChars.cpp
   ${PROJECT_SOURCE_DIR}/src/BackTracking/NumbersConsecutiveDifferences.cpp
   ${PROJECT_SOURCE_DIR}/src/BackTracking/PalindromePartitioning.cpp
   ${PROJECT_SOURCE_DIR}/src/BackTracking/RestoreIPAddresses.cpp
@@ -247,6 +248,7 @@ add_executable(${PROJECT_NAME}_test
   ${PROJECT_SOURCE_DIR}/test/BackTracking/testCombinationSum.cpp
   ${PROJECT_SOURCE_DIR}/test/BackTracking/testCombinationSum3.cpp
   ${PROJECT_SOURCE_DIR}/test/BackTracking/testLetterCombinationsPhoneNumber.cpp
+  ${PROJECT_SOURCE_DIR}/test/BackTracking/testMaxConcatUniqueChars.cpp
   ${PROJECT_SOURCE_DIR}/test/BackTracking/testNumbersConsecutiveDifferences.cpp
   ${PROJECT_SOURCE_DIR}/test/BackTracking/testPalindromePartitioning.cpp
   ${PROJECT_SOURCE_DIR}/test/BackTracking/testRestoreIPAddresses.cpp

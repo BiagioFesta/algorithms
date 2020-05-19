@@ -1,6 +1,6 @@
 # Problems List
 ![Easy_counter](https://img.shields.io/badge/Easy-19-green.svg?style=for-the-badge&logo=c%2b%2b)
-![Medium_counter](https://img.shields.io/badge/Medium-94-yellow.svg?style=for-the-badge&logo=c%2b%2b)
+![Medium_counter](https://img.shields.io/badge/Medium-95-yellow.svg?style=for-the-badge&logo=c%2b%2b)
 ![Hard_counter](https://img.shields.io/badge/Hard-15-red.svg?style=for-the-badge&logo=c%2b%2b)
 ![Undefined_counter](https://img.shields.io/badge/Undefined-36-lightgray.svg?style=for-the-badge&logo=c%2b%2b)
 
@@ -101,6 +101,7 @@
 | [Matrix2D]() | ![Not Defined](https://img.shields.io/badge/Difficulty-ND-lightgray.svg) | [Source](https://github.com/BiagioFesta/algorithms/blob/master/include/algorithms/Matrix/Matrix2D.hpp) |
 | [Max Len Sub Without Rep](https://www.geeksforgeeks.org/length-of-the-longest-substring-without-repeating-characters/) | ![Not Defined](https://img.shields.io/badge/Difficulty-ND-lightgray.svg) | [Source](https://github.com/BiagioFesta/algorithms/blob/master/src/String/MaxLenSubWithoutRep.cpp) |
 | [Maximum Gap](https://leetcode.com/problems/maximum-gap/description/) | ![Hard](https://img.shields.io/badge/Difficulty-Hard-red.svg) | [Source](https://github.com/BiagioFesta/algorithms/blob/master/src/Array/MaximumGap.cpp) |
+| [Maximum Length of a Concatenated String with Unique Characters](https://leetcode.com/problems/maximum-length-of-a-concatenated-string-with-unique-characters/) | ![Medium](https://img.shields.io/badge/Difficulty-Medium-yellow.svg) | [Source](https://github.com/BiagioFesta/algorithms/blob/master/src/BackTracking/MaxConcatUniqueChars.cpp) |
 | [Maximum Product of Three Numbers](https://leetcode.com/problems/maximum-product-of-three-numbers/) | ![Easy](https://img.shields.io/badge/Difficulty-Easy-green.svg) | [Source](https://github.com/BiagioFesta/algorithms/blob/master/src/Array/MaximumProduct.cpp) |
 | [Maximum Width Ramp](https://leetcode.com/problems/maximum-width-ramp/) | ![Medium](https://img.shields.io/badge/Difficulty-Medium-yellow.svg) | [Source](https://github.com/BiagioFesta/algorithms/blob/master/src/Array/MaxWidthRamp.cpp) |
 | [Maximum of Absolute Value Expression](https://leetcode.com/problems/maximum-of-absolute-value-expression/) | ![Medium](https://img.shields.io/badge/Difficulty-Medium-yellow.svg) | [Source](https://github.com/BiagioFesta/algorithms/blob/master/src/Array/MaximumAbsoluteValueExpression.cpp) |
