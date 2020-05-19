@@ -18,6 +18,7 @@
 #include <benchmark/benchmark.h>
 #include <algorithms/Array/CountSmallerAfterSelf.hpp>
 #include <algorithms/Array/DeckIncreasingReveal.hpp>
+#include <algorithms/Array/RankTransformArray.hpp>
 #include <algorithms/Array/ValidateStackSequences.hpp>
 #include <algorithms/BackTracking/BeautifulArrangement.hpp>
 #include <algorithms/BackTracking/NumbersConsecutiveDifferences.hpp>
@@ -102,5 +103,6 @@ GENERATE_BENCHMARK(PalindromePartitioningII,
 GENERATE_BENCHMARK(CountSmallerAfterSelf, SeqList<1024>());
 GENERATE_BENCHMARK(NextGreaterElementIII, 1999999999);
 GENERATE_BENCHMARK(ValidPalindrome, "A man, a plan, a canal: Panama");
+GENERATE_BENCHMARK(RankTransformArray, {37, 12, 28, 9, 100, 56, 80, 5, 12});
 
 }  // namespace algorithms::benchmark

@@ -61,6 +61,7 @@ target_sources(${PROJECT_NAME}
   ${PROJECT_SOURCE_DIR}/src/Array/Partition.cpp
   ${PROJECT_SOURCE_DIR}/src/Array/PlusOne.cpp
   ${PROJECT_SOURCE_DIR}/src/Array/RadixSort.cpp
+  ${PROJECT_SOURCE_DIR}/src/Array/RankTransformArray.cpp
   ${PROJECT_SOURCE_DIR}/src/Array/RemoveDuplicatesSortedArrayII.cpp
   ${PROJECT_SOURCE_DIR}/src/Array/RotateRight.cpp
   ${PROJECT_SOURCE_DIR}/src/Array/Search2DMatrix.cpp
@@ -228,6 +229,7 @@ add_executable(${PROJECT_NAME}_test
   ${PROJECT_SOURCE_DIR}/test/Array/testPartition.cpp
   ${PROJECT_SOURCE_DIR}/test/Array/testPlusOne.cpp
   ${PROJECT_SOURCE_DIR}/test/Array/testRadixSort.cpp
+  ${PROJECT_SOURCE_DIR}/test/Array/testRankTransformArray.cpp
   ${PROJECT_SOURCE_DIR}/test/Array/testRemoveDuplicatesSortedArrayII.cpp
   ${PROJECT_SOURCE_DIR}/test/Array/testRotateRight.cpp
   ${PROJECT_SOURCE_DIR}/test/Array/testSearch2DMatrix.cpp
