@@ -157,6 +157,7 @@ target_sources(${PROJECT_NAME}
   ${PROJECT_SOURCE_DIR}/src/String/StringCompression.cpp
   ${PROJECT_SOURCE_DIR}/src/String/SwapAdjacentLR.cpp
   ${PROJECT_SOURCE_DIR}/src/String/URLify.cpp
+  ${PROJECT_SOURCE_DIR}/src/String/ValidPalindrome.cpp
   ${PROJECT_SOURCE_DIR}/src/Trie/SimpleTrie.cpp
   ${PROJECT_SOURCE_DIR}/src/Twitter/Twitter.cpp)
 target_include_directories(${PROJECT_NAME} PUBLIC include)
@@ -330,6 +331,7 @@ add_executable(${PROJECT_NAME}_test
   ${PROJECT_SOURCE_DIR}/test/String/testStringCompression.cpp
   ${PROJECT_SOURCE_DIR}/test/String/testSwapAdjacentLR.cpp
   ${PROJECT_SOURCE_DIR}/test/String/testURLify.cpp
+  ${PROJECT_SOURCE_DIR}/test/String/testValidPalindrome.cpp
   ${PROJECT_SOURCE_DIR}/test/Trie/testSimpleTrie.cpp
   ${PROJECT_SOURCE_DIR}/test/Twitter/testTwitter.cpp)
 target_link_libraries(${PROJECT_NAME}_test

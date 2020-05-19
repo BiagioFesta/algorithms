@@ -31,6 +31,7 @@
 #include <algorithms/Misc/NextGreaterElementIII.hpp>
 #include <algorithms/String/FindAllAnagramsString.hpp>
 #include <algorithms/String/SwapAdjacentLR.hpp>
+#include <algorithms/String/ValidPalindrome.hpp>
 #include <vector>
 
 /*! \brief Macro generate a benchmark for a specific algorithm.
@@ -100,5 +101,6 @@ GENERATE_BENCHMARK(PalindromePartitioningII,
                    "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
 GENERATE_BENCHMARK(CountSmallerAfterSelf, SeqList<1024>());
 GENERATE_BENCHMARK(NextGreaterElementIII, 1999999999);
+GENERATE_BENCHMARK(ValidPalindrome, "A man, a plan, a canal: Panama");
 
 }  // namespace algorithms::benchmark

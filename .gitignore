@@ -8,3 +8,4 @@ c_cpp_properties.json
 .vscode/
 .dir-locals.el
 __pycache__
+release/
