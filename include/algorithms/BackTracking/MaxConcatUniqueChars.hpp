@@ -26,7 +26,7 @@ namespace algorithms {
  *  sub-sequence of arr which have unique characters.
  *  Return the maximum possible length of s.
  *
- *  \note  Complexity  -->  Time: O(N^2)   Space: O(N)
+ *  \note  Complexity  -->  Time: O(2^N)   Space: O(N)
  *  \note
  * https://leetcode.com/problems/maximum-length-of-a-concatenated-string-with-unique-characters/
  */

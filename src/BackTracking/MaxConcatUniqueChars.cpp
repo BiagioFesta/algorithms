@@ -17,53 +17,68 @@
 */
 #include <algorithm>
 #include <algorithms/BackTracking/MaxConcatUniqueChars.hpp>
-#include <bitset>
-#include <limits>
+#include <cassert>
 #include <string>
 #include <vector>
 
 namespace {
 
-constexpr auto BitMaskSize = std::numeric_limits<char>::max();
-using BitMask = std::bitset<static_cast<std::size_t>(BitMaskSize)>;
+using BitMask = std::size_t;
+using VectMasks = std::vector<BitMask>;
+static_assert(static_cast<std::size_t>('z' - 'a') < (sizeof(BitMask) * 8));
 
-int ApplyToMask(const std::string& str, BitMask* bitMask) noexcept {
-  int i = 0;
-  for (const char c : str) {
-    if (bitMask->test(static_cast<std::size_t>(c))) {
-      break;
+/*! \brief Compute the 'mask' for each string of the input vector.
+ *  The mask simply indicates the letters present in the string.
+ *
+ *      E.g.:
+ *        'ac'        ->       0..000000101  (MSB  --- LSB)
+ *
+ *  \note If the string contains duplicate letters, the mask is zero.
+ */
+VectMasks ComputeMasks(const std::vector<std::string>& arr) {
+  VectMasks vectMasks;
+  BitMask mask, bit;
+
+  vectMasks.reserve(arr.size());
+
+  for (const auto& str : arr) {
+    mask = 0;
+    for (const char c : str) {
+      assert(c >= 'a' && c <= 'z');
+      bit = 1 << static_cast<int>(c - 'a');
+      if (mask & bit) {
+        mask = 0;
+        break;
+      }
+      mask |= bit;
     }
-    bitMask->set(static_cast<std::size_t>(c));
-    ++i;
+    vectMasks.emplace_back(mask);
   }
-  return i;
-}
 
-void RemoveFromMask(const std::string& str,
-                    int index,
-                    BitMask* bitMask) noexcept {
-  char c;
-  while (index) {
-    c = str[--index];
-    bitMask->reset(static_cast<std::size_t>(c));
-  }
+  return vectMasks;
 }
 
 int MaxConcatUniqueCharsImpl(const std::vector<std::string>& arr,
-                             const std::size_t i,
+                             const VectMasks& vectMasks,
+                             const std::size_t index,
                              BitMask* bitMask) {
-  int max = 0;
-  if (i < arr.size()) {
-    max = MaxConcatUniqueCharsImpl(arr, i + 1, bitMask);
-    const auto& str = arr[i];
-    const auto index = ::ApplyToMask(str, bitMask);
-    if (static_cast<std::size_t>(index) == str.size()) {
-      max = std::max(max,
-                     index + ::MaxConcatUniqueCharsImpl(arr, i + 1, bitMask));
-    }
-    ::RemoveFromMask(str, index, bitMask);
+  if (arr.size() <= index) {
+    return 0;
   }
-  return max;
+
+  int ans = ::MaxConcatUniqueCharsImpl(arr, vectMasks, index + 1, bitMask);
+
+  const BitMask mask = vectMasks[index];
+  if (mask && !(mask & (*bitMask))) {
+    *bitMask |= mask;
+    const int opt =
+        static_cast<int>(arr[index].size()) +
+        ::MaxConcatUniqueCharsImpl(arr, vectMasks, index + 1, bitMask);
+    ans = std::max(ans, opt);
+    *bitMask ^= mask;
+  }
+
+  return ans;
 }
 
 }  // anonymous namespace
@@ -71,8 +86,9 @@ int MaxConcatUniqueCharsImpl(const std::vector<std::string>& arr,
 namespace algorithms {
 
 int MaxConcatUniqueChars(const std::vector<std::string>& arr) {
-  BitMask bitMask;
-  return ::MaxConcatUniqueCharsImpl(arr, 0, &bitMask);
+  const VectMasks vectMasks = ::ComputeMasks(arr);
+  BitMask bitMask = 0;
+  return ::MaxConcatUniqueCharsImpl(arr, vectMasks, 0, &bitMask);
 }
 
 }  // namespace algorithms
