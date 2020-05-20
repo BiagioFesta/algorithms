@@ -27,7 +27,9 @@ TEST(BackTracking, MaxConcatUniqueChars) {
   using Test = std::pair<std::vector<std::string>, int>;
   const std::vector<Test> testCases = {{{"un", "iq", "ue"}, 4},
                                        {{"cha", "r", "act", "ers"}, 6},
-                                       {{"abcdefghijklmnopqrstuvwxyz"}, 26}};
+                                       {{"abcdefghijklmnopqrstuvwxyz"}, 26},
+                                       {{"aa"}, 0},
+                                       {{"aa", "ab"}, 2}};
 
   for (const auto& [arr, expt] : testCases) {
     ASSERT_EQ(MaxConcatUniqueChars(arr), expt);
