@@ -46,7 +46,7 @@ readProblemType() {
 }
 
 getYear() {
-    date | awk '{print $4}'
+    date +%Y
 }
 
 genCpp() {
