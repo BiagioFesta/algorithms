@@ -1,7 +1,7 @@
 # Problems List
-![Easy_counter](https://img.shields.io/badge/Easy-19-green.svg?style=for-the-badge&logo=c%2b%2b)
-![Medium_counter](https://img.shields.io/badge/Medium-95-yellow.svg?style=for-the-badge&logo=c%2b%2b)
-![Hard_counter](https://img.shields.io/badge/Hard-15-red.svg?style=for-the-badge&logo=c%2b%2b)
+![Easy_counter](https://img.shields.io/badge/Easy-18-green.svg?style=for-the-badge&logo=c%2b%2b)
+![Medium_counter](https://img.shields.io/badge/Medium-98-yellow.svg?style=for-the-badge&logo=c%2b%2b)
+![Hard_counter](https://img.shields.io/badge/Hard-14-red.svg?style=for-the-badge&logo=c%2b%2b)
 ![Undefined_counter](https://img.shields.io/badge/Undefined-36-lightgray.svg?style=for-the-badge&logo=c%2b%2b)
 
 | Problem Name | Difficulty | Implementation |
@@ -68,11 +68,11 @@
 | [H-Index](https://leetcode.com/problems/h-index/) | ![Medium](https://img.shields.io/badge/Difficulty-Medium-yellow.svg) | [Source](https://github.com/BiagioFesta/algorithms/blob/master/src/Array/HIndex.cpp) |
 | [House Robber II](https://leetcode.com/problems/house-robber-ii/) | ![Medium](https://img.shields.io/badge/Difficulty-Medium-yellow.svg) | [Source](https://github.com/BiagioFesta/algorithms/blob/master/src/DynamicProgramming/HouseRobberII.cpp) |
 | [Increasing Triplet Subsequence](https://leetcode.com/problems/increasing-triplet-subsequence/) | ![Medium](https://img.shields.io/badge/Difficulty-Medium-yellow.svg) | [Source](https://github.com/BiagioFesta/algorithms/blob/master/src/Array/IncreasingTripletSubsequence.cpp) |
-| [Insert Interval](https://leetcode.com/problems/insert-interval/) | ![Hard](https://img.shields.io/badge/Difficulty-Hard-red.svg) | [Source](https://github.com/BiagioFesta/algorithms/blob/master/src/Array/InsertInterval.cpp) |
+| [Insert Interval](https://leetcode.com/problems/insert-interval/) | ![Medium](https://img.shields.io/badge/Difficulty-Medium-yellow.svg) | [Source](https://github.com/BiagioFesta/algorithms/blob/master/src/Array/InsertInterval.cpp) |
 | [Integer Break](https://leetcode.com/problems/integer-break/) | ![Medium](https://img.shields.io/badge/Difficulty-Medium-yellow.svg) | [Source](https://github.com/BiagioFesta/algorithms/blob/master/src/DynamicProgramming/IntegerBreak.cpp) |
 | [Is Palindrome]() | ![Not Defined](https://img.shields.io/badge/Difficulty-ND-lightgray.svg) | [Source](https://github.com/BiagioFesta/algorithms/blob/master/src/Array/IsPalindrome.cpp) |
-| [Is Permutation]() | ![Not Defined](https://img.shields.io/badge/Difficulty-ND-lightgray.svg) | [Source](https://github.com/BiagioFesta/algorithms/blob/master/src/String/IsPermutation.cpp) |
-| [Is Permutation]() | ![Not Defined](https://img.shields.io/badge/Difficulty-ND-lightgray.svg) | [Source](https://github.com/BiagioFesta/algorithms/blob/master/src/String/IsPermutation.cpp) |
+| [Is Permutation]() | ![Not Defined](https://img.shields.io/badge/Difficulty-ND-lightgray.svg) | [Source](https://github.com/BiagioFesta/algorithms/blob/master/src/Array/IsPermutation.cpp) |
+| [Is Permutation]() | ![Not Defined](https://img.shields.io/badge/Difficulty-ND-lightgray.svg) | [Source](https://github.com/BiagioFesta/algorithms/blob/master/src/Array/IsPermutation.cpp) |
 | [Jump Game II](https://leetcode.com/problems/jump-game-ii/) | ![Hard](https://img.shields.io/badge/Difficulty-Hard-red.svg) | [Source](https://github.com/BiagioFesta/algorithms/blob/master/src/Array/JumpGame2.cpp) |
 | [K-Similar Strings](https://leetcode.com/problems/k-similar-strings/) | ![Hard](https://img.shields.io/badge/Difficulty-Hard-red.svg) | [Source](https://github.com/BiagioFesta/algorithms/blob/master/src/String/KSimilarStrings.cpp) |
 | [K-th Symbol in Grammar](https://leetcode.com/problems/k-th-symbol-in-grammar/) | ![Medium](https://img.shields.io/badge/Difficulty-Medium-yellow.svg) | [Source](https://github.com/BiagioFesta/algorithms/blob/master/src/Misc/KSymbolInGrammar.cpp) |
@@ -87,7 +87,7 @@
 | [Largest Number](https://leetcode.com/problems/largest-number/description/) | ![Medium](https://img.shields.io/badge/Difficulty-Medium-yellow.svg) | [Source](https://github.com/BiagioFesta/algorithms/blob/master/src/Array/LargestNumber.cpp) |
 | [Larry&#x27;s Array](https://www.hackerrank.com/challenges/larrys-array/problem) | ![Medium](https://img.shields.io/badge/Difficulty-Medium-yellow.svg) | [Source](https://github.com/BiagioFesta/algorithms/blob/master/src/Array/LarrysArray.cpp) |
 | [Len Last Word](https://www.geeksforgeeks.org/length-of-last-word-in-a-string/) | ![Not Defined](https://img.shields.io/badge/Difficulty-ND-lightgray.svg) | [Source](https://github.com/BiagioFesta/algorithms/blob/master/src/String/LenLastWord.cpp) |
-| [Letter Case Permutation](https://leetcode.com/problems/letter-case-permutation/description/) | ![Easy](https://img.shields.io/badge/Difficulty-Easy-green.svg) | [Source](https://github.com/BiagioFesta/algorithms/blob/master/src/String/LetterCasePermutation.cpp) |
+| [Letter Case Permutation](https://leetcode.com/problems/letter-case-permutation/description/) | ![Medium](https://img.shields.io/badge/Difficulty-Medium-yellow.svg) | [Source](https://github.com/BiagioFesta/algorithms/blob/master/src/String/LetterCasePermutation.cpp) |
 | [Letter Combinations of a Phone Number](https://leetcode.com/problems/letter-combinations-of-a-phone-number/) | ![Medium](https://img.shields.io/badge/Difficulty-Medium-yellow.svg) | [Source](https://github.com/BiagioFesta/algorithms/blob/master/src/BackTracking/LetterCombinationsPhoneNumber.cpp) |
 | [Longest Arithmetic Subsequence of Given Difference](https://leetcode.com/problems/longest-arithmetic-subsequence-of-given-difference/) | ![Medium](https://img.shields.io/badge/Difficulty-Medium-yellow.svg) | [Source](https://github.com/BiagioFesta/algorithms/blob/master/src/DynamicProgramming/LongestArithmeticSubsequenceDifference.cpp) |
 | [Longest Common Prefix](https://leetcode.com/problems/longest-common-prefix/) | ![Easy](https://img.shields.io/badge/Difficulty-Easy-green.svg) | [Source](https://github.com/BiagioFesta/algorithms/blob/master/src/String/LongestCommonPrefix.cpp) |
@@ -97,6 +97,7 @@
 | [Longest Palindrome](https://www.geeksforgeeks.org/longest-palindrome-substring-set-1/) | ![Not Defined](https://img.shields.io/badge/Difficulty-ND-lightgray.svg) | [Source](https://github.com/BiagioFesta/algorithms/blob/master/src/String/LongestPalindrome.cpp) |
 | [Longest Word in Dictionary through Deleting](https://leetcode.com/problems/longest-word-in-dictionary-through-deleting/) | ![Medium](https://img.shields.io/badge/Difficulty-Medium-yellow.svg) | [Source](https://github.com/BiagioFesta/algorithms/blob/master/src/String/FindLongestWord.cpp) |
 | [Longest common subsequence problem](https://en.wikipedia.org/wiki/Longest_common_subsequence_problem) | ![Not Defined](https://img.shields.io/badge/Difficulty-ND-lightgray.svg) | [Source](https://github.com/BiagioFesta/algorithms/blob/master/src/DynamicProgramming/LongestCommonSubsequence.cpp) |
+| [Majority Element](https://leetcode.com/problems/majority-element/) | ![Easy](https://img.shields.io/badge/Difficulty-Easy-green.svg) | [Source](https://github.com/BiagioFesta/algorithms/blob/master/src/Array/MajorityElement.cpp) |
 | [Majority Element II](https://leetcode.com/problems/majority-element-ii/) | ![Medium](https://img.shields.io/badge/Difficulty-Medium-yellow.svg) | [Source](https://github.com/BiagioFesta/algorithms/blob/master/src/Array/MajorityElementII.cpp) |
 | [Matrix2D]() | ![Not Defined](https://img.shields.io/badge/Difficulty-ND-lightgray.svg) | [Source](https://github.com/BiagioFesta/algorithms/blob/master/include/algorithms/Matrix/Matrix2D.hpp) |
 | [Max Len Sub Without Rep](https://www.geeksforgeeks.org/length-of-the-longest-substring-without-repeating-characters/) | ![Not Defined](https://img.shields.io/badge/Difficulty-ND-lightgray.svg) | [Source](https://github.com/BiagioFesta/algorithms/blob/master/src/String/MaxLenSubWithoutRep.cpp) |
@@ -157,7 +158,7 @@
 | [Student Attendance Record I](https://leetcode.com/problems/student-attendance-record-i/description/) | ![Easy](https://img.shields.io/badge/Difficulty-Easy-green.svg) | [Source](https://github.com/BiagioFesta/algorithms/blob/master/src/String/CheckRecord.cpp) |
 | [Subarray Sum Equals K](https://leetcode.com/problems/subarray-sum-equals-k/) | ![Medium](https://img.shields.io/badge/Difficulty-Medium-yellow.svg) | [Source](https://github.com/BiagioFesta/algorithms/blob/master/src/Array/SubarraySumEqualsK.cpp) |
 | [Subsets](https://leetcode.com/problems/subsets/) | ![Medium](https://img.shields.io/badge/Difficulty-Medium-yellow.svg) | [Source](https://github.com/BiagioFesta/algorithms/blob/master/src/Array/Subsets.cpp) |
-| [Sum of Square Numbers](https://leetcode.com/problems/sum-of-square-numbers/) | ![Easy](https://img.shields.io/badge/Difficulty-Easy-green.svg) | [Source](https://github.com/BiagioFesta/algorithms/blob/master/src/Misc/SumSquareNumbers.cpp) |
+| [Sum of Square Numbers](https://leetcode.com/problems/sum-of-square-numbers/) | ![Medium](https://img.shields.io/badge/Difficulty-Medium-yellow.svg) | [Source](https://github.com/BiagioFesta/algorithms/blob/master/src/Misc/SumSquareNumbers.cpp) |
 | [Swap Adjacent in LR String](https://leetcode.com/problems/swap-adjacent-in-lr-string/) | ![Medium](https://img.shields.io/badge/Difficulty-Medium-yellow.svg) | [Source](https://github.com/BiagioFesta/algorithms/blob/master/src/String/SwapAdjacentLR.cpp) |
 | [Tallest Billboard](https://leetcode.com/problems/tallest-billboard/) | ![Hard](https://img.shields.io/badge/Difficulty-Hard-red.svg) | [Source](https://github.com/BiagioFesta/algorithms/blob/master/src/DynamicProgramming/TallestBillboard.cpp) |
 | [Target Sum](https://leetcode.com/problems/target-sum/) | ![Medium](https://img.shields.io/badge/Difficulty-Medium-yellow.svg) | [Source](https://github.com/BiagioFesta/algorithms/blob/master/src/DynamicProgramming/TargetSum.cpp) |
