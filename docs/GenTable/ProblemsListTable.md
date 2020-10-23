@@ -1,6 +1,6 @@
 # Problems List
-![Easy_counter](https://img.shields.io/badge/Easy-18-green.svg?style=for-the-badge&logo=c%2b%2b)
-![Medium_counter](https://img.shields.io/badge/Medium-98-yellow.svg?style=for-the-badge&logo=c%2b%2b)
+![Easy_counter](https://img.shields.io/badge/Easy-17-green.svg?style=for-the-badge&logo=c%2b%2b)
+![Medium_counter](https://img.shields.io/badge/Medium-100-yellow.svg?style=for-the-badge&logo=c%2b%2b)
 ![Hard_counter](https://img.shields.io/badge/Hard-14-red.svg?style=for-the-badge&logo=c%2b%2b)
 ![Undefined_counter](https://img.shields.io/badge/Undefined-36-lightgray.svg?style=for-the-badge&logo=c%2b%2b)
 
@@ -53,6 +53,7 @@
 | [Euclidean algorithm](https://en.wikipedia.org/wiki/Euclidean_algorithm) | ![Not Defined](https://img.shields.io/badge/Difficulty-ND-lightgray.svg) | [Source](https://github.com/BiagioFesta/algorithms/blob/master/src/Array/EuclideanAlgorithmGCD.cpp) |
 | [Fenwick tree](https://en.wikipedia.org/wiki/Fenwick_tree) | ![Not Defined](https://img.shields.io/badge/Difficulty-ND-lightgray.svg) | [Source](https://github.com/BiagioFesta/algorithms/blob/master/include/algorithms/BinaryIndexedTree/BinaryIndexedTree.hpp) |
 | [Fibonacci number](https://en.wikipedia.org/wiki/Fibonacci_number) | ![Not Defined](https://img.shields.io/badge/Difficulty-ND-lightgray.svg) | [Source](https://github.com/BiagioFesta/algorithms/blob/master/src/DynamicProgramming/Fibonacci.cpp) |
+| [Filter Restaurants by Vegan-Friendly, Price and Distance](https://leetcode.com/problems/filter-restaurants-by-vegan-friendly-price-and-distance/) | ![Medium](https://img.shields.io/badge/Difficulty-Medium-yellow.svg) | [Source](https://github.com/BiagioFesta/algorithms/blob/master/src/Array/FilterRestaurants.cpp) |
 | [Find All Anagrams in a String](https://leetcode.com/problems/find-all-anagrams-in-a-string/) | ![Medium](https://img.shields.io/badge/Difficulty-Medium-yellow.svg) | [Source](https://github.com/BiagioFesta/algorithms/blob/master/src/String/FindAllAnagramsString.cpp) |
 | [Find All Numbers Disappeared in an Array](https://leetcode.com/problems/find-all-numbers-disappeared-in-an-array/description/) | ![Easy](https://img.shields.io/badge/Difficulty-Easy-green.svg) | [Source](https://github.com/BiagioFesta/algorithms/blob/master/src/Array/FindDisappearedNumbers.cpp) |
 | [Find And Replace Pattern]() | ![Not Defined](https://img.shields.io/badge/Difficulty-ND-lightgray.svg) | [Source](https://github.com/BiagioFesta/algorithms/blob/master/src/String/FindAndReplacePattern.cpp) |
@@ -142,7 +143,7 @@
 | [Restore IP Addresses](https://leetcode.com/problems/restore-ip-addresses/) | ![Medium](https://img.shields.io/badge/Difficulty-Medium-yellow.svg) | [Source](https://github.com/BiagioFesta/algorithms/blob/master/src/BackTracking/RestoreIPAddresses.cpp) |
 | [Reveal Cards In Increasing Order](https://leetcode.com/problems/reveal-cards-in-increasing-order/) | ![Medium](https://img.shields.io/badge/Difficulty-Medium-yellow.svg) | [Source](https://github.com/BiagioFesta/algorithms/blob/master/src/Array/DeckIncreasingReveal.cpp) |
 | [Reverse String In Place]() | ![Not Defined](https://img.shields.io/badge/Difficulty-ND-lightgray.svg) | [Source](https://github.com/BiagioFesta/algorithms/blob/master/src/String/ReverseStringInPlace.cpp) |
-| [Rotate Array](https://leetcode.com/problems/rotate-array/) | ![Easy](https://img.shields.io/badge/Difficulty-Easy-green.svg) | [Source](https://github.com/BiagioFesta/algorithms/blob/master/src/Array/RotateRight.cpp) |
+| [Rotate Array](https://leetcode.com/problems/rotate-array/) | ![Medium](https://img.shields.io/badge/Difficulty-Medium-yellow.svg) | [Source](https://github.com/BiagioFesta/algorithms/blob/master/src/Array/RotateRight.cpp) |
 | [Sam and substrings](https://www.hackerrank.com/challenges/sam-and-substrings/problem) | ![Medium](https://img.shields.io/badge/Difficulty-Medium-yellow.svg) | [Source](https://github.com/BiagioFesta/algorithms/blob/master/src/DynamicProgramming/SubstringsSum.cpp) |
 | [Search a 2D Matrix](https://leetcode.com/problems/search-a-2d-matrix/) | ![Medium](https://img.shields.io/badge/Difficulty-Medium-yellow.svg) | [Source](https://github.com/BiagioFesta/algorithms/blob/master/src/Array/Search2DMatrix.cpp) |
 | [Search in Rotated Sorted Array](https://leetcode.com/problems/search-in-rotated-sorted-array/) | ![Medium](https://img.shields.io/badge/Difficulty-Medium-yellow.svg) | [Source](https://github.com/BiagioFesta/algorithms/blob/master/src/Array/SearchRotatedSortedArray.cpp) |

@@ -21,6 +21,7 @@ target_sources(${PROJECT_NAME}
   ${PROJECT_SOURCE_DIR}/src/Array/DeckIncreasingReveal.cpp
   ${PROJECT_SOURCE_DIR}/src/Array/DistantBarcodes.cpp
   ${PROJECT_SOURCE_DIR}/src/Array/EuclideanAlgorithmGCD.cpp
+  ${PROJECT_SOURCE_DIR}/src/Array/FilterRestaurants.cpp
   ${PROJECT_SOURCE_DIR}/src/Array/Find132Pattern.cpp
   ${PROJECT_SOURCE_DIR}/src/Array/FindDisappearedNumbers.cpp
   ${PROJECT_SOURCE_DIR}/src/Array/FindDuplicateNumber.cpp
@@ -191,6 +192,7 @@ add_executable(${PROJECT_NAME}_test
   ${PROJECT_SOURCE_DIR}/test/Array/testDeckIncreasingReveal.cpp
   ${PROJECT_SOURCE_DIR}/test/Array/testDistantBarcodes.cpp
   ${PROJECT_SOURCE_DIR}/test/Array/testEuclideanAlgorithmGCD.cpp
+  ${PROJECT_SOURCE_DIR}/test/Array/testFilterRestaurants.cpp
   ${PROJECT_SOURCE_DIR}/test/Array/testFind132Pattern.cpp
   ${PROJECT_SOURCE_DIR}/test/Array/testFindDisappearedNumbers.cpp
   ${PROJECT_SOURCE_DIR}/test/Array/testFindDuplicateNumber.cpp
