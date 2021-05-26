@@ -19,6 +19,7 @@
 #include <algorithms/String/FindAndReplacePattern.hpp>
 #include <array>
 #include <cstring>
+#include <iterator>
 #include <string>
 #include <vector>
 

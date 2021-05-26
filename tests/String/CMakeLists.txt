@@ -1,0 +1,35 @@
+target_sources(
+  algorithms_tests
+  PRIVATE testAlphabetBoardPath.cpp
+          testBiggerIsGreater.cpp
+          testCheckRecord.cpp
+          testCountSegment.cpp
+          testDecodeString.cpp
+          testDetectCapitalUse.cpp
+          testEncryptionStr.cpp
+          testFindAllAnagramsString.cpp
+          testFindAndReplacePattern.cpp
+          testFindLongestWord.cpp
+          testFindTheDifference.cpp
+          testFrequencySort.cpp
+          testIsPermutation.cpp
+          testKMPstrstr.cpp
+          testKSimilarStrings.cpp
+          testLenLastWord.cpp
+          testLetterCasePermutation.cpp
+          testLongestCommonPrefix.cpp
+          testLongestPalindrome.cpp
+          testMaxLenSubWithoutRep.cpp
+          testMinAddParentheses.cpp
+          testMinimumWindowSubstring.cpp
+          testOneWay.cpp
+          testOriginalDigits.cpp
+          testPalindromePermutation.cpp
+          testRepeatedDNASequences.cpp
+          testReverseStringInPlace.cpp
+          testSteadyGene.cpp
+          testStringCompression.cpp
+          testStrStr.cpp
+          testSwapAdjacentLR.cpp
+          testURLify.cpp
+          testValidPalindrome.cpp)

@@ -1,0 +1,29 @@
+target_sources(
+  algorithms
+  PRIVATE BinomialCoefficient.cpp
+          BuySellStockWithCooldown.cpp
+          CheapestJump.cpp
+          CoinChange.cpp
+          CoinChange2.cpp
+          DeleteAndEarn.cpp
+          Fibonacci.cpp
+          FindRotateSteps.cpp
+          HouseRobberII.cpp
+          IntegerBreak.cpp
+          Keystroke.cpp
+          LongestArithmeticSubsequenceDifference.cpp
+          LongestCommonSubsequence.cpp
+          MaxProfit.cpp
+          MinPathSum.cpp
+          MinSwap.cpp
+          OnesAndZeroes.cpp
+          PalindromePartitioningII.cpp
+          PartitionEqualSubSum.cpp
+          SherlockAndCost.cpp
+          SubstringsSum.cpp
+          TallestBillboard.cpp
+          TargetSum.cpp
+          TwoEggsDropping.cpp
+          TwoKeysKeyboard.cpp
+          UniquePaths.cpp
+          UniquePathsWithObstacles.cpp)

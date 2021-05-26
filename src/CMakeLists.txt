@@ -1,0 +1,17 @@
+add_library(algorithms STATIC)
+target_include_directories(algorithms PUBLIC ${PROJECT_SOURCE_DIR}/include)
+target_compile_features(algorithms PUBLIC cxx_std_17)
+
+add_subdirectory(Array)
+add_subdirectory(BackTracking)
+add_subdirectory(CTCI)
+add_subdirectory(DynamicProgramming)
+add_subdirectory(Graph)
+add_subdirectory(LRUCache)
+add_subdirectory(Misc)
+add_subdirectory(String)
+add_subdirectory(Trie)
+add_subdirectory(Twitter)
+
+install(TARGETS algorithms)
+install(DIRECTORY ${PROJECT_SOURCE_DIR}/include DESTINATION ${CMAKE_INSTALL_PREFIX})

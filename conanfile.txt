@@ -1,6 +1,0 @@
-[requires]
-gtest/1.8.1@bincrafters/stable
-google-benchmark/1.4.1@mpusz/stable
-
-[generators]
-cmake

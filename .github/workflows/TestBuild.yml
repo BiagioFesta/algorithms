@@ -1,0 +1,67 @@
+name: Algorithms Test Build
+
+on: [push]
+
+jobs:
+  build:
+    strategy:
+      matrix:
+        config:
+        - {
+             name: "Windows",
+             os: windows-latest,
+             build-type: "Debug",
+             cxx-flags: ""
+          }
+        - {
+             name: "Linux",
+             os: ubuntu-latest,
+             build-type: "Debug",
+             cxx-flags: "-Wall -Wextra -pedantic -fsanitize=address -fsanitize=undefined -fprofile-arcs -ftest-coverage"
+          }
+        - {
+             name: "MacOS",
+             os: macos-latest,
+             build-type: "Debug",
+             cxx-flags: "-Wall -Wextra -pedantic -fsanitize=address -fsanitize=undefined"
+          }
+
+    name: ${{matrix.config.name}}
+    runs-on: ${{matrix.config.os}}
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Create Build Directory
+      run: cmake -E make_directory ${{github.workspace}}/build
+
+    - name: Configure CMake
+      working-directory: ${{github.workspace}}/build
+      shell: bash
+      run: cmake $GITHUB_WORKSPACE
+        -DCMAKE_BUILD_TYPE=$BUILD_TYPE
+        -DBUILD_TESTS=ON
+        -DBUILD_BENCHMARKS=ON
+        -DCMAKE_CXX_FLAGS="${{matrix.config.cxx-flags}}"
+
+    - name: Build
+      working-directory: ${{github.workspace}}/build
+      shell: bash
+      run: cmake --build . --config ${{matrix.config.build-type}}
+
+    - name: Test
+      working-directory: ${{github.workspace}}/build
+      shell: bash
+      run: ctest --output-on-failure --test-dir tests/ -C ${{matrix.config.build-type}}
+
+    - name: Generate Code Coverage (Linux Only)
+      if: matrix.config.name == 'Linux'
+      working-directory: ${{github.workspace}}
+      shell: bash
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y lcov
+        lcov --capture --directory build/ --output-file coverage.info
+        lcov --remove coverage.info '/usr/*' --output-file coverage.info
+        lcov --list coverage.info
+        bash <(curl -s https://codecov.io/bash) -f coverage.info || echo "Codecov did not collect coverage reports"
