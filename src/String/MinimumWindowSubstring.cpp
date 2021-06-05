@@ -27,8 +27,7 @@ namespace {
  */
 template <std::size_t Size>
 constexpr bool NoNeeded(int table[Size]) noexcept {
-  return std::all_of(
-      table, table + Size, [](const int value) noexcept { return value <= 0; });
+  return std::all_of(table, table + Size, [](const int value) noexcept { return value <= 0; });
 }
 
 }  // anonymous namespace

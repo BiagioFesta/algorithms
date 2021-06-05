@@ -33,9 +33,7 @@ namespace algorithms {
  *  \note  Complexity  ->  Time: O(|V| + |E|)   Space: O(|V|)
  *  \note https://leetcode.com/problems/course-schedule-ii/
  */
-std::vector<int> CourseScheduleII(
-    const int numCourses,
-    const std::vector<std::vector<int>>& prerequisites);
+std::vector<int> CourseScheduleII(const int numCourses, const std::vector<std::vector<int>>& prerequisites);
 
 }  // namespace algorithms
 

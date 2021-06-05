@@ -32,9 +32,7 @@ namespace algorithms {
  *  Differently from std::set, a FlatSet is implemented in a contiguos memory
  *  region in order to increase cache locality.
  */
-template <typename T,
-          typename Compare = std::less<T>,
-          typename Allocator = std::allocator<T>>
+template <typename T, typename Compare = std::less<T>, typename Allocator = std::allocator<T>>
 class FlatSet {
  public:
   using value_type = T;
@@ -116,11 +114,9 @@ class FlatSet {
 
 template <typename T, typename Compare, typename Allocator>
 template <typename U>
-auto FlatSet<T, Compare, Allocator>::insert_impl(U&& iValue)
-    -> std::pair<iterator, bool> {
+auto FlatSet<T, Compare, Allocator>::insert_impl(U&& iValue) -> std::pair<iterator, bool> {
   Compare aComparator;
-  auto aLwIt =
-      std::lower_bound(_data.begin(), _data.end(), iValue, aComparator);
+  auto aLwIt = std::lower_bound(_data.begin(), _data.end(), iValue, aComparator);
   if (aLwIt != _data.end() && !aComparator(iValue, *aLwIt)) {
     return std::make_pair(aLwIt, false);
   }
@@ -128,14 +124,12 @@ auto FlatSet<T, Compare, Allocator>::insert_impl(U&& iValue)
 }
 
 template <typename T, typename Compare, typename Allocator>
-auto FlatSet<T, Compare, Allocator>::insert(const value_type& iValue)
-    -> std::pair<iterator, bool> {
+auto FlatSet<T, Compare, Allocator>::insert(const value_type& iValue) -> std::pair<iterator, bool> {
   return insert_impl(iValue);
 }
 
 template <typename T, typename Compare, typename Allocator>
-auto FlatSet<T, Compare, Allocator>::insert(value_type&& iValue)
-    -> std::pair<iterator, bool> {
+auto FlatSet<T, Compare, Allocator>::insert(value_type&& iValue) -> std::pair<iterator, bool> {
   return insert_impl(std::move(iValue));
 }
 
@@ -145,11 +139,9 @@ bool FlatSet<T, Compare, Allocator>::empty() const noexcept {
 }
 
 template <typename T, typename Compare, typename Allocator>
-auto FlatSet<T, Compare, Allocator>::find(const value_type& iValue)
-    -> iterator {
+auto FlatSet<T, Compare, Allocator>::find(const value_type& iValue) -> iterator {
   Compare aComparator;
-  auto aLwIt =
-      std::lower_bound(_data.begin(), _data.end(), iValue, aComparator);
+  auto aLwIt = std::lower_bound(_data.begin(), _data.end(), iValue, aComparator);
   if (aLwIt != _data.end() && !aComparator(iValue, *aLwIt)) {
     return aLwIt;
   }
@@ -157,11 +149,9 @@ auto FlatSet<T, Compare, Allocator>::find(const value_type& iValue)
 }
 
 template <typename T, typename Compare, typename Allocator>
-auto FlatSet<T, Compare, Allocator>::find(const value_type& iValue) const
-    -> const_iterator {
+auto FlatSet<T, Compare, Allocator>::find(const value_type& iValue) const -> const_iterator {
   Compare aComparator;
-  auto aLwIt =
-      std::lower_bound(_data.cbegin(), _data.cend(), iValue, aComparator);
+  auto aLwIt = std::lower_bound(_data.cbegin(), _data.cend(), iValue, aComparator);
   if (aLwIt != _data.end() && !aComparator(iValue, *aLwIt)) {
     return aLwIt;
   }
@@ -219,17 +209,13 @@ bool FlatSet<T, Compare, Allocator>::contains(const value_type& iValue) const {
 }
 
 template <typename T, typename Compare, typename Allocator>
-auto FlatSet<T, Compare, Allocator>::count(const value_type& iValue) const
-    -> size_type {
+auto FlatSet<T, Compare, Allocator>::count(const value_type& iValue) const -> size_type {
   return contains(iValue) ? 1u : 0u;
 }
 
 template <typename T, typename Compare, typename Allocator>
 template <typename InputIt>
-FlatSet<T, Compare, Allocator>::FlatSet(InputIt first,
-                                        InputIt last,
-                                        const Allocator& alloc)
-    : _data(alloc) {
+FlatSet<T, Compare, Allocator>::FlatSet(InputIt first, InputIt last, const Allocator& alloc) : _data(alloc) {
   const auto kSize = std::distance(first, last);
   reserve(kSize);
 
@@ -240,8 +226,7 @@ FlatSet<T, Compare, Allocator>::FlatSet(InputIt first,
 }
 
 template <typename T, typename Compare, typename Allocator>
-FlatSet<T, Compare, Allocator>::FlatSet(const Allocator& alloc)
-    : _data(alloc) {}
+FlatSet<T, Compare, Allocator>::FlatSet(const Allocator& alloc) : _data(alloc) {}
 
 }  // namespace algorithms
 

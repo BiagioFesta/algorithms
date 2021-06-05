@@ -29,9 +29,7 @@ namespace algorithms {
  *  \return a list of the words in words that match the given pattern.
  *  \note Complexity -> Time: O(NM) Space: (1)  N size of iWords; M size Pattern
  */
-std::vector<std::string> FindAndReplacePattern(
-    const std::vector<std::string>& iWords,
-    const std::string& iPattern);
+std::vector<std::string> FindAndReplacePattern(const std::vector<std::string>& iWords, const std::string& iPattern);
 
 }  // namespace algorithms
 

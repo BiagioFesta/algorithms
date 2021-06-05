@@ -28,11 +28,9 @@ std::string LongestCommonPrefix(const std::vector<std::string>& strs) {
   if (!strs.empty()) {
     std::size_t cIndex = 0;
 
-    while (std::all_of(strs.cbegin(),
-                       strs.cend(),
-                       [c = strs.front()[cIndex], cIndex](const auto& str) {
-                         return cIndex < str.size() && str[cIndex] == c;
-                       })) {
+    while (std::all_of(strs.cbegin(), strs.cend(), [c = strs.front()[cIndex], cIndex](const auto& str) {
+      return cIndex < str.size() && str[cIndex] == c;
+    })) {
       comPrefix += strs.front()[cIndex++];
     }
   }

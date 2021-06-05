@@ -25,9 +25,7 @@ namespace algorithms::test {
 
 TEST(String, LongestCommonPrefix) {
   using Test = std::pair<std::vector<std::string>, std::string>;
-  const std::vector<Test> testCases = {{{"flower", "flow", "flight"}, "fl"},
-                                       {{"dog", "racecar", "car"}, ""},
-                                       {{}, ""}};
+  const std::vector<Test> testCases = {{{"flower", "flow", "flight"}, "fl"}, {{"dog", "racecar", "car"}, ""}, {{}, ""}};
 
   for (const auto& [strs, expt] : testCases) {
     ASSERT_EQ(LongestCommonPrefix(strs), expt);

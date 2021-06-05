@@ -25,9 +25,7 @@
 
 namespace algorithms {
 
-std::vector<std::string> FindAndReplacePattern(
-    const std::vector<std::string>& iWords,
-    const std::string& iPattern) {
+std::vector<std::string> FindAndReplacePattern(const std::vector<std::string>& iWords, const std::string& iPattern) {
   constexpr std::size_t kSizeTable = 1 << 8;
 
   std::vector<std::string> aMatchedWords;
@@ -39,10 +37,7 @@ std::vector<std::string> FindAndReplacePattern(
       iWords.cbegin(),
       iWords.cend(),
       std::back_inserter(aMatchedWords),
-      [&iPattern,
-       &aLeft2RightTable,
-       &aRight2LeftTable,
-       kSizePattern = iPattern.size()](const std::string& iWord) {
+      [&iPattern, &aLeft2RightTable, &aRight2LeftTable, kSizePattern = iPattern.size()](const std::string& iWord) {
         const auto kSizeWord = iWord.size();
         if (kSizePattern != kSizeWord) return false;
 

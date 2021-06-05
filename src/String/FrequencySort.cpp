@@ -29,8 +29,7 @@ std::string FrequencySort(const std::string& s) {
       return a.second < b.second;
     }
   };
-  using Heap =
-      std::priority_queue<HeapNode, std::vector<HeapNode>, HeapComparator>;
+  using Heap = std::priority_queue<HeapNode, std::vector<HeapNode>, HeapComparator>;
   constexpr std::size_t kHashSize = sizeof(char) << 8;
 
   int hashTable[kHashSize]{};

@@ -31,8 +31,7 @@ namespace algorithms {
  *  \note Complexity -> Time: O(N x M)   Space: O(N x M)
  *  \note https://leetcode.com/problems/unique-paths-ii/
  */
-int UniquePathsWithObstacles(
-    const std::vector<std::vector<int>>& iObstacleGrid);
+int UniquePathsWithObstacles(const std::vector<std::vector<int>>& iObstacleGrid);
 
 }  // namespace algorithms
 

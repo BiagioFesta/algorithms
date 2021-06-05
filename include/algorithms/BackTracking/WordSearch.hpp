@@ -29,8 +29,7 @@ namespace algorithms {
  *
  *  \note https://leetcode.com/problems/word-search/
  */
-bool WordSearch(const std::vector<std::vector<char>>& iBoard,
-                const std::string& iWord);
+bool WordSearch(const std::vector<std::vector<char>>& iBoard, const std::string& iWord);
 
 }  // namespace algorithms
 

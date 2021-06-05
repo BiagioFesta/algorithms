@@ -29,9 +29,8 @@ namespace algorithms {
  *  \note  Complexity  -->  Time: O(N)  Space: O(1)  // Not consider output
  *  \note https://leetcode.com/problems/insert-interval/
  */
-std::vector<std::vector<int>> InsertInterval(
-    const std::vector<std::vector<int>>& intervals,
-    const std::vector<int>& newInterval);
+std::vector<std::vector<int>> InsertInterval(const std::vector<std::vector<int>>& intervals,
+                                             const std::vector<int>& newInterval);
 
 }  // namespace algorithms
 

@@ -24,12 +24,8 @@ namespace algorithms::test {
 
 TEST(Array, MaxWidthRamp) {
   using Test = std::pair<std::vector<int>, int>;
-  const std::vector<Test> testCases = {{{6, 0, 8, 2, 1, 5}, 4},
-                                       {{9, 8, 1, 0, 1, 9, 4, 0, 4, 1}, 7},
-                                       {{4, 3, 2, 1}, 0},
-                                       {{}, 0},
-                                       {{1}, 0},
-                                       {{1, 2}, 1}};
+  const std::vector<Test> testCases = {
+      {{6, 0, 8, 2, 1, 5}, 4}, {{9, 8, 1, 0, 1, 9, 4, 0, 4, 1}, 7}, {{4, 3, 2, 1}, 0}, {{}, 0}, {{1}, 0}, {{1, 2}, 1}};
 
   for (const auto& [v, expt] : testCases) {
     ASSERT_EQ(MaxWidthRamp(v), expt);

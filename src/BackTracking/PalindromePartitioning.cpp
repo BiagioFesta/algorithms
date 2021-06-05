@@ -37,8 +37,7 @@ bool IsPalidrome(const std::string& str) noexcept {
 
 namespace algorithms {
 
-std::vector<std::vector<std::string>> PalindromePartitioning(
-    const std::string& s) {
+std::vector<std::vector<std::string>> PalindromePartitioning(const std::string& s) {
   using State = std::vector<std::string>;
   std::vector<std::vector<std::string>> ans;
 

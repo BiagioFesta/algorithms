@@ -30,8 +30,7 @@ namespace algorithms {
  *  \note   Complexity -> Time: O(N + M)    Space: O(1)
  *  \note https://leetcode.com/problems/find-the-difference/
  */
-char FindTheDifference(const std::string& iStringS,
-                       const std::string& iStringT);
+char FindTheDifference(const std::string& iStringS, const std::string& iStringT);
 
 }  // namespace algorithms
 

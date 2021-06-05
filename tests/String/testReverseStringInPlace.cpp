@@ -26,9 +26,7 @@ namespace algorithms::test {
 TEST(String, ReverseStringInPlace) {
   using Test = std::pair<std::string, std::string>;
   const std::vector<Test> testCases = {
-      {"hello", "olleh"},
-      {"A man, a plan, a canal: Panama", "amanaP :lanac a ,nalp a ,nam A"},
-      {"", ""}};
+      {"hello", "olleh"}, {"A man, a plan, a canal: Panama", "amanaP :lanac a ,nalp a ,nam A"}, {"", ""}};
 
   std::string aMutableStr;
   for (const auto& [str, expt] : testCases) {

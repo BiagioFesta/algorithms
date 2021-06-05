@@ -24,9 +24,8 @@ namespace algorithms::test {
 
 TEST(Graph, ShortestPathBinaryMatrix) {
   using Test = std::pair<std::vector<std::vector<int>>, int>;
-  const std::vector<Test> testCases = {{{{0, 1}, {1, 0}}, 2},
-                                       {{{0, 0, 0}, {1, 1, 0}, {1, 1, 0}}, 4},
-                                       {{{0, 0, 0}, {0, 1, 1}, {0, 1, 1}}, -1}};
+  const std::vector<Test> testCases = {
+      {{{0, 1}, {1, 0}}, 2}, {{{0, 0, 0}, {1, 1, 0}, {1, 1, 0}}, 4}, {{{0, 0, 0}, {0, 1, 1}, {0, 1, 1}}, -1}};
 
   for (const auto& [grid, expt] : testCases) {
     ASSERT_EQ(ShortestPathBinaryMatrix(grid), expt);

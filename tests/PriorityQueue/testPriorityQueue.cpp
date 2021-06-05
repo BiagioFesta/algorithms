@@ -44,8 +44,7 @@ TEST_F(PriorityQueueTest, OneElement) {
 
 TEST_F(PriorityQueueTest, MaxElement) {
   constexpr int kValues[] = {1, 2, 3, 4, 5, 4, 3, 2, 1};
-  constexpr int kMaxValue =
-      *std::max_element(std::cbegin(kValues), std::cend(kValues));
+  constexpr int kMaxValue = *std::max_element(std::cbegin(kValues), std::cend(kValues));
 
   for (const int aValue : kValues) {
     _priorityQueue.push(aValue);
@@ -56,8 +55,7 @@ TEST_F(PriorityQueueTest, MaxElement) {
 
 TEST_F(PriorityQueueTest, PopMax) {
   constexpr int kValues[] = {1, 2, 3, 4, 5, 4, 3, 2, 1};
-  constexpr int kMaxValue =
-      *std::max_element(std::cbegin(kValues), std::cend(kValues));
+  constexpr int kMaxValue = *std::max_element(std::cbegin(kValues), std::cend(kValues));
 
   for (const int aValue : kValues) {
     _priorityQueue.push(aValue);
@@ -75,8 +73,7 @@ TEST_F(PriorityQueueTest, PopAll) {
   }
 
   while (!aValues.empty()) {
-    const auto aRefMaxValue =
-        std::max_element(aValues.cbegin(), aValues.cend());
+    const auto aRefMaxValue = std::max_element(aValues.cbegin(), aValues.cend());
 
     ASSERT_EQ(_priorityQueue.top(), *aRefMaxValue);
     _priorityQueue.pop();

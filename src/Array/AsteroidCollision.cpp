@@ -27,8 +27,7 @@ std::vector<int> AsteroidCollision(const std::vector<int>& asteroids) {
   for (const int asteroid : asteroids) {
     if (asteroid < 0) {
       const int positiveAsteroid = -asteroid;
-      while (!stack.empty() && stack.back() >= 0 &&
-             stack.back() < positiveAsteroid) {
+      while (!stack.empty() && stack.back() >= 0 && stack.back() < positiveAsteroid) {
         stack.pop_back();
       }
       if (stack.empty() || stack.back() < 0) {

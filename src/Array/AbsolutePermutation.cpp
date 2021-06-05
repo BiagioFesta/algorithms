@@ -27,12 +27,10 @@ std::vector<int> AbsolutePermutation(const int n, const int k) {
 
   for (int i = 0; i < n; ++i) {
     const int aNumber = i + 1;
-    if (const int aNegValue = aNumber - k;
-        aNegValue > 0 && usedTable[aNegValue - 1] == false) {
+    if (const int aNegValue = aNumber - k; aNegValue > 0 && usedTable[aNegValue - 1] == false) {
       absPerm[i] = aNegValue;
       usedTable[aNegValue - 1] = true;
-    } else if (const int aPosValue = aNumber + k;
-               aPosValue <= n && usedTable[aPosValue - 1] == false) {
+    } else if (const int aPosValue = aNumber + k; aPosValue <= n && usedTable[aPosValue - 1] == false) {
       absPerm[i] = aPosValue;
       usedTable[aPosValue - 1] = true;
     } else {

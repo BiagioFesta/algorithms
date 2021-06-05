@@ -16,7 +16,6 @@
 
 */
 #include <gtest/gtest.h>
-
 #include <algorithms/Graph/NetworkDelayTime.hpp>
 #include <tuple>
 #include <vector>
@@ -25,11 +24,10 @@ namespace algorithms::test {
 
 TEST(Graph, NetworkDelayTime) {
   using Test = std::tuple<std::vector<std::vector<int>>, int, int, int>;
-  const std::vector<Test> testCases = {
-      {{{2, 1, 1}, {2, 3, 1}, {3, 4, 1}}, 4, 2, 2},
-      {{{1, 2, 1}, {2, 3, 2}, {1, 3, 4}}, 3, 1, 3},
-      {{{1, 2, 1}, {2, 1, 1}}, 2, 1, 1},
-      {{{1, 2, 1}}, 3, 1, -1}};
+  const std::vector<Test> testCases = {{{{2, 1, 1}, {2, 3, 1}, {3, 4, 1}}, 4, 2, 2},
+                                       {{{1, 2, 1}, {2, 3, 2}, {1, 3, 4}}, 3, 1, 3},
+                                       {{{1, 2, 1}, {2, 1, 1}}, 2, 1, 1},
+                                       {{{1, 2, 1}}, 3, 1, -1}};
 
   for (const auto &[times, n, k, expt] : testCases) {
     ASSERT_EQ(NetworkDelayTime(times, n, k), expt);

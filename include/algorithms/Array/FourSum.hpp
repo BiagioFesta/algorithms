@@ -29,8 +29,7 @@ namespace algorithms {
  *  \note   Complexity  ->   Time: O(N^3)    Space: O(1)
  *  \note https://leetcode.com/problems/4sum/
  */
-std::vector<std::vector<int>> FourSum(std::vector<int>* iNumbers,
-                                      const int iTarget);
+std::vector<std::vector<int>> FourSum(std::vector<int>* iNumbers, const int iTarget);
 
 }  // namespace algorithms
 

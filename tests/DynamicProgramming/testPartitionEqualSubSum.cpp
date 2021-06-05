@@ -24,11 +24,8 @@ namespace algorithms::test {
 
 TEST(DynamicProgramming, PartitionEqualSubSum) {
   using Test = std::pair<std::vector<int>, bool>;
-  const std::vector<Test> testCases = {{{1, 5, 11, 5}, true},
-                                       {{1, 5, 11, 5, 1, 1}, true},
-                                       {{1}, false},
-                                       {{}, false},
-                                       {{1, 1}, true}};
+  const std::vector<Test> testCases = {
+      {{1, 5, 11, 5}, true}, {{1, 5, 11, 5, 1, 1}, true}, {{1}, false}, {{}, false}, {{1, 1}, true}};
 
   for (const auto& [nums, expt] : testCases) {
     ASSERT_EQ(PartitionEqualSubSum(nums), expt);

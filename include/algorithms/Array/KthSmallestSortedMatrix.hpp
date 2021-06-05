@@ -29,8 +29,7 @@ namespace algorithms {
  *  \note  Complexity  -->  Time: O(NlogN)  Space: O(N)
  *  \note https://leetcode.com/problems/kth-smallest-element-in-a-sorted-matrix/
  */
-int KthSmallestSortedMatrix(const std::vector<std::vector<int>>& matrix,
-                            const int k);
+int KthSmallestSortedMatrix(const std::vector<std::vector<int>>& matrix, const int k);
 
 }  // namespace algorithms
 

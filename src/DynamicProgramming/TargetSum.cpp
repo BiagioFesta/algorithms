@@ -29,17 +29,11 @@ constexpr std::size_t kCol = (::kMaxSum + 1) * 2;
 
 void ValidateInput(const std::vector<int>& nums) {
   assert(nums.size() <= ::kMaxLen);
-  assert(std::none_of(
-      nums.cbegin(), nums.cend(), [](const int num) noexcept {
-        return num < 0;
-      }));
+  assert(std::none_of(nums.cbegin(), nums.cend(), [](const int num) noexcept { return num < 0; }));
   assert(std::accumulate(nums.cbegin(), nums.cend(), 0ull) <= ::kMaxSum);
 }
 
-int TargetSumImpl(const std::vector<int>& nums,
-                  const std::size_t i,
-                  const int S,
-                  std::vector<int>* caches) {
+int TargetSumImpl(const std::vector<int>& nums, const std::size_t i, const int S, std::vector<int>* caches) {
   if (static_cast<std::size_t>(std::abs(S)) > ::kMaxSum) {
     return 0;
   }
@@ -52,8 +46,7 @@ int TargetSumImpl(const std::vector<int>& nums,
   assert(index < caches->size());
   int& result = (*caches)[index];
   if (result < 0) {
-    result = ::TargetSumImpl(nums, i + 1, S + nums[i], caches) +
-             ::TargetSumImpl(nums, i + 1, S - nums[i], caches);
+    result = ::TargetSumImpl(nums, i + 1, S + nums[i], caches) + ::TargetSumImpl(nums, i + 1, S - nums[i], caches);
   }
   return result;
 }

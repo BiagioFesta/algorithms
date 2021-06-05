@@ -24,8 +24,7 @@ namespace algorithms::test {
 
 TEST(Array, SubarraySumEqualsK) {
   using Test = std::tuple<std::vector<int>, int, int>;
-  const std::vector<Test> testCases = {{{1, 1, 1}, 2, 2},
-                                       {{1, 0, 0, 1, 0, 2}, 1, 9}};
+  const std::vector<Test> testCases = {{{1, 1, 1}, 2, 2}, {{1, 0, 0, 1, 0, 2}, 1, 9}};
 
   for (const auto& [nums, k, expt] : testCases) {
     ASSERT_EQ(SubarraySumEqualsK(nums, k), expt);

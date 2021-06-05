@@ -24,8 +24,7 @@ namespace algorithms::test {
 
 TEST(DynamicProgramming, CoinChange) {
   using Test = std::tuple<std::vector<int>, int, int>;
-  const std::vector<Test> testCases = {
-      {{1, 2, 5}, 11, 3}, {{1}, 0, 0}, {{2}, 3, -1}, {{2}, 2, 1}};
+  const std::vector<Test> testCases = {{{1, 2, 5}, 11, 3}, {{1}, 0, 0}, {{2}, 3, -1}, {{2}, 2, 1}};
 
   for (const auto& [coins, amount, expt] : testCases) {
     ASSERT_EQ(CoinChange(coins, amount), expt);

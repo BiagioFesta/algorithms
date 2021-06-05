@@ -24,9 +24,8 @@ namespace algorithms::test {
 
 TEST(Array, MajorityElementII) {
   using Test = std::pair<std::vector<int>, std::vector<int>>;
-  const std::vector<Test> testCases = {{{1, 1, 1, 3, 3, 2, 2, 2}, {1, 2}},
-                                       {{3, 2, 3}, {3}},
-                                       {{-1, 1, 1, 1, 2, 1}, {1}}};
+  const std::vector<Test> testCases = {
+      {{1, 1, 1, 3, 3, 2, 2, 2}, {1, 2}}, {{3, 2, 3}, {3}}, {{-1, 1, 1, 1, 2, 1}, {1}}};
 
   for (const auto& [nums, expt] : testCases) {
     ASSERT_EQ(MajorityElementII(nums), expt);

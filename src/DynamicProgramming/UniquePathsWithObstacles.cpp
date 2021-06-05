@@ -21,8 +21,7 @@
 
 namespace algorithms {
 
-int UniquePathsWithObstacles(
-    const std::vector<std::vector<int>>& iObstacleGrid) {
+int UniquePathsWithObstacles(const std::vector<std::vector<int>>& iObstacleGrid) {
   const int n = static_cast<int>(iObstacleGrid.size());
   if (n == 0) return 0;
   const int m = static_cast<int>(iObstacleGrid[0].size());

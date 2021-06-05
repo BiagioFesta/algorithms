@@ -78,12 +78,10 @@ class BinaryIndexedTree {
 };
 
 template <typename IntegerType>
-BinaryIndexedTree<IntegerType>::BinaryIndexedTree(const std::size_t size)
-    : data_(size + 1) {}
+BinaryIndexedTree<IntegerType>::BinaryIndexedTree(const std::size_t size) : data_(size + 1) {}
 
 template <typename IntegerType>
-auto BinaryIndexedTree<IntegerType>::sum(std::size_t index) const noexcept
-    -> value_type {
+auto BinaryIndexedTree<IntegerType>::sum(std::size_t index) const noexcept -> value_type {
   value_type sum = 0;
   ++index;
   while (index) {
@@ -95,15 +93,12 @@ auto BinaryIndexedTree<IntegerType>::sum(std::size_t index) const noexcept
 }
 
 template <typename IntegerType>
-auto BinaryIndexedTree<IntegerType>::partialSum(std::size_t i,
-                                                std::size_t j) const noexcept
-    -> value_type {
+auto BinaryIndexedTree<IntegerType>::partialSum(std::size_t i, std::size_t j) const noexcept -> value_type {
   return sum(j) - (i ? sum(i - 1) : 0);
 }
 
 template <typename IntegerType>
-void BinaryIndexedTree<IntegerType>::update(std::size_t index,
-                                            value_type delta) noexcept {
+void BinaryIndexedTree<IntegerType>::update(std::size_t index, value_type delta) noexcept {
   ++index;
   while (index < data_.size()) {
     data_[index] += delta;

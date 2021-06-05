@@ -21,8 +21,7 @@
 
 namespace algorithms {
 
-bool IsPermutation(const std::vector<int>& iVectA,
-                   const std::vector<int>& iVectB) {
+bool IsPermutation(const std::vector<int>& iVectA, const std::vector<int>& iVectB) {
   if (iVectA.size() != iVectB.size()) return false;
 
   std::unordered_map<int, int> aOccTable;

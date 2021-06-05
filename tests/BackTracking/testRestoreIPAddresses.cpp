@@ -26,15 +26,13 @@ namespace algorithms::test {
 
 TEST(BackTracking, RestoreIPAddresses) {
   using Test = std::pair<std::string, std::vector<std::string>>;
-  const std::vector<Test> testCases = {
-    {"010010", {"0.10.0.10","0.100.1.0"}},
-      {"0000", {"0.0.0.0"}},
-      {"25525511135", {"255.255.11.135", "255.255.111.35"}}};
+  const std::vector<Test> testCases = {{"010010", {"0.10.0.10", "0.100.1.0"}},
+                                       {"0000", {"0.0.0.0"}},
+                                       {"25525511135", {"255.255.11.135", "255.255.111.35"}}};
 
   for (const auto& [str, expt] : testCases) {
     const auto ans = RestoreIPAddresses(str);
-    ASSERT_TRUE(std::is_permutation(
-        ans.cbegin(), ans.cend(), expt.cbegin(), expt.cend()));
+    ASSERT_TRUE(std::is_permutation(ans.cbegin(), ans.cend(), expt.cbegin(), expt.cend()));
   }
 }
 

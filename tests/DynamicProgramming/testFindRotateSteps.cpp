@@ -24,11 +24,8 @@ namespace algorithms::test {
 
 TEST(DynamicProgramming, FindRotateSteps) {
   using Test = std::tuple<const char*, const char*, std::size_t>;
-  const std::vector<Test> testCases = {
-      {"godding", "gd", 4u},
-      {"caotmcaataijjxi",
-       "oatjiioicitatajtijciocjcaaxaaatmctxamacaamjjx",
-       137u}};
+  const std::vector<Test> testCases = {{"godding", "gd", 4u},
+                                       {"caotmcaataijjxi", "oatjiioicitatajtijciocjcaaxaaatmctxamacaamjjx", 137u}};
 
   for (const auto& [ring, key, expt] : testCases) {
     ASSERT_EQ(FindRotateSteps(ring, key), expt);

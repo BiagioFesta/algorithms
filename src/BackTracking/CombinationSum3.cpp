@@ -28,23 +28,22 @@ std::vector<std::vector<int>> CombinationSum3(const int K, const int N) {
 
   std::vector<std::vector<int>> aSolutions;
 
-  const std::function<void(int, std::vector<int>*)> aHelperFn =
-      [&](int iTarget, std::vector<int>* ioSeq) {
-        const auto aSizeSeq = ioSeq->size();
+  const std::function<void(int, std::vector<int>*)> aHelperFn = [&](int iTarget, std::vector<int>* ioSeq) {
+    const auto aSizeSeq = ioSeq->size();
 
-        if (iTarget >= 0) {
-          if (iTarget == 0 && aSizeSeq == static_cast<size_t>(K)) {
-            aSolutions.emplace_back(*ioSeq);
-          } else {
-            const int aLastNum = ioSeq->empty() ? 0 : ioSeq->back();
-            for (int i = aLastNum + 1; i <= 9; ++i) {
-              ioSeq->push_back(i);
-              aHelperFn(iTarget - i, ioSeq);
-              ioSeq->pop_back();
-            }
-          }
+    if (iTarget >= 0) {
+      if (iTarget == 0 && aSizeSeq == static_cast<size_t>(K)) {
+        aSolutions.emplace_back(*ioSeq);
+      } else {
+        const int aLastNum = ioSeq->empty() ? 0 : ioSeq->back();
+        for (int i = aLastNum + 1; i <= 9; ++i) {
+          ioSeq->push_back(i);
+          aHelperFn(iTarget - i, ioSeq);
+          ioSeq->pop_back();
         }
-      };
+      }
+    }
+  };
 
   std::vector<int> aSequence;
   aSequence.reserve(K + 1);

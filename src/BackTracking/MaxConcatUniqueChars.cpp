@@ -72,8 +72,7 @@ int MaxConcatUniqueCharsImpl(const std::vector<std::string>& arr,
   if (mask && !(mask & (*bitMask))) {
     *bitMask |= mask;
     const int opt =
-        static_cast<int>(arr[index].size()) +
-        ::MaxConcatUniqueCharsImpl(arr, vectMasks, index + 1, bitMask);
+        static_cast<int>(arr[index].size()) + ::MaxConcatUniqueCharsImpl(arr, vectMasks, index + 1, bitMask);
     ans = std::max(ans, opt);
     *bitMask ^= mask;
   }

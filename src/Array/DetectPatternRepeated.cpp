@@ -19,9 +19,7 @@
 
 namespace algorithms {
 
-bool DetectPatternRepeated(const std::vector<int>& v,
-                           const int m,
-                           const int k) {
+bool DetectPatternRepeated(const std::vector<int>& v, const int m, const int k) {
   int l, r = 1;
 
   for (std::size_t i = 0; i + m < v.size(); ++i) {

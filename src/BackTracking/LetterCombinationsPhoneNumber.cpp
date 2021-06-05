@@ -26,12 +26,9 @@
 namespace {
 
 constexpr std::size_t kSizeMap = 8;
-constexpr std::array<const char*, kSizeMap>
-    kKeyMap{"abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz"};
+constexpr std::array<const char*, kSizeMap> kKeyMap{"abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz"};
 
-void LetterCombinationsPhoneNumberImpl(const char* digits,
-                                       std::string* comp,
-                                       std::vector<std::string>* out) {
+void LetterCombinationsPhoneNumberImpl(const char* digits, std::string* comp, std::vector<std::string>* out) {
   const char d = *digits;
   if (d == '\0') {
     if (!comp->empty()) {
@@ -53,8 +50,7 @@ void LetterCombinationsPhoneNumberImpl(const char* digits,
 
 namespace algorithms {
 
-std::vector<std::string> LetterCombinationsPhoneNumber(
-    const std::string& digits) {
+std::vector<std::string> LetterCombinationsPhoneNumber(const std::string& digits) {
   std::vector<std::string> ans;
   std::string tmp;
 

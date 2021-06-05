@@ -24,13 +24,8 @@ namespace algorithms::test {
 
 TEST(Array, CountServersCommunicate) {
   using Test = std::pair<std::vector<std::vector<int>>, int>;
-  const std::vector<Test> testCases = {{{{0, 0, 0, 0},
-                                         {1, 0, 1, 0},
-                                         {1, 0, 1, 1},
-                                         {0, 0, 0, 0},
-                                         {0, 0, 1, 0},
-                                         {0, 1, 0, 0}},
-                                        6}};
+  const std::vector<Test> testCases = {
+      {{{0, 0, 0, 0}, {1, 0, 1, 0}, {1, 0, 1, 1}, {0, 0, 0, 0}, {0, 0, 1, 0}, {0, 1, 0, 0}}, 6}};
 
   for (const auto& [grid, expt] : testCases) {
     ASSERT_EQ(CountServersCommunicate(grid), expt);

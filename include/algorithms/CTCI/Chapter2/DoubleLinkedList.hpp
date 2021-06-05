@@ -128,8 +128,7 @@ void DoubleLinkedList<T>::push_back_impl(U&& iValue) {
 }
 
 template <typename T>
-typename DoubleLinkedList<T>::Node* DoubleLinkedList<T>::getLastValidNode()
-    const {
+typename DoubleLinkedList<T>::Node* DoubleLinkedList<T>::getLastValidNode() const {
   Node* current = _root;
   while (current != nullptr && current->_next != nullptr) {
     current = current->_next;
@@ -138,8 +137,7 @@ typename DoubleLinkedList<T>::Node* DoubleLinkedList<T>::getLastValidNode()
 }
 
 template <typename T>
-typename DoubleLinkedList<T>::const_reference DoubleLinkedList<T>::getByIndex(
-    const size_type iIndex) const {
+typename DoubleLinkedList<T>::const_reference DoubleLinkedList<T>::getByIndex(const size_type iIndex) const {
   const Node* current = _root;
   for (size_type i = 0ull; i < iIndex; ++i) {
     assert(current != nullptr);
@@ -151,8 +149,7 @@ typename DoubleLinkedList<T>::const_reference DoubleLinkedList<T>::getByIndex(
 }
 
 template <typename T>
-typename DoubleLinkedList<T>::size_type DoubleLinkedList<T>::size() const
-    noexcept {
+typename DoubleLinkedList<T>::size_type DoubleLinkedList<T>::size() const noexcept {
   return _size;
 }
 
@@ -190,8 +187,7 @@ DoubleLinkedList<T>::DoubleLinkedList(const DoubleLinkedList& oth) {
 }
 
 template <typename T>
-DoubleLinkedList<T>& DoubleLinkedList<T>::operator=(
-    const DoubleLinkedList& oth) {
+DoubleLinkedList<T>& DoubleLinkedList<T>::operator=(const DoubleLinkedList& oth) {
   clean();
 
   for (std::size_t i = 0; i < oth.size(); ++i) {
@@ -202,15 +198,13 @@ DoubleLinkedList<T>& DoubleLinkedList<T>::operator=(
 }
 
 template <typename T>
-DoubleLinkedList<T>::DoubleLinkedList(DoubleLinkedList&& oth) noexcept
-    : _root(oth._root), _size(oth._size) {
+DoubleLinkedList<T>::DoubleLinkedList(DoubleLinkedList&& oth) noexcept : _root(oth._root), _size(oth._size) {
   oth._root = nullptr;
   oth._size = 0ull;
 }
 
 template <typename T>
-DoubleLinkedList<T>& DoubleLinkedList<T>::operator=(
-    DoubleLinkedList&& oth) noexcept {
+DoubleLinkedList<T>& DoubleLinkedList<T>::operator=(DoubleLinkedList&& oth) noexcept {
   clean();
   _root = oth._root;
   _size = oth._size;
@@ -225,9 +219,7 @@ DoubleLinkedList<T>::Node::Node(value_type&& iData, Node* iNext, Node* iPrev)
     : _data(std::move(iData)), _next(iNext), _prev(iPrev) {}
 
 template <typename T>
-DoubleLinkedList<T>::Node::Node(const value_type& iData,
-                                Node* iNext,
-                                Node* iPrev)
+DoubleLinkedList<T>::Node::Node(const value_type& iData, Node* iNext, Node* iPrev)
     : _data(iData), _next(iNext), _prev(iPrev) {}
 
 }  // namespace algorithms

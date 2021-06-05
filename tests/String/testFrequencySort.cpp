@@ -26,16 +26,12 @@ namespace algorithms::test {
 
 TEST(String, FrequencySort) {
   using Test = std::pair<std::string, std::vector<std::string>>;
-  const std::vector<Test> testCases = {{"tree", {"eert", "eetr"}},
-                                       {"cccaaa", {"cccaaa", "aaaccc"}},
-                                       {"Aabb", {"bbAa", "bbaA"}}};
+  const std::vector<Test> testCases = {
+      {"tree", {"eert", "eetr"}}, {"cccaaa", {"cccaaa", "aaaccc"}}, {"Aabb", {"bbAa", "bbaA"}}};
 
   for (const auto& [s, expts] : testCases) {
     const std::string result = FrequencySort(s);
-    ASSERT_TRUE(
-        std::any_of(expts.cbegin(), expts.cend(), [&result](const auto& expt) {
-          return expt == result;
-        }));
+    ASSERT_TRUE(std::any_of(expts.cbegin(), expts.cend(), [&result](const auto& expt) { return expt == result; }));
   }
 }
 

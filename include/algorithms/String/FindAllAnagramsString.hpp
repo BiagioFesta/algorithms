@@ -31,8 +31,7 @@ namespace algorithms {
  *  \note  Complexity  -->  Time: O(S + P)  Space: O(1)
  *  \note https://leetcode.com/problems/find-all-anagrams-in-a-string/
  */
-std::vector<int> FindAllAnagramsString(const std::string& s,
-                                       const std::string& p);
+std::vector<int> FindAllAnagramsString(const std::string& s, const std::string& p);
 
 }  // namespace algorithms
 

@@ -25,8 +25,7 @@ namespace algorithms::test {
 
 TEST(String, CheckRecord) {
   using Test = std::pair<std::string, bool>;
-  const std::vector<Test> testCases = {
-      {"PPALLP", true}, {"PPALLL", false}, {"", true}, {"PPALLPPPA", false}};
+  const std::vector<Test> testCases = {{"PPALLP", true}, {"PPALLL", false}, {"", true}, {"PPALLPPPA", false}};
 
   for (const auto& [str, expt] : testCases) {
     ASSERT_EQ(CheckRecord(str), expt);

@@ -28,9 +28,7 @@ bool DetectCapitalUse(const std::string& iString) {
   const int kSize = iString.size();
   assert(kSize > 0);
   const int kCounterCapital =
-      std::count_if(iString.cbegin(), iString.cend(), [&kLocale](const char c) {
-        return std::isupper(c, kLocale);
-      });
+      std::count_if(iString.cbegin(), iString.cend(), [&kLocale](const char c) { return std::isupper(c, kLocale); });
 
   if ((kCounterCapital == 0) || (kCounterCapital == kSize) ||
       (kCounterCapital == 1 && std::isupper(iString[0], kLocale))) {

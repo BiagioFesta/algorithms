@@ -22,12 +22,10 @@
 
 namespace algorithms {
 
-void LetterCasePermutation(const std::string& iStr,
-                           std::vector<std::string>* oPermutations) {
+void LetterCasePermutation(const std::string& iStr, std::vector<std::string>* oPermutations) {
   static const std::locale sLocale;
   static const auto permChar = [](const char c) {
-    return std::islower(c, sLocale) ? std::toupper(c, sLocale)
-                                    : std::tolower(c, sLocale);
+    return std::islower(c, sLocale) ? std::toupper(c, sLocale) : std::tolower(c, sLocale);
   };
 
   oPermutations->clear();

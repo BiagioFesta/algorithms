@@ -38,11 +38,10 @@ namespace algorithms {
  *  \note
  *  https://leetcode.com/problems/filter-restaurants-by-vegan-friendly-price-and-distance/
  */
-std::vector<int> FilterRestaurants(
-    const std::vector<std::vector<int>>& restaurants,
-    int veganFriendly,
-    int maxPrice,
-    int maxDistance);
+std::vector<int> FilterRestaurants(const std::vector<std::vector<int>>& restaurants,
+                                   int veganFriendly,
+                                   int maxPrice,
+                                   int maxDistance);
 
 }  // namespace algorithms
 

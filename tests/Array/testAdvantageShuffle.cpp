@@ -51,8 +51,7 @@ TEST(Array, AdvantageShuffle) {
   for (const auto& [a, b, numAdvantageExpt] : testCases) {
     const auto result = AdvantageShuffle(a, b);
 
-    ASSERT_TRUE(std::is_permutation(
-        result.cbegin(), result.cend(), a.cbegin(), a.cend()));
+    ASSERT_TRUE(std::is_permutation(result.cbegin(), result.cend(), a.cbegin(), a.cend()));
     ASSERT_EQ(::CountNumAdvantage(result, b), numAdvantageExpt);
   }
 }

@@ -24,11 +24,8 @@ namespace algorithms::test {
 
 TEST(Array, MaximumProduct) {
   using Test = std::pair<std::vector<int>, int>;
-  const std::vector<Test> testCases = {{{1, 2, 3}, 6},
-                                       {{1, 2, 3, 4}, 24},
-                                       {{-10, -20, 5, 6, 10}, 2000},
-                                       {{1, 0, 100}, 0},
-                                       {{1, 1}, 1}};
+  const std::vector<Test> testCases = {
+      {{1, 2, 3}, 6}, {{1, 2, 3, 4}, 24}, {{-10, -20, 5, 6, 10}, 2000}, {{1, 0, 100}, 0}, {{1, 1}, 1}};
 
   for (const auto& [v, expt] : testCases) {
     ASSERT_EQ(MaximumProduct(v), expt);

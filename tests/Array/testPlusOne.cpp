@@ -24,11 +24,8 @@ namespace algorithms::test {
 
 TEST(Array, PlusOne) {
   using Test = std::pair<std::vector<int>, std::vector<int>>;
-  const std::vector<Test> testCases = {{{1, 2, 3}, {1, 2, 4}},
-                                       {{0}, {1}},
-                                       {{9}, {1, 0}},
-                                       {{9, 9, 9}, {1, 0, 0, 0}},
-                                       {{0, 0, 1, 2}, {1, 3}}};
+  const std::vector<Test> testCases = {
+      {{1, 2, 3}, {1, 2, 4}}, {{0}, {1}}, {{9}, {1, 0}}, {{9, 9, 9}, {1, 0, 0, 0}}, {{0, 0, 1, 2}, {1, 3}}};
 
   for (const auto& [v, expt] : testCases) {
     ASSERT_EQ(PlusOne(v), expt);

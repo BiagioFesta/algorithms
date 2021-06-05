@@ -25,8 +25,7 @@ namespace algorithms::test {
 
 TEST(String, SteadyGene) {
   using Test = std::pair<std::string, int>;
-  const std::vector<Test> testCases{
-      {"GAAATAAA", 5}, {"", 0}, {"ACTGGTCA", 0}, {"GAAATAAT", 3}};
+  const std::vector<Test> testCases{{"GAAATAAA", 5}, {"", 0}, {"ACTGGTCA", 0}, {"GAAATAAT", 3}};
 
   for (const auto& [str, expt] : testCases) {
     ASSERT_EQ(SteadyGene(str), expt);

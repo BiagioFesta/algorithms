@@ -23,13 +23,9 @@
 namespace algorithms::test {
 
 TEST(Array, InsertInterval) {
-  using Test = std::tuple<std::vector<std::vector<int>>,
-                          std::vector<int>,
-                          std::vector<std::vector<int>>>;
+  using Test = std::tuple<std::vector<std::vector<int>>, std::vector<int>, std::vector<std::vector<int>>>;
   const std::vector<Test> testCases = {
-      {{{1, 2}, {3, 5}, {6, 7}, {8, 10}, {12, 16}},
-       {4, 8},
-       {{1, 2}, {3, 10}, {12, 16}}},
+      {{{1, 2}, {3, 5}, {6, 7}, {8, 10}, {12, 16}}, {4, 8}, {{1, 2}, {3, 10}, {12, 16}}},
       {{{1, 3}, {6, 9}}, {2, 5}, {{1, 5}, {6, 9}}},
       {{{1, 3}}, {5, 6}, {{1, 3}, {5, 6}}},
       {{{1, 5}}, {0, 0}, {{0, 0}, {1, 5}}}};

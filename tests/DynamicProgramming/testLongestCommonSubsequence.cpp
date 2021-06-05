@@ -25,8 +25,7 @@ namespace algorithms::test {
 
 TEST(DynamicProgramming, LongestCommonSubsequence) {
   using Test = std::tuple<std::string, std::string, int>;
-  const std::vector<Test> testCases = {
-      {"ABCD", "ABDC", 3}, {"SHINCHAN", "NOHARAAA", 3}, {"ABC", "DEF", 0}};
+  const std::vector<Test> testCases = {{"ABCD", "ABDC", 3}, {"SHINCHAN", "NOHARAAA", 3}, {"ABC", "DEF", 0}};
 
   for (const auto& [str1, str2, expt] : testCases) {
     ASSERT_EQ(LongestCommonSubsequence(str1, str2), expt);

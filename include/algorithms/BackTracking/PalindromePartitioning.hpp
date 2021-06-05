@@ -29,8 +29,7 @@ namespace algorithms {
  *  \note  Complexity  -->  Time: O(2^n)  Space: O(2^n)
  *  \note https://leetcode.com/problems/palindrome-partitioning/
  */
-std::vector<std::vector<std::string>> PalindromePartitioning(
-    const std::string& s);
+std::vector<std::vector<std::string>> PalindromePartitioning(const std::string& s);
 
 }  // namespace algorithms
 

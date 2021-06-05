@@ -26,9 +26,7 @@ namespace algorithms::test {
 TEST(String, FindLongestWord) {
   using Test = std::tuple<std::string, std::vector<std::string>, int>;
   const std::vector<Test> testCases{
-      {"abpcplea", {"ale", "apple", "monkey", "plea"}, 1},
-      {"abpcplea", {"a", "b", "c"}, 0},
-      {"abc", {"d"}, -1}};
+      {"abpcplea", {"ale", "apple", "monkey", "plea"}, 1}, {"abpcplea", {"a", "b", "c"}, 0}, {"abc", {"d"}, -1}};
 
   for (const auto& [str, dict, expt] : testCases) {
     ASSERT_EQ(FindLongestWord(str, dict), expt);

@@ -25,9 +25,8 @@ namespace algorithms::test {
 TEST(Graph, CourseSchedule) {
   using Test = std::tuple<int, std::vector<std::vector<int>>, bool>;
 
-  const std::vector<Test> testCases = {{2, {{1, 0}}, true},
-                                       {2, {{1, 0}, {0, 1}}, false},
-                                       {3, {{0, 1}, {0, 2}, {1, 2}}, true}};
+  const std::vector<Test> testCases = {
+      {2, {{1, 0}}, true}, {2, {{1, 0}, {0, 1}}, false}, {3, {{0, 1}, {0, 2}, {1, 2}}, true}};
 
   for (const auto& [numCourses, edges, expt] : testCases) {
     ASSERT_EQ(CourseSchedule(numCourses, edges), expt);

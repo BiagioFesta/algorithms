@@ -16,7 +16,6 @@
 
 */
 #include <benchmark/benchmark.h>
-
 #include <algorithm>
 #include <algorithms/Array/SearchRotatedSortedArray.hpp>
 #include <cassert>
@@ -44,8 +43,7 @@ std::pair<std::vector<int>, int> GenerateInput(const std::size_t size) {
   return std::make_pair(std::move(v), rndIndex(rndEngine));
 }
 
-int SearchRotatedSortedArrayLinearSearch(const std::vector<int>& nums,
-                                         const int target) {
+int SearchRotatedSortedArrayLinearSearch(const std::vector<int>& nums, const int target) {
   const auto size = nums.size();
   for (std::size_t i = 0; i < size; ++i) {
     if (nums[i] == target) return i;
@@ -62,25 +60,19 @@ void BMSearchRotatedSortedArrayImpl(::benchmark::State& state) {
   const auto input = ::GenerateInput(size);
 
   for (auto _ : state) {
-    ::benchmark::DoNotOptimize(
-        SearchRotatedSortedArray(input.first, input.second));
+    ::benchmark::DoNotOptimize(SearchRotatedSortedArray(input.first, input.second));
   }
 }
-BENCHMARK(BMSearchRotatedSortedArrayImpl)
-    ->RangeMultiplier(2)
-    ->Range(::kMinValue, ::kMaxValue);
+BENCHMARK(BMSearchRotatedSortedArrayImpl)->RangeMultiplier(2)->Range(::kMinValue, ::kMaxValue);
 
 void BMSearchRotatedSortedArrayLinearSearch(::benchmark::State& state) {
   const std::size_t size = state.range();
   const auto input = ::GenerateInput(size);
 
   for (auto _ : state) {
-    ::benchmark::DoNotOptimize(
-        ::SearchRotatedSortedArrayLinearSearch(input.first, input.second));
+    ::benchmark::DoNotOptimize(::SearchRotatedSortedArrayLinearSearch(input.first, input.second));
   }
 }
-BENCHMARK(BMSearchRotatedSortedArrayLinearSearch)
-    ->RangeMultiplier(2)
-    ->Range(::kMinValue, ::kMaxValue);
+BENCHMARK(BMSearchRotatedSortedArrayLinearSearch)->RangeMultiplier(2)->Range(::kMinValue, ::kMaxValue);
 
 }  // namespace algorithms::benchmark

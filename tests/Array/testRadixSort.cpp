@@ -35,18 +35,13 @@ TEST(Array, RadixSort) {
   for (int i = 0; i < kNumTest; ++i) {
     aVector.resize(aDistribution(aRndEngine) % kMaxSize);
     std::generate(
-        aVector.begin(), aVector.end(), [&aRndEngine, &aDistribution]() {
-          return aDistribution(aRndEngine);
-        });
+        aVector.begin(), aVector.end(), [&aRndEngine, &aDistribution]() { return aDistribution(aRndEngine); });
 
     aSortedVector = aVector;
     RadixSort(&aSortedVector);
 
     ASSERT_TRUE(std::is_sorted(aSortedVector.cbegin(), aSortedVector.cend()));
-    ASSERT_TRUE(std::is_permutation(aSortedVector.cbegin(),
-                                    aSortedVector.cend(),
-                                    aVector.cbegin(),
-                                    aVector.cend()));
+    ASSERT_TRUE(std::is_permutation(aSortedVector.cbegin(), aSortedVector.cend(), aVector.cbegin(), aVector.cend()));
   }
 }
 

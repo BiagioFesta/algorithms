@@ -22,8 +22,7 @@
 
 namespace algorithms {
 
-int LongestArithmeticSubsequenceDifference(const std::vector<int>& arr,
-                                           const int difference) {
+int LongestArithmeticSubsequenceDifference(const std::vector<int>& arr, const int difference) {
   std::unordered_map<int, int> hashTable;
   int ans = 0, sol;
   for (const int n : arr) {

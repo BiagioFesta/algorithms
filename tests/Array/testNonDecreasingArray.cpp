@@ -24,8 +24,7 @@ namespace algorithms::test {
 
 TEST(Array, NonDecreasingArray) {
   using Test = std::pair<std::vector<int>, bool>;
-  const std::vector<Test> TestCases = {
-      {{4, 2, 3}, true}, {{4, 2, 1}, false}, {{3, 4, 2, 3}, false}};
+  const std::vector<Test> TestCases = {{{4, 2, 3}, true}, {{4, 2, 1}, false}, {{3, 4, 2, 3}, false}};
 
   for (const auto& [str, exp] : TestCases) {
     ASSERT_EQ(NonDecreasingArray(str.data(), str.size()), exp);

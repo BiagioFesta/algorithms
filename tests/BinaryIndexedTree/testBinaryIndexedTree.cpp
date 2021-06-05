@@ -66,8 +66,7 @@ TEST(BinaryIndexedTree, IncrementalPartialSum) {
 
   for (std::size_t i = 0; i < ::kTestSize; ++i) {
     for (std::size_t j = i; j < ::kTestSize; ++j) {
-      const auto expt =
-          SumPositiveNumbers(j) - (i ? SumPositiveNumbers(i - 1) : 0);
+      const auto expt = SumPositiveNumbers(j) - (i ? SumPositiveNumbers(i - 1) : 0);
       ASSERT_EQ(bit.partialSum(i, j), expt);
     }
   }

@@ -24,10 +24,8 @@ namespace algorithms::test {
 
 TEST(Array, FindDuplicateNumber) {
   using Test = std::pair<std::vector<int>, int>;
-  const std::vector<Test> testCases = {{{1, 2, 3, 4, 2, 5, 6, 7}, 2},
-                                       {{2, 2, 2, 2, 2}, 2},
-                                       {{1, 3, 4, 2, 2}, 2},
-                                       {{3, 1, 3, 4, 2}, 3}};
+  const std::vector<Test> testCases = {
+      {{1, 2, 3, 4, 2, 5, 6, 7}, 2}, {{2, 2, 2, 2, 2}, 2}, {{1, 3, 4, 2, 2}, 2}, {{3, 1, 3, 4, 2}, 3}};
 
   for (const auto& [nums, expt] : testCases) {
     ASSERT_EQ(FindDuplicateNumber(nums), expt);

@@ -29,9 +29,7 @@ namespace algorithms {
  *  \note  Complexity  ->  Time: O(NlogK)   Space: O(K)
  *  \note https://leetcode.com/problems/contains-duplicate-iii/
  */
-bool ContainsDuplicateIII(const std::vector<int>& nums,
-                          const int k,
-                          const int t);
+bool ContainsDuplicateIII(const std::vector<int>& nums, const int k, const int t);
 
 }  // namespace algorithms
 

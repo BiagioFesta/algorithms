@@ -24,13 +24,8 @@ namespace algorithms::test {
 
 TEST(Array, EuclideanAlgorithmGCD) {
   using Test = std::tuple<int, int, int>;
-  const std::vector<Test> testCases = {{3, 3, 3},
-                                       {1024, 0, 1024},
-                                       {3, 2, 1},
-                                       {12, 6, 6},
-                                       {32, 15, 1},
-                                       {36, 144, 36},
-                                       {8, 12, 4}};
+  const std::vector<Test> testCases = {
+      {3, 3, 3}, {1024, 0, 1024}, {3, 2, 1}, {12, 6, 6}, {32, 15, 1}, {36, 144, 36}, {8, 12, 4}};
 
   for (const auto& [i, j, expt] : testCases) {
     ASSERT_EQ(EuclideanAlgorithmGCD(i, j), expt);

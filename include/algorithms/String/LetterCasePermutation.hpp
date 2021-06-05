@@ -27,8 +27,7 @@ namespace algorithms {
  *  \return a list of all possible strings we could create.
  *  \note https://leetcode.com/problems/letter-case-permutation/description/
  */
-void LetterCasePermutation(const std::string& iStr,
-                           std::vector<std::string>* oPermutations);
+void LetterCasePermutation(const std::string& iStr, std::vector<std::string>* oPermutations);
 
 }  // namespace algorithms
 

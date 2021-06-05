@@ -35,8 +35,7 @@ class TwitterTest : public Twitter {
 };
 
 const std::vector<Twitter::TweetId_t> TwitterTest::kFeedsA{kTwitterA};
-const std::vector<Twitter::TweetId_t> TwitterTest::kFeedsBA{kTwitterB,
-                                                            kTwitterA};
+const std::vector<Twitter::TweetId_t> TwitterTest::kFeedsBA{kTwitterB, kTwitterA};
 
 TEST(Twitter, PostTweet) {
   TwitterTest aTwitter;
@@ -69,8 +68,7 @@ TEST(Twitter, Follow) {
 
   aTwitter.follow(TwitterTest::kUserIdA, TwitterTest::kUserIdB);
   ASSERT_EQ(aTwitter.getFollowees(TwitterTest::kUserIdA).size(), 1ull);
-  ASSERT_EQ(*aTwitter.getFollowees(TwitterTest::kUserIdA).cbegin(),
-            TwitterTest::kUserIdB);
+  ASSERT_EQ(*aTwitter.getFollowees(TwitterTest::kUserIdA).cbegin(), TwitterTest::kUserIdB);
 }
 
 TEST(Twitter, UnFollow) {

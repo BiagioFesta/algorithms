@@ -30,9 +30,7 @@ int FindDuplicateNumber(const std::vector<int>& nums) {
 
   while (lo < hi) {
     const int isDup = (lo + hi) / 2;
-    if (std::count_if(nums.cbegin(), nums.cend(), [isDup](const int n) {
-          return n <= isDup;
-        }) <= isDup) {
+    if (std::count_if(nums.cbegin(), nums.cend(), [isDup](const int n) { return n <= isDup; }) <= isDup) {
       lo = isDup + 1;
     } else {
       hi = isDup;

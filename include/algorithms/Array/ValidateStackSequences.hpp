@@ -28,8 +28,7 @@ namespace algorithms {
  *  \note  Complexity   -->  Time: O(N)   Space: O(N)
  *  \note https://leetcode.com/problems/validate-stack-sequences/
  */
-bool ValidateStackSequences(const std::vector<int>& pushed,
-                            const std::vector<int>& popped);
+bool ValidateStackSequences(const std::vector<int>& pushed, const std::vector<int>& popped);
 
 }  // namespace algorithms
 

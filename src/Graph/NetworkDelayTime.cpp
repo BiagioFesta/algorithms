@@ -26,8 +26,7 @@ namespace {
 
 using NextHopMap = std::vector<std::vector<std::pair<int, int>>>;
 
-NextHopMap ComputeNextHopMap(const std::vector<std::vector<int>>& times,
-                             const int N) {
+NextHopMap ComputeNextHopMap(const std::vector<std::vector<int>>& times, const int N) {
   NextHopMap nextHopMap(N + 1);
   for (const auto& edge : times) {
     assert(edge.size() == 3ull);
@@ -42,9 +41,7 @@ NextHopMap ComputeNextHopMap(const std::vector<std::vector<int>>& times,
 
 namespace algorithms {
 
-int NetworkDelayTime(const std::vector<std::vector<int>>& times,
-                     const int N,
-                     const int K) {
+int NetworkDelayTime(const std::vector<std::vector<int>>& times, const int N, const int K) {
   constexpr auto kMaxInt = std::numeric_limits<int>::max();
   const auto nextHopMap = ::ComputeNextHopMap(times, N);
   std::vector<int> delays(N + 1, kMaxInt);

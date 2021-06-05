@@ -32,9 +32,7 @@ namespace algorithms {
  *  \note  Complexity  -->  Time: O(S x M x N)   Space: O(M x N)
  *  \note https://leetcode.com/problems/ones-and-zeroes/
  */
-int OnesAndZeroes(const std::vector<std::string>& strs,
-                  const int m,
-                  const int n);
+int OnesAndZeroes(const std::vector<std::string>& strs, const int m, const int n);
 
 }  // namespace algorithms
 

@@ -24,8 +24,7 @@ namespace algorithms::test {
 
 TEST(Misc, KSymbolInGrammar) {
   using Test = std::tuple<int, int, int>;
-  const std::vector<Test> testCases = {
-      {1, 1, 0}, {2, 1, 0}, {2, 2, 1}, {4, 5, 1}, {30, 40, 0}};
+  const std::vector<Test> testCases = {{1, 1, 0}, {2, 1, 0}, {2, 2, 1}, {4, 5, 1}, {30, 40, 0}};
 
   for (const auto& [n, k, expt] : testCases) {
     ASSERT_EQ(KSymbolInGrammar(n, k), expt);

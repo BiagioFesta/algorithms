@@ -39,8 +39,7 @@ std::string LargestNumber(std::vector<int> iNumbers) {
     return xy > yx;
   });
 
-  const auto aFirstNonZero = std::find_if(
-      iNumbers.begin(), iNumbers.end() - 1, [](const int n) { return n != 0; });
+  const auto aFirstNonZero = std::find_if(iNumbers.begin(), iNumbers.end() - 1, [](const int n) { return n != 0; });
   if (aFirstNonZero != iNumbers.begin()) {
     iNumbers.erase(iNumbers.begin(), aFirstNonZero);
   }

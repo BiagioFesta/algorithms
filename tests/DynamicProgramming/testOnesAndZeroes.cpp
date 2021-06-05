@@ -25,8 +25,7 @@ namespace algorithms::test {
 
 TEST(DynamicProgramming, OnesAndZeroes) {
   using Test = std::tuple<std::vector<std::string>, int, int, int>;
-  const std::vector<Test> testCases = {
-      {{"10", "0", "1"}, 1, 1, 2}, {{"10", "0001", "111001", "1", "0"}, 5, 3, 4}
+  const std::vector<Test> testCases = {{{"10", "0", "1"}, 1, 1, 2}, {{"10", "0001", "111001", "1", "0"}, 5, 3, 4}
 
   };
 

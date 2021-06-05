@@ -80,22 +80,19 @@ void MinStack<T, Compare>::pop() {
 }
 
 template <typename T, typename Compare>
-typename MinStack<T, Compare>::const_reference MinStack<T, Compare>::top() const
-    noexcept {
+typename MinStack<T, Compare>::const_reference MinStack<T, Compare>::top() const noexcept {
   assert(_data.empty() == false);
   return _data.top();
 }
 
 template <typename T, typename Compare>
-typename MinStack<T, Compare>::const_reference MinStack<T, Compare>::getMin()
-    const {
+typename MinStack<T, Compare>::const_reference MinStack<T, Compare>::getMin() const {
   assert(_mins.empty() == false);
   return *(_mins.top());
 }
 
 template <typename T, typename Compare>
-typename MinStack<T, Compare>::size_type MinStack<T, Compare>::size() const
-    noexcept {
+typename MinStack<T, Compare>::size_type MinStack<T, Compare>::size() const noexcept {
   return _data.size();
 }
 

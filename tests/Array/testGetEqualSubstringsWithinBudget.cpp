@@ -25,10 +25,8 @@ namespace algorithms::test {
 
 TEST(Array, GetEqualSubstringsWithinBudget) {
   using Test = std::tuple<std::string, std::string, int, int>;
-  const std::vector<Test> testCases = {{"abcd", "bcdf", 3, 3},
-                                       {"abcd", "cdef", 3, 1},
-                                       {"abcd", "acde", 0, 1},
-                                       {"abc", "cba", 0, 1}};
+  const std::vector<Test> testCases = {
+      {"abcd", "bcdf", 3, 3}, {"abcd", "cdef", 3, 1}, {"abcd", "acde", 0, 1}, {"abc", "cba", 0, 1}};
 
   for (const auto& [s, t, maxCost, expt] : testCases) {
     ASSERT_EQ(GetEqualSubstringsWithinBudget(s, t, maxCost), expt);

@@ -26,11 +26,7 @@ int FindKLargestImpl(int* nums, const std::size_t size, const int k) {
   assert(size > 0);
 
   const auto pindex =
-      std::partition(
-          nums + 1,
-          nums + size,
-          [pvalue = *nums](const int n) noexcept { return n > pvalue; }) -
-      nums - 1;
+      std::partition(nums + 1, nums + size, [pvalue = *nums](const int n) noexcept { return n > pvalue; }) - nums - 1;
   std::iter_swap(nums, nums + pindex);
 
   if (k - 1 == pindex) {

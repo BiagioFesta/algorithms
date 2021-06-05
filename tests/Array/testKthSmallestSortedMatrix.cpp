@@ -24,8 +24,7 @@ namespace algorithms::test {
 
 TEST(Array, KthSmallestSortedMatrix) {
   using Test = std::tuple<std::vector<std::vector<int>>, int, int>;
-  const std::vector<Test> testCases = {
-      {{{1, 5, 9}, {10, 11, 13}, {12, 13, 15}}, 8, 13}};
+  const std::vector<Test> testCases = {{{{1, 5, 9}, {10, 11, 13}, {12, 13, 15}}, 8, 13}};
 
   for (const auto& [matrix, k, expt] : testCases) {
     ASSERT_EQ(KthSmallestSortedMatrix(matrix, k), expt);

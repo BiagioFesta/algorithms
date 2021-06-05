@@ -40,8 +40,7 @@ namespace algorithms::test {
 
 TEST(Array, MinimumRemoveValidParentheses) {
   using Test = std::pair<std::string, std::size_t>;
-  const std::vector<Test> testCases = {
-      {"lee(t(c)o)de)", 12}, {"a)b(c)d", 6}, {"))((", 0}, {"(a(b(c)d)", 8}};
+  const std::vector<Test> testCases = {{"lee(t(c)o)de)", 12}, {"a)b(c)d", 6}, {"))((", 0}, {"(a(b(c)d)", 8}};
 
   for (const auto& [str, exptLen] : testCases) {
     const auto ans = MinimumRemoveValidParentheses(str);

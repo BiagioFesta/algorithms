@@ -54,8 +54,7 @@ std::vector<int> PlusOne(const std::vector<int>& iDigits) {
 
   std::reverse(aPlusOne.begin(), aPlusOne.end());
 
-  const auto aNonZeroIt = std::find_if(
-      aPlusOne.cbegin(), aPlusOne.cend(), [](const int n) { return n != 0; });
+  const auto aNonZeroIt = std::find_if(aPlusOne.cbegin(), aPlusOne.cend(), [](const int n) { return n != 0; });
   if (aNonZeroIt != aPlusOne.cbegin()) {
     aPlusOne.erase(aPlusOne.begin(), aNonZeroIt);
   }

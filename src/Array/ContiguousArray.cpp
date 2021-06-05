@@ -15,8 +15,8 @@
   along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 */
-#include <algorithms/Array/ContiguousArray.hpp>
 #include <algorithm>
+#include <algorithms/Array/ContiguousArray.hpp>
 #include <unordered_map>
 #include <vector>
 
@@ -33,8 +33,7 @@ int ContiguousArray(const std::vector<int>& iBits) {
     diff += iBits[i] ? 1 : -1;
     if (diff == 0) {
       max = i + 1;
-    } else if (auto startIt = diff2index.find(diff);
-               startIt != diff2index.cend()) {
+    } else if (auto startIt = diff2index.find(diff); startIt != diff2index.cend()) {
       max = std::max(max, i - startIt->second);
     } else {
       diff2index[diff] = i;

@@ -29,8 +29,7 @@ constexpr bool Divisible(T a, T b) noexcept {
   return a == 0;
 }
 
-int BeautifulArrangementImpl(const std::size_t poolSize,
-                             std::vector<std::size_t>* poolNums) {
+int BeautifulArrangementImpl(const std::size_t poolSize, std::vector<std::size_t>* poolNums) {
   const auto N = poolNums->size();
   const auto ith = N - poolSize + 1;
   if (poolSize == 0) {

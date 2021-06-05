@@ -24,9 +24,8 @@ namespace algorithms::test {
 
 TEST(Array, DailyTemperatures) {
   using Test = std::pair<std::vector<int>, std::vector<int>>;
-  const std::vector<Test> testCases = {
-      {{10, 9, 8, 7, 6, 5, 4, 3, 2, 11}, {9, 8, 7, 6, 5, 4, 3, 2, 1, 0}},
-      {{73, 74, 75, 71, 69, 72, 76, 73}, {1, 1, 4, 2, 1, 1, 0, 0}}};
+  const std::vector<Test> testCases = {{{10, 9, 8, 7, 6, 5, 4, 3, 2, 11}, {9, 8, 7, 6, 5, 4, 3, 2, 1, 0}},
+                                       {{73, 74, 75, 71, 69, 72, 76, 73}, {1, 1, 4, 2, 1, 1, 0, 0}}};
 
   for (const auto& [temps, expt] : testCases) {
     ASSERT_EQ(DailyTemperatures(temps), expt);

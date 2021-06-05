@@ -24,10 +24,9 @@ namespace algorithms::test {
 
 TEST(Array, Search2DMatrix) {
   using Test = std::tuple<std::vector<std::vector<int>>, int, bool>;
-  const std::vector<Test> testCases = {
-      {{}, 12, false},
-      {{{1, 3, 5, 7}, {10, 11, 16, 20}, {23, 30, 34, 50}}, 3, true},
-      {{{1, 3, 5, 7}, {10, 11, 16, 20}, {23, 30, 34, 50}}, 13, false}};
+  const std::vector<Test> testCases = {{{}, 12, false},
+                                       {{{1, 3, 5, 7}, {10, 11, 16, 20}, {23, 30, 34, 50}}, 3, true},
+                                       {{{1, 3, 5, 7}, {10, 11, 16, 20}, {23, 30, 34, 50}}, 13, false}};
 
   for (const auto& [matrix, target, expt] : testCases) {
     ASSERT_EQ(Search2DMatrix(matrix, target), expt);

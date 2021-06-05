@@ -28,8 +28,7 @@ int StrStr(const std::string& iStr, const std::string& iFinder) {
   int j;
   for (int i = 0; i < kSizeStr; ++i) {
     j = 0;
-    while ((j < kSizeFinder) && (i + j < kSizeStr) &&
-           (iStr[i + j] == iFinder[j])) {
+    while ((j < kSizeFinder) && (i + j < kSizeStr) && (iStr[i + j] == iFinder[j])) {
       ++j;
     }
     if (j == kSizeFinder) return i;

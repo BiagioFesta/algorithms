@@ -23,9 +23,7 @@
 
 namespace algorithms {
 
-int GetEqualSubstringsWithinBudget(const std::string& s,
-                                   const std::string& t,
-                                   const int maxCost) {
+int GetEqualSubstringsWithinBudget(const std::string& s, const std::string& t, const int maxCost) {
   const std::size_t size = s.size();
   assert(size == t.size());
 

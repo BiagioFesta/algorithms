@@ -15,8 +15,8 @@
   along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 */
-#include <algorithms/Array/MaximumProduct.hpp>
 #include <algorithm>
+#include <algorithms/Array/MaximumProduct.hpp>
 #include <cassert>
 #include <functional>
 #include <numeric>
@@ -30,8 +30,7 @@ int MaximumProduct(const std::vector<int>& iVector) {
   assert(iVector.size() > 0);
 
   if (iVector.size() <= 3) {
-    return std::accumulate(
-        iVector.cbegin(), iVector.cend(), 1, std::multiplies<int>{});
+    return std::accumulate(iVector.cbegin(), iVector.cend(), 1, std::multiplies<int>{});
   }
 
   std::vector<int> aLower;

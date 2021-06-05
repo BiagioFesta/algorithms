@@ -28,9 +28,7 @@ bool IsProperMatrix(const std::vector<std::vector<char>>& iGrid) {
     return true;
   }
   const auto M = iGrid.front().size();
-  return std::all_of(iGrid.cbegin(), iGrid.cend(), [M](const auto& row) {
-    return row.size() == M;
-  });
+  return std::all_of(iGrid.cbegin(), iGrid.cend(), [M](const auto& row) { return row.size() == M; });
 }
 
 }  // anonymous namespace

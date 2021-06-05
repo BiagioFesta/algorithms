@@ -42,8 +42,7 @@ std::vector<std::vector<int>> ThreeSum(std::vector<int>* iNumbers) {
       } else if (-aCurrentNumber < aSum) {
         --aUpper;
       } else {
-        aTriplets.emplace_back(
-            std::vector<int>{aCurrentNumber, aLowerNumber, aUpperNumber});
+        aTriplets.emplace_back(std::vector<int>{aCurrentNumber, aLowerNumber, aUpperNumber});
 
         while ((*iNumbers)[aLower] == aLowerNumber) ++aLower;
         while ((*iNumbers)[aUpper] == aUpperNumber) --aUpper;

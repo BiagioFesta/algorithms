@@ -43,17 +43,15 @@ class Matrix2D {
   Matrix2D(const value_type& initValue = value_type{});
 
   //! \return the value given (i, j).
-  const value_type& getValue(const std::size_t i, const std::size_t j) const
-      noexcept;
+  const value_type& getValue(const std::size_t i, const std::size_t j) const noexcept;
 
   //! \brief set the value given (i, j).
-  void
-  setValue(const std::size_t i, const std::size_t j, value_type value) noexcept(
-      noexcept(std::is_nothrow_move_assignable_v<value_type>));
+  void setValue(const std::size_t i,
+                const std::size_t j,
+                value_type value) noexcept(noexcept(std::is_nothrow_move_assignable_v<value_type>));
 
   //! \return the value given (i, j) as mutable pointer.
-  value_type* getMutableValue(const std::size_t i,
-                              const std::size_t j) noexcept;
+  value_type* getMutableValue(const std::size_t i, const std::size_t j) noexcept;
 
  private:
   static constexpr std::size_t kDataSize = kNumRows * kNumCols;
@@ -61,8 +59,7 @@ class Matrix2D {
 
   DataContainer data_;
 
-  static std::size_t GetLinearIndex(const std::size_t i,
-                                    const std::size_t j) noexcept {
+  static std::size_t GetLinearIndex(const std::size_t i, const std::size_t j) noexcept {
     assert(i * kNumCols + j < kDataSize);
     return i * kNumCols + j;
   }
@@ -88,8 +85,7 @@ class Matrix2D {
     }
 
    private:
-    explicit ConstRowAccessor(const value_type* const rowData) noexcept
-        : rowData_(rowData) {}
+    explicit ConstRowAccessor(const value_type* const rowData) noexcept : rowData_(rowData) {}
     const value_type* const rowData_;
     friend Matrix2D;
   };
@@ -107,29 +103,22 @@ class Matrix2D {
 };
 
 template <typename T, std::size_t N, std::size_t M>
-Matrix2D<T, N, M>::Matrix2D(const value_type& initValue)
-    : data_(kDataSize, initValue) {}
+Matrix2D<T, N, M>::Matrix2D(const value_type& initValue) : data_(kDataSize, initValue) {}
 
 template <typename T, std::size_t N, std::size_t M>
-auto Matrix2D<T, N, M>::getValue(const std::size_t i, const std::size_t j) const
-    noexcept -> const value_type& {
+auto Matrix2D<T, N, M>::getValue(const std::size_t i, const std::size_t j) const noexcept -> const value_type& {
   return data_[GetLinearIndex(i, j)];
 }
 
 template <typename T, std::size_t N, std::size_t M>
-void Matrix2D<T, N, M>::setValue(
-    const std::size_t i,
-    const std::size_t j,
-    value_type value) noexcept(noexcept(std::
-                                            is_nothrow_move_assignable_v<
-                                                value_type>)) {
+void Matrix2D<T, N, M>::setValue(const std::size_t i,
+                                 const std::size_t j,
+                                 value_type value) noexcept(noexcept(std::is_nothrow_move_assignable_v<value_type>)) {
   data_[GetLinearIndex(i, j)] = std::move(value);
 }
 
 template <typename T, std::size_t N, std::size_t M>
-auto Matrix2D<T, N, M>::getMutableValue(const std::size_t i,
-                                        const std::size_t j) noexcept
-    -> value_type* {
+auto Matrix2D<T, N, M>::getMutableValue(const std::size_t i, const std::size_t j) noexcept -> value_type* {
   return &(data_[GetLinearIndex(i, j)]);
 }
 

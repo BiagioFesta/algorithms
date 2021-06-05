@@ -31,9 +31,7 @@ namespace algorithms {
  *
  *  \note https://leetcode.com/problems/bus-routes/
  */
-int BusRoutes(const std::vector<std::vector<int>>& routes,
-              const int S,
-              const int T);
+int BusRoutes(const std::vector<std::vector<int>>& routes, const int S, const int T);
 
 }  // namespace algorithms
 

@@ -24,8 +24,7 @@ namespace algorithms::test {
 
 TEST(DynamicProgramming, SherlockAndCost) {
   using Test = std::pair<std::vector<int>, int>;
-  const std::vector<Test> testCases = {{{1, 2, 3}, 2},
-                                       {{10, 1, 10, 1, 10}, 36}};
+  const std::vector<Test> testCases = {{{1, 2, 3}, 2}, {{10, 1, 10, 1, 10}, 36}};
 
   for (const auto& [v, expt] : testCases) {
     ASSERT_EQ(SherlockAndCost(v), expt);

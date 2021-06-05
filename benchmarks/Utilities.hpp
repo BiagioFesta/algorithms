@@ -35,7 +35,9 @@ struct RndIntGenerator {
 
   explicit RndIntGenerator(Seed_t iSeed) : rndEngine_(iSeed) {}
 
-  value_type operator()() noexcept { return rndDistribution_(rndEngine_); }
+  value_type operator()() noexcept {
+    return rndDistribution_(rndEngine_);
+  }
 
   RndEngine_t rndEngine_;
   std::uniform_int_distribution<value_type> rndDistribution_;
@@ -51,15 +53,16 @@ struct RndRealGenerator {
 
   explicit RndRealGenerator(Seed_t seed) : rndEngine_(seed) {}
 
-  value_type operator()() noexcept { return rndDistribution_(rndEngine_); }
+  value_type operator()() noexcept {
+    return rndDistribution_(rndEngine_);
+  }
 
   RndEngine_t rndEngine_;
   std::uniform_real_distribution<value_type> rndDistribution_;
 };
 
 template <typename T, typename RndGenerator = RndIntGenerator<T>>
-std::vector<T> GenerateVector(const std::size_t iSize,
-                              typename RndGenerator::Seed_t iSeed = 0) {
+std::vector<T> GenerateVector(const std::size_t iSize, typename RndGenerator::Seed_t iSeed = 0) {
   RndGenerator aRndGenerator{iSeed};
 
   std::vector<T> aVector(iSize);

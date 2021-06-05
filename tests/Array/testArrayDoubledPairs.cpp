@@ -24,12 +24,11 @@ namespace algorithms::test {
 
 TEST(Array, ArrayDoubledPairs) {
   using Test = std::pair<std::vector<int>, bool>;
-  const std::vector<Test> testCases = {
-      {{-8, -4, -2, -1, 0, 0, 1, 2, 4, 8}, true},
-      {{3, 1, 3, 6}, false},
-      {{2, 1, 2, 6}, false},
-      {{4, -2, 2, -4}, true},
-      {{1, 2, 4, 16, 8, 4}, false}};
+  const std::vector<Test> testCases = {{{-8, -4, -2, -1, 0, 0, 1, 2, 4, 8}, true},
+                                       {{3, 1, 3, 6}, false},
+                                       {{2, 1, 2, 6}, false},
+                                       {{4, -2, 2, -4}, true},
+                                       {{1, 2, 4, 16, 8, 4}, false}};
 
   for (const auto& [v, expt] : testCases) {
     ASSERT_EQ(ArrayDoubledPairs(v), expt);

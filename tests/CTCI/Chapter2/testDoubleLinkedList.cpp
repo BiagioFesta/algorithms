@@ -44,7 +44,9 @@ class DoubleLinkedListTest : public ::testing::Test {
 
 namespace algorithms::test {
 
-TEST_F(DoubleLinkedListTest, StartFromEmpty) { ASSERT_EQ(_list.size(), 0ull); }
+TEST_F(DoubleLinkedListTest, StartFromEmpty) {
+  ASSERT_EQ(_list.size(), 0ull);
+}
 
 TEST_F(DoubleLinkedListTest, PushOneValue) {
   _list.push_back(kValue);

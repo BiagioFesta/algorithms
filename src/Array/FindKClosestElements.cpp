@@ -22,9 +22,7 @@
 
 namespace algorithms {
 
-std::vector<int> FindKClosestElements(const std::vector<int>& arr,
-                                      const int k,
-                                      const int x) {
+std::vector<int> FindKClosestElements(const std::vector<int>& arr, const int k, const int x) {
   assert(k >= 0);
   assert(std::is_sorted(arr.cbegin(), arr.cend()));
   assert(static_cast<std::size_t>(k) <= arr.size());

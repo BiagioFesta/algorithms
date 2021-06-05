@@ -94,8 +94,7 @@ void PriorityQueue<T, Comparator>::push(value_type iValue) {
 }
 
 template <typename T, typename Comparator>
-const typename PriorityQueue<T, Comparator>::value_type&
-PriorityQueue<T, Comparator>::top() const noexcept {
+const typename PriorityQueue<T, Comparator>::value_type& PriorityQueue<T, Comparator>::top() const noexcept {
   return _data.front();
 }
 
@@ -149,14 +148,12 @@ void PriorityQueue<T, Comparator>::downHeapify(int iIndexNode) {
 }
 
 template <typename T, typename Comparator>
-int PriorityQueue<T, Comparator>::getParentIndex(int iIndexNode) const
-    noexcept {
+int PriorityQueue<T, Comparator>::getParentIndex(int iIndexNode) const noexcept {
   return (iIndexNode - 1) / 2;
 }
 
 template <typename T, typename Comparator>
-int PriorityQueue<T, Comparator>::getLeftChildIndex(int iIndexNode) const
-    noexcept {
+int PriorityQueue<T, Comparator>::getLeftChildIndex(int iIndexNode) const noexcept {
   return iIndexNode * 2 + 1;
 }
 

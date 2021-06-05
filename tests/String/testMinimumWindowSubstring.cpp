@@ -24,8 +24,7 @@ namespace algorithms::test {
 
 TEST(String, MinimumWindowSubstring) {
   using Test = std::tuple<std::string, std::string, std::string>;
-  const std::vector<Test> testCases = {
-      {"AB", "A", "A"}, {"ABCDE", "T", ""}, {"ADOBECODEBANC", "ABC", "BANC"}};
+  const std::vector<Test> testCases = {{"AB", "A", "A"}, {"ABCDE", "T", ""}, {"ADOBECODEBANC", "ABC", "BANC"}};
 
   for (const auto& [s, t, expt] : testCases) {
     ASSERT_EQ(MinimumWindowSubstring(s, t), expt);

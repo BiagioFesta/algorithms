@@ -24,9 +24,8 @@ namespace algorithms::test {
 
 TEST(String, CountSegment) {
   using Test = std::pair<const char*, int>;
-  const std::vector<Test> testCases = {{"Hello, my name is Biagio", 5},
-                                       {"    Hello, my name is Biagio    ", 5},
-                                       {"OneSingleWord", 1}};
+  const std::vector<Test> testCases = {
+      {"Hello, my name is Biagio", 5}, {"    Hello, my name is Biagio    ", 5}, {"OneSingleWord", 1}};
 
   for (const auto& [str, expt] : testCases) {
     ASSERT_EQ(CountSegment(str), expt);

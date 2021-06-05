@@ -25,11 +25,8 @@ namespace algorithms::test {
 
 TEST(String, BiggerIsGreater) {
   using Test = std::pair<std::string, std::string>;
-  const std::vector<Test> testCases{{"dkhc", "hcdk"},
-                                    {"ab", "ba"},
-                                    {"bb", "no answer"},
-                                    {"hefg", "hegf"},
-                                    {"dhck", "dhkc"}};
+  const std::vector<Test> testCases{
+      {"dkhc", "hcdk"}, {"ab", "ba"}, {"bb", "no answer"}, {"hefg", "hegf"}, {"dhck", "dhkc"}};
 
   for (const auto& [str, expt] : testCases) {
     ASSERT_EQ(BiggerIsGreater(str), expt);

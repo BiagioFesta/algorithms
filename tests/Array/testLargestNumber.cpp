@@ -25,8 +25,7 @@ namespace algorithms::test {
 
 TEST(Array, LargestNumber) {
   using Test = std::pair<std::vector<int>, std::string>;
-  const std::vector<Test> testCases = {{{3, 30, 34, 5, 9}, "9534330"},
-                                       {{0, 0, 0, 0, 0}, "0"}};
+  const std::vector<Test> testCases = {{{3, 30, 34, 5, 9}, "9534330"}, {{0, 0, 0, 0, 0}, "0"}};
 
   for (const auto& [v, expt] : testCases) {
     ASSERT_EQ(LargestNumber(v), expt);

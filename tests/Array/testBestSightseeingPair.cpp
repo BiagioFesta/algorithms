@@ -24,8 +24,7 @@ namespace algorithms::test {
 
 TEST(Array, BestSightseeingPair) {
   using Test = std::pair<std::vector<int>, int>;
-  const std::vector<Test> testCases = {{{8, 1, 5, 2, 6}, 11},
-                                       {{8, 1, 5, 2, 6, 100}, 105}};
+  const std::vector<Test> testCases = {{{8, 1, 5, 2, 6}, 11}, {{8, 1, 5, 2, 6, 100}, 105}};
 
   for (const auto& [data, expt] : testCases) {
     ASSERT_EQ(BestSightseeingPair(data), expt);

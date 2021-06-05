@@ -34,15 +34,13 @@ struct Tester {
   const int _h;
 };
 
-Tester::Tester(const std::vector<int>& piles, const int H)
-    : _piles(piles), _h(H) {}
+Tester::Tester(const std::vector<int>& piles, const int H) : _piles(piles), _h(H) {}
 
 bool Tester::operator()(const int solution) const {
   int timeSpent = 0;
 
   for (const int value : _piles) {
-    timeSpent += static_cast<int>(
-        std::ceil(static_cast<double>(value) / static_cast<double>(solution)));
+    timeSpent += static_cast<int>(std::ceil(static_cast<double>(value) / static_cast<double>(solution)));
   }
 
   return timeSpent <= _h;

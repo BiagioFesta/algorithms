@@ -22,11 +22,10 @@
 
 namespace algorithms {
 
-std::vector<int> FilterRestaurants(
-    const std::vector<std::vector<int>>& restaurants,
-    int veganFriendly,
-    int maxPrice,
-    int maxDistance) {
+std::vector<int> FilterRestaurants(const std::vector<std::vector<int>>& restaurants,
+                                   int veganFriendly,
+                                   int maxPrice,
+                                   int maxDistance) {
   std::priority_queue<std::pair<int, int>> ranks;
   std::vector<int> sortedIds;
 

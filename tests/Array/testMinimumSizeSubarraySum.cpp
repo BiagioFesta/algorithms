@@ -34,8 +34,7 @@ TEST(Array, MinimumSizeSubarraySum) {
   const std::vector<int> kData4 = {};
   ASSERT_EQ(MinimumSizeSubarraySum(kData4.data(), kData4.size(), 100), 0);
 
-  const std::vector<int> kData5 = {
-      12, 28, 83, 4, 25, 26, 25, 2, 25, 25, 25, 12};
+  const std::vector<int> kData5 = {12, 28, 83, 4, 25, 26, 25, 2, 25, 25, 25, 12};
   ASSERT_EQ(MinimumSizeSubarraySum(kData5.data(), kData5.size(), 213), 8);
 }
 

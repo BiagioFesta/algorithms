@@ -33,9 +33,7 @@ namespace algorithms {
  *
  *  \note https://leetcode.com/problems/combination-sum/
  */
-std::vector<std::vector<int>> CombinationSum(
-    const std::vector<int>& iCandidates,
-    const int iTarget);
+std::vector<std::vector<int>> CombinationSum(const std::vector<int>& iCandidates, const int iTarget);
 
 }  // namespace algorithms
 

@@ -30,8 +30,7 @@ int JumpGame2(const std::vector<int>& iNumbers) {
 
   while (currentIndex < kSizeMinusOne) {
     assert(iNumbers[currentIndex] > 0);
-    const int kPossibleChoices =
-        std::min(iNumbers[currentIndex], kSizeMinusOne - currentIndex);
+    const int kPossibleChoices = std::min(iNumbers[currentIndex], kSizeMinusOne - currentIndex);
 
     if (currentIndex + kPossibleChoices < kSizeMinusOne) {
       int maxValue = 0;

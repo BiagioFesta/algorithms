@@ -29,8 +29,7 @@ namespace algorithms {
  *  \note Complexity  -->  Time: O(N)   Space: O(1)
  *  \note https://leetcode.com/problems/maximum-of-absolute-value-expression/
  */
-int MaximumAbsoluteValueExpression(const std::vector<int>& arr1,
-                                   const std::vector<int>& arr2);
+int MaximumAbsoluteValueExpression(const std::vector<int>& arr1, const std::vector<int>& arr2);
 
 }  // namespace algorithms
 

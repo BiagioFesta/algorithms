@@ -28,10 +28,7 @@ int SherlockAndCost(const std::vector<int>& iUpperBounds) {
 
   for (std::size_t i = 0u; i < iUpperBounds.size(); ++i) {
     L[1] = i == 0 ? 0 : std::max(L[0], H[0] + iUpperBounds[i - 1] - 1);
-    H[1] = i == 0 ? 0
-                  : std::max(
-                        H[0] + std::abs(iUpperBounds[i] - iUpperBounds[i - 1]),
-                        L[0] + iUpperBounds[i] - 1);
+    H[1] = i == 0 ? 0 : std::max(H[0] + std::abs(iUpperBounds[i] - iUpperBounds[i - 1]), L[0] + iUpperBounds[i] - 1);
     L[0] = L[1];
     H[0] = H[1];
   }

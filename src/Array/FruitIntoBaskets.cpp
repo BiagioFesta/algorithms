@@ -40,8 +40,7 @@ int FruitIntoBaskets(const std::vector<int>& tree) {
 
     if (j < tree.size()) {
       secondType = tree[j];
-      while (j < tree.size() &&
-             (tree[j] == firstType || tree[j] == secondType)) {
+      while (j < tree.size() && (tree[j] == firstType || tree[j] == secondType)) {
         ++j;
       }
     }

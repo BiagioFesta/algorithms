@@ -16,7 +16,6 @@
 
 */
 #include <gtest/gtest.h>
-
 #include <algorithm>
 #include <algorithms/BackTracking/LetterCombinationsPhoneNumber.hpp>
 #include <utility>
@@ -26,13 +25,11 @@ namespace algorithms::test {
 
 TEST(BackTracking, LetterCombinationsPhoneNumber) {
   using Test = std::pair<std::string, std::vector<std::string>>;
-  const std::vector<Test> testCases = {
-      {"23", {"ad", "ae", "af", "bd", "be", "bf", "cd", "ce", "cf"}}, {"", {}}};
+  const std::vector<Test> testCases = {{"23", {"ad", "ae", "af", "bd", "be", "bf", "cd", "ce", "cf"}}, {"", {}}};
 
   for (const auto& [digits, expt] : testCases) {
     const auto ans = LetterCombinationsPhoneNumber(digits);
-    ASSERT_TRUE(std::is_permutation(
-        ans.cbegin(), ans.cend(), expt.cbegin(), expt.cend()));
+    ASSERT_TRUE(std::is_permutation(ans.cbegin(), ans.cend(), expt.cbegin(), expt.cend()));
   }
 }
 

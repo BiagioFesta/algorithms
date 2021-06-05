@@ -26,15 +26,12 @@ namespace algorithms::test {
 
 TEST(String, FindAllAnagramsString) {
   using Test = std::tuple<std::string, std::string, std::vector<int>>;
-  const std::vector<Test> testCases = {{"cbaebabacd", "abc", {0, 6}},
-                                       {"abc", "cba", {0}},
-                                       {"dabc", "cba", {1}},
-                                       {"", "a", {}}};
+  const std::vector<Test> testCases = {
+      {"cbaebabacd", "abc", {0, 6}}, {"abc", "cba", {0}}, {"dabc", "cba", {1}}, {"", "a", {}}};
 
   for (const auto& [s, p, expt] : testCases) {
     const auto result = FindAllAnagramsString(s, p);
-    ASSERT_TRUE(std::is_permutation(
-        result.cbegin(), result.cend(), expt.cbegin(), expt.cend()));
+    ASSERT_TRUE(std::is_permutation(result.cbegin(), result.cend(), expt.cbegin(), expt.cend()));
   }
 }
 

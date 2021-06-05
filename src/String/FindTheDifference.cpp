@@ -20,8 +20,7 @@
 
 namespace algorithms {
 
-char FindTheDifference(const std::string& iStringS,
-                       const std::string& iStringT) {
+char FindTheDifference(const std::string& iStringS, const std::string& iStringT) {
   static constexpr int kSizeASCII = 1 << 8;
 
   int freqCounter[kSizeASCII]{};

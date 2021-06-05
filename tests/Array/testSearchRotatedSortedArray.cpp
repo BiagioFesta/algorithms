@@ -16,7 +16,6 @@
 
 */
 #include <gtest/gtest.h>
-
 #include <algorithms/Array/SearchRotatedSortedArray.hpp>
 #include <tuple>
 #include <vector>

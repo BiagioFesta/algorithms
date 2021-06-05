@@ -25,11 +25,10 @@ namespace algorithms::test {
 
 TEST(String, RepeatedDNASequences) {
   using Test = std::pair<std::string, std::vector<std::string>>;
-  const std::vector<Test> testCases = {
-      {"AAAAACCCCCAAAAACCCCCCAAAAAGGGTTT", {"AAAAACCCCC", "CCCCCAAAAA"}},
-      {"AAAAAAAAAAA", {"AAAAAAAAAA"}},
-      {"AAAAAAAAAAAA", {"AAAAAAAAAA"}},
-      {"AAA", {}}};
+  const std::vector<Test> testCases = {{"AAAAACCCCCAAAAACCCCCCAAAAAGGGTTT", {"AAAAACCCCC", "CCCCCAAAAA"}},
+                                       {"AAAAAAAAAAA", {"AAAAAAAAAA"}},
+                                       {"AAAAAAAAAAAA", {"AAAAAAAAAA"}},
+                                       {"AAA", {}}};
 
   for (const auto& [s, expt] : testCases) {
     ASSERT_EQ(RepeatedDNASequences(s), expt);

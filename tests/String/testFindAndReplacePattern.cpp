@@ -25,15 +25,12 @@
 namespace algorithms::test {
 
 TEST(String, FindAndReplacePattern) {
-  using Test = std::
-      tuple<std::vector<std::string>, std::string, std::vector<std::string>>;
-  const std::vector<Test> testCases = {
-      {{"abc", "deq", "mee", "aqq", "dkd", "ccc"}, "abb", {"mee", "aqq"}}};
+  using Test = std::tuple<std::vector<std::string>, std::string, std::vector<std::string>>;
+  const std::vector<Test> testCases = {{{"abc", "deq", "mee", "aqq", "dkd", "ccc"}, "abb", {"mee", "aqq"}}};
 
   for (const auto& [words, pattern, expt] : testCases) {
     const auto aResult = FindAndReplacePattern(words, pattern);
-    ASSERT_TRUE(std::is_permutation(
-        aResult.cbegin(), aResult.cend(), expt.cbegin(), expt.cend()));
+    ASSERT_TRUE(std::is_permutation(aResult.cbegin(), aResult.cend(), expt.cbegin(), expt.cend()));
   }
 }
 

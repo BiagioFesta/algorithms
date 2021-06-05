@@ -23,8 +23,7 @@ namespace algorithms::test {
 
 TEST(Misc, IsPerfectSquare) {
   using Test = std::pair<int, bool>;
-  const std::vector<Test> testCases = {
-      {16, true}, {14, false}, {1, true}, {64, true}, {2147395600, true}};
+  const std::vector<Test> testCases = {{16, true}, {14, false}, {1, true}, {64, true}, {2147395600, true}};
 
   for (const auto& [num, expt] : testCases) {
     ASSERT_EQ(IsPerfectSquare(num), expt);

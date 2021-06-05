@@ -43,10 +43,9 @@ int PalindromePartitioningII(const std::string& str) {
   const int size = str.size();
 
   std::vector<bool> palindromes(size * size);
-  for (int i = 0; i < size; ++i) {    // O(N)
-    for (int j = i; j < size; ++j) {  // O(N)
-      palindromes[i * size + j] =
-          ::IsPalindrome(str.c_str() + i, str.c_str() + j);  // O(N)
+  for (int i = 0; i < size; ++i) {                                                   // O(N)
+    for (int j = i; j < size; ++j) {                                                 // O(N)
+      palindromes[i * size + j] = ::IsPalindrome(str.c_str() + i, str.c_str() + j);  // O(N)
     }
   }
 

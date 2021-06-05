@@ -24,9 +24,8 @@ namespace algorithms::test {
 
 TEST(Array, IsPermutation) {
   using Test = std::tuple<std::vector<int>, std::vector<int>, bool>;
-  const std::vector<Test> testCases = {{{1, 2, 3}, {3, 1, 2}, true},
-                                       {{1, 2, 3}, {1, 2}, false},
-                                       {{1, 2, 3}, {3, 2, 4}, false}};
+  const std::vector<Test> testCases = {
+      {{1, 2, 3}, {3, 1, 2}, true}, {{1, 2, 3}, {1, 2}, false}, {{1, 2, 3}, {3, 2, 4}, false}};
 
   for (const auto& [v1, v2, expt] : testCases) {
     ASSERT_EQ(IsPermutation(v1, v2), expt);

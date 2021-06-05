@@ -30,9 +30,7 @@ namespace algorithms {
  *
  *  \note https://leetcode.com/problems/network-delay-time/
  */
-int NetworkDelayTime(const std::vector<std::vector<int>>& times,
-                     const int N,
-                     const int K);
+int NetworkDelayTime(const std::vector<std::vector<int>>& times, const int N, const int K);
 
 }  // namespace algorithms
 

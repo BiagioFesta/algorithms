@@ -53,8 +53,7 @@ namespace algorithms {
  *
  *  \note https://leetcode.com/problems/freedom-trail/description/
  */
-std::size_t FindRotateSteps(const std::string_view iRing,
-                            const std::string_view iKey);
+std::size_t FindRotateSteps(const std::string_view iRing, const std::string_view iKey);
 
 }  // namespace algorithms
 

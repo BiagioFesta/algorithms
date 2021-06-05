@@ -24,10 +24,8 @@ namespace algorithms::test {
 
 TEST(Array, LongestMountainArray) {
   using Test = std::pair<std::vector<int>, int>;
-  const std::vector<Test> testCases = {{{875, 884, 239, 731, 723, 685}, 4},
-                                       {{2, 1, 4, 7, 3, 2, 5}, 5},
-                                       {{2, 2, 2}, 0},
-                                       {{3, 1, 0, 2, 1, 0}, 4}};
+  const std::vector<Test> testCases = {
+      {{875, 884, 239, 731, 723, 685}, 4}, {{2, 1, 4, 7, 3, 2, 5}, 5}, {{2, 2, 2}, 0}, {{3, 1, 0, 2, 1, 0}, 4}};
 
   for (const auto& [v, expt] : testCases) {
     ASSERT_EQ(LongestMountainArray(v), expt);

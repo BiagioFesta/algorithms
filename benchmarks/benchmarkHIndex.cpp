@@ -32,8 +32,7 @@ std::vector<int> generatePositiveInts(const std::size_t iSize) {
   using algorithms::benchmark::GenerateVector;
   using PositiveInt_t = std::uint16_t;
 
-  static_assert(std::numeric_limits<PositiveInt_t>::max() <=
-                std::numeric_limits<int>::max());
+  static_assert(std::numeric_limits<PositiveInt_t>::max() <= std::numeric_limits<int>::max());
 
   auto aVector = GenerateVector<PositiveInt_t>(iSize);
   return {aVector.cbegin(), aVector.cend()};

@@ -39,9 +39,7 @@ int GeneDistance(const char* gene, const char* geneRef) noexcept {
 
 namespace algorithms {
 
-int MinimumGeneticMutation(const std::string& start,
-                           const std::string& end,
-                           const std::vector<std::string>& bank) {
+int MinimumGeneticMutation(const std::string& start, const std::string& end, const std::vector<std::string>& bank) {
   assert(start.size() == ::kGeneSize);
   assert(end.size() == ::kGeneSize);
 

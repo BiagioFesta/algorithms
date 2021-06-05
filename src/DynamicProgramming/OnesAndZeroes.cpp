@@ -22,9 +22,7 @@
 
 namespace algorithms {
 
-int OnesAndZeroes(const std::vector<std::string>& strs,
-                  const int m,
-                  const int n) {
+int OnesAndZeroes(const std::vector<std::string>& strs, const int m, const int n) {
   const int Mplus = m + 1;
   const int Nplus = n + 1;
   std::vector<int> table(Mplus * Nplus);
@@ -40,9 +38,7 @@ int OnesAndZeroes(const std::vector<std::string>& strs,
 
     for (int i = m; i >= numZeroes; --i) {  // O(M)
       for (int j = n; j >= numOnes; --j) {  // O(N)
-        table[i * Nplus + j] =
-            std::max(table[i * Nplus + j],
-                     table[(i - numZeroes) * Nplus + (j - numOnes)] + 1);
+        table[i * Nplus + j] = std::max(table[i * Nplus + j], table[(i - numZeroes) * Nplus + (j - numOnes)] + 1);
       }
     }
   }

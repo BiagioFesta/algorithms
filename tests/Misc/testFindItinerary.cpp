@@ -24,19 +24,12 @@
 namespace algorithms::test {
 
 TEST(Misc, FindItinerary) {
-  using Test = std::pair<std::vector<std::vector<std::string>>,
-                         std::vector<std::string>>;
+  using Test = std::pair<std::vector<std::vector<std::string>>, std::vector<std::string>>;
   const std::vector<Test> testCases = {
-      {{{"JFK", "AAA"}, {"JFK", "BBB"}, {"BBB", "JFK"}},
-       {"JFK", "BBB", "JFK", "AAA"}},
-      {{{"JFK", "SFO"},
-        {"JFK", "ATL"},
-        {"SFO", "ATL"},
-        {"ATL", "JFK"},
-        {"ATL", "SFO"}},
+      {{{"JFK", "AAA"}, {"JFK", "BBB"}, {"BBB", "JFK"}}, {"JFK", "BBB", "JFK", "AAA"}},
+      {{{"JFK", "SFO"}, {"JFK", "ATL"}, {"SFO", "ATL"}, {"ATL", "JFK"}, {"ATL", "SFO"}},
        {"JFK", "ATL", "JFK", "SFO", "ATL", "SFO"}},
-      {{{"JFK", "KUL"}, {"JFK", "NRT"}, {"NRT", "JFK"}},
-       {"JFK", "NRT", "JFK", "KUL"}},
+      {{{"JFK", "KUL"}, {"JFK", "NRT"}, {"NRT", "JFK"}}, {"JFK", "NRT", "JFK", "KUL"}},
       {{{"EZE", "TIA"},
         {"EZE", "AXA"},
         {"AUA", "EZE"},
@@ -49,19 +42,7 @@ TEST(Misc, FindItinerary) {
         {"ANU", "EZE"},
         {"ANU", "EZE"},
         {"TIA", "AUA"}},
-       {"JFK",
-        "ANU",
-        "EZE",
-        "AXA",
-        "TIA",
-        "AUA",
-        "EZE",
-        "JFK",
-        "ANU",
-        "EZE",
-        "TIA",
-        "JFK",
-        "AUA"}}};
+       {"JFK", "ANU", "EZE", "AXA", "TIA", "AUA", "EZE", "JFK", "ANU", "EZE", "TIA", "JFK", "AUA"}}};
 
   for (const auto& [tickets, expt] : testCases) {
     ASSERT_EQ(FindItinerary(tickets), expt);

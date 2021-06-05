@@ -24,9 +24,8 @@ namespace algorithms::test {
 
 TEST(Graph, BusRoutes) {
   using Test = std::tuple<std::vector<std::vector<int>>, int, int, int>;
-  const std::vector<Test> testCases = {{{{1, 7}, {3, 5}}, 5, 5, 0},
-                                       {{{1, 2, 7}, {3, 6, 7}}, 1, 6, 2},
-                                       {{{1, 2, 3}, {3, 4, 5}}, 1, 6, -1}};
+  const std::vector<Test> testCases = {
+      {{{1, 7}, {3, 5}}, 5, 5, 0}, {{{1, 2, 7}, {3, 6, 7}}, 1, 6, 2}, {{{1, 2, 3}, {3, 4, 5}}, 1, 6, -1}};
 
   for (const auto& [routes, s, t, expt] : testCases) {
     ASSERT_EQ(BusRoutes(routes, s, t), expt);

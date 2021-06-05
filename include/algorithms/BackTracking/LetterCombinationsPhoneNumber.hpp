@@ -34,8 +34,7 @@ namespace algorithms {
  *  \note  Complexity  ->  Time: O(2^N)   Space: O(2^N)
  *  \note https://leetcode.com/problems/letter-combinations-of-a-phone-number/
  */
-std::vector<std::string> LetterCombinationsPhoneNumber(
-    const std::string& digits);
+std::vector<std::string> LetterCombinationsPhoneNumber(const std::string& digits);
 
 }  // namespace algorithms
 

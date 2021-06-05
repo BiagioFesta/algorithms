@@ -15,30 +15,25 @@
   along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 */
-#include <algorithms/Array/ClimbingLeaderboard.hpp>
 #include <algorithm>
+#include <algorithms/Array/ClimbingLeaderboard.hpp>
 #include <iterator>
 #include <set>
 #include <vector>
 
 namespace algorithms {
 
-std::vector<int> climbingLeaderboard(const std::vector<int>& iLeaderBoard,
-                                     const std::vector<int>& iAliceScores) {
-  const std::set<int> aLeaderBoardTree(iLeaderBoard.cbegin(),
-                                       iLeaderBoard.cend());
-  const std::vector<int> aLeaderBoardPurged(aLeaderBoardTree.cbegin(),
-                                            aLeaderBoardTree.cend());
+std::vector<int> climbingLeaderboard(const std::vector<int>& iLeaderBoard, const std::vector<int>& iAliceScores) {
+  const std::set<int> aLeaderBoardTree(iLeaderBoard.cbegin(), iLeaderBoard.cend());
+  const std::vector<int> aLeaderBoardPurged(aLeaderBoardTree.cbegin(), aLeaderBoardTree.cend());
   const int aPosTotal = aLeaderBoardPurged.size();
 
   std::vector<int> aPositions;
   aPositions.reserve(iAliceScores.size());
 
   for (const int aGameScore : iAliceScores) {
-    const auto aBoundIt = std::upper_bound(
-        aLeaderBoardPurged.cbegin(), aLeaderBoardPurged.cend(), aGameScore);
-    const auto aPos =
-        aPosTotal + 1 - std::distance(aLeaderBoardPurged.cbegin(), aBoundIt);
+    const auto aBoundIt = std::upper_bound(aLeaderBoardPurged.cbegin(), aLeaderBoardPurged.cend(), aGameScore);
+    const auto aPos = aPosTotal + 1 - std::distance(aLeaderBoardPurged.cbegin(), aBoundIt);
     aPositions.push_back(aPos);
   }
   return aPositions;

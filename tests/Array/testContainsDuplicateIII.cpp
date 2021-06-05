@@ -29,10 +29,7 @@ TEST(Array, ContainsDuplicateIII) {
       {{1, 2, 3, 1}, 3, 0, true},
       {{1, 0, 1, 1}, 1, 2, true},
       {{1, 5, 9, 1, 5, 9}, 2, 3, false},
-      {{std::numeric_limits<int>::min(), std::numeric_limits<int>::min() + 1},
-       3,
-       3,
-       true},
+      {{std::numeric_limits<int>::min(), std::numeric_limits<int>::min() + 1}, 3, 3, true},
       {{1, 2, 3}, 0, 0, false}
 
   };

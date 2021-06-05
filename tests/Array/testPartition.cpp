@@ -27,9 +27,7 @@ namespace algorithms::test {
 TEST(Array, Partition) {
   using Test = std::pair<std::vector<int>, std::function<bool(int)>>;
 
-  static const auto isLessThanFive = [](const int iNumber) {
-    return iNumber < 5;
-  };
+  static const auto isLessThanFive = [](const int iNumber) { return iNumber < 5; };
 
   std::vector<Test> testCases = {{{1, 2, 3, 4, 5, 6}, isLessThanFive},
                                  {{1, 2, 10, 11, 3}, isLessThanFive},

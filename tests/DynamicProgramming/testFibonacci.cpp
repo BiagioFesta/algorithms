@@ -24,8 +24,7 @@ namespace algorithms::test {
 
 TEST(DynamicProgramming, Fibonacci) {
   using Test = std::pair<int, int>;
-  static const std::vector<Test> testCases = {
-      {0, 0}, {1, 1}, {2, 1}, {3, 2}, {5, 5}, {10, 55}};
+  static const std::vector<Test> testCases = {{0, 0}, {1, 1}, {2, 1}, {3, 2}, {5, 5}, {10, 55}};
 
   for (const auto& [n, r] : testCases) {
     ASSERT_EQ(Fibonacci(n), r);

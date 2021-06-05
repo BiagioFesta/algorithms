@@ -24,9 +24,7 @@
 
 namespace algorithms {
 
-int BusRoutes(const std::vector<std::vector<int>>& routes,
-              const int S,
-              const int T) {
+int BusRoutes(const std::vector<std::vector<int>>& routes, const int S, const int T) {
   using Stop2Bus = std::unordered_map<int, std::unordered_set<std::size_t>>;
   using Queue = std::queue<std::pair<int, int>>;
   using VisitedSet = std::unordered_set<int>;

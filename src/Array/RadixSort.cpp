@@ -31,10 +31,8 @@ void RadixSort(std::vector<unsigned int>* ioVector) {
   constexpr std::size_t kSizeBucket = 1 << kBitsPartition;
   constexpr std::size_t kBaseMask = kSizeBucket - 1;
 
-  static_assert(sizeof(unsigned int) % kBytesPartition == 0,
-                "Cannot Paritioning uniform");
-  static_assert(kBytesPartition <= sizeof(std::size_t),
-                "Partition size too big");
+  static_assert(sizeof(unsigned int) % kBytesPartition == 0, "Cannot Paritioning uniform");
+  static_assert(kBytesPartition <= sizeof(std::size_t), "Partition size too big");
 
   std::array<std::size_t, kSizeBucket> aBucket;
   std::vector<unsigned int> aPartialSort;

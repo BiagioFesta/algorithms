@@ -24,20 +24,15 @@
 namespace algorithms::test {
 
 TEST(Graph, CourseScheduleII) {
-  using Test = std::
-      tuple<int, std::vector<std::vector<int>>, std::vector<std::vector<int>>>;
-  const std::vector<Test> testCases = {
-      {2, {{1, 0}}, {{0, 1}}},
-      {4, {{1, 0}, {2, 0}, {3, 1}, {3, 2}}, {{0, 1, 2, 3}, {0, 2, 1, 3}}},
-      {2, {{1, 0}, {0, 1}}, {{}}},
-      {3, {{1, 0}, {2, 0}}, {{0, 2, 1}, {0, 1, 2}}}};
+  using Test = std::tuple<int, std::vector<std::vector<int>>, std::vector<std::vector<int>>>;
+  const std::vector<Test> testCases = {{2, {{1, 0}}, {{0, 1}}},
+                                       {4, {{1, 0}, {2, 0}, {3, 1}, {3, 2}}, {{0, 1, 2, 3}, {0, 2, 1, 3}}},
+                                       {2, {{1, 0}, {0, 1}}, {{}}},
+                                       {3, {{1, 0}, {2, 0}}, {{0, 2, 1}, {0, 1, 2}}}};
 
   for (const auto& [numCourses, deps, expts] : testCases) {
     const auto result = CourseScheduleII(numCourses, deps);
-    ASSERT_TRUE(
-        std::any_of(expts.cbegin(), expts.cend(), [&result](const auto& expt) {
-          return result == expt;
-        }));
+    ASSERT_TRUE(std::any_of(expts.cbegin(), expts.cend(), [&result](const auto& expt) { return result == expt; }));
   }
 }
 

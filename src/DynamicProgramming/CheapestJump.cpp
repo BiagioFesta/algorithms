@@ -23,8 +23,7 @@
 
 namespace algorithms {
 
-std::vector<int> CheapestJump(const std::vector<int>& iVector,
-                              const int iMaxJump) {
+std::vector<int> CheapestJump(const std::vector<int>& iVector, const int iMaxJump) {
   assert(iMaxJump >= 0);
   assert(!iVector.empty());
 

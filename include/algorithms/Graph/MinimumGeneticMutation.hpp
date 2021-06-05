@@ -43,9 +43,7 @@ namespace algorithms {
  *  \note  Complexity  -->  Time: O(N)    Space:O(N)  where N size of bank
  *  \note https://leetcode.com/problems/minimum-genetic-mutation/
  */
-int MinimumGeneticMutation(const std::string& start,
-                           const std::string& end,
-                           const std::vector<std::string>& bank);
+int MinimumGeneticMutation(const std::string& start, const std::string& end, const std::vector<std::string>& bank);
 
 }  // namespace algorithms
 

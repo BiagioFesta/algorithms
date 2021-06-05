@@ -28,17 +28,14 @@ namespace {
  *        optimal!
  */
 bool AllValuesAreDistinct(const std::vector<int>& v) {
-  return std::all_of(v.cbegin(), v.cend(), [&v](const int e) {
-    return std::count(v.cbegin(), v.cend(), e) == 1;
-  });
+  return std::all_of(v.cbegin(), v.cend(), [&v](const int e) { return std::count(v.cbegin(), v.cend(), e) == 1; });
 }
 
 }  // anonymous namespace
 
 namespace algorithms {
 
-bool ValidateStackSequences(const std::vector<int>& pushed,
-                            const std::vector<int>& popped) {
+bool ValidateStackSequences(const std::vector<int>& pushed, const std::vector<int>& popped) {
   assert(::AllValuesAreDistinct(pushed) && ::AllValuesAreDistinct(popped));
 
   if (pushed.size() != popped.size()) {

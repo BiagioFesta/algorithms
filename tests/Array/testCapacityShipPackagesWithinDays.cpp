@@ -24,10 +24,8 @@ namespace algorithms::test {
 
 TEST(Array, CapacityShipPackagesWithinDays) {
   using Test = std::tuple<std::vector<int>, int, int>;
-  const std::vector<Test> testCases = {{{1, 2, 3, 1, 1}, 4, 3},
-                                       {{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}, 5, 15},
-                                       {{}, 1, 0},
-                                       {{}, 0, 0}};
+  const std::vector<Test> testCases = {
+      {{1, 2, 3, 1, 1}, 4, 3}, {{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}, 5, 15}, {{}, 1, 0}, {{}, 0, 0}};
 
   for (const auto& [weights, d, expt] : testCases) {
     ASSERT_EQ(CapacityShipPackagesWithinDays(weights, d), expt);

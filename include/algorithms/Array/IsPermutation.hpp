@@ -25,8 +25,7 @@ namespace algorithms {
  *  other.
  *  \note   Complexity ->  Time: O(N)         Space: O(N)  assuming N == M
  */
-bool IsPermutation(const std::vector<int>& iVectA,
-                   const std::vector<int>& iVectB);
+bool IsPermutation(const std::vector<int>& iVectA, const std::vector<int>& iVectB);
 
 }  // namespace algorithms
 

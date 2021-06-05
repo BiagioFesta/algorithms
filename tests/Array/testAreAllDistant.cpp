@@ -24,11 +24,8 @@ namespace algorithms::test {
 
 TEST(Array, AreAllDistant) {
   using Test = std::pair<std::vector<int>, bool>;
-  const std::vector<Test> testCases = {{{}, true},
-                                       {{1}, true},
-                                       {{1, 2}, true},
-                                       {{1, 2, 1, 2}, true},
-                                       {{1, 2, 1, 1, 2}, false}};
+  const std::vector<Test> testCases = {
+      {{}, true}, {{1}, true}, {{1, 2}, true}, {{1, 2, 1, 2}, true}, {{1, 2, 1, 1, 2}, false}};
 
   for (const auto& [v, expt] : testCases) {
     ASSERT_EQ(AreAllDistant(v), expt);

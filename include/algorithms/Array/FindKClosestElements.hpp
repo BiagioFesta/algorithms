@@ -28,9 +28,7 @@ namespace algorithms {
  *  \note  Complexity  -->  Time: O(K + logN)   Space: O(1)  without output
  *  \note https://leetcode.com/problems/find-k-closest-elements/
  */
-std::vector<int> FindKClosestElements(const std::vector<int>& arr,
-                                      const int k,
-                                      const int x);
+std::vector<int> FindKClosestElements(const std::vector<int>& arr, const int k, const int x);
 
 }  // namespace algorithms
 

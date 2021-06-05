@@ -24,12 +24,8 @@ namespace algorithms::test {
 
 TEST(DynamicProgramming, HouseRobberII) {
   using Test = std::pair<std::vector<int>, int>;
-  const std::vector<Test> testCases = {{{2, 7, 9, 3, 1}, 11},
-                                       {{2, 3, 2}, 3},
-                                       {{1, 2, 3, 1}, 4},
-                                       {{5}, 5},
-                                       {{}, 0},
-                                       {{1, 2}, 2}};
+  const std::vector<Test> testCases = {
+      {{2, 7, 9, 3, 1}, 11}, {{2, 3, 2}, 3}, {{1, 2, 3, 1}, 4}, {{5}, 5}, {{}, 0}, {{1, 2}, 2}};
 
   for (const auto& [nums, expt] : testCases) {
     ASSERT_EQ(HouseRobberII(nums), expt);

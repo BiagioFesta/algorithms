@@ -35,9 +35,7 @@ namespace algorithms {
  *  \note  Complexity  ->  Time: O(N)  Space: O(1)
  *  \note  https://leetcode.com/problems/get-equal-substrings-within-budget/
  */
-int GetEqualSubstringsWithinBudget(const std::string& s,
-                                   const std::string& t,
-                                   const int maxCost);
+int GetEqualSubstringsWithinBudget(const std::string& s, const std::string& t, const int maxCost);
 
 }  // namespace algorithms
 

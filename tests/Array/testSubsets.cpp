@@ -25,13 +25,11 @@ namespace algorithms::test {
 
 TEST(Array, Subsets) {
   using Test = std::pair<std::vector<int>, std::vector<std::vector<int>>>;
-  const std::vector<Test> testCases = {
-      {{1, 2, 3}, {{3}, {1}, {2}, {1, 2, 3}, {1, 3}, {2, 3}, {1, 2}, {}}}};
+  const std::vector<Test> testCases = {{{1, 2, 3}, {{3}, {1}, {2}, {1, 2, 3}, {1, 3}, {2, 3}, {1, 2}, {}}}};
 
   for (const auto& [nums, expt] : testCases) {
     const auto result = Subsets(nums);
-    ASSERT_TRUE(std::is_permutation(
-        expt.cbegin(), expt.cend(), result.cbegin(), result.cend()));
+    ASSERT_TRUE(std::is_permutation(expt.cbegin(), expt.cend(), result.cbegin(), result.cend()));
   }
 }
 

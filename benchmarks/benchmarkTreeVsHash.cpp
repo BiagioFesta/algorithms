@@ -31,17 +31,14 @@ constexpr std::int64_t kMaxValue = 1 << 20;
 static_assert(kMinValue <= kMaxValue);
 using RndEngine = std::mt19937_64;
 
-std::vector<int> GenerateRndSequence(const RndEngine::result_type iSeed,
-                                     const std::size_t iSize) {
+std::vector<int> GenerateRndSequence(const RndEngine::result_type iSeed, const std::size_t iSize) {
   RndEngine rndEngine(iSeed);
   std::uniform_int_distribution<int> rndValue;
 
   std::vector<int> vector;
   vector.reserve(iSize);
 
-  std::generate_n(std::back_inserter(vector), iSize, [&rndEngine, &rndValue]() {
-    return rndValue(rndEngine);
-  });
+  std::generate_n(std::back_inserter(vector), iSize, [&rndEngine, &rndValue]() { return rndValue(rndEngine); });
 
   return vector;
 }
@@ -78,9 +75,7 @@ void BMinsertNaturalSequence(::benchmark::State& iState) {
     }
   }
 }
-BENCHMARK_TEMPLATE(BMinsertNaturalSequence, std::set<int>)
-    ->RangeMultiplier(2)
-    ->Range(::kMinValue, ::kMaxValue);
+BENCHMARK_TEMPLATE(BMinsertNaturalSequence, std::set<int>)->RangeMultiplier(2)->Range(::kMinValue, ::kMaxValue);
 BENCHMARK_TEMPLATE(BMinsertNaturalSequence, std::unordered_set<int>)
     ->RangeMultiplier(2)
     ->Range(::kMinValue, ::kMaxValue);
@@ -98,9 +93,7 @@ void BMinsertRandomSequence(::benchmark::State& iState) {
     ::benchmark::DoNotOptimize(container.size());
   }
 }
-BENCHMARK_TEMPLATE(BMinsertRandomSequence, std::set<int>)
-    ->RangeMultiplier(2)
-    ->Range(::kMinValue, ::kMaxValue);
+BENCHMARK_TEMPLATE(BMinsertRandomSequence, std::set<int>)->RangeMultiplier(2)->Range(::kMinValue, ::kMaxValue);
 BENCHMARK_TEMPLATE(BMinsertRandomSequence, std::unordered_set<int>)
     ->RangeMultiplier(2)
     ->Range(::kMinValue, ::kMaxValue);
@@ -112,22 +105,15 @@ void BMlookupMiss(::benchmark::State& iState) {
 
   const RangeType kSize = iState.range();
   const int kMissValue = ::GenerateRndValue(kFixedSeed);
-  const int kPresentValue =
-      (kMissValue == std::numeric_limits<int>::max() ? kMissValue - 1
-                                                     : kMissValue + 1);
-  const auto kSequence = ::GenerateRndSequenceButValue(
-      kFixedSeed, kSize, kMissValue, kPresentValue);
+  const int kPresentValue = (kMissValue == std::numeric_limits<int>::max() ? kMissValue - 1 : kMissValue + 1);
+  const auto kSequence = ::GenerateRndSequenceButValue(kFixedSeed, kSize, kMissValue, kPresentValue);
   const Container kContainer{kSequence.cbegin(), kSequence.cend()};
 
   for (auto _ : iState) {
     ::benchmark::DoNotOptimize(kContainer.count(kMissValue));
   }
 }
-BENCHMARK_TEMPLATE(BMlookupMiss, std::set<int>)
-    ->RangeMultiplier(2)
-    ->Range(::kMinValue, ::kMaxValue);
-BENCHMARK_TEMPLATE(BMlookupMiss, std::unordered_set<int>)
-    ->RangeMultiplier(2)
-    ->Range(::kMinValue, ::kMaxValue);
+BENCHMARK_TEMPLATE(BMlookupMiss, std::set<int>)->RangeMultiplier(2)->Range(::kMinValue, ::kMaxValue);
+BENCHMARK_TEMPLATE(BMlookupMiss, std::unordered_set<int>)->RangeMultiplier(2)->Range(::kMinValue, ::kMaxValue);
 
 }  // namespace algorithms::benchmark

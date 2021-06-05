@@ -24,8 +24,7 @@ namespace algorithms::test {
 
 TEST(Array, CountSmallerAfterSelf) {
   using Test = std::pair<std::vector<int>, std::vector<int>>;
-  const std::vector<Test> testCases = {
-      {{5, 2, 6, 1}, {2, 1, 1, 0}}, {{5, 5, 3, 3, 2, 1}, {4, 4, 2, 2, 1, 0}}};
+  const std::vector<Test> testCases = {{{5, 2, 6, 1}, {2, 1, 1, 0}}, {{5, 5, 3, 3, 2, 1}, {4, 4, 2, 2, 1, 0}}};
 
   for (const auto& [nums, expt] : testCases) {
     ASSERT_EQ(CountSmallerAfterSelf(nums), expt);

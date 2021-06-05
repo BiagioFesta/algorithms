@@ -24,11 +24,10 @@ namespace algorithms::test {
 
 TEST(Array, KokoEatingBananas) {
   using Test = std::tuple<std::vector<int>, int, int>;
-  const std::vector<Test> testCases = {
-      {{3, 6, 7, 11}, 8, 4},
-      {{30, 11, 23, 4, 20}, 5, 30},
-      {{30, 11, 23, 4, 20}, 6, 23},
-      {{980628391, 681530205, 734313996, 168632541}, 819870953, 4}};
+  const std::vector<Test> testCases = {{{3, 6, 7, 11}, 8, 4},
+                                       {{30, 11, 23, 4, 20}, 5, 30},
+                                       {{30, 11, 23, 4, 20}, 6, 23},
+                                       {{980628391, 681530205, 734313996, 168632541}, 819870953, 4}};
 
   for (const auto& [v, h, expt] : testCases) {
     ASSERT_EQ(KokoEatingBananas(v, h), expt);

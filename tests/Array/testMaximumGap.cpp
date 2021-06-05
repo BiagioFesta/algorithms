@@ -24,10 +24,7 @@ namespace algorithms::test {
 
 TEST(Array, MaximumGap) {
   using Test = std::pair<std::vector<int>, int>;
-  const std::vector<Test> testCases = {{{3, 5, 4, 2}, 2},
-                                       {{1, 10}, 1},
-                                       {{-1, -1, -1, 2}, 3},
-                                       {{1, 2, 2, 2, 2}, 4}};
+  const std::vector<Test> testCases = {{{3, 5, 4, 2}, 2}, {{1, 10}, 1}, {{-1, -1, -1, 2}, 3}, {{1, 2, 2, 2, 2}, 4}};
 
   for (const auto& [v, expt] : testCases) {
     ASSERT_EQ(MaximumGap(v), expt);

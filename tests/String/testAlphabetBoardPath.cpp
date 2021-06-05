@@ -25,8 +25,7 @@ namespace algorithms::test {
 
 TEST(String, AlphabetBoardPath) {
   using Test = std::pair<std::string, std::string>;
-  const std::vector<Test> testCases = {{"leet", "DDR!UURRR!!DDD!"},
-                                       {"code", "RR!DDRR!UUL!R!"}};
+  const std::vector<Test> testCases = {{"leet", "DDR!UURRR!!DDD!"}, {"code", "RR!DDRR!UUL!R!"}};
 
   for (const auto& [target, expt] : testCases) {
     ASSERT_EQ(AlphabetBoardPath(target), expt);

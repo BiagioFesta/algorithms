@@ -24,9 +24,8 @@ namespace algorithms::test {
 TEST(Array, KeysAndRooms) {
   using Test = std::pair<std::vector<std::vector<int>>, bool>;
 
-  const std::vector<Test> testCases = {{{{1}, {2}, {3}, {}}, true},
-                                       {{{1, 3}, {3, 0, 1}, {2}, {0}}, false},
-                                       {{{1, 1}, {}}, true}};
+  const std::vector<Test> testCases = {
+      {{{1}, {2}, {3}, {}}, true}, {{{1, 3}, {3, 0, 1}, {2}, {0}}, false}, {{{1, 1}, {}}, true}};
 
   for (const auto& [rooms, expt] : testCases) {
     ASSERT_EQ(KeysAndRooms(rooms), expt);

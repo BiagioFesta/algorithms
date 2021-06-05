@@ -22,9 +22,7 @@
 namespace {
 
 //! \note  Complexity  -->  Time: O(N)  Space: O(1)
-bool IsSolvable(const std::vector<int>& weights,
-                const int D,
-                const int C) noexcept {
+bool IsSolvable(const std::vector<int>& weights, const int D, const int C) noexcept {
   int c = 0;
   int d = 1;
   for (const int w : weights) {
@@ -44,8 +42,7 @@ bool IsSolvable(const std::vector<int>& weights,
 
 namespace algorithms {
 
-int CapacityShipPackagesWithinDays(const std::vector<int>& weights,
-                                   const int D) {
+int CapacityShipPackagesWithinDays(const std::vector<int>& weights, const int D) {
   int lo = 0, hi = 0, mid;
 
   for (const int w : weights) {  // O(N)

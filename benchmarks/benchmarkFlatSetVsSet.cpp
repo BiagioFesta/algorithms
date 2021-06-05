@@ -67,12 +67,8 @@ void BMinsert(::benchmark::State& iState) {
     InsertRndInts(kSize, &aContainer);
   }
 }
-BENCHMARK_TEMPLATE(BMinsert, std::set<int>)
-    ->RangeMultiplier(2)
-    ->Range(kMinValue, kMaxValue);
-BENCHMARK_TEMPLATE(BMinsert, FlatSet<int>)
-    ->RangeMultiplier(2)
-    ->Range(kMinValue, kMaxValue);
+BENCHMARK_TEMPLATE(BMinsert, std::set<int>)->RangeMultiplier(2)->Range(kMinValue, kMaxValue);
+BENCHMARK_TEMPLATE(BMinsert, FlatSet<int>)->RangeMultiplier(2)->Range(kMinValue, kMaxValue);
 
 template <typename Container>
 void BMlookup(::benchmark::State& iState) {
@@ -90,11 +86,7 @@ void BMlookup(::benchmark::State& iState) {
     ::benchmark::DoNotOptimize(aContainer.count(aRandomIntsEngine()));
   }
 }
-BENCHMARK_TEMPLATE(BMlookup, std::set<int>)
-    ->RangeMultiplier(2)
-    ->Range(kMinValue, kMaxValue);
-BENCHMARK_TEMPLATE(BMlookup, FlatSet<int>)
-    ->RangeMultiplier(2)
-    ->Range(kMinValue, kMaxValue);
+BENCHMARK_TEMPLATE(BMlookup, std::set<int>)->RangeMultiplier(2)->Range(kMinValue, kMaxValue);
+BENCHMARK_TEMPLATE(BMlookup, FlatSet<int>)->RangeMultiplier(2)->Range(kMinValue, kMaxValue);
 
 }  // namespace algorithms::benchmark

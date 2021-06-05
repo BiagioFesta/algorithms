@@ -24,9 +24,8 @@ namespace {
 //! \return 'true' whether the container has no duplicated elements.
 template <typename Container>
 bool NoDuplicate(const Container& c) {
-  return std::all_of(std::begin(c), std::end(c), [&c](const auto& e) {
-    return std::count(std::begin(c), std::end(c), e) == 1;
-  });
+  return std::all_of(
+      std::begin(c), std::end(c), [&c](const auto& e) { return std::count(std::begin(c), std::end(c), e) == 1; });
 }
 
 }  // anonymous namespace
@@ -36,17 +35,15 @@ namespace algorithms::test {
 TEST(Array, FourSum) {
   using Test = std::tuple<std::vector<int>, int, std::vector<std::vector<int>>>;
 
-  const std::vector<Test> testCases = {
-      {{1, 0, -1, 0, -2, 2}, 0, {{-1, 0, 0, 1}, {-2, -1, 1, 2}, {-2, 0, 0, 2}}},
-      {{0, 0, 0, 0}, 0, {{0, 0, 0, 0}}}};
+  const std::vector<Test> testCases = {{{1, 0, -1, 0, -2, 2}, 0, {{-1, 0, 0, 1}, {-2, -1, 1, 2}, {-2, 0, 0, 2}}},
+                                       {{0, 0, 0, 0}, 0, {{0, 0, 0, 0}}}};
 
   for (const auto& [nums, target, expt] : testCases) {
     auto numsMutable = nums;
     const auto result = FourSum(&numsMutable, target);
 
     ASSERT_TRUE(::NoDuplicate(result));
-    ASSERT_TRUE(std::is_permutation(
-        result.cbegin(), result.cend(), expt.cbegin(), expt.cend()));
+    ASSERT_TRUE(std::is_permutation(result.cbegin(), result.cend(), expt.cbegin(), expt.cend()));
   }
 }
 

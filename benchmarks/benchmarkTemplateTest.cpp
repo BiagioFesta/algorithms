@@ -60,9 +60,7 @@ constexpr Container SeqListImpl(const std::integer_sequence<T, Values...>) {
  *    E.g.:
  *      std::vector<int>{0, 1, 2, 3, ,4 ..., Size - 1}
  */
-template <std::size_t Size,
-          typename T = int,
-          typename Container = std::vector<T>>
+template <std::size_t Size, typename T = int, typename Container = std::vector<T>>
 constexpr Container SeqList() {
   return SeqListImpl<Container>(std::make_integer_sequence<T, Size>());
 }
@@ -74,22 +72,14 @@ namespace algorithms::benchmark {
 GENERATE_BENCHMARK(FindAllAnagramsString, "cbaebabacd", "abc");
 GENERATE_BENCHMARK(ValidateStackSequences, {1, 2, 3, 4, 5}, {4, 5, 3, 2, 1});
 GENERATE_BENCHMARK(DeckIncreasingReveal, SeqList<1024>());
-GENERATE_BENCHMARK(MinimumGeneticMutation,
-                   "AAAAAAAA",
-                   "CCCCCCCC",
-                   {"AAAAAAAA",
-                    "AAAAAAAC",
-                    "AAAAAACC",
-                    "AAAAACCC",
-                    "AAAACCCC",
-                    "AACACCCC",
-                    "ACCACCCC",
-                    "ACCCCCCC",
-                    "CCCCCCCA"});
+GENERATE_BENCHMARK(
+    MinimumGeneticMutation,
+    "AAAAAAAA",
+    "CCCCCCCC",
+    {"AAAAAAAA", "AAAAAAAC", "AAAAAACC", "AAAAACCC", "AAAACCCC", "AACACCCC", "ACCACCCC", "ACCCCCCC", "CCCCCCCA"});
 GENERATE_BENCHMARK(BrokenCalculator, 2, 10000);
 GENERATE_BENCHMARK(NumbersConsecutiveDifferences, 9, 0);
-GENERATE_BENCHMARK(BasicCalculator,
-                   "(2+3-(5+(3)-(4)+(5+6+7-3-(3)+(3+2)+3)-4+5)-2)+10");
+GENERATE_BENCHMARK(BasicCalculator, "(2+3-(5+(3)-(4)+(5+6+7-3-(3)+(3+2)+3)-4+5)-2)+10");
 GENERATE_BENCHMARK(CoinChange2, 5, {1, 2, 5});
 GENERATE_BENCHMARK(SwapAdjacentLR,
                    "RXXXXLXXXXXRXXXXXLXXXXXLXXXXXRXXXXLXXXXXRXXXXXLXXXXXRXXXXXL"
@@ -99,8 +89,7 @@ GENERATE_BENCHMARK(SwapAdjacentLR,
 GENERATE_BENCHMARK(BuySellStockWithCooldown, {1, 2, 3, 0, 2});
 GENERATE_BENCHMARK(RestoreIPAddresses, "25525511135");
 GENERATE_BENCHMARK(BeautifulArrangement, 6);
-GENERATE_BENCHMARK(PalindromePartitioningII,
-                   "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
+GENERATE_BENCHMARK(PalindromePartitioningII, "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
 GENERATE_BENCHMARK(CountSmallerAfterSelf, SeqList<1024>());
 GENERATE_BENCHMARK(NextGreaterElementIII, 1999999999);
 GENERATE_BENCHMARK(ValidPalindrome, "A man, a plan, a canal: Panama");

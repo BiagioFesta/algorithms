@@ -25,8 +25,7 @@ namespace algorithms::test {
 
 TEST(String, ValidPalindrome) {
   using Test = std::pair<std::string, bool>;
-  const std::vector<Test> testCases = {{"A man, a plan, a canal: Panama", true},
-                                       {"race a car", false}};
+  const std::vector<Test> testCases = {{"A man, a plan, a canal: Panama", true}, {"race a car", false}};
 
   for (const auto& [str, expt] : testCases) {
     ASSERT_EQ(ValidPalindrome(str), expt) << "Testing string: " << str;

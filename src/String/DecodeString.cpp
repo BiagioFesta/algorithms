@@ -40,8 +40,7 @@ std::string DecodeString(const std::string& encStr) {
           --bkCount;
         }
       }
-      const auto innerDecoded =
-          DecodeString(encStr.substr(openBkIndex + 1, index - openBkIndex - 2));
+      const auto innerDecoded = DecodeString(encStr.substr(openBkIndex + 1, index - openBkIndex - 2));
       for (int i = 0; i < rep; ++i) {
         decStr += innerDecoded;
       }

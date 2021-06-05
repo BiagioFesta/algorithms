@@ -28,8 +28,7 @@ bool isValidVector(const std::vector<int>& iVector) {
   std::vector<int> aNaturalSequence(iVector.size());
   std::iota(aNaturalSequence.begin(), aNaturalSequence.end(), 0);
 
-  return std::is_permutation(
-      iVector.cbegin(), iVector.cend(), aNaturalSequence.cbegin());
+  return std::is_permutation(iVector.cbegin(), iVector.cend(), aNaturalSequence.cbegin());
 }
 
 }  // anonymous namespace

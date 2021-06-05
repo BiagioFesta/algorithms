@@ -43,9 +43,7 @@ bool PartitionEqualSubSum(const std::vector<int>& nums) {
   for (int i = kSize - 1; i >= 0; --i) {
     assert(nums[i] <= kMaxValue);
     for (int j = 0; j < kM; ++j) {
-      table[i * kM + j] =
-          table[(i + 1) * kM + j] ||
-          (j + nums[i] < kM ? table[(i + 1) * kM + j + nums[i]] : false);
+      table[i * kM + j] = table[(i + 1) * kM + j] || (j + nums[i] < kM ? table[(i + 1) * kM + j + nums[i]] : false);
     }
   }
 

@@ -38,9 +38,7 @@ TEST(MinStack, KeepMin) {
   for (std::size_t i = 0; i < aNumsSequence.size(); ++i) {
     mStack.push(aNumsSequence[i]);
 
-    ASSERT_EQ(*std::min_element(aNumsSequence.cbegin(),
-                                aNumsSequence.cbegin() + i + 1),
-              mStack.getMin());
+    ASSERT_EQ(*std::min_element(aNumsSequence.cbegin(), aNumsSequence.cbegin() + i + 1), mStack.getMin());
   }
 }
 

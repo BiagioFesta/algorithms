@@ -51,8 +51,7 @@ Type OnePassByCol(const Matrix& matrix) {
 }
 
 template <typename Matrix>
-Type OnePassRnd(const Matrix& matrix,
-                const std::vector<std::size_t>& indicesAccess) {
+Type OnePassRnd(const Matrix& matrix, const std::vector<std::size_t>& indicesAccess) {
   Type acc{};
   for (const std::size_t index : indicesAccess) {
     acc += matrix[index / M][index % M];

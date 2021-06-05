@@ -24,12 +24,8 @@ namespace algorithms::test {
 
 TEST(DynamicProgramming, MaxProfit) {
   using Test = std::pair<std::vector<int>, int>;
-  const std::vector<Test> testCases = {{{1, 2, 3, 4, 5}, 4},
-                                       {{3, 3, 5, 0, 0, 3, 1, 4}, 6},
-                                       {{7, 6, 4, 3, 1}, 0},
-                                       {{}, 0},
-                                       {{1, 2}, 1},
-                                       {{2, 1}, 0}};
+  const std::vector<Test> testCases = {
+      {{1, 2, 3, 4, 5}, 4}, {{3, 3, 5, 0, 0, 3, 1, 4}, 6}, {{7, 6, 4, 3, 1}, 0}, {{}, 0}, {{1, 2}, 1}, {{2, 1}, 0}};
 
   for (const auto& [v, expt] : testCases) {
     ASSERT_EQ(MaxProfit(v), expt);

@@ -24,8 +24,7 @@ namespace algorithms::test {
 
 TEST(String, MinAddParentheses) {
   using Test = std::pair<std::string, int>;
-  const std::vector<Test> testCases{
-      {"())", 1}, {"(((", 3}, {"()", 0}, {"()))((", 4}, {"", 0}};
+  const std::vector<Test> testCases{{"())", 1}, {"(((", 3}, {"()", 0}, {"()))((", 4}, {"", 0}};
 
   for (const auto& [str, expt] : testCases) {
     ASSERT_EQ(MinAddParentheses(str), expt);

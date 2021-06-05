@@ -35,8 +35,7 @@ namespace algorithms {
  *  \note  Complexity ->  Time: O(NlogM)    Space: O(M + N)
  *  \note https://www.hackerrank.com/challenges/climbing-the-leaderboard/problem
  */
-std::vector<int> climbingLeaderboard(const std::vector<int>& iLeaderBoard,
-                                     const std::vector<int>& iAliceScores);
+std::vector<int> climbingLeaderboard(const std::vector<int>& iLeaderBoard, const std::vector<int>& iAliceScores);
 
 }  // namespace algorithms
 

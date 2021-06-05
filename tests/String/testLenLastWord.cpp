@@ -25,12 +25,7 @@ namespace algorithms::test {
 
 TEST(String, LenLastWord) {
   using Test = std::pair<std::string, int>;
-  std::vector<Test> testCases = {{"Hello World", 5},
-                                 {"On", 2},
-                                 {"", 0},
-                                 {"A BC DEFG", 4},
-                                 {"   ab", 2},
-                                 {"a   ", 1}};
+  std::vector<Test> testCases = {{"Hello World", 5}, {"On", 2}, {"", 0}, {"A BC DEFG", 4}, {"   ab", 2}, {"a   ", 1}};
 
   for (const auto& [str, exp] : testCases) {
     ASSERT_EQ(LenLastWord(str.c_str()), exp);

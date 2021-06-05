@@ -23,19 +23,15 @@
 namespace algorithms {
 
 int HIndex(std::vector<int>* iCitations) {
-  assert(std::all_of(iCitations->cbegin(),
-                     iCitations->cend(),
-                     [](const int num) { return num >= 0; }));
+  assert(std::all_of(iCitations->cbegin(), iCitations->cend(), [](const int num) { return num >= 0; }));
 
   std::sort(iCitations->begin(), iCitations->end());
 
   int aIndexH = iCitations->size();
 
   while (aIndexH) {
-    const auto ub =
-        std::upper_bound(iCitations->cbegin(), iCitations->cend(), aIndexH);
-    const auto lb =
-        std::lower_bound(iCitations->cbegin(), iCitations->cend(), aIndexH);
+    const auto ub = std::upper_bound(iCitations->cbegin(), iCitations->cend(), aIndexH);
+    const auto lb = std::lower_bound(iCitations->cbegin(), iCitations->cend(), aIndexH);
     const auto maxH = std::distance(lb, iCitations->cend());
     const auto minH = std::min(maxH, std::distance(ub, iCitations->cend()));
 

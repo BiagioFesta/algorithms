@@ -21,17 +21,15 @@
 
 namespace {
 
-int SingleElementInSortedArrayImpl(const int* const data,
-                                   const std::size_t size) noexcept {
+int SingleElementInSortedArrayImpl(const int* const data, const std::size_t size) noexcept {
   if (size == 1ull) return *data;
 
   int middle = size / 2;
   if (middle % 2) {
     ++middle;
   }
-  return data[middle] == data[middle - 1]
-             ? SingleElementInSortedArrayImpl(data, middle - 1)
-             : SingleElementInSortedArrayImpl(data + middle, size - middle);
+  return data[middle] == data[middle - 1] ? SingleElementInSortedArrayImpl(data, middle - 1)
+                                          : SingleElementInSortedArrayImpl(data + middle, size - middle);
 }
 
 }  // anonymous namespace

@@ -28,8 +28,7 @@ namespace algorithms {
  *  \note  Complexity  -->  Time: O(NlogN)   Space: O(N)
  *  \note https://leetcode.com/problems/advantage-shuffle/
  */
-std::vector<int> AdvantageShuffle(const std::vector<int>& A,
-                                  const std::vector<int>& B);
+std::vector<int> AdvantageShuffle(const std::vector<int>& A, const std::vector<int>& B);
 
 }  // namespace algorithms
 

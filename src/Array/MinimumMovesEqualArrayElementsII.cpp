@@ -27,16 +27,11 @@ int MinimumMovesEqualArrayElementsII(const std::vector<int>& nums) {
   assert(nums.size() > 0);
   const auto medianElement = nums.size() / 2;
   auto mutableNums = nums;
-  std::nth_element(mutableNums.begin(),
-                   mutableNums.begin() + medianElement,
-                   mutableNums.end());
-  return std::accumulate(nums.cbegin(),
-                         nums.cend(),
-                         0,
-                         [median = mutableNums[medianElement]](
-                             const int ans, const int n) noexcept {
-                           return ans + std::abs(n - median);
-                         });
+  std::nth_element(mutableNums.begin(), mutableNums.begin() + medianElement, mutableNums.end());
+  return std::accumulate(
+      nums.cbegin(), nums.cend(), 0, [median = mutableNums[medianElement]](const int ans, const int n) noexcept {
+        return ans + std::abs(n - median);
+      });
 }
 
 }  // namespace algorithms

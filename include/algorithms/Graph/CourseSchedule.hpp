@@ -30,8 +30,7 @@ namespace algorithms {
  *  \note   Complexity  ->   Time: O(N)  Space: O(N)
  *  \note https://leetcode.com/problems/course-schedule/
  */
-bool CourseSchedule(const int numCourses,
-                    const std::vector<std::vector<int>>& prerequisites);
+bool CourseSchedule(const int numCourses, const std::vector<std::vector<int>>& prerequisites);
 
 }  // namespace algorithms
 

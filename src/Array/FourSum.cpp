@@ -21,8 +21,7 @@
 
 namespace algorithms {
 
-std::vector<std::vector<int>> FourSum(std::vector<int>* iNumbers,
-                                      const int iTarget) {
+std::vector<std::vector<int>> FourSum(std::vector<int>* iNumbers, const int iTarget) {
   const int size = static_cast<int>(iNumbers->size());
   std::sort(iNumbers->begin(), iNumbers->end());  // O(NlogN)
 

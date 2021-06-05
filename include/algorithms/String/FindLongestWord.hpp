@@ -32,8 +32,7 @@ namespace algorithms {
  *  \note
  * https://leetcode.com/problems/longest-word-in-dictionary-through-deleting/
  */
-int FindLongestWord(const std::string& iString,
-                    const std::vector<std::string>& iStringDict);
+int FindLongestWord(const std::string& iString, const std::vector<std::string>& iStringDict);
 
 }  // namespace algorithms
 

@@ -25,13 +25,12 @@ namespace algorithms::test {
 
 TEST(String, EncryptionStr) {
   using Test = std::pair<std::string, std::string>;
-  const std::vector<Test> testCases{
-      {"haveaniceday", "hae and via ecy"},
-      {"if man was meant to stay on the ground god would have given us roots",
-       "imtgdvs fearwer mayoogo anouuio ntnnlvt wttddes aohghn sseoau"},
-      {"feedthedog", "fto ehg ee dd"},
-      {"chillout", "clu hlt io"},
-      {"halo", "hl ao"}};
+  const std::vector<Test> testCases{{"haveaniceday", "hae and via ecy"},
+                                    {"if man was meant to stay on the ground god would have given us roots",
+                                     "imtgdvs fearwer mayoogo anouuio ntnnlvt wttddes aohghn sseoau"},
+                                    {"feedthedog", "fto ehg ee dd"},
+                                    {"chillout", "clu hlt io"},
+                                    {"halo", "hl ao"}};
 
   for (const auto& [str, expt] : testCases) {
     ASSERT_EQ(EncryptionStr(str), expt);

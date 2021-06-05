@@ -23,9 +23,7 @@
 
 namespace algorithms {
 
-bool ContainsDuplicateIII(const std::vector<int>& nums,
-                          const int k,
-                          const int t) {
+bool ContainsDuplicateIII(const std::vector<int>& nums, const int k, const int t) {
   std::set<long long> numsWindow;
   for (std::size_t i = 0; i < nums.size(); ++i) {
     const long long value = nums[i];

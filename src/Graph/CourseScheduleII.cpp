@@ -22,9 +22,7 @@
 
 namespace algorithms {
 
-std::vector<int> CourseScheduleII(
-    const int numCourses,
-    const std::vector<std::vector<int>>& prerequisites) {
+std::vector<int> CourseScheduleII(const int numCourses, const std::vector<std::vector<int>>& prerequisites) {
   assert(numCourses >= 0);
 
   std::vector<int> inDegrees(numCourses, 0);

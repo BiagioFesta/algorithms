@@ -24,12 +24,11 @@ namespace algorithms::test {
 
 TEST(Array, NextPermutation) {
   using Test = std::pair<std::vector<int>, std::vector<int>>;
-  const std::vector<Test> testCases = {
-      {{1, 3, 2}, {2, 1, 3}},
-      {{0, 1, 2, 5, 3, 3, 0}, {0, 1, 3, 0, 2, 3, 5}},
-      {{1, 2, 3}, {1, 3, 2}},
-      {{3, 2, 1}, {1, 2, 3}},
-      {{1, 1, 5}, {1, 5, 1}}};
+  const std::vector<Test> testCases = {{{1, 3, 2}, {2, 1, 3}},
+                                       {{0, 1, 2, 5, 3, 3, 0}, {0, 1, 3, 0, 2, 3, 5}},
+                                       {{1, 2, 3}, {1, 3, 2}},
+                                       {{3, 2, 1}, {1, 2, 3}},
+                                       {{1, 1, 5}, {1, 5, 1}}};
 
   for (const auto& [nums, expt] : testCases) {
     auto result = nums;

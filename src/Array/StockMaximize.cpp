@@ -15,8 +15,8 @@
   along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 */
-#include <algorithms/Array/StockMaximize.hpp>
 #include <algorithm>
+#include <algorithms/Array/StockMaximize.hpp>
 #include <cassert>
 #include <vector>
 

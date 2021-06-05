@@ -27,8 +27,7 @@
 
 namespace algorithms {
 
-std::vector<std::string> FindItinerary(
-    const std::vector<std::vector<std::string>>& tickets) {
+std::vector<std::string> FindItinerary(const std::vector<std::vector<std::string>>& tickets) {
   using HashTable = std::unordered_map<std::string, std::multiset<std::string>>;
   constexpr const char* kStartingAirport = "JFK";
 

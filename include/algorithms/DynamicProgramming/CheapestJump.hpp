@@ -42,8 +42,7 @@ namespace algorithms {
  *  \note  Complexity ->  Time: O(N x min(iMaxJump, N))     Space: O(N)
  *  \note https://www.leetfree.com/problems/coin-path.html
  */
-std::vector<int> CheapestJump(const std::vector<int>& iVector,
-                              const int iMaxJump);
+std::vector<int> CheapestJump(const std::vector<int>& iVector, const int iMaxJump);
 
 }  // namespace algorithms
 

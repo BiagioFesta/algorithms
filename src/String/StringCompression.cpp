@@ -36,8 +36,7 @@ bool StringCompression(const char* iStr, char* oBuffer, const int iSizeBuffer) {
         interBuffer.clear();
         interBuffer += std::to_string(numSame + 1);
         interBuffer += *iStr;
-        if (bytesWritten + static_cast<int>(interBuffer.size()) <=
-            iSizeBuffer) {
+        if (bytesWritten + static_cast<int>(interBuffer.size()) <= iSizeBuffer) {
           std::memcpy(oBuffer, interBuffer.data(), interBuffer.size());
           oBuffer += interBuffer.size();
           bytesWritten += interBuffer.size();

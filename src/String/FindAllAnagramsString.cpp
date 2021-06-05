@@ -25,8 +25,7 @@
 
 namespace algorithms {
 
-std::vector<int> FindAllAnagramsString(const std::string& s,
-                                       const std::string& p) {
+std::vector<int> FindAllAnagramsString(const std::string& s, const std::string& p) {
   constexpr std::size_t kSizeTable = 1 << 8;
 
   const int kSizeS = s.size();

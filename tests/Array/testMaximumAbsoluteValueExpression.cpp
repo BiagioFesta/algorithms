@@ -24,9 +24,8 @@ namespace algorithms::test {
 
 TEST(Array, MaximumAbsoluteValueExpression) {
   using Test = std::tuple<std::vector<int>, std::vector<int>, int>;
-  const std::vector<Test> testCases = {
-      {{1, 2, 3, 4}, {-1, 4, 5, 6}, 13},
-      {{1, -2, -5, 0, 10}, {0, -2, -1, -7, -4}, 20}};
+  const std::vector<Test> testCases = {{{1, 2, 3, 4}, {-1, 4, 5, 6}, 13},
+                                       {{1, -2, -5, 0, 10}, {0, -2, -1, -7, -4}, 20}};
 
   for (const auto& [arr1, arr2, expt] : testCases) {
     ASSERT_EQ(MaximumAbsoluteValueExpression(arr1, arr2), expt);

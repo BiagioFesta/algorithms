@@ -71,13 +71,11 @@ void Twitter::unfollow(const UserId_t followerId, const UserId_t followeeId) {
   _user2followee[followerId].erase(followeeId);
 }
 
-const Twitter::ListTweets_t& Twitter::getTweetsListOfUser(
-    const UserId_t userId) {
+const Twitter::ListTweets_t& Twitter::getTweetsListOfUser(const UserId_t userId) {
   return _user2tweets[userId];
 }
 
-const std::set<Twitter::UserId_t>& Twitter::getFollowees(
-    const UserId_t userId) {
+const std::set<Twitter::UserId_t>& Twitter::getFollowees(const UserId_t userId) {
   return _user2followee[userId];
 }
 

@@ -24,12 +24,11 @@ namespace algorithms::test {
 
 TEST(Array, ValidateStackSequences) {
   using Test = std::tuple<std::vector<int>, std::vector<int>, bool>;
-  const std::vector<Test> testCases = {
-      {{1, 2, 3, 4, 5}, {4, 5, 3, 2, 1}, true},
-      {{1, 2, 3, 4, 5}, {4, 3, 5, 1, 2}, false},
-      {{1, 2, 3, 4, 5}, {}, false},
-      {{1, 2, 3, 4, 5}, {5}, false},
-      {{}, {}, true}};
+  const std::vector<Test> testCases = {{{1, 2, 3, 4, 5}, {4, 5, 3, 2, 1}, true},
+                                       {{1, 2, 3, 4, 5}, {4, 3, 5, 1, 2}, false},
+                                       {{1, 2, 3, 4, 5}, {}, false},
+                                       {{1, 2, 3, 4, 5}, {5}, false},
+                                       {{}, {}, true}};
 
   for (const auto& [pushed, popped, expt] : testCases) {
     ASSERT_EQ(ValidateStackSequences(pushed, popped), expt);

@@ -21,15 +21,12 @@
 
 namespace algorithms {
 
-std::vector<std::vector<int>> InsertInterval(
-    const std::vector<std::vector<int>>& intervals,
-    const std::vector<int>& newInterval) {
+std::vector<std::vector<int>> InsertInterval(const std::vector<std::vector<int>>& intervals,
+                                             const std::vector<int>& newInterval) {
   std::vector<std::vector<int>> res(intervals);
 
   auto [first, last] = std::equal_range(
-      res.begin(), res.end(), newInterval, [](const auto& i1, const auto& i2) {
-        return i1[1] < i2[0];
-      });  // O(logN)
+      res.begin(), res.end(), newInterval, [](const auto& i1, const auto& i2) { return i1[1] < i2[0]; });  // O(logN)
 
   if (first == last) {
     res.insert(first, newInterval);  // O(1) Amortized!

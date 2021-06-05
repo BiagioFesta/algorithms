@@ -24,13 +24,8 @@ namespace algorithms::test {
 
 TEST(String, NextGreaterElementIII) {
   using Test = std::pair<int, int>;
-  const std::vector<Test> testCases = {{0, -1},
-                                       {230241, 230412},
-                                       {11, -1},
-                                       {12, 21},
-                                       {21, -1},
-                                       {1234, 1243},
-                                       {1999999999, -1}};
+  const std::vector<Test> testCases = {
+      {0, -1}, {230241, 230412}, {11, -1}, {12, 21}, {21, -1}, {1234, 1243}, {1999999999, -1}};
 
   for (const auto& [n, expt] : testCases) {
     ASSERT_EQ(NextGreaterElementIII(n), expt);

@@ -33,8 +33,7 @@ namespace algorithms {
  *  \note  Complexity  -->  Time: O(N logS)  Space: O(1)  where S is sum weights
  *  \note https://leetcode.com/problems/capacity-to-ship-packages-within-d-days/
  */
-int CapacityShipPackagesWithinDays(const std::vector<int>& weights,
-                                   const int D);
+int CapacityShipPackagesWithinDays(const std::vector<int>& weights, const int D);
 
 }  // namespace algorithms
 

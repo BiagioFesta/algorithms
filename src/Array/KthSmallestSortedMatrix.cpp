@@ -24,12 +24,9 @@
 
 namespace algorithms {
 
-int KthSmallestSortedMatrix(const std::vector<std::vector<int>>& matrix,
-                            int k) {
+int KthSmallestSortedMatrix(const std::vector<std::vector<int>>& matrix, int k) {
   using HeapElement = std::tuple<int, std::size_t, std::size_t>;
-  using Heap = std::priority_queue<HeapElement,
-                                   std::vector<HeapElement>,
-                                   std::greater<HeapElement>>;
+  using Heap = std::priority_queue<HeapElement, std::vector<HeapElement>, std::greater<HeapElement>>;
 
   const std::size_t size = matrix.size();
   assert(k > 0);

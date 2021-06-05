@@ -25,9 +25,8 @@ namespace algorithms::test {
 
 TEST(String, DecodeString) {
   using Test = std::pair<std::string, std::string>;
-  const std::vector<Test> testCases = {{"3[a]2[bc]", "aaabcbc"},
-                                       {"3[a2[c]]", "accaccacc"},
-                                       {"2[abc]3[cd]ef", "abcabccdcdcdef"}};
+  const std::vector<Test> testCases = {
+      {"3[a]2[bc]", "aaabcbc"}, {"3[a2[c]]", "accaccacc"}, {"2[abc]3[cd]ef", "abcabccdcdcdef"}};
 
   for (const auto& [str, expt] : testCases) {
     ASSERT_EQ(DecodeString(str), expt);

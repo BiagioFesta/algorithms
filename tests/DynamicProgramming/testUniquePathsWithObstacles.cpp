@@ -24,8 +24,7 @@ namespace algorithms::test {
 
 TEST(DynamicProgramming, UniquePathsWithObstacles) {
   using Test = std::pair<std::vector<std::vector<int>>, int>;
-  const std::vector<Test> testCases = {
-      {{{0, 0, 0}, {0, 1, 0}, {0, 0, 0}}, 2}, {{{0}}, 1}, {{{1}}, 0}};
+  const std::vector<Test> testCases = {{{{0, 0, 0}, {0, 1, 0}, {0, 0, 0}}, 2}, {{{0}}, 1}, {{{1}}, 0}};
 
   for (const auto& [v, expt] : testCases) {
     ASSERT_EQ(UniquePathsWithObstacles(v), expt);

@@ -26,17 +26,15 @@ namespace algorithms::test {
 
 TEST(String, LetterCasePermutation) {
   using Test = std::pair<std::string, std::vector<std::string>>;
-  const std::vector<Test> testCases = {
-      {"a1b2", {"a1b2", "a1B2", "A1b2", "A1B2"}},
-      {"3z4", {"3z4", "3Z4"}},
-      {"12345", {"12345"}},
-      {"AB", {"AB", "aB", "Ab", "ab"}}};
+  const std::vector<Test> testCases = {{"a1b2", {"a1b2", "a1B2", "A1b2", "A1B2"}},
+                                       {"3z4", {"3z4", "3Z4"}},
+                                       {"12345", {"12345"}},
+                                       {"AB", {"AB", "aB", "Ab", "ab"}}};
 
   std::vector<std::string> result;
   for (const auto& [str, expt] : testCases) {
     LetterCasePermutation(str, &result);
-    ASSERT_TRUE(std::is_permutation(
-        result.cbegin(), result.cend(), expt.cbegin(), expt.cend()));
+    ASSERT_TRUE(std::is_permutation(result.cbegin(), result.cend(), expt.cbegin(), expt.cend()));
   }
 }
 

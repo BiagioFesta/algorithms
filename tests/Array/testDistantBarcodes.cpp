@@ -24,12 +24,8 @@ namespace algorithms::test {
 
 TEST(Array, DistantBarcodes) {
   using Test = std::vector<int>;
-  const std::vector<Test> testCases = {{1, 1, 1, 2, 2, 2},
-                                       {1, 1, 1, 1, 2, 2, 3, 3},
-                                       {1},
-                                       {1, 2},
-                                       {1, 2, 3},
-                                       {1, 2, 3, 3}};
+  const std::vector<Test> testCases = {
+      {1, 1, 1, 2, 2, 2}, {1, 1, 1, 1, 2, 2, 3, 3}, {1}, {1, 2}, {1, 2, 3}, {1, 2, 3, 3}};
 
   for (const auto& v : testCases) {
     const auto result = DistantBarcodes(v);

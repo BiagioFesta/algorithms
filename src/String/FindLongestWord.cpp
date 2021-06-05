@@ -21,8 +21,7 @@
 
 namespace algorithms {
 
-int FindLongestWord(const std::string& iString,
-                    const std::vector<std::string>& iStringDict) {
+int FindLongestWord(const std::string& iString, const std::vector<std::string>& iStringDict) {
   const int kSizeStr = iString.size();      // N
   const int kSizeDic = iStringDict.size();  // M
 

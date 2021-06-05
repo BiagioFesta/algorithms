@@ -43,8 +43,7 @@ namespace algorithms {
  *      ai + bi + i   ->  c1
  *     -aj - bj - j   ->  c2
  */
-int MaximumAbsoluteValueExpression(const std::vector<int>& arr1,
-                                   const std::vector<int>& arr2) {
+int MaximumAbsoluteValueExpression(const std::vector<int>& arr1, const std::vector<int>& arr2) {
   assert(arr1.size() == arr2.size());
   const int kSize = arr1.size();
   int c1 = std::numeric_limits<int>::min();

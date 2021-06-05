@@ -31,10 +31,7 @@ bool IsMatrix(const std::vector<std::vector<T>>& iMatrix) {
     return true;
   }
   const auto numCols = iMatrix.front().size();
-  return std::all_of(
-      iMatrix.cbegin(), iMatrix.cend(), [numCols](const auto& row) {
-        return row.size() == numCols;
-      });
+  return std::all_of(iMatrix.cbegin(), iMatrix.cend(), [numCols](const auto& row) { return row.size() == numCols; });
 }
 
 using Pos = std::pair<int, int>;
@@ -50,8 +47,7 @@ bool WordSearchImpl(const std::vector<std::vector<char>>& iBoard,
   const auto [i, j] = iPos;
   const int numRows = iBoard.size();
   const int numCols = iBoard.front().size();
-  if (i < 0 || j < 0 || i >= numRows || j >= numCols ||
-      iVisPos->count(iPos) == 1 || iBoard[i][j] != *iWord) {
+  if (i < 0 || j < 0 || i >= numRows || j >= numCols || iVisPos->count(iPos) == 1 || iBoard[i][j] != *iWord) {
     return false;
   }
 
@@ -68,8 +64,7 @@ bool WordSearchImpl(const std::vector<std::vector<char>>& iBoard,
 
 namespace algorithms {
 
-bool WordSearch(const std::vector<std::vector<char>>& iBoard,
-                const std::string& iWord) {
+bool WordSearch(const std::vector<std::vector<char>>& iBoard, const std::string& iWord) {
   assert(::IsMatrix(iBoard));
 
   if (iBoard.empty()) {

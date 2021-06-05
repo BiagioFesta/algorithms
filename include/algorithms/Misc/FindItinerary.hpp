@@ -30,8 +30,7 @@ namespace algorithms {
  *  \note   Complexity  ->  Time: O(NlogN)   Space: O(N)
  *  \note https://leetcode.com/problems/reconstruct-itinerary/
  */
-std::vector<std::string> FindItinerary(
-    const std::vector<std::vector<std::string>>& tickets);
+std::vector<std::string> FindItinerary(const std::vector<std::vector<std::string>>& tickets);
 
 }  // namespace algorithms
 

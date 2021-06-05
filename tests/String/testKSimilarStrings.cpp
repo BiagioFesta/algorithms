@@ -25,12 +25,11 @@ namespace algorithms::test {
 
 TEST(String, KSimilarStrings) {
   using Test = std::tuple<std::string, std::string, int>;
-  const std::vector<Test> testCases = {
-      {"ab", "ba", 1},
-      {"abc", "bca", 2},
-      {"abac", "baca", 2},
-      {"aabc", "abca", 2},
-      {"abccaacceecdeea", "bcaacceeccdeaae", 9}};
+  const std::vector<Test> testCases = {{"ab", "ba", 1},
+                                       {"abc", "bca", 2},
+                                       {"abac", "baca", 2},
+                                       {"aabc", "abca", 2},
+                                       {"abccaacceecdeea", "bcaacceeccdeaae", 9}};
 
   for (const auto& [s1, s2, expt] : testCases) {
     ASSERT_EQ(KSimilarStrings(s1, s2), expt);

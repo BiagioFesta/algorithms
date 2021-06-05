@@ -25,8 +25,7 @@ namespace algorithms::test {
 
 TEST(DynamicProgramming, SubstringsSum) {
   using Test = std::pair<std::string, int>;
-  const std::vector<Test> testCases = {
-      {"123", 164}, {"1", 1}, {"16", 23}, {"42", 48}};
+  const std::vector<Test> testCases = {{"123", 164}, {"1", 1}, {"16", 23}, {"42", 48}};
 
   for (const auto& [str, expt] : testCases) {
     ASSERT_EQ(SubstringsSum(str), expt);

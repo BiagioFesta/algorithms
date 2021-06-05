@@ -24,13 +24,11 @@
 namespace algorithms::test {
 
 TEST(Graph, MinimumGeneticMutation) {
-  using Test =
-      std::tuple<std::string, std::string, std::vector<std::string>, int>;
-  const std::vector<Test> testCases = {
-      {"AAAAAAAA", "CCCCCCCC", {"AAAAAAAA", "AAAAAAAC"}, -1},
-      {"AACCGGTT", "AACCGGTA", {"AACCGGTA"}, 1},
-      {"AACCGGTT", "AAACGGTA", {"AACCGGTA", "AACCGCTA", "AAACGGTA"}, 2},
-      {"AAAAACCC", "AACCCCCC", {"AAAACCCC", "AAACCCCC", "AACCCCCC"}, 3}};
+  using Test = std::tuple<std::string, std::string, std::vector<std::string>, int>;
+  const std::vector<Test> testCases = {{"AAAAAAAA", "CCCCCCCC", {"AAAAAAAA", "AAAAAAAC"}, -1},
+                                       {"AACCGGTT", "AACCGGTA", {"AACCGGTA"}, 1},
+                                       {"AACCGGTT", "AAACGGTA", {"AACCGGTA", "AACCGCTA", "AAACGGTA"}, 2},
+                                       {"AAAAACCC", "AACCCCCC", {"AAAACCCC", "AAACCCCC", "AACCCCCC"}, 3}};
 
   for (const auto& [start, end, bank, expt] : testCases) {
     ASSERT_EQ(MinimumGeneticMutation(start, end, bank), expt);

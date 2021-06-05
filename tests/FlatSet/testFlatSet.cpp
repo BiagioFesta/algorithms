@@ -16,8 +16,8 @@
 
 */
 #include <gtest/gtest.h>
-#include <algorithms/FlatSet/FlatSet.hpp>
 #include <algorithm>
+#include <algorithms/FlatSet/FlatSet.hpp>
 #include <array>
 #include <iterator>
 #include <limits>
@@ -113,8 +113,7 @@ TEST(FlatSet, LookUpFound) {
 TEST(FlatSet, SetIsSorted) {
   FlatSet<int> aFlatSet(::kSequence.cbegin(), ::kSequence.cend());
 
-  ASSERT_EQ(::CountUniqueElements(::kSequence.cbegin(), ::kSequence.cend()),
-            aFlatSet.size());
+  ASSERT_EQ(::CountUniqueElements(::kSequence.cbegin(), ::kSequence.cend()), aFlatSet.size());
   ASSERT_TRUE(std::is_sorted(aFlatSet.cbegin(), aFlatSet.cend()));
 }
 
@@ -153,8 +152,7 @@ TEST(FlatSet, ForEachWritePlusOne) {
     ++n;
   }
 
-  const int aTotalSumAfter =
-      std::accumulate(aFlatSet.cbegin(), aFlatSet.cend(), 0);
+  const int aTotalSumAfter = std::accumulate(aFlatSet.cbegin(), aFlatSet.cend(), 0);
 
   ASSERT_EQ(aTotalSum + static_cast<int>(aFlatSet.size()), aTotalSumAfter);
 }

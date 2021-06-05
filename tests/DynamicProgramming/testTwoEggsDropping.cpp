@@ -24,15 +24,8 @@ namespace algorithms::test {
 
 TEST(DynamicProgramming, TwoEggsDropping) {
   using Test = std::tuple<int, int, int>;
-  const std::vector<Test> testCases = {{0, 0, -1},
-                                       {1, 1, 0},
-                                       {2, 2, 0},
-                                       {3, 2, 1},
-                                       {4, 3, 0},
-                                       {5, 3, 1},
-                                       {10, 4, 3},
-                                       {36, 8, 7},
-                                       {100, 14, 8}};
+  const std::vector<Test> testCases = {
+      {0, 0, -1}, {1, 1, 0}, {2, 2, 0}, {3, 2, 1}, {4, 3, 0}, {5, 3, 1}, {10, 4, 3}, {36, 8, 7}, {100, 14, 8}};
 
   for (const auto& [n, expt1, expt2] : testCases) {
     const auto aSolution = TwoEggsDropping(n);

@@ -24,14 +24,12 @@
 
 namespace algorithms {
 
-std::size_t FindRotateSteps(const std::string_view iRing,
-                            const std::string_view iKey) {
+std::size_t FindRotateSteps(const std::string_view iRing, const std::string_view iKey) {
   constexpr auto kMaxIndex = std::numeric_limits<std::size_t>::max();
   const auto kK = iKey.size();
   const auto kR = iRing.size();
 
-  const auto kFnDistance = [kR](const std::size_t i,
-                                const std::size_t j) noexcept {
+  const auto kFnDistance = [kR](const std::size_t i, const std::size_t j) noexcept {
     const auto aAbs = i < j ? j - i : i - j;
     return std::min(aAbs, kR - aAbs);
   };

@@ -27,14 +27,12 @@ TEST(BackTracking, CombinationSum) {
   using Result = std::vector<std::vector<int>>;
   using Test = std::tuple<std::vector<int>, int, Result>;
 
-  const std::vector<Test> testCases = {
-      {{2, 3, 6, 7}, 7, {{7}, {2, 2, 3}}},
-      {{2, 3, 5}, 8, {{2, 2, 2, 2}, {2, 3, 3}, {3, 5}}}};
+  const std::vector<Test> testCases = {{{2, 3, 6, 7}, 7, {{7}, {2, 2, 3}}},
+                                       {{2, 3, 5}, 8, {{2, 2, 2, 2}, {2, 3, 3}, {3, 5}}}};
 
   for (const auto& [v, t, expt] : testCases) {
     const auto result = CombinationSum(v, t);
-    ASSERT_TRUE(std::is_permutation(
-        result.cbegin(), result.cend(), expt.cbegin(), expt.cend()));
+    ASSERT_TRUE(std::is_permutation(result.cbegin(), result.cend(), expt.cbegin(), expt.cend()));
   }
 }
 

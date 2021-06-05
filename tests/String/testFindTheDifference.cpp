@@ -25,8 +25,7 @@ namespace algorithms::test {
 
 TEST(String, FindTheDifference) {
   using Test = std::tuple<std::string, std::string, char>;
-  const std::vector<Test> testCases{
-      {"abcd", "abcde", 'e'}, {"abc", "ccba", 'c'}, {"abc", "bca", '\0'}};
+  const std::vector<Test> testCases{{"abcd", "abcde", 'e'}, {"abc", "ccba", 'c'}, {"abc", "bca", '\0'}};
 
   for (const auto& [s, t, expt] : testCases) {
     ASSERT_EQ(FindTheDifference(s, t), expt);

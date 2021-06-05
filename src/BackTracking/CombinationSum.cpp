@@ -29,9 +29,7 @@ namespace {
 template <typename T>
 bool allStrictlyPositive(const std::vector<T>& iVector) {
   static_assert(std::is_arithmetic_v<T>);
-  return std::all_of(iVector.cbegin(), iVector.cend(), [](const auto iValue) {
-    return iValue > 0;
-  });
+  return std::all_of(iVector.cbegin(), iVector.cend(), [](const auto iValue) { return iValue > 0; });
 }
 
 //! \return true if all numbers into the vector are different.
@@ -46,9 +44,7 @@ bool noDuplicates(const std::vector<T>& iVector) {
 
 namespace algorithms {
 
-std::vector<std::vector<int>> CombinationSum(
-    const std::vector<int>& iCandidates,
-    const int iTarget) {
+std::vector<std::vector<int>> CombinationSum(const std::vector<int>& iCandidates, const int iTarget) {
   using Node_t = std::tuple<int, int, std::vector<int>>;
   using OpenList_t = std::stack<Node_t>;
 

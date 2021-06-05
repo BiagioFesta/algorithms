@@ -24,13 +24,8 @@ namespace algorithms::test {
 
 TEST(Array, StockMaximize) {
   using Test = std::pair<std::vector<int>, int>;
-  const std::vector<Test> testCases = {{{1, 2}, 1},
-                                       {{2, 1}, 0},
-                                       {{5, 3, 2}, 0},
-                                       {{1, 2, 100}, 197},
-                                       {{1, 3, 1, 2}, 3},
-                                       {{5, 4, 3, 4, 5}, 4},
-                                       {{}, 0}};
+  const std::vector<Test> testCases = {
+      {{1, 2}, 1}, {{2, 1}, 0}, {{5, 3, 2}, 0}, {{1, 2, 100}, 197}, {{1, 3, 1, 2}, 3}, {{5, 4, 3, 4, 5}, 4}, {{}, 0}};
 
   for (const auto& [v, expt] : testCases) {
     ASSERT_EQ(StockMaximize(v), expt);

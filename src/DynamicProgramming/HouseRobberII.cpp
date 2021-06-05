@@ -47,8 +47,7 @@ int HouseRobberII(const std::vector<int>& nums) {
   if (size == 1) return nums[0];
   if (size == 2) return std::max(nums[0], nums[1]);
 
-  return std::max(::HouseRobberIIImpl(nums.data(), size - 1),
-                  ::HouseRobberIIImpl(nums.data() + 1, size - 1));
+  return std::max(::HouseRobberIIImpl(nums.data(), size - 1), ::HouseRobberIIImpl(nums.data() + 1, size - 1));
 }
 
 }  // namespace algorithms

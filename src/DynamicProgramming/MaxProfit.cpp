@@ -38,8 +38,7 @@ int MaxProfit(const std::vector<int>& iPrices) {
   int aCurrentMax = iPrices.back();
   for (std::size_t i = kSize; i > 0; --i) {
     const int iCurrentPrice = iPrices[i - 1];
-    aMaxProfit =
-        std::max(aMaxProfit, aCurrentMax - iCurrentPrice + aMaxRevenue[i - 1]);
+    aMaxProfit = std::max(aMaxProfit, aCurrentMax - iCurrentPrice + aMaxRevenue[i - 1]);
     aCurrentMax = std::max(aCurrentMax, iCurrentPrice);
   }
 

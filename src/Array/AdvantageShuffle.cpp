@@ -22,8 +22,7 @@
 
 namespace algorithms {
 
-std::vector<int> AdvantageShuffle(const std::vector<int>& A,
-                                  const std::vector<int>& B) {
+std::vector<int> AdvantageShuffle(const std::vector<int>& A, const std::vector<int>& B) {
   assert(A.size() == B.size());
 
   std::multiset<int> sortedA(A.cbegin(), A.cend());  // O(NlogN)

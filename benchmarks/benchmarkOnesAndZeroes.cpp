@@ -61,8 +61,6 @@ void BMOnesAndZeroes(::benchmark::State& state) {
     OnesAndZeroes(strs, M, N);
   }
 }
-BENCHMARK(BMOnesAndZeroes)
-    ->RangeMultiplier(10)
-    ->Ranges({{10, 100}, {10, 100}, {10, 100}});
+BENCHMARK(BMOnesAndZeroes)->RangeMultiplier(10)->Ranges({{10, 100}, {10, 100}, {10, 100}});
 
 }  // namespace algorithms::benchmark

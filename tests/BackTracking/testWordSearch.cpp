@@ -29,9 +29,7 @@ TEST(BackTracking, WordSearch) {
   const std::vector<Test> testCases = {
       {{{'b'}, {'a'}, {'b'}}, "bbabab", false},
       {{{'a'}}, "ab", false},
-      {{{'A', 'B', 'C', 'E'}, {'S', 'F', 'C', 'S'}, {'A', 'D', 'E', 'E'}},
-       "ABCCED",
-       true},
+      {{{'A', 'B', 'C', 'E'}, {'S', 'F', 'C', 'S'}, {'A', 'D', 'E', 'E'}}, "ABCCED", true},
       {{}, "some", false},
       {{}, "", true}};
 

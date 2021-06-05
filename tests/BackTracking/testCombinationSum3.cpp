@@ -27,8 +27,7 @@ namespace {
 template <typename Container>
 bool isUniqueSortedValues(const Container& iContainer) {
   return (std::is_sorted(std::cbegin(iContainer), std::cend(iContainer))) &&
-         (std::adjacent_find(std::cbegin(iContainer), std::cend(iContainer)) ==
-          std::cend(iContainer));
+         (std::adjacent_find(std::cbegin(iContainer), std::cend(iContainer)) == std::cend(iContainer));
 }
 
 }  // anonymous namespace
@@ -39,24 +38,19 @@ TEST(BackTracking, CombinationSum3) {
   using Result = std::vector<std::vector<int>>;
   using Test = std::tuple<int, int, Result>;
 
-  const std::vector<Test> testCases = {
-      {3, 7, {{1, 2, 4}}},
-      {3, 9, {{1, 2, 6}, {1, 3, 5}, {2, 3, 4}}},
-      {1, 10, {}},
-      {1, 9, {{9}}},
-      {2, 14, {{6, 8}, {5, 9}}}};
+  const std::vector<Test> testCases = {{3, 7, {{1, 2, 4}}},
+                                       {3, 9, {{1, 2, 6}, {1, 3, 5}, {2, 3, 4}}},
+                                       {1, 10, {}},
+                                       {1, 9, {{9}}},
+                                       {2, 14, {{6, 8}, {5, 9}}}};
 
   for (const auto& [k, n, expt] : testCases) {
     const auto aResult = CombinationSum3(k, n);
 
-    ASSERT_TRUE(std::all_of(aResult.cbegin(),
-                            aResult.cend(),
-                            ::isUniqueSortedValues<std::vector<int>>));
-    ASSERT_TRUE(std::all_of(
-        expt.cbegin(), expt.cend(), ::isUniqueSortedValues<std::vector<int>>));
+    ASSERT_TRUE(std::all_of(aResult.cbegin(), aResult.cend(), ::isUniqueSortedValues<std::vector<int>>));
+    ASSERT_TRUE(std::all_of(expt.cbegin(), expt.cend(), ::isUniqueSortedValues<std::vector<int>>));
 
-    ASSERT_TRUE(std::is_permutation(
-        aResult.cbegin(), aResult.cend(), expt.cbegin(), expt.cend()));
+    ASSERT_TRUE(std::is_permutation(aResult.cbegin(), aResult.cend(), expt.cbegin(), expt.cend()));
   }
 }
 

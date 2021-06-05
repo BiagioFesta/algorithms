@@ -33,10 +33,8 @@ int MinPathSum(const int* const iMatrix, const int M, const int N) {
 
   for (int i = 1; i < Q; ++i) {
     const int index = Q - 1 - i;
-    const int costDown =
-        i < N ? kMaxInt : aSolutions[index + N] + iMatrix[index];
-    const int costRight =
-        i % N == 0 ? kMaxInt : aSolutions[index + 1] + iMatrix[index];
+    const int costDown = i < N ? kMaxInt : aSolutions[index + N] + iMatrix[index];
+    const int costRight = i % N == 0 ? kMaxInt : aSolutions[index + 1] + iMatrix[index];
     aSolutions[index] = std::min(costDown, costRight);
   }
 

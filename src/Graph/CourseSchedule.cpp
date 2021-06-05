@@ -24,8 +24,7 @@
 
 namespace algorithms {
 
-bool CourseSchedule(const int numCourses,
-                    const std::vector<std::vector<int>>& prerequisites) {
+bool CourseSchedule(const int numCourses, const std::vector<std::vector<int>>& prerequisites) {
   using NextHops = std::unordered_map<int, std::vector<int>>;
   NextHops nextHops;
   for (const auto& edge : prerequisites) {

@@ -24,14 +24,13 @@ namespace algorithms::test {
 
 TEST(Array, RotateRight) {
   using Test = std::tuple<std::vector<int>, int, std::vector<int>>;
-  const std::vector<Test> testCases = {
-      {{1, 2, 3, 4, 5, 6, 7}, 3, {5, 6, 7, 1, 2, 3, 4}},
-      {std::vector<int>{}, 10, std::vector<int>{}},
-      {{1, 2, 3, 4, 5, 6, 7}, 0, {1, 2, 3, 4, 5, 6, 7}},
-      {{1, 2, 3, 4, 5, 6, 7}, -1, {2, 3, 4, 5, 6, 7, 1}},
-      {{1, 2, 3}, 3, {1, 2, 3}},
-      {{1, 2, 3}, -6, {1, 2, 3}},
-      {{1, 2, 3, 4, 5, 6}, 2, {5, 6, 1, 2, 3, 4}}};
+  const std::vector<Test> testCases = {{{1, 2, 3, 4, 5, 6, 7}, 3, {5, 6, 7, 1, 2, 3, 4}},
+                                       {std::vector<int>{}, 10, std::vector<int>{}},
+                                       {{1, 2, 3, 4, 5, 6, 7}, 0, {1, 2, 3, 4, 5, 6, 7}},
+                                       {{1, 2, 3, 4, 5, 6, 7}, -1, {2, 3, 4, 5, 6, 7, 1}},
+                                       {{1, 2, 3}, 3, {1, 2, 3}},
+                                       {{1, 2, 3}, -6, {1, 2, 3}},
+                                       {{1, 2, 3, 4, 5, 6}, 2, {5, 6, 1, 2, 3, 4}}};
 
   for (const auto& [v, k, expt] : testCases) {
     auto rotated = v;

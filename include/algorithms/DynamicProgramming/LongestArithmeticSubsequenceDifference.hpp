@@ -30,8 +30,7 @@ namespace algorithms {
  *  \note
  * https://leetcode.com/problems/longest-arithmetic-subsequence-of-given-difference/
  */
-int LongestArithmeticSubsequenceDifference(const std::vector<int>& arr,
-                                           const int difference);
+int LongestArithmeticSubsequenceDifference(const std::vector<int>& arr, const int difference);
 
 }  // namespace algorithms
 

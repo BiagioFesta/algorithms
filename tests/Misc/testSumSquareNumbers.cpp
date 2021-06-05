@@ -24,8 +24,7 @@ namespace algorithms::test {
 
 TEST(Misc, SumSquareNumbers) {
   using Test = std::pair<int, bool>;
-  const std::vector<Test> testCases = {
-      {5, true}, {3, false}, {0, true}, {2147482647, false}};
+  const std::vector<Test> testCases = {{5, true}, {3, false}, {0, true}, {2147482647, false}};
 
   for (const auto& [c, expt] : testCases) {
     ASSERT_EQ(SumSquareNumbers(c), expt) << "Failed with c == " << c;

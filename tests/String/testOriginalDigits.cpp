@@ -25,11 +25,10 @@ namespace algorithms::test {
 
 TEST(String, OriginalDigits) {
   using Test = std::pair<std::string, std::string>;
-  const std::vector<Test> testCases{
-      {"owoztneoer", "012"},
-      {"fviefuro", "45"},
-      {"zerozero", "00"},
-      {"zeroonetwothreefourfivesixseveneightnine", "0123456789"}};
+  const std::vector<Test> testCases{{"owoztneoer", "012"},
+                                    {"fviefuro", "45"},
+                                    {"zerozero", "00"},
+                                    {"zeroonetwothreefourfivesixseveneightnine", "0123456789"}};
 
   for (const auto& [s, expt] : testCases) {
     ASSERT_EQ(OriginalDigits(s), expt);

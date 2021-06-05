@@ -24,9 +24,8 @@ namespace algorithms::test {
 
 TEST(DynamicProgramming, LongestArithmeticSubsequenceDifference) {
   using Test = std::tuple<std::vector<int>, int, int>;
-  const std::vector<Test> testCases = {{{1, 5, 7, 8, 5, 3, 4, 2, 1}, -2, 4},
-                                       {{1, 2, 3, 4}, 1, 4},
-                                       {{1, 3, 5, 7}, 1, 1}};
+  const std::vector<Test> testCases = {
+      {{1, 5, 7, 8, 5, 3, 4, 2, 1}, -2, 4}, {{1, 2, 3, 4}, 1, 4}, {{1, 3, 5, 7}, 1, 1}};
 
   for (const auto& [arr, difference, expt] : testCases) {
     ASSERT_EQ(LongestArithmeticSubsequenceDifference(arr, difference), expt);

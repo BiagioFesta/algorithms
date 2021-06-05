@@ -24,8 +24,7 @@ namespace algorithms::test {
 
 TEST(Array, GlobalLocalInversions) {
   using Test = std::pair<std::vector<int>, bool>;
-  const std::vector<Test> testCases{
-      {{1, 0, 2}, true}, {{1, 2, 0}, false}, {{2, 0, 1}, false}};
+  const std::vector<Test> testCases{{{1, 0, 2}, true}, {{1, 2, 0}, false}, {{2, 0, 1}, false}};
 
   for (const auto& [v, expt] : testCases) {
     ASSERT_EQ(GlobalLocalInversions(v), expt);

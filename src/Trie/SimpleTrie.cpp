@@ -38,8 +38,7 @@ bool SimpleTrie::find(const char* str) const {
   return str[index] == '\0' && node->final_;
 }
 
-std::pair<SimpleTrie::Node*, std::size_t> SimpleTrie::scanPrefix(
-    const char* str) const {
+std::pair<SimpleTrie::Node*, std::size_t> SimpleTrie::scanPrefix(const char* str) const {
   std::pair<Node*, std::size_t> p{root_, 0};
   Node* next;
 

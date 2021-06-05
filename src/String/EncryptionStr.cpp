@@ -27,10 +27,9 @@ namespace algorithms {
 std::string EncryptionStr(const std::string& iString) {
   std::string aTrailedString;
   aTrailedString.reserve(iString.size());
-  std::copy_if(iString.cbegin(),
-               iString.cend(),
-               std::back_inserter(aTrailedString),
-               [](const char c) { return !std::isspace(c, std::locale()); });
+  std::copy_if(iString.cbegin(), iString.cend(), std::back_inserter(aTrailedString), [](const char c) {
+    return !std::isspace(c, std::locale());
+  });
   const int aNewLen = aTrailedString.size();
   const double aSqrt = std::sqrt(static_cast<double>(aNewLen));
 

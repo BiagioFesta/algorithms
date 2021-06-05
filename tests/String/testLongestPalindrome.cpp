@@ -26,10 +26,7 @@ namespace algorithms::test {
 
 TEST(String, LongestPalindrome) {
   using Test = std::pair<std::string, std::vector<std::string>>;
-  const std::vector<Test> testCases = {{"babad", {"bab", "aba"}},
-                                       {"cbbd", {"bb"}},
-                                       {"", {""}},
-                                       {"ab", {"a", "b"}}};
+  const std::vector<Test> testCases = {{"babad", {"bab", "aba"}}, {"cbbd", {"bb"}}, {"", {""}}, {"ab", {"a", "b"}}};
 
   for (const auto& [str, expt] : testCases) {
     const auto aResult = LongestPalindrome(str);

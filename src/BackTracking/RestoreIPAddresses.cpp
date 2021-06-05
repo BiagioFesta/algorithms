@@ -27,9 +27,7 @@ constexpr std::size_t kNumFieldsIp = 4ull;
 constexpr char kIpCharSep = '.';
 constexpr std::size_t kSizeFieldMax = 3ull;
 
-void RestoreIPAddressImpl(std::string_view s,
-                          std::vector<std::string_view>* fields,
-                          std::vector<std::string>* ips) {
+void RestoreIPAddressImpl(std::string_view s, std::vector<std::string_view>* fields, std::vector<std::string>* ips) {
   if (s.empty() && fields->size() == kNumFieldsIp) {
     std::string ip;
     for (std::size_t i = 0; i < kNumFieldsIp; ++i) {

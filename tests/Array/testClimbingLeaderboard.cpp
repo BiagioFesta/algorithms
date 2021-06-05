@@ -24,8 +24,7 @@ namespace algorithms::test {
 
 TEST(Array, ClimbingLeaderboard) {
   using Test = std::tuple<std::vector<int>, std::vector<int>, std::vector<int>>;
-  const std::vector<Test> testCases = {
-      {{100, 100, 50, 40, 40, 20, 10}, {5, 25, 50, 120}, {6, 4, 2, 1}}};
+  const std::vector<Test> testCases = {{{100, 100, 50, 40, 40, 20, 10}, {5, 25, 50, 120}, {6, 4, 2, 1}}};
 
   for (const auto& [board, alice, expt] : testCases) {
     ASSERT_EQ(climbingLeaderboard(board, alice), expt);

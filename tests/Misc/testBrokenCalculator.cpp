@@ -16,7 +16,6 @@
 
 */
 #include <gtest/gtest.h>
-
 #include <algorithms/Misc/BrokenCalculator.hpp>
 #include <tuple>
 #include <vector>
@@ -25,8 +24,7 @@ namespace algorithms::test {
 
 TEST(Misc, BrokenCalculator) {
   using Test = std::tuple<int, int, int>;
-  const std::vector<Test> testCases = {
-      {2, 3, 2}, {5, 8, 2}, {3, 10, 3}, {1024, 1, 1023}, {42, 42, 0}};
+  const std::vector<Test> testCases = {{2, 3, 2}, {5, 8, 2}, {3, 10, 3}, {1024, 1, 1023}, {42, 42, 0}};
 
   for (const auto& [x, y, expt] : testCases) {
     ASSERT_EQ(BrokenCalculator(x, y), expt);

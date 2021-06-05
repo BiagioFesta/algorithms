@@ -25,18 +25,14 @@ namespace algorithms::test {
 
 TEST(BackTracking, NumbersConsecutiveDifferences) {
   using Test = std::tuple<int, int, std::vector<int>>;
-  const std::vector<Test> testCases = {
-      {3, 7, {181, 292, 707, 818, 929}},
-      {2,
-       1,
-       {10, 12, 21, 23, 32, 34, 43, 45, 54, 56, 65, 67, 76, 78, 87, 89, 98}},
-      {1, 0, {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}},
-      {2, 0, {11, 22, 33, 44, 55, 66, 77, 88, 99}}};
+  const std::vector<Test> testCases = {{3, 7, {181, 292, 707, 818, 929}},
+                                       {2, 1, {10, 12, 21, 23, 32, 34, 43, 45, 54, 56, 65, 67, 76, 78, 87, 89, 98}},
+                                       {1, 0, {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}},
+                                       {2, 0, {11, 22, 33, 44, 55, 66, 77, 88, 99}}};
 
   for (const auto& [n, k, expt] : testCases) {
     const auto ans = NumbersConsecutiveDifferences(n, k);
-    ASSERT_TRUE(std::is_permutation(
-        expt.cbegin(), expt.cend(), ans.cbegin(), ans.cend()));
+    ASSERT_TRUE(std::is_permutation(expt.cbegin(), expt.cend(), ans.cbegin(), ans.cend()));
   }
 }
 
