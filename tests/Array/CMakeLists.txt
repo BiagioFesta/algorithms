@@ -15,6 +15,7 @@ target_sources(
           testCountSmallerAfterSelf.cpp
           testDailyTemperatures.cpp
           testDeckIncreasingReveal.cpp
+          testDetectPatternRepeated.cpp
           testDistantBarcodes.cpp
           testEuclideanAlgorithmGCD.cpp
           testFilterRestaurants.cpp
@@ -45,10 +46,10 @@ target_sources(
           testLongestMountainArray.cpp
           testMajorityElement.cpp
           testMajorityElementII.cpp
+          testMaxWidthRamp.cpp
           testMaximumAbsoluteValueExpression.cpp
           testMaximumGap.cpp
           testMaximumProduct.cpp
-          testMaxWidthRamp.cpp
           testMinimumMovesEqualArrayElementsII.cpp
           testMinimumRemoveValidParentheses.cpp
           testMinimumSizeSubarraySum.cpp

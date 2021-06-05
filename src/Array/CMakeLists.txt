@@ -15,6 +15,7 @@ target_sources(
           CountSmallerAfterSelf.cpp
           DailyTemperatures.cpp
           DeckIncreasingReveal.cpp
+          DetectPatternRepeated.cpp
           DistantBarcodes.cpp
           EuclideanAlgorithmGCD.cpp
           FilterRestaurants.cpp
