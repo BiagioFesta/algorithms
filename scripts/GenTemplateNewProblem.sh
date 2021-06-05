@@ -115,7 +115,7 @@ Type ${problemName}()
 }
 
 genTest() {
-    fileTest="test/${problemType}/test${problemName}.cpp"
+    fileTest="tests/${problemType}/test${problemName}.cpp"
     touch ${fileTest}
     echo "/*
   Copyright (C) $(getYear)  Biagio Festa
