@@ -29,6 +29,11 @@ TEST(Array, MajorityElement) {
   for (const auto& [nums, expt] : testCases) {
     ASSERT_EQ(MajorityElement(nums), expt);
   }
+
+#ifndef NDEBUG
+  std::vector<int> assertionCase{1, 2, 3, 4};
+  ASSERT_DEATH(MajorityElement(assertionCase), "IsThereMajorityElement");
+#endif
 }
 
 }  // namespace algorithms::test
