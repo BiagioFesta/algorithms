@@ -46,6 +46,7 @@ target_sources(
           LongestMountainArray.cpp
           MajorityElement.cpp
           MajorityElementII.cpp
+          MaxAreaIsland.cpp
           MaxWidthRamp.cpp
           MaximumAbsoluteValueExpression.cpp
           MaximumGap.cpp
