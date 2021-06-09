@@ -49,6 +49,7 @@ target_sources(
           MaxAreaIsland.cpp
           MaxWidthRamp.cpp
           MaximumAbsoluteValueExpression.cpp
+          MaximumEqualFrequency.cpp
           MaximumGap.cpp
           MaximumProduct.cpp
           MinimumMovesEqualArrayElementsII.cpp
