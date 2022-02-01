@@ -183,7 +183,7 @@ class Parser:
             raise Exception('Cannot parse metadata for url "{}" (Get Failed)'
                             .format(url))
 
-        pattern_title = 'class="firstHeading" [^>]*>([^<]+)</'
+        pattern_title = 'firstHeading" [^>]*>([^<]+)</'
         matches_title = re.search(pattern_title, response.text)
         if not matches_title:
             raise Exception('Cannot parse metadata for url "{}" (Title Not Found)'
