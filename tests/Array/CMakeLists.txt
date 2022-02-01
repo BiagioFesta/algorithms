@@ -69,6 +69,7 @@ target_sources(
           testSearchRotatedSortedArray.cpp
           testSieveOfEratosthenes.cpp
           testSingleElementInSortedArray.cpp
+          testSmallestDivisorThreshold.cpp
           testSortColors.cpp
           testStockMaximize.cpp
           testSubarraySumEqualsK.cpp

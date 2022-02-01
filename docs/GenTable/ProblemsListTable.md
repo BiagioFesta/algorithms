@@ -1,7 +1,7 @@
 # Problems List
 ![Easy_counter](https://img.shields.io/badge/Easy-17-green.svg?style=for-the-badge&logo=c%2b%2b)
 ![Medium_counter](https://img.shields.io/badge/Medium-103-yellow.svg?style=for-the-badge&logo=c%2b%2b)
-![Hard_counter](https://img.shields.io/badge/Hard-14-red.svg?style=for-the-badge&logo=c%2b%2b)
+![Hard_counter](https://img.shields.io/badge/Hard-15-red.svg?style=for-the-badge&logo=c%2b%2b)
 ![Undefined_counter](https://img.shields.io/badge/Undefined-36-lightgray.svg?style=for-the-badge&logo=c%2b%2b)
 
 | Problem Name | Difficulty | Implementation |
@@ -61,6 +61,7 @@
 | [Find K Closest Elements](https://leetcode.com/problems/find-k-closest-elements/) | ![Medium](https://img.shields.io/badge/Difficulty-Medium-yellow.svg) | [Source](https://github.com/BiagioFesta/algorithms/blob/master/src/Array/FindKClosestElements.cpp) |
 | [Find the Difference](https://leetcode.com/problems/find-the-difference/) | ![Easy](https://img.shields.io/badge/Difficulty-Easy-green.svg) | [Source](https://github.com/BiagioFesta/algorithms/blob/master/src/String/FindTheDifference.cpp) |
 | [Find the Duplicate Number](https://leetcode.com/problems/find-the-duplicate-number/) | ![Medium](https://img.shields.io/badge/Difficulty-Medium-yellow.svg) | [Source](https://github.com/BiagioFesta/algorithms/blob/master/src/Array/FindDuplicateNumber.cpp) |
+| [Find the Smallest Divisor Given a Threshold](https://leetcode.com/problems/find-the-smallest-divisor-given-a-threshold/) | ![Medium](https://img.shields.io/badge/Difficulty-Medium-yellow.svg) | [Source](https://github.com/BiagioFesta/algorithms/blob/master/src/Array/SmallestDivisorThreshold.cpp) |
 | [First Missing Positive](https://leetcode.com/problems/first-missing-positive/description/) | ![Hard](https://img.shields.io/badge/Difficulty-Hard-red.svg) | [Source](https://github.com/BiagioFesta/algorithms/blob/master/src/Array/FirstMissingPositive.cpp) |
 | [Flat Set]() | ![Not Defined](https://img.shields.io/badge/Difficulty-ND-lightgray.svg) | [Source](https://github.com/BiagioFesta/algorithms/blob/master/include/algorithms/FlatSet/FlatSet.hpp) |
 | [Freedom Trail](https://leetcode.com/problems/freedom-trail/description/) | ![Hard](https://img.shields.io/badge/Difficulty-Hard-red.svg) | [Source](https://github.com/BiagioFesta/algorithms/blob/master/src/DynamicProgramming/FindRotateSteps.cpp) |
@@ -139,7 +140,7 @@
 | [Priority queue](https://en.wikipedia.org/wiki/Priority_queue) | ![Not Defined](https://img.shields.io/badge/Difficulty-ND-lightgray.svg) | [Source](https://github.com/BiagioFesta/algorithms/blob/master/include/algorithms/PriorityQueue/PriorityQueue.hpp) |
 | [Radix sort](https://en.wikipedia.org/wiki/Radix_sort) | ![Not Defined](https://img.shields.io/badge/Difficulty-ND-lightgray.svg) | [Source](https://github.com/BiagioFesta/algorithms/blob/master/src/Array/RadixSort.cpp) |
 | [Rank Transform of an Array](https://leetcode.com/problems/rank-transform-of-an-array/) | ![Easy](https://img.shields.io/badge/Difficulty-Easy-green.svg) | [Source](https://github.com/BiagioFesta/algorithms/blob/master/src/Array/RankTransformArray.cpp) |
-| [Reconstruct Itinerary](https://leetcode.com/problems/reconstruct-itinerary/) | ![Medium](https://img.shields.io/badge/Difficulty-Medium-yellow.svg) | [Source](https://github.com/BiagioFesta/algorithms/blob/master/src/Misc/FindItinerary.cpp) |
+| [Reconstruct Itinerary](https://leetcode.com/problems/reconstruct-itinerary/) | ![Hard](https://img.shields.io/badge/Difficulty-Hard-red.svg) | [Source](https://github.com/BiagioFesta/algorithms/blob/master/src/Misc/FindItinerary.cpp) |
 | [Remove Duplicates]() | ![Not Defined](https://img.shields.io/badge/Difficulty-ND-lightgray.svg) | [Source](https://github.com/BiagioFesta/algorithms/blob/master/src/CTCI/Chapter2/RemoveDuplicates.cpp) |
 | [Remove Duplicates from Sorted Array II](https://leetcode.com/problems/remove-duplicates-from-sorted-array-ii/) | ![Medium](https://img.shields.io/badge/Difficulty-Medium-yellow.svg) | [Source](https://github.com/BiagioFesta/algorithms/blob/master/src/Array/RemoveDuplicatesSortedArrayII.cpp) |
 | [Repeated DNA Sequences](https://leetcode.com/problems/repeated-dna-sequences/) | ![Medium](https://img.shields.io/badge/Difficulty-Medium-yellow.svg) | [Source](https://github.com/BiagioFesta/algorithms/blob/master/src/String/RepeatedDNASequences.cpp) |
